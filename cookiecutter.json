@@ -1,23 +1,20 @@
 {
     "project_name": "ProjectName",
-    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-    "first_module_name": "{{ cookiecutter.repo_name.lower().replace(' ', '_') }}",
+    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_').replace(' ', '_') }}",
+    "github_username": "Your account name or organization name on GitHub where repo will be hosted",
+    "github_url": "{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}",
+    "first_module_name": "{{ cookiecutter.repo_name.lower().replace(' ', '_').replace('-', '_').replace(' ', '_') }}",
     "author_name": "Your name (or your organization/company/team)",
     "author_email": "Your email (or your organization/company/team)",
-    "description": "A short description of the project (less than one line).",
-    "open_source_license": [
-
-        "MIT",
-        "BSD-3-Clause",
-        "LGPLv3",
-        "Not Open Source"
-    ],
+    "description": "A short description of the project.",
     "dependency_source": [
         "Prefer conda-forge over the default anaconda channel with pip fallback",
         "Prefer default anaconda channel with pip fallback",
         "Dependencies from pip only (no conda)"
     ],
-    
-    "include_ReadTheDocs": ["y", "n"],
-  "_cms_cc_version": 1.6
+    "include_ReadTheDocs": [
+        "y",
+        "n"
+    ],
+    "_mda_cc_version": 0.1
 }
