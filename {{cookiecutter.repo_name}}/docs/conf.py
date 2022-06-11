@@ -22,8 +22,11 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 
 project = '{{cookiecutter.project_name}}'
-copyright = ("{% now 'utc', '%Y' %}, {{cookiecutter.author_name}}. Project structure based on the "
-             "MDAnalysis Cookiecutter version {{cookiecutter._mda_cc_version}}")
+copyright = (
+    "{% now 'utc', '%Y' %}, {{cookiecutter.author_name}}. "
+    "Project structure based on the "
+    "MDAnalysis Cookiecutter version {{cookiecutter._mda_cc_version}}"
+)
 author = '{{cookiecutter.author_name}}'
 
 # The short X.Y version
