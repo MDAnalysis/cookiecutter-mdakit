@@ -43,7 +43,8 @@ setup(
 
     # Allows `setup.py test` to work correctly with pytest
     setup_requires=[] + pytest_runner,
-    # Required packages, pulls from pip if needed; do not use for Conda deployment
+    # Required packages, pulls from pip if needed
+    # do not use for Conda deployment
     install_requires=[
         "mdanalysis",
     ],
