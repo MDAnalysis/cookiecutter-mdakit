@@ -7,6 +7,7 @@ If any error is raised, the cookie cutter creation fails and crashes
 import re
 import sys
 
+
 def validate(regex: str, value: str, field: str):
     if not re.match(regex, value):
         print('ERROR: "{}" is not a valid {}!'.format(value, field))

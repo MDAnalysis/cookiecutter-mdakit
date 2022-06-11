@@ -13,6 +13,7 @@ COMMIT_MESSAGE = (
     "{{ cookiecutter._mda_cc_version }}"
 )
 
+
 def run(command, expected_error=True, print_output=True) -> str:
     """Run a shell command and return the output."""
     try:
@@ -59,7 +60,7 @@ def git_init_and_tag():
             run("git tag 0.0.0")
     else:
         print("\ngit repository detected. ")
-    
+
     print(
         "Cookiecutter files have been created in "
         "{{ cookiecutter.repo_name }} directory."
