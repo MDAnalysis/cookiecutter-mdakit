@@ -9,8 +9,10 @@ The rules for this file:
   * entries are sorted newest-first.
   * summarize sets of changes - don't reproduce every git log comment here.
   * don't ever delete anything.
-  * keep the format consistent (79 char width, M/D/Y date format) and do not
-    use tabs but use spaces for formatting
+  * keep the format consistent:
+    * do not use tabs but use spaces for formatting
+    * 79 char width
+    * YYYY-MM-DD date format (following ISO 8601)
   * accompany each entry with github issue/PR number (Issue #xyz)
 -->
 
