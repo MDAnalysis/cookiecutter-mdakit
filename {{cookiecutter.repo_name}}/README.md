@@ -1,13 +1,98 @@
 {{cookiecutter.project_name}}
 ==============================
 [//]: # (Badges)
-[![GitHub Actions Build Status](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/{{cookiecutter.repo_name}}/workflows/CI/badge.svg)](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/{{cookiecutter.repo_name}}/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/{{cookiecutter.project_name}}/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/{{cookiecutter.project_name}}/branch/master)
 
+| **Latest release** | [![Last release tag](https://img.shields.io/github/release-pre/{{cookiecutter.github_url}}.svg)](https://github.com/{{cookiecutter.github_url}}/releases) ![GitHub commits since latest release (by date) for a branch](https://img.shields.io/github/commits-since/{{cookiecutter.github_url}}/latest)  {% if cookiecutter.include_ReadTheDocs == 'y' %}[![Documentation Status](https://readthedocs.org/projects/{{cookiecutter.repo_name}}/badge/?version=latest)](https://{{cookiecutter.repo_name}}.readthedocs.io/en/latest/?badge=latest){% endif %}|
+| :------ | :------- |
+| **Status** | [![GH Actions Status](https://github.com/{{cookiecutter.github_url}}/actions/workflows/gh-ci.yaml/badge.svg)](https://github.com/{{cookiecutter.github_url}}/actions?query=branch%3Amain+workflow%3Agh-ci) [![codecov](https://codecov.io/gh/{{cookiecutter.github_url}}/branch/main/graph/badge.svg)](https://codecov.io/gh/{{cookiecutter.github_url}}/branch/main) [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/{{cookiecutter.github_url}}.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/{{cookiecutter.github_url}}/context:python) |
+| **Community** | [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  [![Powered by MDAnalysis](https://img.shields.io/badge/powered%20by-MDAnalysis-orange.svg?logoWidth=16&logo=data:image/x-icon;base64,AAABAAEAEBAAAAEAIAAoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJD+XwCY/fEAkf3uAJf97wGT/a+HfHaoiIWE7n9/f+6Hh4fvgICAjwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACT/yYAlP//AJ///wCg//8JjvOchXly1oaGhv+Ghob/j4+P/39/f3IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJH8aQCY/8wAkv2kfY+elJ6al/yVlZX7iIiI8H9/f7h/f38UAAAAAAAAAAAAAAAAAAAAAAAAAAB/f38egYF/noqAebF8gYaagnx3oFpUUtZpaWr/WFhY8zo6OmT///8BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICAn46Ojv+Hh4b/jouJ/4iGhfcAAADnAAAA/wAAAP8AAADIAAAAAwCj/zIAnf2VAJD/PAAAAAAAAAAAAAAAAICAgNGHh4f/gICA/4SEhP+Xl5f/AwMD/wAAAP8AAAD/AAAA/wAAAB8Aov9/ALr//wCS/Z0AAAAAAAAAAAAAAACBgYGOjo6O/4mJif+Pj4//iYmJ/wAAAOAAAAD+AAAA/wAAAP8AAABhAP7+FgCi/38Axf4fAAAAAAAAAAAAAAAAiIiID4GBgYKCgoKogoB+fYSEgZhgYGDZXl5e/m9vb/9ISEjpEBAQxw8AAFQAAAAAAAAANQAAADcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjo6Mb5iYmP+cnJz/jY2N95CQkO4pKSn/AAAA7gAAAP0AAAD7AAAAhgAAAAEAAAAAAAAAAACL/gsAkv2uAJX/QQAAAAB9fX3egoKC/4CAgP+NjY3/c3Nz+wAAAP8AAAD/AAAA/wAAAPUAAAAcAAAAAAAAAAAAnP4NAJL9rgCR/0YAAAAAfX19w4ODg/98fHz/i4uL/4qKivwAAAD/AAAA/wAAAP8AAAD1AAAAGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALGxsVyqqqr/mpqa/6mpqf9KSUn/AAAA5QAAAPkAAAD5AAAAhQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADkUFBSuZ2dn/3V1df8uLi7bAAAATgBGfyQAAAA2AAAAMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0AAADoAAAA/wAAAP8AAAD/AAAAWgC3/2AAnv3eAJ/+dgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9AAAA/wAAAP8AAAD/AAAA/wAKDzEAnP3WAKn//wCS/OgAf/8MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAANwAAADtAAAA7QAAAMAAABUMAJn9gwCe/e0Aj/2LAP//AQAAAAAAAAAA)](https://www.mdanalysis.org)|
 
 {{cookiecutter.description}}
 
+{{cookiecutter.project_name}} is bound by a [Code of Conduct](https://github.com/{{cookiecutter.github_url}}/blob/main/CODE_OF_CONDUCT.md).
+
+### Installation
+
+To build {{cookiecutter.project_name}} from source,
+we highly recommend using virtual environments.
+If possible, we strongly recommend that you use
+[Anaconda](https://docs.conda.io/en/latest/) as your package manager.
+Below we provide instructions both for `conda` and
+for `pip` (using [Poetry](https://python-poetry.org/docs/)).
+
+#### With conda
+
+Ensure that you have [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) installed.
+
+Create a virtual environment and activate it:
+
+```
+conda create --name {{cookiecutter.repo_name}}
+conda activate {{cookiecutter.repo_name}}
+```
+
+Install the development and documentation dependencies:
+
+```
+conda env update --name {{cookiecutter.repo_name}} --file devtools/conda-envs/test_env.yaml
+conda env update --name {{cookiecutter.repo_name}} --file docs/requirements.yaml
+```
+
+Build this package from source:
+
+```
+pip install -e .
+```
+
+If you want to update your dependencies (which can be risky!), run:
+
+```
+conda update --all
+```
+
+And when you are finished, you can exit the virtual environment with:
+
+```
+conda deactivate
+```
+
+#### With pip
+
+Ensure that you have [Poetry](https://python-poetry.org/docs/#installation) installed.
+Activate your virtual environment by running the below.
+If this is the first time you have used a virtual environment for {{cookiecutter.project_name}},
+Poetry will both create and activate it at the same time.
+
+```
+poetry shell
+```
+
+You can install this package and its dependencies with the following command:
+
+```
+poetry install
+```
+
+If you want to update your dependencies (which can be risky!), run:
+
+```
+poetry update
+```
+
+And when you are finished, you can exit the virtual environment with:
+
+```
+exit
+```
+
+Poetry has more information about managing environments
+at its [documentation](https://python-poetry.org/docs/managing-environments/).
+
+
 ### Copyright
+
+The {{cookiecutter.project_name}} source code is hosted at https://github.com/{{cookiecutter.github_url}}
+and is available under the GNU General Public License, version 3 (see the file [LICENSE](https://github.com/{{cookiecutter.github_url}}/blob/main/LICENSE)).
 
 Copyright (c) {% now 'utc', '%Y' %}, {{cookiecutter.author_name}}
 
@@ -15,4 +100,5 @@ Copyright (c) {% now 'utc', '%Y' %}, {{cookiecutter.author_name}}
 #### Acknowledgements
  
 Project based on the 
-[Computational Molecular Science Python Cookiecutter](https://github.com/molssi/cookiecutter-cms) version {{cookiecutter._cms_cc_version}}.
+[MDAnalysis Cookiecutter](https://github.com/MDAnalysis/cookiecutter-mda) version {{cookiecutter._mda_cc_version}}.
+Please cite [MDAnalysis](https://github.com/MDAnalysis/mdanalysis#citation) when using {{cookiecutter.project_name}} in published work.

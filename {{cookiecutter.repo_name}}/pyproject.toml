@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "{{cookiecutter.repo_name}}"
+version = "0.0.0"
+description = "{{cookiecutter.description}}"
+license = "GPL-2.0-or-later"
+authors = ["{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>"]
+maintainers = ["{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>"]
+readme = "README.md"
+# homepage = "https://github.com/{{cookiecutter.github_url}}"
+# documentation = "https://{{cookiecutter.repo_name}}.readthedocs.io"
+
+[tool.poetry.dependencies]
+python = "~=3.7"
+MDAnalysis = ">=2.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = ">=6.0"
+pytest-xdist = ">=2.5"
+pytest-cov = ">=3.0"
+sphinx = ">=1.8"
+sphinx_rtd_theme = ">=1.0"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = [
+    "{{cookiecutter.repo_name}}/tests",
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
