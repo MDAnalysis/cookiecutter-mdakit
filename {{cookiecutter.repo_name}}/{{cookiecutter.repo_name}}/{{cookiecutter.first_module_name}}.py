@@ -1,21 +1,26 @@
-"""Provide the primary functions."""
+"""
+{{cookiecutter.first_module_name}}.py
+{{cookiecutter.description}}
+
+Handles the primary functions
+"""
 
 
-def canvas(with_attribution=True):
+def canvas(with_attribution: bool = True) -> str:
     """
-    Placeholder function to show example docstring (NumPy format).
+    Placeholder function to show example docstring (NumPy format)
 
-    Replace this function and doc string for your own project.
+    Replace this function and doc string for your own project
 
     Parameters
     ----------
-    with_attribution : bool, Optional, default: True
-        Set whether or not to display who the quote is from.
+    with_attribution : bool
+        Set whether or not to display who the quote is from
 
     Returns
     -------
     quote : str
-        Compiled string including quote and optional attribution.
+        Compiled string including quote and optional attribution
     """
 
     quote = "The code is but a canvas to our imagination."
