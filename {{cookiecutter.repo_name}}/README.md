@@ -18,7 +18,7 @@ we highly recommend using virtual environments.
 If possible, we strongly recommend that you use
 [Anaconda](https://docs.conda.io/en/latest/) as your package manager.
 Below we provide instructions both for `conda` and
-for `pip` (using [Poetry](https://python-poetry.org/docs/)).
+for `pip`.
 
 #### With conda
 
@@ -58,36 +58,18 @@ conda deactivate
 
 #### With pip
 
-Ensure that you have [Poetry](https://python-poetry.org/docs/#installation) installed.
-Activate your virtual environment by running the below.
-If this is the first time you have used a virtual environment for {{cookiecutter.project_name}},
-Poetry will both create and activate it at the same time.
+To build the package from source, run:
 
 ```
-poetry shell
+pip install -e .
 ```
 
-You can install this package and its dependencies with the following command:
+If you want to create a development environment, install
+the dependencies required for tests and docs with:
 
 ```
-poetry install
+pip install -e ".[test,doc]"
 ```
-
-If you want to update your dependencies (which can be risky!), run:
-
-```
-poetry update
-```
-
-And when you are finished, you can exit the virtual environment with:
-
-```
-exit
-```
-
-Poetry has more information about managing environments
-at its [documentation](https://python-poetry.org/docs/managing-environments/).
-
 
 ### Copyright
 

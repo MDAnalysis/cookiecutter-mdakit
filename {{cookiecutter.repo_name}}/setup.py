@@ -40,7 +40,7 @@ setup(
     # Customize MANIFEST.in if the general case does not suit your needs
     # Comment out this line to prevent the files from being packaged with your software
     include_package_data=True,
-
+    python_requires=">=3.8",          # Python version restrictions
     # Allows `setup.py test` to work correctly with pytest
     setup_requires=[] + pytest_runner,
     # Required packages, pulls from pip if needed
@@ -54,9 +54,19 @@ setup(
     #            'Mac OS-X',
     #            'Unix',
     #            'Windows'],            # Valid platforms your code works on, adjust to your flavor
-    # python_requires=">=3.7",          # Python version restrictions
 
     # Manual control if final package is compressible or not, set False to prevent the .egg from being made
     # zip_safe=False,
 
+    extras_require={
+        "test": [
+            "pytest>=6.0",
+            "pytest-xdist>=2.5",
+            "pytest-cov>=3.0",
+        ],
+        "doc": [
+            "sphinx>=1.8",
+            "sphinx_rtd_theme>=1.0",
+        ]
+    }
 )
