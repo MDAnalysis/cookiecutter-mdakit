@@ -81,9 +81,9 @@ avoid, you will help us make {{cookiecutter.project_name}} a welcoming and produ
    discussion, avoiding features, etc. but often just unavailable.
 
 7. **When we disagree, try to understand why**. Disagreements, both social and
-   technical, happen all the time and MDAnalysis is no exception. It is important
+   technical, happen all the time and {{cookiecutter.project_name}} is no exception. It is important
    that we resolve disagreements and differing views constructively. Remember
-   that we’re different. The strength of MDAnalysis comes from its varied community
+   that we’re different. The strength of {{cookiecutter.project_name}} comes from its varied community
    that includes people from a wide range of backgrounds. Different people have
    different perspectives on issues. Being unable to understand why someone
    holds a viewpoint doesn’t mean they’re wrong. Don’t forget that it is human
