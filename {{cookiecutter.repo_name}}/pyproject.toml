@@ -7,7 +7,6 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "{{cookiecutter.repo_name}}"
-version = "0.0.0"
 description = "{{cookiecutter.description}}"
 license = {{ "{" }}file = "LICENSE" {{ "}" }}
 authors = [
@@ -23,6 +22,9 @@ dependencies = [
 ]
 keywords = [
     "molecular dynamics",
+]
+dynamic = [
+    "version",
 ]
 
 [project.optional-dependencies]
