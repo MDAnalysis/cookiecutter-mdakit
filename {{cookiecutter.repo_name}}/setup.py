@@ -46,7 +46,7 @@ setup(
     # Required packages, pulls from pip if needed
     # do not use for Conda deployment
     install_requires=[
-        "mdanalysis",
+        "mdanalysis>=2.0.0",
     ],
     # Additional entries you may want simply uncomment the lines you want and fill in the data
     # url='{{cookiecutter.repo_name}}.readthedocs.io/en/latest/',  # Website
