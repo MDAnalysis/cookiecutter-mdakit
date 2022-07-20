@@ -102,7 +102,7 @@ jobs:
         pytest -n 4 -v --cov={{ cookiecutter.repo_name }} --cov-report=xml --color=yes {{ cookiecutter.repo_name }}/tests/
 
     - name: codecov
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v3
       with:
         file: coverage.xml
         name: codecov-{{ '${{ matrix.os }}' }}-py{{ '${{ matrix.python-version }}' }}
