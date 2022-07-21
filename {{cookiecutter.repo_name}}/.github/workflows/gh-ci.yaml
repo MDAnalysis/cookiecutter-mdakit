@@ -146,29 +146,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-{% if cookiecutter.dependency_source == 'Dependencies from pip only (no conda)' %}
     - name: Set up Python {{ '${{ matrix.python-version }}' }}
       uses: actions/setup-python@v3
       with:
         python-version: {{ '${{ matrix.python-version }}' }}
-
-{% else %}
-    # More info on options: https://github.com/conda-incubator/setup-miniconda
-    - name: Install conda dependencies
-      uses: conda-incubator/setup-miniconda@v2
-      with:
-        python-version: {{ '${{ matrix.python-version }}' }}
-        add-pip-as-python-dependency: true
-        architecture: x64
-{% if cookiecutter.dependency_source == 'Prefer conda-forge over the default anaconda channel with pip fallback' %}
-        mamba-version: "*"
-        channels: conda-forge, defaults
-{% elif cookiecutter.dependency_source == 'Prefer default anaconda channel with pip fallback' %}
-        channels: defaults
-{% endif %}
-        auto-update-conda: true
-        show-channel-urls: true
-{% endif %}
 
     - name: Install dependencies
       run: |
