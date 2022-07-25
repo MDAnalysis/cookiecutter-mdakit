@@ -48,7 +48,7 @@ jobs:
             python-version: "3.9"
 
     env:
-      OUTPUT_DIR: /home/runner/output_mdakits
+      # OUTPUT_DIR: ${HOME}/output_mdakits
       GITHUB_REPO_NAME: cookiecutter_example_deps-${{ matrix.dependency_source['name'] }}_rtd-${{ matrix.rtd['value'] }}
       TEST_REPO_NAME: "testmdakit_deps_${{ matrix.dependency_source['name'] }}_rtd_${{ matrix.rtd['value'] }}"
       ACTION_DIR: ".github/actions/${TEST_REPO_NAME}"
@@ -72,6 +72,10 @@ jobs:
           echo "Test repo name: ${TEST_REPO_NAME}"
           echo "Uploading artifact: ${UPLOAD_PR_ARTIFACT}"
 
+          OUTPUT_DIR=${HOME}/output_mdakits
+          echo $OUTPUT_DIR
+
+          echo "OUTPUT_DIR=${OUTPUT_DIR}" >> $GITHUB_ENV
           mkdir -p $OUTPUT_DIR
 
       - name: Set up git
