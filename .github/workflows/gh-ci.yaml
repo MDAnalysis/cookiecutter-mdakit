@@ -139,14 +139,14 @@ jobs:
           act --job main_tests --platform ubuntu-latest=act-conda
           cd -
 
-      - name: Build from source
-        run: |
-          cd ${OUTPUT_DIR}/${GITHUB_REPO_NAME}
-          pip install -e ".[test,doc]"
-          cd -
+      # - name: Build from source
+      #   run: |
+      #     cd ${OUTPUT_DIR}/${GITHUB_REPO_NAME}
+      #     pip install -e ".[test,doc]"
+      #     cd -
 
-          python -c "import MDAnalysis as mda; print(f'MDAnalysis version:', mda.__version__)"
-          python -c "import ${TEST_REPO_NAME}; print('${TEST_REPO_NAME} version:', ${TEST_REPO_NAME}.__version__)"
+      #     python -c "import MDAnalysis as mda; print(f'MDAnalysis version:', mda.__version__)"
+      #     python -c "import ${TEST_REPO_NAME}; print('${TEST_REPO_NAME} version:', ${TEST_REPO_NAME}.__version__)"
 
       # - name: Deploy artifact
       #   if: ${{ env.UPLOAD_PR_ARTIFACT == 'true' }}
