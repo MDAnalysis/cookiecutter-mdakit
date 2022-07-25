@@ -21,7 +21,7 @@ dependencies = [
     "MDAnalysis>=2.0.0",
 ]
 keywords = [
-    "molecular dynamics",
+    "molecular simulations",
 ]
 dynamic = [
     "version",
