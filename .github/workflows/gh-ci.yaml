@@ -35,8 +35,8 @@ jobs:
         rtd:
           - key: 1
             value: "y"
-          # - key: 2
-          #   value: "n"
+          - key: 2
+            value: "n"
         exclude:
           - os: macOS-latest
             python-version: "3.8"
@@ -73,7 +73,7 @@ jobs:
           echo "Uploading artifact: ${UPLOAD_PR_ARTIFACT}"
 
           OUTPUT_DIR=${HOME}/output_mdakits
-          echo $OUTPUT_DIR
+          echo "Test repo output directory: $OUTPUT_DIR"
 
           echo "OUTPUT_DIR=${OUTPUT_DIR}" >> $GITHUB_ENV
           mkdir -p $OUTPUT_DIR
@@ -159,21 +159,21 @@ jobs:
       #     git checkout -b pr-${{github.event.pull_request.number}}
       #     git push origin HEAD
 
-      # - name: Copy to examples
-      #   if: github.event_name != 'pull_request'
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     GH_REPOSITORY: "github.com/${{ env.GITHUB_HOST_ACCOUNT }}/${{ env.GITHUB_REPO_NAME }}.git"
-      #   run: |
-      #     git remote add upstream "https://${GH_USER}:${GH_TOKEN}@${GH_REPOSITORY}"
-      #     git fetch --depth 50 upstream
-      #     git reset upstream/main
+      - name: Copy to examples
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPOSITORY: "github.com/${{ github.repository }}.git"
+        run: |
+          git remote add upstream "https://${GH_USER}:${GH_TOKEN}@${GH_REPOSITORY}"
+          git fetch --depth 50 upstream
+          git reset upstream/main
 
-      #     cp -r ${OUTPUT_DIR}/* examples/
+          cp -r ${OUTPUT_DIR}/* examples/
 
-      #     git add examples/
-      #     git diff-index --quiet HEAD -- || git commit -m "Updated examples"
-      #     git push -q upstream HEAD
+          git add examples/
+          git diff-index --quiet HEAD -- || git commit -m "Updated examples"
+          git push -q upstream HEAD
 
 
 
