@@ -20,7 +20,11 @@ concurrency:
 
 defaults:
   run:
+{% if cookiecutter.dependency_source == 'Dependencies from pip only (no conda)' %}
+    shell: bash
+{% else %}
     shell: bash -l {0}
+{% endif %}
 
 jobs:
   main_tests:
@@ -48,9 +52,6 @@ jobs:
         python-version: {{ '${{ matrix.python-version }}' }}
 
     - name: Install testing dependencies
-      # need non-login bash shell for Mac outside conda
-      # otherwise it sources system Python
-      shell: bash
       run: |
         python -m pip install -U pytest pytest-xdist pytest-cov codecov
 {% else %}
@@ -74,22 +75,12 @@ jobs:
         show-channel-urls: true
 {% endif %}
 
-{% if cookiecutter.dependency_source == 'Dependencies from pip only (no conda)' %}
     - name: Install package
-      shell: bash
       run: |
         python --version
-        python -m pip install .
-{% else %}
-    - name: Install package
-      run: |
-        python -m pip install . --no-deps
-{% endif %}
+        python -m pip install . {% if cookiecutter.dependency_source != 'Dependencies from pip only (no conda)' %} --no-deps {% endif %}
 
     - name: Python information
-{% if cookiecutter.dependency_source == 'Dependencies from pip only (no conda)' %}
-      shell: bash
-{% endif %}
       run: |
         which python
         which pip
@@ -100,9 +91,6 @@ jobs:
 {% endif %}
 
     - name: Run tests
-{% if cookiecutter.dependency_source == 'Dependencies from pip only (no conda)' %}
-      shell: bash
-{% endif %}
       run: |
         pytest -n 2 -v --cov={{ cookiecutter.repo_name }} --cov-report=xml --color=yes {{ cookiecutter.repo_name }}/tests/
 
