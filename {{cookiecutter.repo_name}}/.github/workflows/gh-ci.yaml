@@ -27,7 +27,7 @@ defaults:
 {% endif %}
 
 env:
-  LAST_MINOR_RELEASE: "3.9"
+  LAST_MINOR_PYTHON_RELEASE: "3.9"
 
 jobs:
   main_tests:
@@ -115,7 +115,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: {{ '${{ env.LAST_MINOR_RELEASE }}' }}
+        python-version: {{ '${{ env.LAST_MINOR_PYTHON_RELEASE }}' }}
 
     - name: Install Pylint
       run: |
@@ -137,10 +137,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Python {{ '${{ env.LAST_MINOR_RELEASE }}' }}
+    - name: Set up Python {{ '${{ env.LAST_MINOR_PYTHON_RELEASE }}' }}
       uses: actions/setup-python@v4
       with:
-        python-version: {{ '${{ env.LAST_MINOR_RELEASE }}' }}
+        python-version: {{ '${{ env.LAST_MINOR_PYTHON_RELEASE }}' }}
 
     - name: Install dependencies
       run: |
