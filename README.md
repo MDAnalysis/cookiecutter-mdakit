@@ -310,7 +310,7 @@ upon setup.
 ├── MANIFEST.in                     <- Packaging information for pip
 ├── README.md                       <- Description of project which GitHub will render
 ├── {{repo_name}}                   <- Basic Python Package import file
-│   ├── {{first_module_name}}.py    <- Starting packge module
+│   ├── {{package_name}}.py    <- Starting packge module
 │   ├── __init__.py                 <- Basic Python Package import file
 │   ├── _version.py                 <- Automatic version control with Versioneer
 │   ├── data                        <- Sample additional data (non-code) which can be packaged. Just an example, delete in production
