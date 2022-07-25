@@ -34,7 +34,7 @@ remove deployment platforms, or test with a different suite.
 
 ## Requirements
 
-* Python 3.7+
+* Python 3.8+
 * [Cookiecutter](http://cookiecutter.readthedocs.io/en/latest/installation.html)
 * [Git](https://git-scm.com/)
 
