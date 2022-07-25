@@ -25,7 +25,7 @@ except:
 
 setup(
     # Self-descriptive entries which should always be present
-    name='{{cookiecutter.repo_name}}',
+    name='{{cookiecutter.package_name}}',
     author='{{cookiecutter.author_name}}',
     author_email='{{cookiecutter.author_email}}',
     description=short_description,
