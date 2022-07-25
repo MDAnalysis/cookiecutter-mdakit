@@ -25,6 +25,9 @@ Then it adds a `github_url` variable for easier use with CI, etc.
 
 {{ cookiecutter.update({"github_url": [cookiecutter.github_host_account, cookiecutter.repo_name]|join("/") }) }}
 
+
+{{ cookiecutter.update({"open_source_license": 'GNU Public License v2+'}) }}
+
 """
 
 import re
