@@ -1,12 +1,17 @@
-## Description
-Provide a brief description of the PR's purpose here.
 
-## Todos
-Notable points that this PR has either accomplished or will accomplish.
-  - [ ] TODO 1
+<!-- Does this PR fix an issue or relate to an existing discussion? Please link it below after "Fixes #" -->
 
-## Questions
-- [ ] Question1
+Fixes #
 
-## Status
-- [ ] Ready to go
+Changes made in this Pull Request:
+<!-- Summarise changes made with dot points below -->
+ - 
+ - 
+
+
+PR Checklist
+------------
+ - [ ] Tests?
+ - [ ] Docs?
+ - [ ] CHANGELOG updated?
+ - [ ] Issue raised/referenced?

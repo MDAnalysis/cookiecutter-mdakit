@@ -13,18 +13,20 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
 # Incase the project was not installed
+import {{cookiecutter.repo_name}}
 import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
-
-import {{cookiecutter.repo_name}}
 
 
 # -- Project information -----------------------------------------------------
 
 project = '{{cookiecutter.project_name}}'
-copyright = ("{% now 'utc', '%Y' %}, {{cookiecutter.author_name}}. Project structure based on the "
-             "Computational Molecular Science Python Cookiecutter version {{cookiecutter._mda_cc_version}}")
+copyright = (
+    "{% now 'utc', '%Y' %}, {{cookiecutter.author_name}}. "
+    "Project structure based on the "
+    "MDAnalysis Cookiecutter version {{cookiecutter._mda_cc_version}}"
+)
 author = '{{cookiecutter.author_name}}'
 
 # The short X.Y version
@@ -172,3 +174,7 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
+intersphinx_mapping = {
+    'https://docs.python.org/3/': None,
+    'https://docs.mdanalysis.org/stable/': None,
+}
