@@ -69,8 +69,8 @@ setup(
             "pytest-cov>=3.0",
         ],
         "doc": [
-            "sphinx>=1.8",
-            "sphinx_rtd_theme>=1.0",
+            "sphinx",
+            "sphinx_rtd_theme",
         ]
     }
 )
