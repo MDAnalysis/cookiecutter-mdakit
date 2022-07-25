@@ -4,7 +4,7 @@
 """
 
 # Add imports here
-from .{{cookiecutter.first_module_name}} import canvas
+from .{{cookiecutter.package_name}} import canvas
 
 # Handle versioneer
 from ._version import get_versions

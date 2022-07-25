@@ -4,7 +4,7 @@ Location of data files
 
 Use as ::
 
-    from {{ cookiecutter.repo_name }}.data.files import *
+    from {{ cookiecutter.package_name }}.data.files import *
 
 """
 

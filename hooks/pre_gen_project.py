@@ -30,14 +30,11 @@ Then it adds a `github_url` variable for easier use with CI, etc.
 import re
 import sys
 
-<<<<<<< HEAD
-
-=======
 REGEX_EMAIL = r'^[^@]+@[^@]+\.[^@]+$'
+REGEX_ONLINE = r'^[_\-a-zA-Z][_\-a-zA-Z0-9]+$'
 REGEX_MODULE = r'^[_a-zA-Z][_a-zA-Z0-9]+$'
 
 
->>>>>>> trial injected variables
 def validate(regex: str, value: str, field: str):
     if not re.match(regex, value):
         print('ERROR: "{}" is not a valid {}!'.format(value, field))
@@ -47,23 +44,15 @@ def validate(regex: str, value: str, field: str):
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
-    REGEX_EMAIL = r'^[^@]+@[^@]+\.[^@]+$'
-    REGEX_MODULE = r'^[_a-zA-Z][_a-zA-Z0-9]+$'
 
     validate(REGEX_EMAIL, "{{ cookiecutter.author_email }}", "email")
-    validate(REGEX_MODULE, "{{ cookiecutter.repo_name }}", "repo name")
-=======
-
-    validate(REGEX_EMAIL, "{{ cookiecutter.author_email }}", "email")
-    validate(REGEX_MODULE, "{{ cookiecutter.repo_name }}", "repo name")
-    validate(REGEX_MODULE,
+    validate(REGEX_ONLINE, "{{ cookiecutter.repo_name }}", "repo name")
+    validate(REGEX_ONLINE,
              "{{ cookiecutter.github_username }}", "GitHub username")
-    validate(REGEX_MODULE,
+    validate(REGEX_ONLINE,
              "{{ cookiecutter.github_host_account }}", "GitHub account")
->>>>>>> trial injected variables
     validate(
         REGEX_MODULE,
-        "{{ cookiecutter.first_module_name }}",
+        "{{ cookiecutter.package_name }}",
         "module name"
     )

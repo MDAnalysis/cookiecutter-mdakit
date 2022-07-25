@@ -9,7 +9,7 @@ Global pytest fixtures
 
 import pytest
 
-from {{cookiecutter.repo_name}}.data.files import MDANALYSIS_LOGO
+from {{cookiecutter.package_name}}.data.files import MDANALYSIS_LOGO
 
 
 @pytest.fixture
