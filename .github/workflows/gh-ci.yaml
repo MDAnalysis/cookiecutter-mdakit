@@ -15,7 +15,38 @@ defaults:
   run:
     shell: bash
 
+env:
+  GH_USER: github-actions
+  GH_EMAIL: "github-action@users.noreply.github.com"
+
 jobs:
+  main_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Environment information
+        run: |
+          uname -a
+          df -h
+          ulimit -a
+
+          git config --global user.name $GH_USER
+          git config --global user.email $GH_EMAIL
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+      
+      - name: Install dependencies
+        run: |
+          python --version
+          python -m pip install -U pyyaml cookiecutter pytest pytest-cov
+      
+      - name: Run tests
+        run: |
+          pytest tests
+
+
   generate-cookiecutter:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -56,8 +87,7 @@ jobs:
       RUN_ACT_TESTS: ${{ matrix.os == 'ubuntu-latest' && matrix.dependency_source['key'] == 1 }}
       UPLOAD_PR_ARTIFACT: ${{ matrix.os == 'ubuntu-latest' && matrix.python-version == '3.10' && github.event_name == 'pull_request' }}
       GITHUB_HOST_ACCOUNT: lilyminium
-      GH_USER: github-actions
-      GH_EMAIL: "github-action@users.noreply.github.com"
+      
 
 
     steps:
@@ -85,7 +115,7 @@ jobs:
 
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -105,7 +135,9 @@ jobs:
             author_email="github-action@users.noreply.github.com" \
             description="Test MDAKit repository: deps=${{ matrix.dependency_source }}, rtd=${{ matrix.rtd }}" \
             dependency_source="${{ matrix.dependency_source['value'] }}" \
-            include_ReadTheDocs="${{ matrix.rtd['value'] }}"
+            include_ReadTheDocs="${{ matrix.rtd['value'] }}" \
+            template_analysis_class="MyAnalysis"
+
       
       - name: Add origin
         if: ${{ env.RUN_ACT_TESTS == 'true' }}
@@ -158,6 +190,13 @@ jobs:
       #     cd ${OUTPUT_DIR}/${GITHUB_REPO_NAME}
       #     git checkout -b pr-${{github.event.pull_request.number}}
       #     git push origin HEAD
+
+      - name: Print out
+        run: |
+          cd ${OUTPUT_DIR}/${GITHUB_REPO_NAME}
+
+          cat ${TEST_REPO_NAME}/analysis/*
+          cat ${TEST_REPO_NAME}/tests/analysis/*
 
       - name: Copy to examples
         if: github.event_name != 'pull_request'

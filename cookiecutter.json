@@ -16,5 +16,6 @@
         "y",
         "n"
     ],
+    "template_analysis_class": "Class name to template (e.g. {{ cookiecutter.project_name.title().replace(' ', '').replace('-', '').replace('_', '') }} ). Press Enter to skip including analysis templates",
     "_mda_cc_version": 0.1
 }
