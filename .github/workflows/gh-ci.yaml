@@ -135,7 +135,9 @@ jobs:
             author_email="github-action@users.noreply.github.com" \
             description="Test MDAKit repository: deps=${{ matrix.dependency_source }}, rtd=${{ matrix.rtd }}" \
             dependency_source="${{ matrix.dependency_source['value'] }}" \
-            include_ReadTheDocs="${{ matrix.rtd['value'] }}"
+            include_ReadTheDocs="${{ matrix.rtd['value'] }}" \
+            template_analysis_class="MyAnalysis"
+
       
       - name: Add origin
         if: ${{ env.RUN_ACT_TESTS == 'true' }}
@@ -188,6 +190,13 @@ jobs:
       #     cd ${OUTPUT_DIR}/${GITHUB_REPO_NAME}
       #     git checkout -b pr-${{github.event.pull_request.number}}
       #     git push origin HEAD
+
+      - name: Print out
+        run: |
+          cd ${OUTPUT_DIR}/${GITHUB_REPO_NAME}
+
+          cat ${TEST_REPO_NAME}/analysis/*
+          cat ${TEST_REPO_NAME}/tests/analysis/*
 
       - name: Copy to examples
         if: github.event_name != 'pull_request'

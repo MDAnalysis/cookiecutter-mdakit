@@ -53,7 +53,7 @@ class CookiecutterMDAKit:
 
     def run(self):
         context = {}
-        for k, v in asdict(self):
+        for k, v in asdict(self).items():
             if isinstance(v, enum.Enum):
                 v = v.value
             context[k] = v
