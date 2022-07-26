@@ -21,6 +21,8 @@ def remove_files(*paths):
             path.unlink()
         elif path.is_dir():
             shutil.rmtree(str(path))
+        else:
+            raise ValueError(f"{path} is not a file or directory")
 
 def run(command, expected_error=True, print_output=True) -> str:
     """Run a shell command and return the output."""
