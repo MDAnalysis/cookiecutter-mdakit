@@ -22,5 +22,5 @@ class TestAnalysis:
 
             assert kit.cookie_package_path_exists("analysis/myanalysisclass.py")
             assert kit.cookie_package_path_exists("tests/analysis/test_myanalysisclass.py")
-            assert "MyAnalysisClass" in kit.get_classes_from_file("analysis/myanalysisclass.py")
-            assert "TestMyAnalysisClass" in kit.get_classes_from_file("tests/analysis/myanalysisclass.py")
+            assert "MyAnalysisClass" in kit.get_classes_from_package_file("analysis/myanalysisclass.py")
+            assert "TestMyAnalysisClass" in kit.get_classes_from_package_file("tests/analysis/myanalysisclass.py")

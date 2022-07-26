@@ -15,6 +15,10 @@ defaults:
   run:
     shell: bash
 
+env:
+  GH_USER: github-actions
+  GH_EMAIL: "github-action@users.noreply.github.com"
+
 jobs:
   main_tests:
     runs-on: ubuntu-latest
@@ -26,6 +30,9 @@ jobs:
           uname -a
           df -h
           ulimit -a
+
+          git config --global user.name $GH_USER
+          git config --global user.email $GH_EMAIL
         
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
@@ -81,8 +88,7 @@ jobs:
       RUN_ACT_TESTS: ${{ matrix.os == 'ubuntu-latest' && matrix.dependency_source['key'] == 1 }}
       UPLOAD_PR_ARTIFACT: ${{ matrix.os == 'ubuntu-latest' && matrix.python-version == '3.10' && github.event_name == 'pull_request' }}
       GITHUB_HOST_ACCOUNT: lilyminium
-      GH_USER: github-actions
-      GH_EMAIL: "github-action@users.noreply.github.com"
+      
 
 
     steps:
