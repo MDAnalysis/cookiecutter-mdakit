@@ -14,6 +14,7 @@ COMMIT_MESSAGE = (
     "{{ cookiecutter._mda_cc_version }}"
 )
 
+
 def remove_files(*paths):
     for path in paths:
         path = pathlib.Path(path)
@@ -82,6 +83,7 @@ def remove_rtd():
     include_rtd = '{{ cookiecutter.include_ReadTheDocs }}'
     if include_rtd == "n":
         remove_files("readthedocs.yaml")
+
 
 def remove_analysis():
     """Remove analysis files if unnecessary. """
