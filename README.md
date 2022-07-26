@@ -169,3 +169,5 @@ This cookiecutter is developed by MDAnalysis, based heavily off the
 by Levi N. Naden and Jessica A. Nash
 from the [Molecular Sciences Software Institute (MolSSI)](http://molssi.org/) and
 Daniel G. A. Smith of [ENTOS](https://www.entos.ai/).
+
+The development of this repository is supported by a grant from the Chan Zuckerberg Initiative under an EOSS4 award.
