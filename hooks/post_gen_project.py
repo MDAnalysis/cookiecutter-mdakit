@@ -88,4 +88,7 @@ def remove_analysis():
         remove_files("analysis", "tests/analysis")
 
 remove_rtd()
+remove_analysis()
+
+
 git_init_and_tag()
