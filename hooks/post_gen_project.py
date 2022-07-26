@@ -87,7 +87,10 @@ def remove_analysis():
     """Remove analysis files if unnecessary. """
     include_analysis = '{{ cookiecutter.template_analysis_class }}'
     if not include_analysis:
-        remove_files("analysis", "tests/analysis")
+        remove_files(
+            "{{ cookiecutter.package_name }}/analysis",
+            "{{ cookiecutter.package_name }}/tests/analysis"
+        )
 
 remove_rtd()
 remove_analysis()
