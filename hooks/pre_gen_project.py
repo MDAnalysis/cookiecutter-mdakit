@@ -77,5 +77,6 @@ if __name__ == "__main__":
     validate(
         REGEX_PYTHON_COMPATIBLE,
         "{{ cookiecutter.template_analysis_class }}",
-        "analysis class name"
+        "analysis class name",
+        allow_empty=True
     )
