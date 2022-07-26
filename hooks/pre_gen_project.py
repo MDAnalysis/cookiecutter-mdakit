@@ -26,6 +26,19 @@ Then it adds a `github_url` variable for easier use with CI, etc.
 {{ cookiecutter.update({"github_url": [cookiecutter.github_host_account, cookiecutter.repo_name]|join("/") }) }}
 
 
+--- ANALYSIS ---
+
+Set `template_analysis_class` to "" if default value is passed.
+
+{{ cookiecutter.update({"template_analysis_class": cookiecutter.template_analysis_class | trim }) }}
+
+{% if "Enter" in cookiecutter.template_analysis_class %}
+    {{ cookiecutter.update({ "template_analysis_class": "" }) }}
+{% endif %}
+
+
+=== LICENSE ===
+
 {{ cookiecutter.update({"open_source_license": 'GNU Public License v2+'}) }}
 
 """
@@ -34,11 +47,13 @@ import re
 import sys
 
 REGEX_EMAIL = r'^[^@]+@[^@]+\.[^@]+$'
-REGEX_ONLINE = r'^[_\-a-zA-Z][_\-a-zA-Z0-9]+$'
-REGEX_MODULE = r'^[_a-zA-Z][_a-zA-Z0-9]+$'
+REGEX_URL_COMPATIBLE = r'^[_\-a-zA-Z][_\-a-zA-Z0-9]+$'
+REGEX_PYTHON_COMPATIBLE = r'^[_a-zA-Z][_a-zA-Z0-9]+$'
 
 
-def validate(regex: str, value: str, field: str):
+def validate(regex: str, value: str, field: str, allow_empty: bool = False):
+    if allow_empty and not value:
+        return
     if not re.match(regex, value):
         print('ERROR: "{}" is not a valid {}!'.format(value, field))
 
@@ -49,13 +64,18 @@ def validate(regex: str, value: str, field: str):
 if __name__ == "__main__":
 
     validate(REGEX_EMAIL, "{{ cookiecutter.author_email }}", "email")
-    validate(REGEX_ONLINE, "{{ cookiecutter.repo_name }}", "repo name")
-    validate(REGEX_ONLINE,
+    validate(REGEX_URL_COMPATIBLE, "{{ cookiecutter.repo_name }}", "repo name")
+    validate(REGEX_URL_COMPATIBLE,
              "{{ cookiecutter.github_username }}", "GitHub username")
-    validate(REGEX_ONLINE,
+    validate(REGEX_URL_COMPATIBLE,
              "{{ cookiecutter.github_host_account }}", "GitHub account")
     validate(
-        REGEX_MODULE,
+        REGEX_PYTHON_COMPATIBLE,
         "{{ cookiecutter.package_name }}",
         "module name"
+    )
+    validate(
+        REGEX_PYTHON_COMPATIBLE,
+        "{{ cookiecutter.template_analysis_class }}",
+        "analysis class name"
     )
