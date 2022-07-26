@@ -6,6 +6,7 @@ If any error is raised, the cookie cutter creation fails and crashes
 """
 
 import pathlib
+import shutil
 import subprocess
 
 COMMIT_MESSAGE = (
@@ -13,6 +14,13 @@ COMMIT_MESSAGE = (
     "{{ cookiecutter._mda_cc_version }}"
 )
 
+def remove_files(*paths):
+    for path in paths:
+        path = pathlib.Path(path)
+        if path.is_file():
+            path.unlink()
+        elif path.is_dir():
+            shutil.rmtree(str(path))
 
 def run(command, expected_error=True, print_output=True) -> str:
     """Run a shell command and return the output."""
@@ -71,9 +79,13 @@ def remove_rtd():
     """Remove the ReadTheDocs files if unnecessary."""
     include_rtd = '{{ cookiecutter.include_ReadTheDocs }}'
     if include_rtd == "n":
-        pathlib.Path("docs/requirements.yaml").unlink()
-        pathlib.Path("readthedocs.yaml").unlink()
+        remove_files("readthedocs.yaml")
 
+def remove_analysis():
+    """Remove analysis files if unnecessary. """
+    include_analysis = '{{ cookiecutter.template_analysis_class }}'
+    if not include_analysis:
+        remove_files("analysis", "tests/analysis")
 
 remove_rtd()
 git_init_and_tag()
