@@ -1,5 +1,5 @@
 import ast
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 import pathlib
 from typing import Literal, List
 
@@ -53,7 +53,7 @@ class CookiecutterMDAKit:
         return cookiecutter(
             str(COOKIECUTTER_PATH),
             no_input=True,
-            extra_context=self.asdict(),
+            extra_context=asdict(self),
     )
 
     def cookie_path_exists(self, path: str) -> bool:
