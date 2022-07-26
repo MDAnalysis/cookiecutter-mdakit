@@ -24,7 +24,8 @@ class {{ cookiecutter.template_analysis_class }}(AnalysisBase):
         Universe or group of atoms to apply this analysis to.
         If a trajectory is associated with the atoms,
         then the computation iterates over the trajectory.
-
+    select: str
+        Selection string for atoms to extract from the input Universe or AtomGroup
 
     Attributes
     ----------
