@@ -19,9 +19,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Computational Molecular Sciences Cookiecutter'
-copyright = '2021, Levi N. Naden, Jessica A. Nash, Daniel G. A. Smith'
-author = 'Levi N. Naden, Jessica A. Nash Daniel G. A. Smith'
+project = 'MDAKit Cookiecutter'
+author = 'MDAnalysis'
 
 # The short X.Y version
 version = ''
@@ -102,7 +101,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'ComputationalMolecularSciencesCookiecutterdoc'
+htmlhelp_basename = 'MDAKitCookiecutterdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -130,9 +129,9 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc,
-     'ComputationalMolecularSciencesCookiecutter.tex',
-     'Computational Molecular Sciences Cookiecutter Documentation',
-     'Levi N. Naden, Daniel G. A. Smith', 'manual'),
+     'MDAKitCookiecutter.tex',
+     'MDAKit Cookiecutter Documentation',
+     'MDAnalysis', 'manual'),
 ]
 
 
@@ -141,8 +140,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'computationalmolecularsciencescookiecutter',
-     'Computational Molecular Sciences Cookiecutter Documentation',
+    (master_doc, 'mdakitcookiecutter',
+     'MDAKit Cookiecutter Documentation',
      [author], 1)
 ]
 
@@ -153,10 +152,10 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'ComputationalMolecularSciencesCookiecutter',
-     'Computational Molecular Sciences Cookiecutter Documentation',
-     author, 'ComputationalMolecularSciencesCookiecutter',
-     'A Cookiecutter which provides skeletal packages of Computational Molecular Sciences Software.',
+    (master_doc, 'MDAKitCookiecutter',
+     'MDAKit Cookiecutter Documentation',
+     author, 'MDAKitCookiecutter',
+     'A Cookiecutter which provides a template for packages based on MDAnalysis.',
      'Miscellaneous'),
 ]
 
