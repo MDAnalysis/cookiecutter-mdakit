@@ -53,7 +53,7 @@ jobs:
 
       - name: Run cookiecutter tests
         run: |
-          if [[ ${{ matrix.os == 'ubuntu-latest' }} ]] ; then
+          if [ ${{ matrix.os = 'ubuntu-latest' }} ] ; then
             PYTEST_FLAGS="--keep-test-outputs $OUTPUT_DIRECTORY"
           else
             PYTEST_FLAGS=""
