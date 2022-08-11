@@ -23,5 +23,8 @@
         "Prefer default anaconda channel with pip fallback": "anaconda",
         "Dependencies from pip only (no conda)": "pip"
     },
-    "__dependency_source": "{{ cookiecutter._dependency_source_keys[cookiecutter.dependency_source] }}"
+    "__dependency_source": "{{ cookiecutter._dependency_source_keys[cookiecutter.dependency_source] }}",
+    "_copy_without_render": [
+        "{{cookiecutter.repo_name}}/.github/actions/get-stable-python-version"
+    ]
 }
