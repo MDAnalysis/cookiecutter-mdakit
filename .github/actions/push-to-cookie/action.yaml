@@ -44,7 +44,14 @@ runs:
       run: |
         for mdakit_directory in $(ls -d */${{ inputs.target-repository }}) ; do
           TARGET_BRANCH=$(dirname $mdakit_directory)
+          echo $mdakit_directory
           cd $mdakit_directory
+
+          ls -la *
+
+          git init
+          git add .
+          git commit -m 'initial commit'
           git remote add upstream $GITHUB_URL
           git push -f upstream $TARGET_BRANCH
           cd -
