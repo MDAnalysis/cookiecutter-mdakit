@@ -15,7 +15,7 @@ class Test{{cookiecutter.template_analysis_class}}:
             n_frames=3,
         )
         # create toy data to test assumptions
-        for ts in u.trajectory.ts:
+        for ts in u.trajectory:
             ts.positions[:ts.frame] *= -1
         return u
 
