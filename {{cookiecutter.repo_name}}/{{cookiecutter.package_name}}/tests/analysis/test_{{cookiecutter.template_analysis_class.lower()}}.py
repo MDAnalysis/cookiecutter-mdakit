@@ -29,7 +29,7 @@ class Test{{cookiecutter.template_analysis_class}}:
         [  # argument values in a tuple, in order
             ("all", 125),
             ("index 0:9", 10),
-            ("resindex 3:4", 50),
+            ("segindex 3:4", 50),
         ]
     )
     def test_atom_selection(self, universe, select, n_atoms):
@@ -41,15 +41,17 @@ class Test{{cookiecutter.template_analysis_class}}:
     @pytest.mark.parametrize(
         "stop, expected_mean",
         [
-            (0, 0),
-            (1, 1),
-            (2, 1.5),
+            (1, 0),
+            (2, 0.5),
+            (3, 1)
         ]
     )
     def test_mean_negative_atoms(self, analysis, stop, expected_mean):
         # assert we haven't run yet and the result doesn't exist yet
         assert "mean_negative_atoms" not in analysis.results
         analysis.run(stop=stop)
+        assert analysis.n_frames == stop
+
         # when comparing floating point values, it's best to use assert_allclose
         # to allow for floating point precision differences
         assert_allclose(
