@@ -20,17 +20,26 @@ concurrency:
 
 defaults:
   run:
-{% if cookiecutter.dependency_source == 'Dependencies from pip only (no conda)' %}
+{% if cookiecutter.__dependency_source == 'pip' %}
     shell: bash
 {% else %}
     shell: bash -l {0}
 {% endif %}
 
-env:
-  LAST_MINOR_PYTHON_RELEASE: "3.9"
-
 jobs:
-  main_tests:
+  environment-config:
+    runs-on: ubuntu-latest
+    outputs:
+      stable-python-version: ${{ steps.get-python-version.outputs.python-version }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: get-python-version
+        uses: .github/actions/get-stable-python-version
+        with:
+          last-n-minor-release: 1
+
+  main-tests:
     if: "github.repository == '{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}'"
     runs-on: {{ '${{ matrix.os }}' }}
     strategy:
@@ -48,7 +57,7 @@ jobs:
         df -h
         ulimit -a
 
-{% if cookiecutter.dependency_source == 'Dependencies from pip only (no conda)' %}
+{% if cookiecutter.__dependency_source == 'pip' %}
     - name: Set up Python {{ '${{ matrix.python-version }}' }}
       uses: actions/setup-python@v4
       with:
@@ -66,10 +75,10 @@ jobs:
         environment-file: devtools/conda-envs/test_env.yaml
         add-pip-as-python-dependency: true
         architecture: x64
-{% if cookiecutter.dependency_source == 'Prefer conda-forge over the default anaconda channel with pip fallback' %}
+{% if cookiecutter.__dependency_source == 'conda-forge' %}
         mamba-version: "*"
         channels: conda-forge, defaults
-{% elif cookiecutter.dependency_source == 'Prefer default anaconda channel with pip fallback' %}
+{% elif cookiecutter.__dependency_source == 'anaconda' %}
         channels: defaults
 {% endif %}
         activate-environment: {{cookiecutter.repo_name}}-test
@@ -81,14 +90,14 @@ jobs:
     - name: Install package
       run: |
         python --version
-        python -m pip install . {% if cookiecutter.dependency_source != 'Dependencies from pip only (no conda)' %} --no-deps {% endif %}
+        python -m pip install . {% if cookiecutter.__dependency_source != 'pip' %} --no-deps {% endif %}
 
     - name: Python information
       run: |
         which python
         which pip
         pip list
-{% if cookiecutter.dependency_source != 'Dependencies from pip only (no conda)' %}
+{% if cookiecutter.__dependency_source != 'pip' %}
         conda info
         conda list
 {% endif %}
@@ -115,7 +124,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: {{ '${{ env.LAST_MINOR_PYTHON_RELEASE }}' }}
+        python-version: {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
 
     - name: Install Pylint
       run: |
@@ -137,10 +146,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Python {{ '${{ env.LAST_MINOR_PYTHON_RELEASE }}' }}
+    - name: Set up Python {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
       uses: actions/setup-python@v4
       with:
-        python-version: {{ '${{ env.LAST_MINOR_PYTHON_RELEASE }}' }}
+        python-version: {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
 
     - name: Install dependencies
       run: |

@@ -6,7 +6,7 @@ from .utils import CookiecutterMDAKit
 
 class TestAnalysis:
 
-    @pytest.mark.parametrize("analysis_name", ["", "Enter"])
+    @pytest.mark.parametrize("analysis_name", ["", "Press Enter to skip"])
     def test_no_analysis(self, tmpdir, analysis_name):
         with tmpdir.as_cwd():
             kit = CookiecutterMDAKit(template_analysis_class=analysis_name)

@@ -1,0 +1,48 @@
+name: push-to-cookie
+description: Push example repo to branch on cookie
+inputs:
+  source-directory:
+    description: Source directory
+    required: true
+  target-branch:
+    description: Target branch
+    required: true
+  target-repository:
+    description: Target repository name
+    required: true
+    default: mdakit-cookie
+  target-account:
+    description: Target account name
+    required: true
+    default: MDAnalysis
+  target-ssh-deploy-key:
+    description: SSH key to deploy to target repository
+    required: true
+  github-username:
+    description: GitHub username
+    required: true
+    default: github-actions
+  github-email:
+    description: email associated with GitHub user
+    required: true
+    default: github-action@users.noreply.github.com
+
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up SSH keys
+      uses: webfactory/ssh-agent@v0.5.4
+      with:
+        ssh-private-key: ${{ env.INPUT_TARGET_SSH_DEPLOY_KEY }}
+
+    - name: Force push cookie
+      working-directory: ${{ env.INPUT_SOURCE_DIRECTORY }}
+      env:
+        GITHUB_URL: "git@github.com:${{ env.INPUT_TARGET_ACCOUNT }}/${{ env.INPUT_TARGET_REPOSITORY }}.git"
+      run: |
+        for mdakit_directory in $(ls -d */${INPUT_TARGET_REPOSITORY}) ; do
+          TARGET_BRANCH=$(dirname $mdakit_directory)
+          git remote add upstream $GITHUB_URL
+          git push -f upstream $TARGET_BRANCH
+        done
