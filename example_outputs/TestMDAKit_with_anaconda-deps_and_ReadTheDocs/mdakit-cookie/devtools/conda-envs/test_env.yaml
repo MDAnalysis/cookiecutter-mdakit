@@ -1,0 +1,21 @@
+name: mdakit-cookie-test
+channels: 
+  - defaults
+dependencies:
+    # Base depends
+  - python
+  - pip
+
+    # MDAnalysis
+  
+
+    # Testing
+  - pytest
+  - pytest-cov
+  - pytest-xdist
+
+  # Pip-only installs
+  - pip:
+    - codecov
+    - MDAnalysis
+
