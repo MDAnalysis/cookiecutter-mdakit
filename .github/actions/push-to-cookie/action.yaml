@@ -44,6 +44,8 @@ runs:
       run: |
         for mdakit_directory in $(ls -d */${{ inputs.target-repository }}) ; do
           TARGET_BRANCH=$(dirname $mdakit_directory)
+          cd $mdakit_directory
           git remote add upstream $GITHUB_URL
           git push -f upstream $TARGET_BRANCH
+          cd -
         done
