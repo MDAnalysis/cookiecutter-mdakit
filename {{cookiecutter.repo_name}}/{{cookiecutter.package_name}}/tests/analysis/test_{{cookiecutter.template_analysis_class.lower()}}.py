@@ -1,7 +1,7 @@
 import pytest
 from numpy.testing import assert_allclose
 
-from {{cookiecutter.package_name}}.analysis.{{cookiecutter.template_analysis_class}} import {{cookiecutter.template_analysis_class}}
+from {{cookiecutter.package_name}}.analysis.{{cookiecutter.template_analysis_class.lower()}} import {{cookiecutter.template_analysis_class}}
 from {{cookiecutter.package_name}}.tests.utils import make_Universe
 
 class Test{{cookiecutter.template_analysis_class}}:
