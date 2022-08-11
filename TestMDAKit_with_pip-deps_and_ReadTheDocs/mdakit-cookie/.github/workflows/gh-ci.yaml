@@ -92,6 +92,7 @@ jobs:
 
   pylint_check:
     if: "github.repository == 'MDAnalysis/mdakit-cookie'"
+    needs: environment-config
     runs-on: ubuntu-latest
 
     steps:
@@ -117,6 +118,7 @@ jobs:
 
   pypi_check:
     if: "github.repository == 'MDAnalysis/mdakit-cookie'"
+    needs: environment-config
     runs-on: ubuntu-latest
 
     steps:
