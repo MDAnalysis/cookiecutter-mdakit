@@ -43,6 +43,8 @@ runs:
       run: |
         REV=$(git rev-parse --short HEAD)
 
+        ls ${{ inputs.source-directory }}/*
+
         cp -r ${{ inputs.source-directory }} ${HOME}/cookies
         cd ${HOME}/cookies
 

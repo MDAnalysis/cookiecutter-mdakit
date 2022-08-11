@@ -112,6 +112,8 @@ jobs:
           BRANCH="${GITHUB_REF#refs/heads/}"
           REV=$(git rev-parse --short HEAD)
 
+          ls ${{ env.OUTPUT_DIRECTORY }}/*
+
           cd $HOME
           mkdir examples
           cd examples
@@ -134,6 +136,8 @@ jobs:
 
           rm -rf *
           mv ${{ env.OUTPUT_DIRECTORY }}/* .
+
+          ls *
 
           # push back to GitHub
           git add .
