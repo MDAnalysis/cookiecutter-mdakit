@@ -21,7 +21,7 @@ env:
     OUTPUT_DIRECTORY: /home/runner/example_outputs
 
 jobs:
-  main-tests:
+  cookiecutter-main-tests:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -65,7 +65,7 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-latest' }}
         uses: ./.github/actions/run-cookie-ci
         with:
-          source-directory: ${{ env.OUTPUT_DIRECTORY }}/TestMDAKit_with_condaforge-deps_and_ReadTheDocs
+          source-directory: ${{ env.OUTPUT_DIRECTORY }}/TestMDAKit_with_condaforge-deps_and_ReadTheDocs/mdakit-cookie
 
       - name: Upload artifact
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.last-n-minor-python-release == 0 }}
@@ -77,7 +77,7 @@ jobs:
 
   update-repo-examples:
     # if: github.event_name == 'push'
-    needs: main-tests
+    needs: cookiecutter-main-tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

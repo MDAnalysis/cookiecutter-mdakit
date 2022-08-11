@@ -4,8 +4,9 @@ from numpy.testing import assert_allclose
 from {{cookiecutter.package_name}}.analysis.{{cookiecutter.template_analysis_class.lower()}} import {{cookiecutter.template_analysis_class}}
 from {{cookiecutter.package_name}}.tests.utils import make_Universe
 
+
 class Test{{cookiecutter.template_analysis_class}}:
-    
+
     # fixtures are helpful functions that set up a test
     # See more at https://docs.pytest.org/en/stable/how-to/fixtures.html
     @pytest.fixture
@@ -23,20 +24,19 @@ class Test{{cookiecutter.template_analysis_class}}:
     def analysis(self, universe):
         return {{cookiecutter.template_analysis_class}}(universe)
 
-
     @pytest.mark.parametrize(
         "select, n_atoms",  # argument names
         [  # argument values in a tuple, in order
             ("all", 125),
-            ("index < 10", 10),
-            ("resindex > 2", 50),
+            ("index 0:10", 10),
+            ("resindex 2:5", 50),
         ]
     )
     def test_atom_selection(self, universe, select, n_atoms):
         # `universe` here is the fixture defined above
-        analysis = {{cookiecutter.template_analysis_class}}(universe, select=select)
+        analysis = {{cookiecutter.template_analysis_class}}(
+            universe, select=select)
         assert analysis.atomgroup.n_atoms == n_atoms
-    
 
     @pytest.mark.parametrize(
         "stop, expected_mean",
@@ -55,7 +55,7 @@ class Test{{cookiecutter.template_analysis_class}}:
         assert_allclose(
             analysis.results.mean_negative_atoms,  # computed data
             expected_mean,  # reference / desired data
-            rtol=1e-07, # relative tolerance
-            atol=0, # absolute tolerance
+            rtol=1e-07,  # relative tolerance
+            atol=0,  # absolute tolerance
             err_msg="mean_negative_atoms is not correct",
         )

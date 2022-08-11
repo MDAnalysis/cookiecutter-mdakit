@@ -31,8 +31,8 @@ runs:
         git config --global user.email ${{ inputs.github-email }}
 
     - name: Add origin
-      shell: bash
       working-directory: ${{ inputs.source-directory }}
+      shell: bash
       run: |
         GITHUB_URL="https://github.com/${{ inputs.target-account }}/${{ inputs.target-repository }}.git"
         echo $GITHUB_URL
@@ -48,6 +48,6 @@ runs:
       run: docker build -t act-conda image
 
     - name: Run cookiecutter CI
+      working-directory: ${{ inputs.source-directory }}
       shell: bash
-      working-directory: ${{ env.inputs.source-directory }}
       run: act --job main-tests --platform ubuntu-latest=act-conda
