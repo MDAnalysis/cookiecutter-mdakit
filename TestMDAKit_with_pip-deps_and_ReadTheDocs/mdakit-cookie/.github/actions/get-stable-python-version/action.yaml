@@ -22,6 +22,7 @@ runs:
         python --version
         python3 --version
         
+        chmod a+x ./get_python_version.py
         pyver=$(./get_python_version.py --field minor --last-n-version ${{ inputs.last-n-minor-release }})
         echo $pyver
         echo "::set-output name=python-version::$(echo $pyver)"
