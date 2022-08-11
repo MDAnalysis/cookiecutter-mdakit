@@ -36,6 +36,7 @@ runs:
       run: |
         GITHUB_URL="https://github.com/${{ inputs.target-account }}/${{ inputs.target-repository }}.git"
         echo $GITHUB_URL
+        git init
         git remote add origin $GITHUB_URL
     
     - name: Install act
