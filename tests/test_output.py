@@ -19,18 +19,29 @@ class TestAnalysis:
             kit = CookiecutterMDAKit(template_analysis_class="MyAnalysisClass")
             kit.run()
 
-            for clsname, file in (
-                ("MyAnalysisClass", "analysis/myanalysisclass.py"),
-                ("TestMyAnalysisClass", "tests/analysis/test_myanalysisclass.py"),
-            ):
-                assert kit.cookie_package_path_exists(file)
-                assert clsname in kit.get_classes_from_package_file(file)
+            clsname = "MyAnalysisClass"
+            clsfile = "analysis/myanalysisclass.py"
+            testcls = "TestMyAnalysisClass"
+            testfile = "tests/analysis/test_myanalysisclass.py"
+
+            assert kit.cookie_package_path_exists(clsfile)
+            assert clsname in kit.get_classes_from_package_file(clsfile)
+            assert kit.cookie_package_path_exists(testfile)
+            assert testcls in kit.get_classes_from_package_file(testfile)
 
 
 @pytest.mark.parametrize("dependency_source", DependencyType)
 @pytest.mark.parametrize("include_ReadTheDocs", ["y", "n"])
-def test_write_outputs(test_output_directory, dependency_source, include_ReadTheDocs):
-    rtd_name = "ReadTheDocs" if include_ReadTheDocs == "y" else "no-ReadTheDocs"
+def test_write_outputs(
+    test_output_directory,
+    dependency_source,
+    include_ReadTheDocs
+):
+    if include_ReadTheDocs == "y":
+        rtd_name = "ReadTheDocs"
+    else:
+        rtd_name = "no-ReadTheDocs"
+        
     dep_name = f"{dependency_source.name.lower()}-deps"
     project_name = f"TestMDAKit_with_{dep_name}_and_{rtd_name}"
     description = (
