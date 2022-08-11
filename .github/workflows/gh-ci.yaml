@@ -198,22 +198,3 @@ jobs:
           cat ${TEST_REPO_NAME}/analysis/*
           cat ${TEST_REPO_NAME}/tests/analysis/*
 
-      - name: Copy to examples
-        if: github.event_name != 'pull_request'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPOSITORY: "github.com/${{ github.repository }}.git"
-        run: |
-          git remote add upstream "https://${GH_USER}:${GH_TOKEN}@${GH_REPOSITORY}"
-          git fetch --depth 50 upstream
-          git reset upstream/main
-
-          cp -r ${OUTPUT_DIR}/* examples/
-
-          git add examples/
-          git diff-index --quiet HEAD -- || git commit -m "Updated examples"
-          git push -q upstream HEAD
-
-
-
-          
