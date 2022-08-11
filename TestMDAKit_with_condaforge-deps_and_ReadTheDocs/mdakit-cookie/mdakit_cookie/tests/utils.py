@@ -67,8 +67,8 @@ def make_Universe(
         pos = np.arange(3 * n_atoms * n_frames).reshape(n_frames, n_atoms, 3)
         vel = pos + 100 if velocities else None
         fcs = pos + 10000 if forces else None
-        reader = MemoryReader.from_coordinates(
-            positions=pos,
+        reader = MemoryReader(
+            pos,
             velocities=vel,
             forces=fcs,
         )
