@@ -8,7 +8,7 @@ inputs:
 outputs:
   python-version:
     description: Last N Python version
-    value: ${{ steps.get-python-version.outputs.python-version }}
+    value: {{ "${{ steps.get-python-version.outputs.python-version }}" }}
 
 
 runs:
@@ -17,7 +17,7 @@ runs:
     - name: Run script
       id: get-python-version
       shell: bash
-      working-directory: ${{ github.action_path }}
+      working-directory: {{ "${{ github.action_path }}" }}
       run: |
         pyver=$(./get_python_version.py --field minor --last-n-version $INPUT_LAST_N_MINOR_RELEASE)
         echo "::set-output name=python-version::$(echo $pyver)"
