@@ -55,7 +55,7 @@ class {{ cookiecutter.template_analysis_class }}(AnalysisBase):
 
     def __init__(
         self,
-        universe_or_atomgroup: Union[Universe, AtomGroup],
+        universe_or_atomgroup: Union["Universe", "AtomGroup"],
         select: str = "all",
         # TODO: add your own parameters here
         **kwargs
