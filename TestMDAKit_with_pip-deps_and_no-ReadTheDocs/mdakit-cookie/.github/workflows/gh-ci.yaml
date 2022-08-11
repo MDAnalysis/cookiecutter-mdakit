@@ -80,7 +80,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -n 2 -v --cov=mdakit-cookie --cov-report=xml --color=yes mdakit-cookie/tests/
+        pytest -n 2 -v --cov=mdakit_cookie --cov-report=xml --color=yes mdakit_cookie/tests/
 
     - name: codecov
       uses: codecov/codecov-action@v3
@@ -137,7 +137,7 @@ jobs:
 
     - name: Check package build
       run: |
-        DISTRIBUTION=$(ls -t1 dist/mdakit-cookie-*.tar.gz | head -n 1)
-        test -n "${DISTRIBUTION}" || { echo "no distribution dist/mdakit-cookie-*.tar.gz found"; exit 1; }
+        DISTRIBUTION=$(ls -t1 dist/mdakit_cookie-*.tar.gz | head -n 1)
+        test -n "${DISTRIBUTION}" || { echo "no distribution dist/mdakit_cookie-*.tar.gz found"; exit 1; }
         echo "twine check $DISTRIBUTION"
         twine check $DISTRIBUTION
