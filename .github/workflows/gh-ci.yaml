@@ -55,7 +55,12 @@ jobs:
         run: |
           if [[ ${{ matrix.os == 'ubuntu-latest' }} ]] ; then
             PYTEST_FLAGS="--keep-test-outputs $OUTPUT_DIRECTORY"
+          else
+            PYTEST_FLAGS=""
           fi
+
+          echo $PYTEST_FLAGS
+          
           pytest tests/ $PYTEST_FLAGS
 
       - name: Run cookie CI
