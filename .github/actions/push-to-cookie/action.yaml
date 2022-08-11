@@ -44,6 +44,8 @@ runs:
       run: |
         for mdakit_directory in $(ls -d */${{ inputs.target-repository }}) ; do
           TARGET_BRANCH=$(dirname $mdakit_directory)
+          echo $TARGET_BRANCH
+          
           echo $mdakit_directory
           cd $mdakit_directory
 
@@ -52,7 +54,7 @@ runs:
           git init
           git config user.name ${{ inputs.github-username }}
           git config user.email ${{ inputs.github-email }}
-          
+
           git add .
           git commit -m 'initial commit'
           git remote add upstream $GITHUB_URL
