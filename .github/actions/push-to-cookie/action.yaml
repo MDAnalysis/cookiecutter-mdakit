@@ -69,7 +69,7 @@ runs:
           ls -la *
 
           if [[ ${{ inputs.edit-ci-to-run }} == true ]] ; then
-            sed -i 's/- main/- * # main   -- replaced main to allow CI to run in example cookie repo/g' $CI_FILE
+            sed -i 's/- main/- "**" # main   -- replaced main to allow CI to run in example cookie repo/g' $CI_FILE
           fi
 
           cat $CI_FILE
