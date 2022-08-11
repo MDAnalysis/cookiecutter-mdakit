@@ -116,6 +116,7 @@ jobs:
 
   pylint_check:
     if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
+    needs: environment-config
     runs-on: ubuntu-latest
 
     steps:
@@ -141,6 +142,7 @@ jobs:
 
   pypi_check:
     if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
+    needs: environment-config
     runs-on: ubuntu-latest
 
     steps:
