@@ -25,6 +25,6 @@
     },
     "__dependency_source": "{{ cookiecutter._dependency_source_keys[cookiecutter.dependency_source] }}",
     "_copy_without_render": [
-        "{{cookiecutter.repo_name}}/.github/actions/get-stable-python-version"
+        ".github/actions/get-stable-python-version/action.yaml"
     ]
 }
