@@ -50,6 +50,9 @@ runs:
           ls -la *
 
           git init
+          git config user.name ${{ inputs.github-username }}
+          git config user.email ${{ inputs.github-email }}
+          
           git add .
           git commit -m 'initial commit'
           git remote add upstream $GITHUB_URL
