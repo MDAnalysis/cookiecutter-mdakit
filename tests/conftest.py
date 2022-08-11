@@ -8,8 +8,6 @@ def test_output_directory(tmp_path, request):
     path = request.config.getoption("--keep-test-outputs")
     if path:
         path = pathlib.Path(path)
-        if path.exists():
-            path = path / "example_outputs"
         path.mkdir(exist_ok=True)
         return path
     return tmp_path

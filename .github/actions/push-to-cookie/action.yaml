@@ -26,6 +26,10 @@ inputs:
     description: email associated with GitHub user
     required: true
     default: github-action@users.noreply.github.com
+  edit-ci-to-run:
+    description: Whether or not to edit cookie CI to run it on every branch
+    required: true
+    default: true
 
 
 runs:
@@ -40,6 +44,7 @@ runs:
       shell: bash
       env:
         GITHUB_URL: "git@github.com:${{ inputs.target-account }}/${{ inputs.target-repository }}.git"
+        CI_FILE: ./.github/workflows/gh-ci.yaml
       run: |
         REV=$(git rev-parse --short HEAD)
 
@@ -62,6 +67,12 @@ runs:
           cd $mdakit_directory
 
           ls -la *
+
+          if [[ ${{ inputs.edit-ci-to-run }} == true ]] ; then
+            sed -i 's/- main/- * # main   -- replaced main to allow CI to run in example cookie repo/g' $CI_FILE
+          fi
+
+          cat $CI_FILE
 
           git init
           git config user.name ${{ inputs.github-username }}
