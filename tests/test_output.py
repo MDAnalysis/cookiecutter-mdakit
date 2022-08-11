@@ -41,7 +41,7 @@ def test_write_outputs(
         rtd_name = "ReadTheDocs"
     else:
         rtd_name = "no-ReadTheDocs"
-        
+
     dep_name = f"{dependency_source.name.lower()}-deps"
     project_name = f"TestMDAKit_with_{dep_name}_and_{rtd_name}"
     description = (
