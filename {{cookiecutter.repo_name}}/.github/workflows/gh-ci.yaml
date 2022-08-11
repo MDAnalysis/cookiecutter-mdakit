@@ -104,7 +104,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -n 2 -v --cov={{ cookiecutter.repo_name }} --cov-report=xml --color=yes {{ cookiecutter.repo_name }}/tests/
+        pytest -n 2 -v --cov={{ cookiecutter.package_name }} --cov-report=xml --color=yes {{ cookiecutter.package_name }}/tests/
 
     - name: codecov
       uses: codecov/codecov-action@v3
@@ -161,7 +161,7 @@ jobs:
 
     - name: Check package build
       run: |
-        DISTRIBUTION=$(ls -t1 dist/{{ cookiecutter.repo_name }}-*.tar.gz | head -n 1)
-        test -n "${DISTRIBUTION}" || { echo "no distribution dist/{{ cookiecutter.repo_name }}-*.tar.gz found"; exit 1; }
+        DISTRIBUTION=$(ls -t1 dist/{{ cookiecutter.package_name }}-*.tar.gz | head -n 1)
+        test -n "${DISTRIBUTION}" || { echo "no distribution dist/{{ cookiecutter.package_name }}-*.tar.gz found"; exit 1; }
         echo "twine check $DISTRIBUTION"
         twine check $DISTRIBUTION
