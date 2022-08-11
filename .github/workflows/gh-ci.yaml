@@ -1,3 +1,4 @@
+
 name: Cookiecutter CI
 
 on:
@@ -14,23 +15,24 @@ on:
 defaults:
   run:
     shell: bash
-  env:
-      ARTIFACT_NAME: demo-mdakit-repos
-      OUTPUT_DIRECTORY: /home/runner/example_outputs
+
+env:
+    ARTIFACT_NAME: demo-mdakit-repos
+    OUTPUT_DIRECTORY: /home/runner/example_outputs
 
 jobs:
-  generate-cookiecutter:
+  main-tests:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest, windows-latest]
-        last-n-minor-python-release: [2, 1, 0]
+        os: [ubuntu-latest] #, macOS-latest, windows-latest]
+        last-n-minor-python-release: [0] #[2, 1, 0]
 
     steps:
       - uses: actions/checkout@v3
 
       - id: get-python-version
-        uses: "{{cookiecutter.repo_name}}/.github/actions/get-stable-python-version"
+        uses: "./{{cookiecutter.repo_name}}/.github/actions/get-stable-python-version"
         with:
           last-n-minor-release: ${{ matrix.last-n-minor-python-release }}
 
@@ -40,7 +42,6 @@ jobs:
           df -h
           ulimit -a
           echo "Using Python ${{ steps.get-python-version.outputs.stable-python-version }}"
-
       - name: Set up Python ${{ steps.get-python-version.outputs.python-version }}
         uses: actions/setup-python@v3
         with:
@@ -48,23 +49,26 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install -U pyyaml cookiecutter
-
+          python -m pip install -U pytest pyyaml cookiecutter
       - name: Run cookiecutter tests
         run: |
-          if [[ ${{ matrix.os == 'ubuntu-latest' }} ]] ; then
+          if [[ ${{ matrix.os }} == "ubuntu-latest" ]] ; then
             PYTEST_FLAGS="--keep-test-outputs $OUTPUT_DIRECTORY"
+          else
+            PYTEST_FLAGS=""
           fi
+          echo "PYTEST_FLAGS=${PYTEST_FLAGS}"
+          
           pytest tests/ $PYTEST_FLAGS
 
       - name: Run cookie CI
         if: ${{ matrix.os == 'ubuntu-latest' }}
-        uses: .github/actions/run-cookie-ci
+        uses: ./.github/actions/run-cookie-ci
         with:
           source-directory: ${{ env.OUTPUT_DIRECTORY }}/TestMDAKit_with_condaforge-deps_and_ReadTheDocs
 
       - name: Upload artifact
-        if: ${{ matrix.os == 'ubuntu-latest' && matrix.last-n-minor-release == 0 }}
+        if: ${{ matrix.os == 'ubuntu-latest' && matrix.last-n-minor-python-release == 0 }}
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.ARTIFACT_NAME }}
@@ -73,6 +77,7 @@ jobs:
 
   update-repo-examples:
     # if: github.event_name == 'push'
+    needs: main-tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -87,36 +92,40 @@ jobs:
           path: ${{ env.OUTPUT_DIRECTORY }}
 
       - name: Push to cookie repo
-        uses: .github/actions/push-to-cookie
+        uses: ./.github/actions/push-to-cookie
         with:
           source-directory: ${{ env.OUTPUT_DIRECTORY }}
+          target-ssh-deploy-key: ${{ secrets.MDAKIT_COOKIE_SSH_DEPLOY_KEY }}
 
-      - name: Set up git
+      - name: Push to remote
         env:
           GH_USER: github-actions
           GH_EMAIL: "github-action@users.noreply.github.com"
           GH_REPOSITORY: "github.com/${{ github.repository }}.git"
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        runs: |
+        run: |
           # dynamic vars
           BRANCH="${GITHUB_REF#refs/heads/}"
           REV=$(git rev-parse --short HEAD)
-
+          cd $HOME
+          mkdir examples
+          cd examples
           # set up git
           git init
           git config user.name $GH_USER
           git config user.email $GH_EMAIL
           git remote add upstream "https://${GH_USER}:${GH_TOKEN}@${GH_REPOSITORY}"
-
-          git fetch --depth 50 upstream $BRANCH main
-          git reset upstream/main
-
+          git fetch --depth 50 upstream $BRANCH examples
+          git reset upstream/examples
           # update examples
-          rm -rf examples/*
-          mv ${{ env.OUTPUT_DIRECTORY }}/* examples/
-
+          for keep in README.md ; do
+            if [[ -e $keep ]] ; then
+              cp $keep ${{ env.OUTPUT_DIRECTORY }}/
+            fi
+          done
+          rm -rf *
+          mv ${{ env.OUTPUT_DIRECTORY }}/* .
           # push back to GitHub
-    
-          git diff-index --quiet HEAD -- || git commit -m "rebuilt examples from branch ${BRANCH} with sphinx at ${REV}"
-          git push -q upstream HEAD:main
-
+          git add .
+          git diff-index --quiet HEAD -- || git commit -m "rebuilt examples from branch ${BRANCH} with CI at ${REV}"
+          git push -q upstream HEAD:examples
