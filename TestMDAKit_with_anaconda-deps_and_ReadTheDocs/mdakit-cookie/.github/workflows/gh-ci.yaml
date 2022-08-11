@@ -38,7 +38,7 @@ jobs:
           last-n-minor-release: 1
 
   main-tests:
-    if: "github.repository == 'test-user-account/mdakit-cookie'"
+    if: "github.repository == 'MDAnalysis/mdakit-cookie'"
     runs-on: ${{ matrix.os }}
     strategy:
         fail-fast: false
@@ -101,7 +101,7 @@ jobs:
 
 
   pylint_check:
-    if: "github.repository == 'test-user-account/mdakit-cookie'"
+    if: "github.repository == 'MDAnalysis/mdakit-cookie'"
     runs-on: ubuntu-latest
 
     steps:
@@ -126,7 +126,7 @@ jobs:
 
 
   pypi_check:
-    if: "github.repository == 'test-user-account/mdakit-cookie'"
+    if: "github.repository == 'MDAnalysis/mdakit-cookie'"
     runs-on: ubuntu-latest
 
     steps:
