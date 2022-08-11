@@ -24,8 +24,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest, windows-latest]
-        last-n-minor-python-release: [2, 1, 0]
+        os: [ubuntu-latest] #, macOS-latest, windows-latest]
+        last-n-minor-python-release: [0] #[2, 1, 0]
 
     steps:
       - uses: actions/checkout@v3
@@ -63,11 +63,11 @@ jobs:
           
           pytest tests/ $PYTEST_FLAGS
 
-      - name: Run cookie CI
-        if: ${{ matrix.os == 'ubuntu-latest' }}
-        uses: ./.github/actions/run-cookie-ci
-        with:
-          source-directory: ${{ env.OUTPUT_DIRECTORY }}/TestMDAKit_with_condaforge-deps_and_ReadTheDocs
+      # - name: Run cookie CI
+      #   if: ${{ matrix.os == 'ubuntu-latest' }}
+      #   uses: ./.github/actions/run-cookie-ci
+      #   with:
+      #     source-directory: ${{ env.OUTPUT_DIRECTORY }}/TestMDAKit_with_condaforge-deps_and_ReadTheDocs
 
       - name: Upload artifact
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.last-n-minor-python-release == 0 }}
@@ -125,7 +125,7 @@ jobs:
           for keep in README.md ; do
             cp $keep ${{ env.OUTPUT_DIRECTORY }}/
           done
-          
+
           rm -rf examples/*
           mv ${{ env.OUTPUT_DIRECTORY }}/* examples/
 
