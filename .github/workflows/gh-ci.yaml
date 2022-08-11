@@ -99,7 +99,7 @@ jobs:
           GH_EMAIL: "github-action@users.noreply.github.com"
           GH_REPOSITORY: "github.com/${{ github.repository }}.git"
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        runs: |
+        run: |
           # dynamic vars
           BRANCH="${GITHUB_REF#refs/heads/}"
           REV=$(git rev-parse --short HEAD)
