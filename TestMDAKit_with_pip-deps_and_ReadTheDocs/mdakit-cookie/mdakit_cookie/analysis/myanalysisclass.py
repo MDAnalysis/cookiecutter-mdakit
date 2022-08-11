@@ -55,7 +55,7 @@ class MyAnalysisClass(AnalysisBase):
 
     def __init__(
         self,
-        universe_or_atomgroup: Union[Universe, AtomGroup],
+        universe_or_atomgroup: Union["Universe", "AtomGroup"],
         select: str = "all",
         # TODO: add your own parameters here
         **kwargs
