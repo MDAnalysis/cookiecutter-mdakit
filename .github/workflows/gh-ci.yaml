@@ -123,7 +123,7 @@ jobs:
           git remote add upstream "https://${GH_USER}:${GH_TOKEN}@${GH_REPOSITORY}"
 
           git fetch --depth 50 upstream $BRANCH examples
-          git reset upstream/main
+          git reset upstream/examples
 
           # update examples
           for keep in README.md ; do
