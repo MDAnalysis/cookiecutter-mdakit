@@ -28,8 +28,8 @@ class Test{{cookiecutter.template_analysis_class}}:
         "select, n_atoms",  # argument names
         [  # argument values in a tuple, in order
             ("all", 125),
-            ("index 0:10", 10),
-            ("resindex 2:5", 50),
+            ("index 0:9", 10),
+            ("resindex 3:4", 50),
         ]
     )
     def test_atom_selection(self, universe, select, n_atoms):
