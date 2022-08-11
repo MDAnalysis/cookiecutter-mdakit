@@ -59,7 +59,10 @@ parser = argparse.ArgumentParser(
 parser.add_argument(
     "--last-n-version",
     type=int,
-    help="The version to check. 0 returns the latest release; 1 returns the one before that",
+    help=(
+        "The version to check. 0 returns the latest release; "
+        "1 returns the one before that"
+    ),
     default=0,
 )
 parser.add_argument(
@@ -87,10 +90,18 @@ class VersionInfo(NamedTuple):
             serial = int(serial)
 
         major, minor, micro = map(int, version.split("."))
-        return cls(major=major, minor=minor, micro=micro, releaselevel=releaselevel, serial=serial)
+        return cls(
+            major=major,
+            minor=minor,
+            micro=micro,
+            releaselevel=releaselevel,
+            serial=serial
+        )
 
 
-def get_release_versions(only_final_releases: bool = True) -> List[VersionInfo]:
+def get_release_versions(
+    only_final_releases: bool = True
+) -> List[VersionInfo]:
     MANIFEST_URL = 'https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json'
 
     with urllib.request.urlopen(MANIFEST_URL) as response:
