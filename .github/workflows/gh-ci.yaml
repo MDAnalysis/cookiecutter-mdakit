@@ -14,187 +14,112 @@ on:
 defaults:
   run:
     shell: bash
-
-env:
-  GH_USER: github-actions
-  GH_EMAIL: "github-action@users.noreply.github.com"
+  env:
+      ARTIFACT_NAME: demo-mdakit-repos
+      OUTPUT_DIRECTORY: /home/runner/example_outputs
 
 jobs:
-  main_tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Environment information
-        run: |
-          uname -a
-          df -h
-          ulimit -a
-
-          git config --global user.name $GH_USER
-          git config --global user.email $GH_EMAIL
-        
-      - name: Set up Python
-        uses: actions/setup-python@v4
-      
-      - name: Install dependencies
-        run: |
-          python --version
-          python -m pip install -U pyyaml cookiecutter pytest pytest-cov
-      
-      - name: Run tests
-        run: |
-          pytest tests
-
-
   generate-cookiecutter:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest, windows-latest]
-        python-version: ["3.8", "3.9", "3.10"]
-        dependency_source:
-          - key: 1
-            value: "Prefer conda-forge over the default anaconda channel with pip fallback"
-            name: "condaforge"
-          - key: 2
-            value: "Prefer default anaconda channel with pip fallback"
-            name: "anaconda"
-          - key: 3
-            value: "Dependencies from pip only (no conda)"
-            name: "pip"
-        rtd:
-          - key: 1
-            value: "y"
-          - key: 2
-            value: "n"
-        exclude:
-          - os: macOS-latest
-            python-version: "3.8"
-          - os: macOS-latest
-            python-version: "3.9"
-          - os: windows-latest
-            python-version: "3.8"
-          - os: windows-latest
-            python-version: "3.9"
-
-    env:
-      # OUTPUT_DIR: ${HOME}/output_mdakits
-      GITHUB_REPO_NAME: cookiecutter_example_deps-${{ matrix.dependency_source['name'] }}_rtd-${{ matrix.rtd['value'] }}
-      TEST_REPO_NAME: "testmdakit_deps_${{ matrix.dependency_source['name'] }}_rtd_${{ matrix.rtd['value'] }}"
-      ACTION_DIR: ".github/actions/${TEST_REPO_NAME}"
-      RUN_OS: ${{ matrix.os }}
-      RUN_ACT_TESTS: ${{ matrix.os == 'ubuntu-latest' && matrix.dependency_source['key'] == 1 }}
-      UPLOAD_PR_ARTIFACT: ${{ matrix.os == 'ubuntu-latest' && matrix.python-version == '3.10' && github.event_name == 'pull_request' }}
-      GITHUB_HOST_ACCOUNT: lilyminium
-      
-
+        last-n-minor-python-release: [2, 1, 0]
 
     steps:
       - uses: actions/checkout@v3
+
+      - id: get-python-version
+        uses: "{{cookiecutter.repo_name}}/.github/actions/get-stable-python-version"
+        with:
+          last-n-minor-release: ${{ matrix.last-n-minor-python-release }}
 
       - name: Environment information
         run: |
           uname -a
           df -h
           ulimit -a
-          echo "Running act tests: ${RUN_ACT_TESTS}"
-          echo "Test repo name: ${TEST_REPO_NAME}"
-          echo "Uploading artifact: ${UPLOAD_PR_ARTIFACT}"
+          echo "Using Python ${{ steps.get-python-version.outputs.stable-python-version }}"
 
-          OUTPUT_DIR=${HOME}/output_mdakits
-          echo "Test repo output directory: $OUTPUT_DIR"
-
-          echo "OUTPUT_DIR=${OUTPUT_DIR}" >> $GITHUB_ENV
-          mkdir -p $OUTPUT_DIR
-
-      - name: Set up git
-        run: |
-          git config --global user.name $GH_USER
-          git config --global user.email $GH_EMAIL
-
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+      - name: Set up Python ${{ steps.get-python-version.outputs.python-version }}
+        uses: actions/setup-python@v3
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ steps.get-python-version.outputs.python-version }}
 
       - name: Install dependencies
         run: |
           python -m pip install -U pyyaml cookiecutter
 
-      - name: Construct cookiecutter
+      - name: Run cookiecutter tests
         run: |
-          cookiecutter --verbose --output-dir $OUTPUT_DIR --no-input . \
-            project_name=$TEST_REPO_NAME \
-            repo_name=${GITHUB_REPO_NAME} \
-            package_name=$TEST_REPO_NAME \
-            github_username=github-actions-ci \
-            github_host_account=$GITHUB_HOST_ACCOUNT \
-            author_name="Github Actions CI" \
-            author_email="github-action@users.noreply.github.com" \
-            description="Test MDAKit repository: deps=${{ matrix.dependency_source }}, rtd=${{ matrix.rtd }}" \
-            dependency_source="${{ matrix.dependency_source['value'] }}" \
-            include_ReadTheDocs="${{ matrix.rtd['value'] }}" \
-            template_analysis_class="MyAnalysis"
+          if [[ ${{ matrix.os == 'ubuntu-latest' }} ]] ; then
+            PYTEST_FLAGS="--keep-test-outputs $OUTPUT_DIRECTORY"
+          fi
+          pytest tests/ $PYTEST_FLAGS
 
-      
-      - name: Add origin
-        if: ${{ env.RUN_ACT_TESTS == 'true' }}
+      - name: Run cookie CI
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        uses: .github/actions/run-cookie-ci
+        with:
+          source-directory: ${{ env.OUTPUT_DIRECTORY }}/TestMDAKit_with_condaforge-deps_and_ReadTheDocs
+
+      - name: Upload artifact
+        if: ${{ matrix.os == 'ubuntu-latest' && matrix.last-n-minor-release == 0 }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ${{ env.OUTPUT_DIRECTORY }}
+          retention-days: 3
+
+  update-repo-examples:
+    # if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Make output directory
+        run: mkdir $OUTPUT_DIRECTORY
+
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ${{ env.OUTPUT_DIRECTORY }}
+
+<<<<<<< HEAD
+=======
+      - name: Push to cookie repo
+        uses: .github/actions/push-to-cookie
+        with:
+          source-directory: ${{ env.OUTPUT_DIRECTORY }}
+
+      - name: Set up git
         env:
           GH_USER: github-actions
           GH_EMAIL: "github-action@users.noreply.github.com"
-          GH_REPOSITORY: "github.com/${{ env.GITHUB_HOST_ACCOUNT }}/${{ env.GITHUB_REPO_NAME }}.git"
+          GH_REPOSITORY: "github.com/${{ github.repository }}.git"
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          cd ${OUTPUT_DIR}/${GITHUB_REPO_NAME}
-          pwd
-          git status
-          git remote add origin "https://${GH_USER}:${GH_TOKEN}@${GH_REPOSITORY}"
-          
-      - name: Install act
-        if: ${{ env.RUN_ACT_TESTS == 'true' }} 
-        uses: actionsflow/setup-act@v1
+        runs: |
+          # dynamic vars
+          BRANCH="${GITHUB_REF#refs/heads/}"
+          REV=$(git rev-parse --short HEAD)
 
-      - name: Build Act image
-        if: ${{ env.RUN_ACT_TESTS == 'true' }} 
-        run: |
-          docker build -t act-conda ./.github/workflows/image
+          # set up git
+          git init
+          git config user.name $GH_USER
+          git config user.email $GH_EMAIL
+          git remote add upstream "https://${GH_USER}:${GH_TOKEN}@${GH_REPOSITORY}"
 
-      - name: Run cookiecutter CI
-        if: ${{ env.RUN_ACT_TESTS == 'true' }}
-        env:
-          GH_USER: github-actions
-          GH_EMAIL: "github-action@users.noreply.github.com"
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          cd ${OUTPUT_DIR}/${GITHUB_REPO_NAME}
-          pwd
-          git status
+          git fetch --depth 50 upstream $BRANCH main
+          git reset upstream/main
 
-          act --job main_tests --platform ubuntu-latest=act-conda
-          cd -
+          # update examples
+          rm -rf examples/*
+          mv ${{ env.OUTPUT_DIRECTORY }}/* examples/
 
-      # - name: Build from source
-      #   run: |
-      #     cd ${OUTPUT_DIR}/${GITHUB_REPO_NAME}
-      #     pip install -e ".[test,doc]"
-      #     cd -
+          # push back to GitHub
+    
+          git diff-index --quiet HEAD -- || git commit -m "rebuilt examples from branch ${BRANCH} with sphinx at ${REV}"
+          git push -q upstream HEAD:main
 
-      #     python -c "import MDAnalysis as mda; print(f'MDAnalysis version:', mda.__version__)"
-      #     python -c "import ${TEST_REPO_NAME}; print('${TEST_REPO_NAME} version:', ${TEST_REPO_NAME}.__version__)"
-
-      # - name: Deploy artifact
-      #   if: ${{ env.UPLOAD_PR_ARTIFACT == 'true' }}
-      #   run: |
-      #     cd ${OUTPUT_DIR}/${GITHUB_REPO_NAME}
-      #     git checkout -b pr-${{github.event.pull_request.number}}
-      #     git push origin HEAD
-
-      - name: Print out
-        run: |
-          cd ${OUTPUT_DIR}/${GITHUB_REPO_NAME}
-
-          cat ${TEST_REPO_NAME}/analysis/*
-          cat ${TEST_REPO_NAME}/tests/analysis/*
-
+>>>>>>> oops, update workflow
