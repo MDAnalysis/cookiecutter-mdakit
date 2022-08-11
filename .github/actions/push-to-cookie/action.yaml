@@ -38,15 +38,24 @@ runs:
 
     - name: Force push cookie
       shell: bash
-      working-directory: ${{ inputs.source-directory }}
       env:
         GITHUB_URL: "git@github.com:${{ inputs.target-account }}/${{ inputs.target-repository }}.git"
       run: |
+        REV=$(git rev-parse --short HEAD)
+
+        cd ${{ inputs.source-directory }}
+
         for mdakit_directory in $(ls -d */${{ inputs.target-repository }}) ; do
           TARGET_BRANCH=$(dirname $mdakit_directory)
-          echo $TARGET_BRANCH
+          echo "Target branch: ${TARGET_BRANCH}"
+
+          rm -rf ${{ inputs.target-repository }}
+          git clone $GITHUB_URL
+
+          rm -rf ${{ inputs.target-repository }}/*
+          cp -r ${mdakit_directory}/* ${{ inputs.target-repository }}/
           
-          echo $mdakit_directory
+
           cd $mdakit_directory
 
           ls -la *
@@ -54,10 +63,11 @@ runs:
           git init
           git config user.name ${{ inputs.github-username }}
           git config user.email ${{ inputs.github-email }}
-
-          git add .
-          git commit -m 'initial commit'
           git remote add upstream $GITHUB_URL
+
+          git checkout -b $TARGET_BRANCH
+          git add .
+          git commit -m "Updated examples from cookiecutter-mdakit at ${REV}"
           git push -f upstream $TARGET_BRANCH
           cd -
         done
