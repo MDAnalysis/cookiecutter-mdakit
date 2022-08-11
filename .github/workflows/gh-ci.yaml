@@ -74,6 +74,7 @@ jobs:
 
   update-repo-examples:
     # if: github.event_name == 'push'
+    needs: main-tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

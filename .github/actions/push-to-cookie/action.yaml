@@ -37,6 +37,7 @@ runs:
         ssh-private-key: ${{ inputs.target-ssh-deploy-key }}
 
     - name: Force push cookie
+      shell: bash
       working-directory: ${{ inputs.source-directory }}
       env:
         GITHUB_URL: "git@github.com:${{ inputs.target-account }}/${{ inputs.target-repository }}.git"
