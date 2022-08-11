@@ -130,7 +130,7 @@ jobs:
           mv ${{ env.OUTPUT_DIRECTORY }}/* examples/
 
           # push back to GitHub
-    
+          git add examples
           git diff-index --quiet HEAD -- || git commit -m "rebuilt examples from branch ${BRANCH} with sphinx at ${REV}"
           git push -q upstream HEAD:main
 
