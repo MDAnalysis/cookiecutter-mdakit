@@ -19,5 +19,9 @@ runs:
       shell: bash
       working-directory: "${{ github.action_path }}"
       run: |
+        python --version
+        python3 --version
+        
         pyver=$(./get_python_version.py --field minor --last-n-version ${{ inputs.last-n-minor-release }})
+        echo $pyver
         echo "::set-output name=python-version::$(echo $pyver)"
