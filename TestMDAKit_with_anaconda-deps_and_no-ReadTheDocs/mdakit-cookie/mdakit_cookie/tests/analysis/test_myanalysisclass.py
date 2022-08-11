@@ -1,7 +1,7 @@
 import pytest
 from numpy.testing import assert_allclose
 
-from mdakit_cookie.analysis.MyAnalysisClass import MyAnalysisClass
+from mdakit_cookie.analysis.myanalysisclass import MyAnalysisClass
 from mdakit_cookie.tests.utils import make_Universe
 
 class TestMyAnalysisClass:
