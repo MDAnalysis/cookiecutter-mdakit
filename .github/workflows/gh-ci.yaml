@@ -122,6 +122,10 @@ jobs:
           git reset upstream/main
 
           # update examples
+          for keep in README.md ; do
+            cp $keep ${{ env.OUTPUT_DIRECTORY }}/
+          done
+          
           rm -rf examples/*
           mv ${{ env.OUTPUT_DIRECTORY }}/* examples/
 
