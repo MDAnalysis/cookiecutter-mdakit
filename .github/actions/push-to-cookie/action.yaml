@@ -43,7 +43,8 @@ runs:
       run: |
         REV=$(git rev-parse --short HEAD)
 
-        cd ${{ inputs.source-directory }}
+        cp -r ${{ inputs.source-directory }} ${HOME}/cookies
+        cd ${HOME}/cookies
 
         for mdakit_directory in $(ls -d */${{ inputs.target-repository }}) ; do
           TARGET_BRANCH=$(dirname $mdakit_directory)

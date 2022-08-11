@@ -101,7 +101,7 @@ jobs:
           source-directory: ${{ env.OUTPUT_DIRECTORY }}
           target-ssh-deploy-key: ${{ secrets.MDAKIT_COOKIE_SSH_DEPLOY_KEY }}
 
-      - name: Set up git
+      - name: Push to remote
         env:
           GH_USER: github-actions
           GH_EMAIL: "github-action@users.noreply.github.com"
@@ -112,13 +112,17 @@ jobs:
           BRANCH="${GITHUB_REF#refs/heads/}"
           REV=$(git rev-parse --short HEAD)
 
+          cd $HOME
+          mkdir examples
+          cd examples
+
           # set up git
           git init
           git config user.name $GH_USER
           git config user.email $GH_EMAIL
           git remote add upstream "https://${GH_USER}:${GH_TOKEN}@${GH_REPOSITORY}"
 
-          git fetch --depth 50 upstream $BRANCH main
+          git fetch --depth 50 upstream $BRANCH examples
           git reset upstream/main
 
           # update examples
@@ -126,12 +130,12 @@ jobs:
             cp $keep ${{ env.OUTPUT_DIRECTORY }}/
           done
 
-          rm -rf examples/*
-          mv ${{ env.OUTPUT_DIRECTORY }}/* examples/
+          rm -rf *
+          mv ${{ env.OUTPUT_DIRECTORY }}/* .
 
           # push back to GitHub
           git add examples
-          git diff-index --quiet HEAD -- || git commit -m "rebuilt examples from branch ${BRANCH} with sphinx at ${REV}"
-          git push -q upstream HEAD:main
+          git diff-index --quiet HEAD -- || git commit -m "rebuilt examples from branch ${BRANCH} with CI at ${REV}"
+          git push -q upstream HEAD:examples
 
 >>>>>>> oops, update workflow
