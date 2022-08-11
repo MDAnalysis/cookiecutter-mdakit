@@ -14,13 +14,13 @@ on:
 defaults:
   run:
     shell: bash
-    
+
 env:
     ARTIFACT_NAME: demo-mdakit-repos
     OUTPUT_DIRECTORY: /home/runner/example_outputs
 
 jobs:
-  generate-cookiecutter:
+  main-tests:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:

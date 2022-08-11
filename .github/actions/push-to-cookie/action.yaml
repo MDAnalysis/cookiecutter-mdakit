@@ -34,14 +34,14 @@ runs:
     - name: Set up SSH keys
       uses: webfactory/ssh-agent@v0.5.4
       with:
-        ssh-private-key: ${{ env.INPUT_TARGET_SSH_DEPLOY_KEY }}
+        ssh-private-key: ${{ inputs.target-ssh-deploy-key }}
 
     - name: Force push cookie
-      working-directory: ${{ env.INPUT_SOURCE_DIRECTORY }}
+      working-directory: ${{ inputs.source-directory }}
       env:
-        GITHUB_URL: "git@github.com:${{ env.INPUT_TARGET_ACCOUNT }}/${{ env.INPUT_TARGET_REPOSITORY }}.git"
+        GITHUB_URL: "git@github.com:${{ inputs.target-account }}/${{ inputs.target-repository }}.git"
       run: |
-        for mdakit_directory in $(ls -d */${INPUT_TARGET_REPOSITORY}) ; do
+        for mdakit_directory in $(ls -d */${{ inputs.target-repository }}) ; do
           TARGET_BRANCH=$(dirname $mdakit_directory)
           git remote add upstream $GITHUB_URL
           git push -f upstream $TARGET_BRANCH
