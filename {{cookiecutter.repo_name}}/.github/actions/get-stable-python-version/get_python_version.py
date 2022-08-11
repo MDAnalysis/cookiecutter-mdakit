@@ -47,7 +47,7 @@ $ ./get_python_version.py --field micro --last-n-version 2
 
 
 import argparse
-import urllib3
+import urllib.request
 import json
 from typing import NamedTuple, List, Tuple
 
@@ -93,9 +93,9 @@ class VersionInfo(NamedTuple):
 def get_release_versions(only_final_releases: bool = True) -> List[VersionInfo]:
     MANIFEST_URL = 'https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json'
 
-    http = urllib3.PoolManager()
-    response = http.request('GET', MANIFEST_URL)
-    content = response.data.decode('utf-8')
+    with urllib.request.urlopen(MANIFEST_URL) as response:
+        content = response.read().decode('utf-8')
+
     version_dicts = json.loads(content)
     all_versions = [VersionInfo.from_str(v["version"]) for v in version_dicts]
     if only_final_releases:
