@@ -1,0 +1,53 @@
+name: run-cookie-ci
+description: Run cookie CI
+inputs:
+  source-directory:
+    description: Source directory
+    required: true
+  target-repository:
+    description: Target repository name
+    required: true
+    default: mdakit-cookie
+  target-account:
+    description: Target account name
+    required: true
+    default: MDAnalysis
+  github-username:
+    description: GitHub username
+    required: true
+    default: github-actions
+  github-email:
+    description: email associated with GitHub user
+    required: true
+    default: github-action@users.noreply.github.com
+
+runs:
+  using: "composite"
+  steps:
+    - name: Configure git
+      shell: bash
+      run: |
+        git config --global user.name ${{ inputs.github-username }}
+        git config --global user.email ${{ inputs.github-email }}
+
+    - name: Add origin
+      working-directory: ${{ inputs.source-directory }}
+      shell: bash
+      run: |
+        GITHUB_URL="https://github.com/${{ inputs.target-account }}/${{ inputs.target-repository }}.git"
+        echo $GITHUB_URL
+        git init
+        git remote add origin $GITHUB_URL
+    
+    - name: Install act
+      uses: actionsflow/setup-act@v1
+    
+    - name: Build Act image
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: docker build -t act-conda image
+
+    - name: Run cookiecutter CI
+      working-directory: ${{ inputs.source-directory }}
+      shell: bash
+      run: act --job main-tests --platform ubuntu-latest=act-conda

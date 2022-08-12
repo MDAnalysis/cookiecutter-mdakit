@@ -23,6 +23,7 @@ def get_classes_from_file(path: str) -> List:
 
 IncludeReadTheDocs = Literal["y", "n"]
 
+
 class DependencyType(enum.Enum):
     CONDAFORGE = "Prefer conda-forge over the default anaconda channel with pip fallback"
     ANACONDA = "Prefer default anaconda channel with pip fallback"
@@ -42,6 +43,7 @@ class CookiecutterMDAKit:
     dependency_source: DependencyType = DependencyType.CONDAFORGE
     include_ReadTheDocs: IncludeReadTheDocs = "y"
     template_analysis_class: str = "MyAnalysisClass"
+    output_directory: str = "."
 
     @property
     def cookie_directory(self) -> pathlib.Path:
@@ -62,6 +64,7 @@ class CookiecutterMDAKit:
             str(COOKIECUTTER_PATH),
             no_input=True,
             extra_context=context,
+            output_dir=self.output_directory,
         )
 
     def cookie_path_exists(self, path: str) -> bool:

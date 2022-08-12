@@ -32,7 +32,7 @@ Set `template_analysis_class` to "" if default value is passed.
 
 {{ cookiecutter.update({"template_analysis_class": cookiecutter.template_analysis_class | trim }) }}
 
-{% if "Enter" in cookiecutter.template_analysis_class %}
+{% if "Press Enter to skip" in cookiecutter.template_analysis_class %}
     {{ cookiecutter.update({ "template_analysis_class": "" }) }}
 {% endif %}
 

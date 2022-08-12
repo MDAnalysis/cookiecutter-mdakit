@@ -1,0 +1,28 @@
+name: get-python-version
+description: Get Python version
+inputs:
+  last-n-minor-release:
+    description: How many minor releases to go back. 0 for the most recent
+    required: true
+    default: 1
+outputs:
+  python-version:
+    description: Last N Python version
+    value: "${{ steps.get-python-version.outputs.python-version }}"
+
+
+runs:
+  using: "composite"
+  steps:
+    - name: Run script
+      id: get-python-version
+      shell: bash
+      working-directory: "${{ github.action_path }}"
+      run: |
+        python --version
+        python3 --version
+        
+        chmod a+x ./get_python_version.py
+        pyver=$(./get_python_version.py --field minor --last-n-version ${{ inputs.last-n-minor-release }})
+        echo $pyver
+        echo "::set-output name=python-version::$(echo $pyver)"

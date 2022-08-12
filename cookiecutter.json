@@ -17,5 +17,14 @@
         "n"
     ],
     "template_analysis_class": "Class name to template (e.g. {{ cookiecutter.project_name.title().replace(' ', '').replace('-', '').replace('_', '') }} ). Press Enter to skip including analysis templates",
-    "_mda_cc_version": 0.1
+    "_mda_cc_version": 0.1,
+    "_dependency_source_keys": {
+        "Prefer conda-forge over the default anaconda channel with pip fallback": "conda-forge",
+        "Prefer default anaconda channel with pip fallback": "anaconda",
+        "Dependencies from pip only (no conda)": "pip"
+    },
+    "__dependency_source": "{{ cookiecutter._dependency_source_keys[cookiecutter.dependency_source] }}",
+    "_copy_without_render": [
+        ".github/actions/get-stable-python-version/action.yaml"
+    ]
 }

@@ -20,18 +20,27 @@ concurrency:
 
 defaults:
   run:
-{% if cookiecutter.dependency_source == 'Dependencies from pip only (no conda)' %}
+{% if cookiecutter.__dependency_source == 'pip' %}
     shell: bash
 {% else %}
     shell: bash -l {0}
 {% endif %}
 
-env:
-  LAST_MINOR_PYTHON_RELEASE: "3.9"
-
 jobs:
-  main_tests:
-    if: "github.repository == '{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}'"
+  environment-config:
+    runs-on: ubuntu-latest
+    outputs:
+      stable-python-version: {{ "${{ steps.get-python-version.outputs.python-version }}" }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: get-python-version
+        uses: ./.github/actions/get-stable-python-version
+        with:
+          last-n-minor-release: 1
+
+  main-tests:
+    if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
     runs-on: {{ '${{ matrix.os }}' }}
     strategy:
         fail-fast: false
@@ -48,7 +57,7 @@ jobs:
         df -h
         ulimit -a
 
-{% if cookiecutter.dependency_source == 'Dependencies from pip only (no conda)' %}
+{% if cookiecutter.__dependency_source == 'pip' %}
     - name: Set up Python {{ '${{ matrix.python-version }}' }}
       uses: actions/setup-python@v4
       with:
@@ -66,10 +75,10 @@ jobs:
         environment-file: devtools/conda-envs/test_env.yaml
         add-pip-as-python-dependency: true
         architecture: x64
-{% if cookiecutter.dependency_source == 'Prefer conda-forge over the default anaconda channel with pip fallback' %}
+{% if cookiecutter.__dependency_source == 'conda-forge' %}
         mamba-version: "*"
         channels: conda-forge, defaults
-{% elif cookiecutter.dependency_source == 'Prefer default anaconda channel with pip fallback' %}
+{% elif cookiecutter.__dependency_source == 'anaconda' %}
         channels: defaults
 {% endif %}
         activate-environment: {{cookiecutter.repo_name}}-test
@@ -81,21 +90,21 @@ jobs:
     - name: Install package
       run: |
         python --version
-        python -m pip install . {% if cookiecutter.dependency_source != 'Dependencies from pip only (no conda)' %} --no-deps {% endif %}
+        python -m pip install . {% if cookiecutter.__dependency_source != 'pip' %} --no-deps {% endif %}
 
     - name: Python information
       run: |
         which python
         which pip
         pip list
-{% if cookiecutter.dependency_source != 'Dependencies from pip only (no conda)' %}
+{% if cookiecutter.__dependency_source != 'pip' %}
         conda info
         conda list
 {% endif %}
 
     - name: Run tests
       run: |
-        pytest -n 2 -v --cov={{ cookiecutter.repo_name }} --cov-report=xml --color=yes {{ cookiecutter.repo_name }}/tests/
+        pytest -n 2 -v --cov={{ cookiecutter.package_name }} --cov-report=xml --color=yes {{ cookiecutter.package_name }}/tests/
 
     - name: codecov
       uses: codecov/codecov-action@v3
@@ -106,7 +115,8 @@ jobs:
 
 
   pylint_check:
-    if: "github.repository == '{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}'"
+    if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
+    needs: environment-config
     runs-on: ubuntu-latest
 
     steps:
@@ -115,7 +125,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: {{ '${{ env.LAST_MINOR_PYTHON_RELEASE }}' }}
+        python-version: {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
 
     - name: Install Pylint
       run: |
@@ -131,16 +141,17 @@ jobs:
 
 
   pypi_check:
-    if: "github.repository == '{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}'"
+    if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
+    needs: environment-config
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Python {{ '${{ env.LAST_MINOR_PYTHON_RELEASE }}' }}
+    - name: Set up Python {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
       uses: actions/setup-python@v4
       with:
-        python-version: {{ '${{ env.LAST_MINOR_PYTHON_RELEASE }}' }}
+        python-version: {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
 
     - name: Install dependencies
       run: |
@@ -152,7 +163,7 @@ jobs:
 
     - name: Check package build
       run: |
-        DISTRIBUTION=$(ls -t1 dist/{{ cookiecutter.repo_name }}-*.tar.gz | head -n 1)
-        test -n "${DISTRIBUTION}" || { echo "no distribution dist/{{ cookiecutter.repo_name }}-*.tar.gz found"; exit 1; }
+        DISTRIBUTION=$(ls -t1 dist/{{ cookiecutter.package_name }}-*.tar.gz | head -n 1)
+        test -n "${DISTRIBUTION}" || { echo "no distribution dist/{{ cookiecutter.package_name }}-*.tar.gz found"; exit 1; }
         echo "twine check $DISTRIBUTION"
         twine check $DISTRIBUTION

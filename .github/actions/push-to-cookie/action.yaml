@@ -1,0 +1,87 @@
+name: push-to-cookie
+description: Push example repo to branch on cookie
+inputs:
+  source-directory:
+    description: Source directory
+    required: true
+  target-branch:
+    description: Target branch
+    required: true
+  target-repository:
+    description: Target repository name
+    required: true
+    default: mdakit-cookie
+  target-account:
+    description: Target account name
+    required: true
+    default: MDAnalysis
+  target-ssh-deploy-key:
+    description: SSH key to deploy to target repository
+    required: true
+  github-username:
+    description: GitHub username
+    required: true
+    default: github-actions
+  github-email:
+    description: email associated with GitHub user
+    required: true
+    default: github-action@users.noreply.github.com
+  edit-ci-to-run:
+    description: Whether or not to edit cookie CI to run it on every branch
+    required: true
+    default: true
+
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up SSH keys
+      uses: webfactory/ssh-agent@v0.5.4
+      with:
+        ssh-private-key: ${{ inputs.target-ssh-deploy-key }}
+
+    - name: Force push cookie
+      shell: bash
+      env:
+        GITHUB_URL: "git@github.com:${{ inputs.target-account }}/${{ inputs.target-repository }}.git"
+        CI_FILE: ./.github/workflows/gh-ci.yaml
+      run: |
+        REV=$(git rev-parse --short HEAD)
+
+        ls ${{ inputs.source-directory }}/*
+
+        cp -r ${{ inputs.source-directory }} ${HOME}/cookies
+        cd ${HOME}/cookies
+
+        for mdakit_directory in $(ls -d */${{ inputs.target-repository }}) ; do
+          TARGET_BRANCH=$(dirname $mdakit_directory)
+          echo "Target branch: ${TARGET_BRANCH}"
+
+          rm -rf ${{ inputs.target-repository }}
+          git clone $GITHUB_URL
+
+          rm -rf ${{ inputs.target-repository }}/*
+          cp -r ${mdakit_directory}/* ${{ inputs.target-repository }}/
+          
+
+          cd $mdakit_directory
+
+          ls -la *
+
+          if [[ ${{ inputs.edit-ci-to-run }} == true ]] ; then
+            sed -i 's/- main/- "**" # main   -- replaced main to allow CI to run in example cookie repo/g' $CI_FILE
+          fi
+
+          cat $CI_FILE
+
+          git init
+          git config user.name ${{ inputs.github-username }}
+          git config user.email ${{ inputs.github-email }}
+          git remote add upstream $GITHUB_URL
+
+          git checkout -b $TARGET_BRANCH
+          git add .
+          git commit -m "Updated examples from cookiecutter-mdakit at ${REV}"
+          git push -f upstream $TARGET_BRANCH
+          cd -
+        done
