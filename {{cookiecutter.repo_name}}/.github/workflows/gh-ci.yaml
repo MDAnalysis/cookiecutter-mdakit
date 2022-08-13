@@ -20,11 +20,7 @@ concurrency:
 
 defaults:
   run:
-{% if cookiecutter.__dependency_source == 'pip' %}
-    shell: bash
-{% else %}
-    shell: bash -l {0}
-{% endif %}
+    shell: bash {% if cookiecutter.__dependency_source != 'pip' %} -l {0} {% endif %}
 
 jobs:
   environment-config:
@@ -47,6 +43,7 @@ jobs:
         matrix:
           os: [macOS-latest, ubuntu-latest, windows-latest]
           python-version: ["3.8", "3.9", "3.10"]
+          mdanalysis-version: ["2.0.0", "latest", "develop"]
 
     steps:
     - uses: actions/checkout@v3
@@ -87,6 +84,14 @@ jobs:
         show-channel-urls: true
 {% endif %}
 
+    - name: Install MDAnalysis version
+      uses: ./.github/actions/install-mdanalysis
+      with:
+        version: ${{ matrix.mdanalysis-version }}
+        install-tests: false
+        installer: {% if cookiecutter.__dependency_source != 'pip' %} mamba {% else %} pip {% endif %}
+        shell: bash {% if cookiecutter.__dependency_source != 'pip' %} -l {0} {% endif %}
+      
     - name: Install package
       run: |
         python --version
