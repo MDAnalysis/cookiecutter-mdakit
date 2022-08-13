@@ -43,7 +43,7 @@ jobs:
         matrix:
           os: [macOS-latest, ubuntu-latest, windows-latest]
           python-version: ["3.8", "3.9", "3.10"]
-          mdanalysis-version: ["2.0.0", "latest", "develop"]
+          mdanalysis-version: ["2.1.0", "latest", "develop"]
 
     steps:
     - uses: actions/checkout@v3
