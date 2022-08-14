@@ -24,8 +24,5 @@
         "Dependencies from pip only (no conda)": "pip"
     },
     "__dependency_source": "{{ cookiecutter._dependency_source_keys[cookiecutter.dependency_source] }}",
-    "_copy_without_render": [
-        ".github/actions/get-stable-python-version/action.yaml",
-        ".github/actions/install-mdanalysis/action.yaml"
-    ]
+    "_copy_without_render": []
 }

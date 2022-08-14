@@ -85,11 +85,11 @@ jobs:
 {% endif %}
 
     - name: Install MDAnalysis version
-      uses: "./.github/actions/install-mdanalysis"
+      uses: MDAnalysis/install-mdanalysis@main
       with:
         version: {{ "${{ matrix.mdanalysis-version }}" }}
         install-tests: false
-        installer: {% if cookiecutter.__dependency_source != 'pip' %} mamba {% else %} pip {% endif %}
+        installer: {% if cookiecutter.__dependency_source == 'conda-forge' %} mamba {% else %} pip {% endif %}
         shell: bash {% if cookiecutter.__dependency_source != 'pip' %} -l {0} {% endif %}
       
     - name: Install package
