@@ -97,7 +97,7 @@ class ExampleRepositoryDocumentation:
             "",  # dependency_source
             "",  # include_ReadTheDocs
             "MyAnalysisClass",  # template_analysis_class
-
+            ""
             ""
         ]
 
@@ -137,6 +137,7 @@ class ExampleRepositoryDocumentation:
             text=True
         )
         tree = proc.stdout
+        raise ValueError(tree, proc.stderr, proc.returncode)
         descriptions = FileDescriptions()
         formatted = descriptions.label_files(tree)
 
