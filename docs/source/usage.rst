@@ -109,7 +109,7 @@ Edit that file to modify settings.
 .. _`Create a new repository on GitHub`: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository
 
 4. Make and push changes to your code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
 Now you should go forth and code!
 To keep things clean and simple, we advise a few tips:
@@ -133,4 +133,14 @@ To keep things clean and simple, we advise a few tips:
   allows multiple people to work on the code at the same time.
   Create a new branch with ``git checkout -b <my_branch_name>``.
   See `GitHub's documentation <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches>`_
+  for more information.
+
+* When you feel ready, open a pull request on GitHub.
+  **This does not have to be when you think you have finished the code!**
+  A PR runs tests and builds documentation.
+  This will allow others to review your code and
+  help you make sure it is correct.
+  It's always a good way to get feedback and validation,
+  as well as collaborate with other people.
+  See `GitHub's documentation <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_
   for more information.

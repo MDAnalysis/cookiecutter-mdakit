@@ -6,15 +6,27 @@ Cookiecutter for MDAnalysis-based packages
 ==========================================
 
 
-A `cookiecutter <https://github.com/audreyr/cookiecutter>`_ template for those interested in developing packages
-based on MDAnalysis. Skeletal starting repositories can be created from this template to create the
-file structure semi-autonomously so you can focus on what's important: the science!
+A `cookiecutter <https://github.com/audreyr/cookiecutter>`_ template
+for those interested in developing packages
+based on MDAnalysis.
+Starting repositories can be created from this template so you can focus on what's important: the science!
 
-The skeletal structure is designed to help you get started, but do not feel limited by the skeleton's features
-included here.
+**Features**
+* Python-centric skeletal structure with initial module files
+* Pre-configured ``setup.py`` for installation and packaging
+* Pre-configured Window, Linux, and OSX continuous integration on GitHub Actions
+* Choice of dependency locations through ``conda-forge``, default ``conda``, or ``pip``
+* Basic testing structure with `PyTest <https://docs.pytest.org/en/latest/>`_
+* Automatic ``git`` initialization + tag
+* GitHub Hooks
+* Automatic package version control with `Versioneer <https://github.com/warner/python-versioneer>`_
+* Sample data inclusion with packaging instructions
+* Basic documentation structure powered by `Sphinx <http://www.sphinx-doc.org/en/master/>`_
+
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :hidden:
    
    usage
 
