@@ -9,7 +9,7 @@ from typing import List
 import yaml
 
 abs_filepath = pathlib.Path(__file__).resolve()
-COOKIECUTTER_PATH = pathlib.Path(str(abs_filepath).split("docs")[0])
+COOKIECUTTER_PATH = abs_filepath.parent.parent.parent
 GENERATED_PATH = COOKIECUTTER_PATH / "docs" / "source" / "generated"
 
 
