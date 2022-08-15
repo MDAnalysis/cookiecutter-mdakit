@@ -13,12 +13,9 @@ file structure semi-autonomously so you can focus on what's important: the scien
 The skeletal structure is designed to help you get started, but do not feel limited by the skeleton's features
 included here.
 
-
-Additional Pages
-================
-
 .. toctree::
    :maxdepth: 2
+   
    usage
 
 
