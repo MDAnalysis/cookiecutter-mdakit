@@ -5,19 +5,13 @@
 Cookiecutter for MDAnalysis-based packages
 ==========================================
 
-.. note::
-
-   These docs are are mainly a recreation of the package's ``README.md`` file as an example of building the docs.
-   Feel free to borrow from this example and consider splitting the docs into multiple pages!
-
 
 A `cookiecutter <https://github.com/audreyr/cookiecutter>`_ template for those interested in developing packages
 based on MDAnalysis. Skeletal starting repositories can be created from this template to create the
 file structure semi-autonomously so you can focus on what's important: the science!
 
 The skeletal structure is designed to help you get started, but do not feel limited by the skeleton's features
-included here. Just to name a few things you can alter to suite your needs: change continuous integration options,
-remove deployment platforms, or test with a different suite.
+included here.
 
 Features
 --------

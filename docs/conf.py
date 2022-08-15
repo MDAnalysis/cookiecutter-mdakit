@@ -13,9 +13,17 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 # import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import sys
+import pathlib
 
+SCRIPT_DIR = pathlib.Path(__file__).parent.resolve() / "scripts"
+sys.path.insert(0, str(SCRIPT_DIR))
+
+from generate_cookiecutter_cli import main as generate_cookiecutter_cli
+
+# -- Autogenerate docs -------------------------------------------------------
+
+generate_cookiecutter_cli()
 
 # -- Project information -----------------------------------------------------
 
