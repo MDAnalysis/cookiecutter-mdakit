@@ -26,6 +26,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest, windows-latest]
+        # check last three versions of Python
         last-n-minor-python-release: [2, 1, 0]
 
     steps:
@@ -52,6 +53,7 @@ jobs:
           python -m pip install -U pytest pyyaml cookiecutter
       - name: Run cookiecutter tests
         run: |
+          # --keep-test-outputs also saves the generated repositories
           if [[ ${{ matrix.os }} == "ubuntu-latest" ]] ; then
             PYTEST_FLAGS="--keep-test-outputs $OUTPUT_DIRECTORY"
           else

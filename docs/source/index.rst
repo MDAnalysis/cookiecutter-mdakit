@@ -33,6 +33,13 @@ Starting repositories can be created from this template so you can focus on what
    usage
    options
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Developer
+   :hidden:
+   
+   cookiecutter/*
+
 
 Acknowledgments
 ===============
