@@ -10,7 +10,7 @@ import yaml
 
 abs_filepath = pathlib.Path(__file__).resolve()
 COOKIECUTTER_PATH = pathlib.Path(str(abs_filepath).split("docs")[0])
-GENERATED_PATH = COOKIECUTTER_PATH / "docs" / "generated"
+GENERATED_PATH = COOKIECUTTER_PATH / "docs" / "source" / "generated"
 
 
 def flatten_dict(dct, key=tuple()):
@@ -111,7 +111,6 @@ class ExampleRepositoryDocumentation:
                 input="\n".join(inputs),
                 cwd=tmpdir,
             )
-            raise ValueError(proc.stderr)
 
             source_repo = os.path.join(tmpdir, self.repo_name)
             destination_repo = str(self.example_repo_path.resolve())

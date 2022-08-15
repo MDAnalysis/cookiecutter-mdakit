@@ -16,10 +16,12 @@
 import sys
 import pathlib
 
-SCRIPT_DIR = pathlib.Path(__file__).parent.resolve() / "scripts"
+SCRIPT_DIR = pathlib.Path(__file__).parent.parent.resolve() / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from generate_cookiecutter_cli import main as generate_cookiecutter_cli
+
+
 
 # -- Autogenerate docs -------------------------------------------------------
 
