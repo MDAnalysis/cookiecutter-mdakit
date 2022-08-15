@@ -137,7 +137,6 @@ class ExampleRepositoryDocumentation:
             text=True
         )
         tree = proc.stdout
-        raise ValueError(tree, proc.stderr, proc.returncode)
         descriptions = FileDescriptions()
         formatted = descriptions.label_files(tree)
 

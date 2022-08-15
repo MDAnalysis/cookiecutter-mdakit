@@ -107,3 +107,30 @@ Edit that file to modify settings.
 .. _ReadTheDocs: https://readthedocs.org
 .. _LGTM: https://lgtm.com
 .. _`Create a new repository on GitHub`: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository
+
+4. Make and push changes to your code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Now you should go forth and code!
+To keep things clean and simple, we advise a few tips:
+
+* Always work in a virtual environment like ``conda``.
+  You can create a development environment by following
+  the instructions in the README. In short:
+
+  .. code-block:: bash
+
+    conda create --name <environment_name> python=3.8
+    conda activate <environment_name>  # remember to do this every time
+    conda env update --name <environment_name> --file devtools/conda-envs/test_env.yaml
+    conda env update --name <environment_name> --file docs/requirements.yaml
+
+* Always work in a separate branch. The ``main`` branch
+  is the default, or central, branch. All development
+  work should be done in a separate branch to avoid
+  messing up the main branch, or to allow you to work on
+  different approaches at the same time. This also
+  allows multiple people to work on the code at the same time.
+  Create a new branch with ``git checkout -b <my_branch_name>``.
+  See `GitHub's documentation <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches>`_
+  for more information.
