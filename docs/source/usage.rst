@@ -1,5 +1,5 @@
-Using the template
-==================
+Usage
+=====
 
 Getting up and running requires a short process.
 

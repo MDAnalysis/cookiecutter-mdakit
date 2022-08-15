@@ -12,6 +12,7 @@ based on MDAnalysis.
 Starting repositories can be created from this template so you can focus on what's important: the science!
 
 **Features**
+
 * Python-centric skeletal structure with initial module files
 * Pre-configured ``setup.py`` for installation and packaging
 * Pre-configured Window, Linux, and OSX continuous integration on GitHub Actions
