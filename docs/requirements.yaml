@@ -1,5 +1,6 @@
 name: cookiecutter-mdakit-docs
 channels:
+  - conda-forge
 dependencies:
   # Base depends
   - python
@@ -7,6 +8,8 @@ dependencies:
 
   - sphinx
   - sphinx_rtd_theme
+
+  - tree
 
   # Pip-only installs
   - pip:
