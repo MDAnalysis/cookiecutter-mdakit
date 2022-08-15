@@ -1,7 +1,7 @@
 # Cookiecutter for MDAnalysis-based packages
 [//]: # (Badges)
 [![GitHub Actions Build Status](https://github.com/MDAnalysis/cookiecutter-mdakit/actions/workflows/gh-ci.yaml/badge.svg)](https://github.com/MDAnalysis/cookiecutter-mdakit/actions?query=workflow%3A%22Cookiecutter+CI%22)
-[![Documentation Status](https://readthedocs.org/projects/cookiecutter-mdakit/badge/?version=latest)](https://cookiecutter-mdakit.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/cookiecutter-mdakit/badge/?version=latest)](https://www.mdanalysis.org/cookiecutter-mdakit)
 
 
 A [cookiecutter](https://github.com/audreyr/cookiecutter) template for those interested in developing

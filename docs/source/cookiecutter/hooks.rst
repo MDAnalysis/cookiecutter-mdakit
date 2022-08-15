@@ -26,8 +26,7 @@ post_gen_project.py
 This script is run after the project is generated.
 It accomplishes the following steps:
 
-* removes unnecessary files (e.g. the template analysis
-files, if no analysis class is specified)
+* removes unnecessary files (e.g. the template analysis files, if no analysis class is specified)
 * tries to initialize a git repository
 * checkout a ``main`` branch
 * adds an initial commit
