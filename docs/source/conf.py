@@ -15,13 +15,13 @@
 # import os
 import sys
 import pathlib
+import datetime
 
 SCRIPT_DIR = pathlib.Path(__file__).parent.parent.resolve() / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
 
-from generate_cookiecutter_cli import main as generate_cookiecutter_cli
-
-
+from generate_cookiecutter_cli import main as generate_cookiecutter_cli  # noqa: E402
+from parse_authors import parse_authors  # noqa: E402
 
 # -- Autogenerate docs -------------------------------------------------------
 
@@ -30,12 +30,16 @@ generate_cookiecutter_cli()
 # -- Project information -----------------------------------------------------
 
 project = 'MDAKit Cookiecutter'
-author = 'MDAnalysis'
+# author = 'MDAnalysis'
 
 # The short X.Y version
-version = ''
+version = '0.1'
 # The full version, including alpha/beta/rc tags
-release = ''
+release = '0.1.0b'
+
+author = ", ".join(parse_authors(sort_alphabetically=True))
+now = datetime.datetime.now()
+copyright = f'2022-{now.year}, {author}'
 
 
 # -- General configuration ---------------------------------------------------
@@ -89,13 +93,31 @@ html_theme = 'sphinx_rtd_theme'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#
-# html_theme_options = {}
+
+color = {'orange': '#FF9200',
+         'gray': '#808080',
+         'white': '#FFFFFF',
+         'black': '#000000', }
+html_theme_options = {
+    'canonical_url': '',
+    'logo_only': True,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'style_nav_header_background': 'white',  # '#e76900', # dark orange
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = ['custom.css']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -171,3 +193,6 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
+rst_epilog = """
+.. |Cookiecutter_MDAKit_version| replace:: {0}
+""".format(version)

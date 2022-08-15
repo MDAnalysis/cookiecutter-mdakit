@@ -5,6 +5,7 @@
 Cookiecutter for MDAnalysis-based packages
 ==========================================
 
+**Cookiecutter-MDAKit version:** |Cookiecutter_MDAKit_version|
 
 A `cookiecutter <https://github.com/audreyr/cookiecutter>`_ template
 for those interested in developing packages
