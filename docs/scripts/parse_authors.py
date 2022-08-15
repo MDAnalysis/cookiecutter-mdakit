@@ -18,7 +18,7 @@ def parse_authors(sort_alphabetically: bool = False):
 
         if re.search(username_pattern, line):
             author_name = re.sub(username_pattern, "", line)[1:]
-            authors.append(author_name.strip())
+            authors.append(author_name.strip().strip("\\"))
 
     if sort_alphabetically:
         authors = sorted(authors, key=lambda x: x.split()[-1])

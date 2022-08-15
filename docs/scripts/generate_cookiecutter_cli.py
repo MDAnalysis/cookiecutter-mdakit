@@ -118,6 +118,10 @@ class ExampleRepositoryDocumentation:
 
         output = proc.stdout.split(": ")
         log = [f"{prompt}: {value}" for prompt, value in zip(output, inputs)]
+        # not sure why this happens -- git not configured?
+        if log[-1].strip().endswith("hint:"):
+            log = log[:-1]
+
         logtext = "\n".join(log)
         logtext = "$ cookiecutter gh:MDAnalysis/cookiecutter-mdakit\n" + logtext
         return logtext
