@@ -27,6 +27,7 @@ This generates the output skeleton:
 
 We will go more into these files in the rest of this
 tutorial, as well as other sections in this documentation.
+Please see `options-label`_ for more details.
 
 2. Add the project to GitHub
 ----------------------------

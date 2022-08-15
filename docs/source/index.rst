@@ -31,7 +31,7 @@ Starting repositories can be created from this template so you can focus on what
    :hidden:
    
    usage
-
+   options
 
 
 Acknowledgments
