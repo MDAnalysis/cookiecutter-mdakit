@@ -112,6 +112,8 @@ class ExampleRepositoryDocumentation:
                 cwd=tmpdir,
             )
 
+            raise ValueError(proc.stderr, proc.stdout, proc.returncode)
+
             source_repo = os.path.join(tmpdir, self.repo_name)
             destination_repo = str(self.example_repo_path.resolve())
             shutil.rmtree(destination_repo, ignore_errors=True)
@@ -119,7 +121,9 @@ class ExampleRepositoryDocumentation:
 
         output = proc.stdout.split(": ")
         log = [f"{prompt}: {value}" for prompt, value in zip(output, inputs)]
-        return "\n".join(log)
+        logtext = "\n".join(log)
+        logtext = "$ cookiecutter MDAnalysis/cookiecutter-mdakit\n" + logtext
+        return logtext
 
     def write_cookiecutter_cli_log(self):
         output = self.generate_cli_output()
