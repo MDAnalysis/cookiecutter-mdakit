@@ -112,7 +112,8 @@ class ExampleRepositoryDocumentation:
                 cwd=tmpdir,
             )
 
-            raise ValueError(proc.stderr, proc.stdout, proc.returncode)
+            raise ValueError(COOKIECUTTER_PATH, proc.stderr,
+                             proc.stdout, proc.returncode)
 
             source_repo = os.path.join(tmpdir, self.repo_name)
             destination_repo = str(self.example_repo_path.resolve())
@@ -122,7 +123,7 @@ class ExampleRepositoryDocumentation:
         output = proc.stdout.split(": ")
         log = [f"{prompt}: {value}" for prompt, value in zip(output, inputs)]
         logtext = "\n".join(log)
-        logtext = "$ cookiecutter MDAnalysis/cookiecutter-mdakit\n" + logtext
+        logtext = "$ cookiecutter gh:MDAnalysis/cookiecutter-mdakit\n" + logtext
         return logtext
 
     def write_cookiecutter_cli_log(self):
