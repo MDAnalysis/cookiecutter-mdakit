@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usage &mdash; MDAKit Cookiecutter 0.1.0b documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Options" href="options.html" />
+    <link rel="prev" title="Cookiecutter for MDAnalysis-based packages" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+            <a href="index.html" class="icon icon-home"> MDAKit Cookiecutter
+          </a>
+              <div class="version">
+                0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#use-the-cookiecutter-to-create-a-new-project">1. Use the cookiecutter to create a new project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-the-project-to-github">2. Add the project to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#link-external-hooks">3. Link external hooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-readthedocs">Documentation: ReadTheDocs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-coverage-codecov">Test coverage: Codecov</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-quality-analysis-lgtm">Code quality analysis: LGTM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#make-and-push-changes-to-your-code">4. Make and push changes to your code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cookiecutter/json_options.html">cookiecutter.json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookiecutter/hooks.html">Hook scripts</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MDAKit Cookiecutter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Usage</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h1>
+<p>Getting up and running requires a short process.</p>
+<dl class="simple">
+<dt>You will need the following:</dt><dd><ul class="simple">
+<li><p>Python 3.8+</p></li>
+<li><p>The <a class="reference external" href="https://github.com/audreyr/cookiecutter">cookiecutter</a> tool installed</p></li>
+<li><p>A GitHub account</p></li>
+</ul>
+</dd>
+</dl>
+<section id="use-the-cookiecutter-to-create-a-new-project">
+<h2>1. Use the cookiecutter to create a new project<a class="headerlink" href="#use-the-cookiecutter-to-create-a-new-project" title="Permalink to this heading"></a></h2>
+<p>An example of using the cookiecutter is illustrated below.
+The first line is the prompt, i.e. the actual
+command to use. It is followed by all the prompts you can expect,
+and some example answers.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cookiecutter gh:MDAnalysis/cookiecutter-mdakit
+project_name <span class="o">[</span>ProjectName<span class="o">]</span>: My Project Name
+repo_name <span class="o">[</span>my_project_name<span class="o">]</span>: example-repository
+package_name <span class="o">[</span>example_repository<span class="o">]</span>: package_name
+description <span class="o">[</span>A short description of the project.<span class="o">]</span>: A package to <span class="k">do</span> MD analysis
+github_username <span class="o">[</span>Your personal GitHub username<span class="o">]</span>: my-github-username
+github_host_account <span class="o">[</span>GitHub account <span class="k">for</span> hosting example-repository <span class="o">(</span>e.g. my-github-username or an organization account<span class="o">)</span>. Press Enter to use my-github-username<span class="o">]</span>: 
+author_name <span class="o">[</span>Your name <span class="o">(</span>or your organization/company/team<span class="o">)]</span>: My Name
+author_email <span class="o">[</span>Your email <span class="o">(</span>or your organization/company/team<span class="o">)]</span>: my_example_email@gmail.com
+Select dependency_source:
+<span class="m">1</span> - Prefer conda-forge over the default anaconda channel with pip fallback
+<span class="m">2</span> - Prefer default anaconda channel with pip fallback
+<span class="m">3</span> - Dependencies from pip only <span class="o">(</span>no conda<span class="o">)</span>
+Choose from <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span> <span class="o">[</span><span class="m">1</span><span class="o">]</span>: 
+Select include_ReadTheDocs:
+<span class="m">1</span> - y
+<span class="m">2</span> - n
+Choose from <span class="m">1</span>, <span class="m">2</span> <span class="o">[</span><span class="m">1</span><span class="o">]</span>: 
+template_analysis_class <span class="o">[</span>Class name to template <span class="o">(</span>e.g. MyProjectName <span class="o">)</span>. Press Enter to skip including analysis templates<span class="o">]</span>: MyAnalysisClass
+</pre></div>
+</div>
+<p>This generates the output skeleton:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>example-repository                     
+├── .codecov.yml                          &lt;- Settings for Codecov
+├── .gitattributes                     
+├── .github                               &lt;- GitHub hooks for user contribution, pull request guides and GitHub Actions CI
+│   ├── ISSUE_TEMPLATE                    &lt;- Templates for opening issues on GitHub
+│   │   ├── bug_report.md              
+│   │   └── feature_request.md         
+│   ├── PULL_REQUEST_TEMPLATE.md          &lt;- Template for opening a pull request on GitHub
+│   └── workflows                         &lt;- where the configuration for CI lives
+│       └── gh-ci.yaml                 
+├── .gitignore                            &lt;- Stock helper file telling git what file name patterns to ignore when adding files
+├── .lgtm.yml                             &lt;- Settings for LGTM.com
+├── .pre-commit-config.yaml               &lt;- Settings for pre-commit hooks for flake8 and isort
+├── .pylintrc                             &lt;- Settings for PyLint
+├── AUTHORS.md                            &lt;- List of all contributors to the package
+├── CHANGELOG.md                          &lt;- Log of changes in each release
+├── CODE_OF_CONDUCT.md                    &lt;- Code of Conduct for developers and users
+├── CONTRIBUTING.md                       &lt;- Guide to contributing
+├── LICENSE                               &lt;- License file
+├── MANIFEST.in                           &lt;- Packaging information for pip
+├── README.md                             &lt;- Description of project which GitHub will render
+├── devtools                              &lt;- Environment and other development tools
+│   └── conda-envs                        &lt;- Conda environments for testing
+│       └── test_env.yaml                 &lt;- Default test environment file
+├── docs                                  &lt;- Documentation template folder with many settings already filled in
+│   ├── Makefile                       
+│   ├── README.md                         &lt;- Instructions on how to build the docs
+│   ├── make.bat                       
+│   ├── requirements.yaml                 &lt;- Documentation building specific requirements. Usually a smaller set than the main program
+│   └── source                         
+│       ├── _static                    
+│       │   └── README.md              
+│       ├── _templates                 
+│       │   └── README.md              
+│       ├── api.rst                    
+│       ├── conf.py                    
+│       ├── getting_started.rst        
+│       └── index.rst                  
+├── package_name                       
+│   ├── __init__.py                    
+│   ├── _version.py                       &lt;- Automatic version control with Versioneer
+│   ├── analysis                       
+│   │   ├── __init__.py                
+│   │   └── myanalysisclass.py         
+│   ├── data                              &lt;- Sample additional data (non-code) which can be packaged
+│   │   ├── README.md                  
+│   │   ├── __init__.py                
+│   │   ├── files.py                      &lt;- Recommended file for resolving data file names
+│   │   └── mda.txt                       &lt;- Just an example, delete in production
+│   ├── package_name.py                
+│   └── tests                             &lt;- Unit test directory with sample tests
+│       ├── __init__.py                
+│       ├── analysis                   
+│       │   ├── __init__.py            
+│       │   └── test_myanalysisclass.py
+│       ├── conftest.py                   &lt;- File for common pytest fixtures
+│       ├── test_package_name.py          &lt;- Example test file
+│       └── utils.py                   
+├── pyproject.toml                        &lt;- Dependencies for pip
+├── readthedocs.yaml                      &lt;- Settings for ReadTheDocs
+├── setup.cfg                             &lt;- Near-master config file settings for Coverage, Flake8, YAPF, etc
+├── setup.py                              &lt;- Your package&#39;s setup file for installing with additional options that can be set
+└── versioneer.py                         &lt;- Automatic version control with Versioneer
+                                       
+14 directories, 48 files               
+                                       
+</pre></div>
+</div>
+<p>We will go more into these files in the rest of this
+tutorial, as well as other sections in this documentation.
+Please see <a class="reference internal" href="options.html#options-label"><span class="std std-ref">Options</span></a> for more details.</p>
+</section>
+<section id="add-the-project-to-github">
+<h2>2. Add the project to GitHub<a class="headerlink" href="#add-the-project-to-github" title="Permalink to this heading"></a></h2>
+<p>The generated repository should be an initialised git repository.
+We now need to connect it to GitHub:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository">Create a new repository on GitHub</a> .
+Do not initialize the repo with a README, license, or any other files.</p></li>
+<li><p>Push the local repository to GitHub.
+GitHub should provide instructions for doing so, but in short:</p>
+<ul class="simple">
+<li><p>Add the remote named <code class="docutils literal notranslate"><span class="pre">origin</span></code> with <code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">&lt;URL&gt;</span></code></p></li>
+<li><p>Push the local repository to the remote repository with <code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">main</span></code></p></li>
+<li><p>Verify files were pushed successfully by checking on GitHub</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="link-external-hooks">
+<h2>3. Link external hooks<a class="headerlink" href="#link-external-hooks" title="Permalink to this heading"></a></h2>
+<p>The generated repository contains configuration files for several
+external services. These need to be manually linked to each service to run.</p>
+<section id="documentation-readthedocs">
+<h3>Documentation: ReadTheDocs<a class="headerlink" href="#documentation-readthedocs" title="Permalink to this heading"></a></h3>
+<p>ReadTheDocs builds documentation automatically for you from the files in <code class="docutils literal notranslate"><span class="pre">docs/</span></code>.
+To link ReadTheDocs, ensure that you have a <a class="reference external" href="https://readthedocs.org">ReadTheDocs</a> account;
+you should be able to use your GitHub account. To link the project,
+click the <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">a</span> <span class="pre">Project</span></code> button on the dashboard.</p>
+<p>We strongly recommend turning on building documentation for your
+pull requests to check and preview your docs. To do so:</p>
+<ol class="arabic simple">
+<li><p>Go to the Admin tab</p></li>
+<li><p>Go to Advanced Settings</p></li>
+<li><p>Tick the “Build pull requests for this project” checkbox</p></li>
+<li><p>Scroll down and remember to click “Save”!</p></li>
+</ol>
+<p>Further configuration can be done on <a class="reference external" href="https://readthedocs.org">ReadTheDocs</a>
+or in the <code class="docutils literal notranslate"><span class="pre">readthedocs.yaml</span></code> file.</p>
+</section>
+<section id="test-coverage-codecov">
+<h3>Test coverage: Codecov<a class="headerlink" href="#test-coverage-codecov" title="Permalink to this heading"></a></h3>
+<p>Sign up at <a class="reference external" href="https://about.codecov.io/">Codecov</a> and
+<a class="reference external" href="https://docs.codecov.com/docs/quick-start">set up this repository</a>
+by adding the GitHub App Integration.
+You may need to trigger some tests and wait a few hours
+before seeing coverage reports appearing on Codecov.
+You can use these reports to discover which parts of your code
+are not checked by your current tests.
+You should ideally aim for &gt;90% code coverage to ensure that
+your package actually does what you think it does!</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.codecov.yml</span></code> file contains configuration for Codecov.
+Edit that file to modify settings, such as files to ignore
+and what to include in the coverage report.</p>
+</section>
+<section id="code-quality-analysis-lgtm">
+<h3>Code quality analysis: LGTM<a class="headerlink" href="#code-quality-analysis-lgtm" title="Permalink to this heading"></a></h3>
+<p>Make a <a class="reference external" href="https://lgtm.com">LGTM</a> account and add your project.
+If, desired you can add code review integration
+by clicking the large green button!</p>
+<p>Static code analysis dramatically enhances the quality of your code
+by finding a large number of common mistakes that both novice and
+advanced programmers make.
+There are many static analysis codes on the market,
+but we have seen that LGTM is a delicate balance between
+verbosity and catching true errors.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.lgtm.yml</span></code> file contains configuration for LGTM.
+Edit that file to modify settings.</p>
+</section>
+</section>
+<section id="make-and-push-changes-to-your-code">
+<h2>4. Make and push changes to your code<a class="headerlink" href="#make-and-push-changes-to-your-code" title="Permalink to this heading"></a></h2>
+<p>Now you should go forth and code!
+To keep things clean and simple, we advise a few tips:</p>
+<ul>
+<li><p>Always work in a virtual environment like <code class="docutils literal notranslate"><span class="pre">conda</span></code>.
+You can create a development environment by following
+the instructions in the README. In short:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create --name &lt;environment_name&gt; <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
+conda activate &lt;environment_name&gt;  <span class="c1"># remember to do this every time</span>
+conda env update --name &lt;environment_name&gt; --file devtools/conda-envs/test_env.yaml
+conda env update --name &lt;environment_name&gt; --file docs/requirements.yaml
+</pre></div>
+</div>
+</li>
+<li><p>Always work in a separate branch. The <code class="docutils literal notranslate"><span class="pre">main</span></code> branch
+is the default, or central, branch. All development
+work should be done in a separate branch to avoid
+messing up the main branch, or to allow you to work on
+different approaches at the same time. This also
+allows multiple people to work on the code at the same time.
+Create a new branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">&lt;my_branch_name&gt;</span></code>.
+See <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches">GitHub’s documentation on branches</a>
+for more information.</p></li>
+<li><p>When you feel ready, open a pull request on GitHub.
+<strong>This does not have to be when you think you have finished the code!</strong>
+A PR runs tests and builds documentation.
+This will allow others to review your code and
+help you make sure it is correct.
+It’s always a good way to get feedback and validation,
+as well as collaborate with other people.
+See <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">GitHub’s documentation on PRs</a>
+for more information.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Cookiecutter for MDAnalysis-based packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="options.html" class="btn btn-neutral float-right" title="Options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2022, Irfan Alibay, Fiona Naughton, Lily Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+ 
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

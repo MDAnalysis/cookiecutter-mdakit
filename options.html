@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Options &mdash; MDAKit Cookiecutter 0.1.0b documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="cookiecutter.json" href="cookiecutter/json_options.html" />
+    <link rel="prev" title="Usage" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+            <a href="index.html" class="icon icon-home"> MDAKit Cookiecutter
+          </a>
+              <div class="version">
+                0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#project-name">project_name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#repo-name">repo_name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#package-name">package_name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#description">description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#github-username">github_username</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#github-host-account">github_host_account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#author-name">author_name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#author-email">author_email</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependency-source">dependency_source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#conda-forge">conda-forge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anaconda">anaconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pip">pip</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#include-readthedocs">include_ReadTheDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#template-analysis-class">template_analysis_class</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cookiecutter/json_options.html">cookiecutter.json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookiecutter/hooks.html">Hook scripts</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MDAKit Cookiecutter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Options</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/options.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="options">
+<span id="options-label"></span><h1>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h1>
+<p>This page goes into the options you can choose in the cookiecutter,
+what they mean, and what they affect.
+If there are default values, they are explained.</p>
+<section id="project-name">
+<h2>project_name<a class="headerlink" href="#project-name" title="Permalink to this heading"></a></h2>
+<p>This is the name of the project you would
+use when writing about it in the documentation.</p>
+</section>
+<section id="repo-name">
+<h2>repo_name<a class="headerlink" href="#repo-name" title="Permalink to this heading"></a></h2>
+<p>This is the name of the directory containing
+the package. It cannot contain spaces.
+This value is used to generate the URL
+to the project on GitHub
+(i.e. <code class="docutils literal notranslate"><span class="pre">github.com/&lt;github_host_account&gt;/&lt;repo_name&gt;</span></code>).</p>
+<p><strong>Default value:</strong> the <code class="docutils literal notranslate"><span class="pre">project_name</span></code> in lowercase,
+with spaces and hyphens replaced with underscores.</p>
+</section>
+<section id="package-name">
+<h2>package_name<a class="headerlink" href="#package-name" title="Permalink to this heading"></a></h2>
+<p>This is the name of the module you would use
+when importing your package. It must
+follow Python module naming rules, i.e. it cannot
+have spaces or hyphens.</p>
+<p><strong>Default value:</strong> the <code class="docutils literal notranslate"><span class="pre">repo_name</span></code> in lowercase,
+with spaces and hyphens replaced with underscores.</p>
+</section>
+<section id="description">
+<h2>description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h2>
+<p>Give a short description of the project to appear in the README.</p>
+</section>
+<section id="github-username">
+<h2>github_username<a class="headerlink" href="#github-username" title="Permalink to this heading"></a></h2>
+<p>This should be your <em>personal</em> GitHub username.
+It is used for giving you credit in AUTHORS.md.</p>
+</section>
+<section id="github-host-account">
+<h2>github_host_account<a class="headerlink" href="#github-host-account" title="Permalink to this heading"></a></h2>
+<p>This should be the GitHub account name used to host the
+repository. In most cases, this will be the same as
+the GitHub username; however, if you are creating a
+package for an organisation, use the organisation
+account name. This value is used to generate the URL
+to the project on GitHub
+(i.e. <code class="docutils literal notranslate"><span class="pre">github.com/&lt;github_host_account&gt;/&lt;repo_name&gt;</span></code>).</p>
+<p><strong>Default value:</strong> the <code class="docutils literal notranslate"><span class="pre">github_username</span></code>.</p>
+</section>
+<section id="author-name">
+<h2>author_name<a class="headerlink" href="#author-name" title="Permalink to this heading"></a></h2>
+<p>This should be the name you prefer to go by, not your username.
+It is used for giving you credit in files such as
+<code class="docutils literal notranslate"><span class="pre">AUTHORS.md</span></code>, <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, and other packaging materials.</p>
+</section>
+<section id="author-email">
+<h2>author_email<a class="headerlink" href="#author-email" title="Permalink to this heading"></a></h2>
+<p>This should be an email address that you are comfortable
+getting contacted at. It is used for contact details
+in files such as <code class="docutils literal notranslate"><span class="pre">AUTHORS.md</span></code>, <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, and other packaging materials.
+It is also used as the point of contact in <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code>.</p>
+</section>
+<section id="dependency-source">
+<h2>dependency_source<a class="headerlink" href="#dependency-source" title="Permalink to this heading"></a></h2>
+<p>This option determines which sources to use for dependencies for the package.
+It affects the continuous integration testing, as well as
+the dependency files written. The three choices
+(<code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>, <code class="docutils literal notranslate"><span class="pre">anaconda</span></code>, and <code class="docutils literal notranslate"><span class="pre">pip</span></code>)
+are explained below.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>.</p>
+<section id="conda-forge">
+<h3>conda-forge<a class="headerlink" href="#conda-forge" title="Permalink to this heading"></a></h3>
+<p>This option looks for dependencies first in the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel,
+then the default <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel, before falling back to <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We <strong>highly recommend</strong> using <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>.
+<code class="docutils literal notranslate"><span class="pre">conda</span></code> is a great package manager for creating
+isolated environments, and managing dependencies between them.
+Moreover, many packages are available on <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>
+that are not on the default <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel or <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+</div>
+</section>
+<section id="anaconda">
+<h3>anaconda<a class="headerlink" href="#anaconda" title="Permalink to this heading"></a></h3>
+<p>This option still uses <code class="docutils literal notranslate"><span class="pre">conda</span></code> to manage dependencies,
+but only uses the <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel and <code class="docutils literal notranslate"><span class="pre">pip</span></code> fallback.
+This option would install MDAnalysis from <a class="reference external" href="https://pypi.org/">PyPI</a> .
+as it is not available on the default <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel.</p>
+</section>
+<section id="pip">
+<h3>pip<a class="headerlink" href="#pip" title="Permalink to this heading"></a></h3>
+<p>This option only installs packages from <a class="reference external" href="https://pypi.org/">PyPI</a>.</p>
+</section>
+</section>
+<section id="include-readthedocs">
+<h2>include_ReadTheDocs<a class="headerlink" href="#include-readthedocs" title="Permalink to this heading"></a></h2>
+<p>This option determines whether to include
+ReadTheDocs configuration (<code class="docutils literal notranslate"><span class="pre">readthedocs.yaml</span></code>)
+in the package. It does not affect the documentation itself.
+We recommend keeping ReadTheDocs, as it is a standard and easy way
+to automatically build documentation online.</p>
+<p><strong>Default value:</strong> “y” (True)</p>
+</section>
+<section id="template-analysis-class">
+<h2>template_analysis_class<a class="headerlink" href="#template-analysis-class" title="Permalink to this heading"></a></h2>
+<p>This option triggers the building of a skeleton custom
+analysis class, and associated tests.
+If a class name is given, it is used as the name of the
+analysis class. If it is not given, this step is skipped.</p>
+<p>We strongly encourage using this option if you are planning
+to write custom analysis, as it copies a helpful
+template with comments and notes to modify.</p>
+<p><strong>Default value:</strong> skip</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cookiecutter/json_options.html" class="btn btn-neutral float-right" title="cookiecutter.json" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2022, Irfan Alibay, Fiona Naughton, Lily Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+ 
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

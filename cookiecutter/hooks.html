@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hook scripts &mdash; MDAKit Cookiecutter 0.1.0b documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="cookiecutter.json" href="json_options.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+            <a href="../index.html" class="icon icon-home"> MDAKit Cookiecutter
+          </a>
+              <div class="version">
+                0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="json_options.html">cookiecutter.json</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hook scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pre-gen-project-py">pre_gen_project.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-gen-project-py">post_gen_project.py</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MDAKit Cookiecutter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Hook scripts</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cookiecutter/hooks.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hook-scripts">
+<h1>Hook scripts<a class="headerlink" href="#hook-scripts" title="Permalink to this heading"></a></h1>
+<section id="pre-gen-project-py">
+<h2>pre_gen_project.py<a class="headerlink" href="#pre-gen-project-py" title="Permalink to this heading"></a></h2>
+<p>This script is run after the user has entered values
+for the prompt, but before the project is generated.</p>
+<p>Two important things happen here, in different places:</p>
+<ol class="arabic simple">
+<li><p>Variables are substituted back into the cookiecutter.
+Because this relies on Jinja variable injection,
+it occurs in the docstring of the file.</p></li>
+<li><p>Validation of the values. This occurs in the Python.
+The <code class="docutils literal notranslate"><span class="pre">author_email</span></code>, <code class="docutils literal notranslate"><span class="pre">repo_name</span></code>, <code class="docutils literal notranslate"><span class="pre">package_name</span></code>,
+<code class="docutils literal notranslate"><span class="pre">github_username</span></code>, <code class="docutils literal notranslate"><span class="pre">github_host_account</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">ttemplate_analysis_class</span></code> variables are validated
+against regular expressions.</p></li>
+</ol>
+</section>
+<section id="post-gen-project-py">
+<h2>post_gen_project.py<a class="headerlink" href="#post-gen-project-py" title="Permalink to this heading"></a></h2>
+<p>This script is run after the project is generated.
+It accomplishes the following steps:</p>
+<ul class="simple">
+<li><p>removes unnecessary files (e.g. the template analysis</p></li>
+</ul>
+<p>files, if no analysis class is specified)
+* tries to initialize a git repository
+* checkout a <code class="docutils literal notranslate"><span class="pre">main</span></code> branch
+* adds an initial commit</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="json_options.html" class="btn btn-neutral float-left" title="cookiecutter.json" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2022, Irfan Alibay, Fiona Naughton, Lily Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+ 
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
