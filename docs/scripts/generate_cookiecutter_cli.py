@@ -111,10 +111,6 @@ class ExampleRepositoryDocumentation:
                 input="\n".join(inputs),
                 cwd=tmpdir,
             )
-
-            raise ValueError(COOKIECUTTER_PATH, proc.stderr,
-                             proc.stdout, proc.returncode)
-
             source_repo = os.path.join(tmpdir, self.repo_name)
             destination_repo = str(self.example_repo_path.resolve())
             shutil.rmtree(destination_repo, ignore_errors=True)
