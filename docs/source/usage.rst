@@ -27,7 +27,7 @@ This generates the output skeleton:
 
 We will go more into these files in the rest of this
 tutorial, as well as other sections in this documentation.
-Please see `options-label`_ for more details.
+Please see :ref:`options-label` for more details.
 
 2. Add the project to GitHub
 ----------------------------
@@ -133,7 +133,7 @@ To keep things clean and simple, we advise a few tips:
   different approaches at the same time. This also
   allows multiple people to work on the code at the same time.
   Create a new branch with ``git checkout -b <my_branch_name>``.
-  See `GitHub's documentation <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches>`_
+  See `GitHub's documentation on branches <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches>`_
   for more information.
 
 * When you feel ready, open a pull request on GitHub.
@@ -143,5 +143,5 @@ To keep things clean and simple, we advise a few tips:
   help you make sure it is correct.
   It's always a good way to get feedback and validation,
   as well as collaborate with other people.
-  See `GitHub's documentation <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_
+  See `GitHub's documentation on PRs <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_
   for more information.

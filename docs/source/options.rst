@@ -80,11 +80,12 @@ dependency_source
 
 This option determines which sources to use for dependencies for the package.
 It affects the continuous integration testing, as well as
-the dependency files written.
+the dependency files written. The three choices
+(``conda-forge``, ``anaconda``, and ``pip``)
+are explained below.
 
 **Default value:** ``conda-forge``.
 
-The options are:
 
 conda-forge
 ~~~~~~~~~~~
@@ -94,7 +95,7 @@ then the default ``anaconda`` channel, before falling back to ``pip``.
 
 .. note::
 
-    We **highly recommend** this option.
+    We **highly recommend** using ``conda-forge``.
     ``conda`` is a great package manager for creating
     isolated environments, and managing dependencies between them.
     Moreover, many packages are available on ``conda-forge``
