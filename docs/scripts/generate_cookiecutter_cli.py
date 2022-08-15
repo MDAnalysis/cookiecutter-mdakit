@@ -111,6 +111,7 @@ class ExampleRepositoryDocumentation:
                 input="\n".join(inputs),
                 cwd=tmpdir,
             )
+            raise ValueError(proc.stderr)
 
             source_repo = os.path.join(tmpdir, self.repo_name)
             destination_repo = str(self.example_repo_path.resolve())
