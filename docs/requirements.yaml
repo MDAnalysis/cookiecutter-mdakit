@@ -15,4 +15,6 @@ dependencies:
   - pip:
     - pyyaml
     - cookiecutter
+    - sphinxcontrib-versioning
+
 

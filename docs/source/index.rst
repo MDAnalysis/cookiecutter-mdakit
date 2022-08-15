@@ -28,6 +28,7 @@ Starting repositories can be created from this template so you can focus on what
 
 .. toctree::
    :maxdepth: 1
+   :caption: General
    :hidden:
    
    usage
@@ -38,7 +39,8 @@ Starting repositories can be created from this template so you can focus on what
    :caption: Developer
    :hidden:
    
-   cookiecutter/*
+   cookiecutter/json_options
+   cookiecutter/hooks
 
 
 Acknowledgments
