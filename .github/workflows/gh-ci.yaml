@@ -45,7 +45,7 @@ jobs:
           uname -a
           df -h
           ulimit -a
-          echo "Using Python ${{ steps.get-python-version.outputs.stable-python-version }}"
+          echo "Using Python ${{ steps.get-python-version.outputs.python-version }}"
       
       - name: Set up Python ${{ steps.get-python-version.outputs.python-version }}
         uses: actions/setup-python@v3
