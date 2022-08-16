@@ -1,0 +1,62 @@
+# for directories, use __description to provide description
+
+# base info
+LICENSE: License file
+AUTHORS.md: List of all contributors to the package
+CHANGELOG.md: Log of changes in each release
+CODE_OF_CONDUCT.md: Code of Conduct for developers and users
+CONTRIBUTING.md: Guide to contributing
+README.md: Description of project which GitHub will render
+
+# github
+.github:
+  __description: GitHub hooks for user contribution, pull request guides and GitHub Actions CI
+  ISSUE_TEMPLATE:
+    __description: Templates for opening issues on GitHub
+  PULL_REQUEST_TEMPLATE.md: Template for opening a pull request on GitHub
+  workflows:
+    __description: where the configuration for CI lives
+
+
+# packaging
+MANIFEST.in: Packaging information for pip
+pyproject.toml: Dependencies for pip
+setup.cfg: Near-master config file settings for Coverage, Flake8, YAPF, etc
+setup.py: Your package's setup file for installing with additional options that can be set
+versioneer.py: Automatic version control with Versioneer
+
+# config
+.codecov.yml: Settings for Codecov
+.gitignore: Stock helper file telling git what file name patterns to ignore when adding files
+.lgtm.yml: Settings for LGTM.com
+.pre-commit-config.yaml: Settings for pre-commit hooks for flake8 and isort
+.pylintrc: Settings for PyLint
+readthedocs.yaml: Settings for ReadTheDocs
+
+# cookie
+package_name:
+  _version.py: Automatic version control with Versioneer
+  data:
+    __description: Sample additional data (non-code) which can be packaged
+    files.py: Recommended file for resolving data file names
+    mda.txt: Just an example, delete in production
+  tests:
+    __description: Unit test directory with sample tests
+    conftest.py: File for common pytest fixtures
+    test_package_name.py: Example test file
+  package_name: Starting package module
+
+# dev
+devtools:
+  __description: Environment and other development tools
+  conda-envs:
+    __description: Conda environments for testing
+    test_env.yaml: Default test environment file
+
+# docs
+docs:
+  __description: Documentation template folder with many settings already filled in
+  README.md: Instructions on how to build the docs
+  index.rst: Root documentation file. This should contain the table of contents tree
+  requirements.yaml: Documentation building specific requirements. Usually a smaller set than the main program
+

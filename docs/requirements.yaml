@@ -1,0 +1,20 @@
+name: cookiecutter-mdakit-docs
+channels:
+  - conda-forge
+dependencies:
+  # Base depends
+  - python
+  - pip
+
+  - sphinx
+  - sphinx_rtd_theme
+
+  - tree
+
+  # Pip-only installs
+  - pip:
+    - pyyaml
+    - cookiecutter
+    - sphinxcontrib-versioning
+
+
