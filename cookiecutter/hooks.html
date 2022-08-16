@@ -103,12 +103,11 @@ against regular expressions.</p></li>
 <p>This script is run after the project is generated.
 It accomplishes the following steps:</p>
 <ul class="simple">
-<li><p>removes unnecessary files (e.g. the template analysis</p></li>
+<li><p>removes unnecessary files (e.g. the template analysis files, if no analysis class is specified)</p></li>
+<li><p>tries to initialize a git repository</p></li>
+<li><p>checkout a <code class="docutils literal notranslate"><span class="pre">main</span></code> branch</p></li>
+<li><p>adds an initial commit</p></li>
 </ul>
-<p>files, if no analysis class is specified)
-* tries to initialize a git repository
-* checkout a <code class="docutils literal notranslate"><span class="pre">main</span></code> branch
-* adds an initial commit</p>
 </section>
 </section>
 
