@@ -16,12 +16,12 @@
 import mdakit-cookie
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('../..'))
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'TestMDAKit_with_pip-deps_and_ReadTheDocs'
+project = 'TestMDAKit_with_condaforge-deps_and_ReadTheDocs'
 copyright = (
     "2022, Test User name. "
     "Project structure based on the "
@@ -146,7 +146,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'mdakit-cookie.tex', 'TestMDAKit_with_pip-deps_and_ReadTheDocs Documentation',
+    (master_doc, 'mdakit-cookie.tex', 'TestMDAKit_with_condaforge-deps_and_ReadTheDocs Documentation',
      'mdakit-cookie', 'manual'),
 ]
 
@@ -156,7 +156,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'mdakit-cookie', 'TestMDAKit_with_pip-deps_and_ReadTheDocs Documentation',
+    (master_doc, 'mdakit-cookie', 'TestMDAKit_with_condaforge-deps_and_ReadTheDocs Documentation',
      [author], 1)
 ]
 
@@ -167,8 +167,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'mdakit-cookie', 'TestMDAKit_with_pip-deps_and_ReadTheDocs Documentation',
-     author, 'mdakit-cookie', 'Test MDAKit Project with dependencies using pip and ReadTheDocs',
+    (master_doc, 'mdakit-cookie', 'TestMDAKit_with_condaforge-deps_and_ReadTheDocs Documentation',
+     author, 'mdakit-cookie', 'Test MDAKit Project with dependencies using condaforge and ReadTheDocs',
      'Miscellaneous'),
 ]
 
