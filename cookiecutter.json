@@ -18,6 +18,8 @@
     ],
     "template_analysis_class": "Class name to template (e.g. {{ cookiecutter.project_name.title().replace(' ', '').replace('-', '').replace('_', '') }} ). Press Enter to skip including analysis templates",
     "_mda_cc_version": 0.1,
+    "_ci_name": "gh-ci",
+    "_central_branch_name": "main",
     "_dependency_source_keys": {
         "Prefer conda-forge over the default anaconda channel with pip fallback": "conda-forge",
         "Prefer default anaconda channel with pip fallback": "anaconda",
