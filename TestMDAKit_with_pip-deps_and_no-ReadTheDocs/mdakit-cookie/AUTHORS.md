@@ -1,6 +1,6 @@
 # Authors
 
-TestMDAKit_with_pip-deps_and_no-ReadTheDocs was created by Test User name in 2022.
+TestMDAKit_with_pip-deps_and_no-ReadTheDocs was created by Test User name in 2023.
 
 
 All contributing authors are listed in this file below.
@@ -19,5 +19,5 @@ The rules for this file:
   * Don't ever delete anything
 -->
 
-**2022**
+**2023**
 - Test User name \<@test-user-account\>

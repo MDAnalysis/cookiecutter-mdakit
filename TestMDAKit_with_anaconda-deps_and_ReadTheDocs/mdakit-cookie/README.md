@@ -76,7 +76,7 @@ pip install -e ".[test,doc]"
 The TestMDAKit_with_anaconda-deps_and_ReadTheDocs source code is hosted at https://github.com/MDAnalysis/mdakit-cookie
 and is available under the GNU General Public License, version 3 (see the file [LICENSE](https://github.com/MDAnalysis/mdakit-cookie/blob/main/LICENSE)).
 
-Copyright (c) 2022, Test User name
+Copyright (c) 2023, Test User name
 
 
 #### Acknowledgements

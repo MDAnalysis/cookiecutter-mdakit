@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 project = 'TestMDAKit_with_condaforge-deps_and_no-ReadTheDocs'
 copyright = (
-    "2022, Test User name. "
+    "2023, Test User name. "
     "Project structure based on the "
     "MDAnalysis Cookiecutter version 0.1"
 )
