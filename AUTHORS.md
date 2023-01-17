@@ -20,3 +20,6 @@ The rules for this file:
 - Lily Wang \<@lilyminium\>
 - Irfan Alibay \<@IAlibay\>
 - Fiona Naughton \<@fiona-naughton\>
+
+**2023**
+- Ian Kenney \<@ianmkenney\>
