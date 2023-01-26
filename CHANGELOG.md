@@ -35,6 +35,7 @@ The rules for this file:
 
 ### Fixed
 <!-- Bug fixes -->
+- Generated template shipped with broken CI options (PR #41)
 
 ### Changed
 <!-- Changes in existing functionality -->
