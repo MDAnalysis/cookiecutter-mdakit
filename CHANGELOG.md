@@ -35,6 +35,7 @@ The rules for this file:
 
 ### Fixed
 <!-- Bug fixes -->
+- Use the correct MDAnalysis email address for code of conduct reports (Issue #42)
 
 ### Changed
 <!-- Changes in existing functionality -->
