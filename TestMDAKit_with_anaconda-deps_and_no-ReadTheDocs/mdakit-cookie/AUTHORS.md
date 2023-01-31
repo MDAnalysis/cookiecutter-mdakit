@@ -20,4 +20,4 @@ The rules for this file:
 -->
 
 **2023**
-- Test User name \<@test-user-account\>
+- Test User name <@test-user-account>
