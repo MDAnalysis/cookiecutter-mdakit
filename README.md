@@ -11,7 +11,7 @@ packages based on MDAnalysis. Starting repositories can be created from this tem
 ## Requirements
 
 * Python 3.8+
-* [Cookiecutter](http://cookiecutter.readthedocs.io/en/latest/installation.html)
+* [Cookiecutter](http://cookiecutter.readthedocs.io/en/latest/installation.html) 2+
 * [Git](https://git-scm.com/)
 
 ## Usage
