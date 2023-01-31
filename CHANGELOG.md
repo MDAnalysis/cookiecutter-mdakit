@@ -35,6 +35,7 @@ The rules for this file:
 
 ### Fixed
 <!-- Bug fixes -->
+- Fix cookie pypi_check test (PR #45)
 - Remove redundant code of conduct document (Issue #42)
 - Generated template shipped with broken CI options (PR #41)
 
@@ -53,3 +54,4 @@ The rules for this file:
 ### Removed
 <!-- Removed features -->
 - Unused files from MolSSI
+- `canvas` entrypoint (Issue #40, PR #45)
