@@ -35,6 +35,7 @@ The rules for this file:
 
 ### Fixed
 <!-- Bug fixes -->
+- Remove redundant code of conduct document (Issue #42)
 - Generated template shipped with broken CI options (PR #41)
 
 ### Changed
