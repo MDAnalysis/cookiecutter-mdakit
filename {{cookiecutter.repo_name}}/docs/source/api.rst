@@ -3,5 +3,6 @@ API Documentation
 
 .. autosummary::
    :toctree: autosummary
+   :recursive:
 
-   {{cookiecutter.repo_name}}.canvas
+   {{cookiecutter.package_name}}
