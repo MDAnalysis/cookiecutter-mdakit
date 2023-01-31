@@ -20,4 +20,4 @@ The rules for this file:
 -->
 
 **{% now 'utc', '%Y' %}**
-- {{cookiecutter.author_name}} \<@{{cookiecutter.github_username}}\>
+- {{cookiecutter.author_name}} <@{{cookiecutter.github_username}}>
