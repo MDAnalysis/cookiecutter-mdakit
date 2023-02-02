@@ -26,6 +26,7 @@ The rules for this file:
 
 ### Added
 <!-- New added features -->
+- Cookiecutter version dependency (Issue #33, PR #46)
 - Configuration files for external hooks (PR #9)
 - Overhaul cookiecutter CI (PR #10, #26)
 - Overhaul cookie CI (PR #7, #28)
