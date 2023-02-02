@@ -44,7 +44,7 @@ runs:
     
     - name: Build Act image
       shell: bash
-      working-directory: ${{ github.action_path }}
+      working-directory: ${{ inputs.source-directory }}
       run: docker build -t act-conda image
 
     - name: Run cookiecutter CI
