@@ -52,4 +52,4 @@ runs:
       shell: bash
       run: |
         docker images
-        act --job main-tests --platform ubuntu-latest=act-conda --no-pull
+        act --job main-tests --platform ubuntu-latest=act-conda --pull false
