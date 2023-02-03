@@ -23,6 +23,7 @@ The rules for this file:
 - lilyminium
 - IAlibay
 - fiona-naughton
+- ianmkenney
 
 ### Added
 <!-- New added features -->
@@ -39,6 +40,7 @@ The rules for this file:
 - Fix cookie pypi_check test (PR #45)
 - Remove redundant code of conduct document (Issue #42)
 - Generated template shipped with broken CI options (PR #41)
+- Added MDA install for CI pylint check (Issue #47, PR #48)
 
 ### Changed
 <!-- Changes in existing functionality -->
