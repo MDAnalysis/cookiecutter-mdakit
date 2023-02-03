@@ -124,7 +124,7 @@ jobs:
       run: |
         which pip
         which python
-        pip install pylint
+        pip install pylint mdanalysis
 
     - name: Run Pylint
       env:
