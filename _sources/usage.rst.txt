@@ -87,28 +87,6 @@ The ``.codecov.yml`` file contains configuration for Codecov.
 Edit that file to modify settings, such as files to ignore
 and what to include in the coverage report.
 
-
-Code quality analysis: LGTM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Make a `LGTM`_ account and add your project.
-If, desired you can add code review integration
-by clicking the large green button!
-
-Static code analysis dramatically enhances the quality of your code
-by finding a large number of common mistakes that both novice and
-advanced programmers make.
-There are many static analysis codes on the market,
-but we have seen that LGTM is a delicate balance between
-verbosity and catching true errors.
-
-The ``.lgtm.yml`` file contains configuration for LGTM.
-Edit that file to modify settings.
-
-.. _cookiecutter: https://github.com/audreyr/cookiecutter
-.. _ReadTheDocs: https://readthedocs.org
-.. _LGTM: https://lgtm.com
-.. _`Create a new repository on GitHub`: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository
-
 4. Make and push changes to your code
 -------------------------------------
 
