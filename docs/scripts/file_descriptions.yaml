@@ -28,7 +28,6 @@ versioneer.py: Automatic version control with Versioneer
 # config
 .codecov.yml: Settings for Codecov
 .gitignore: Stock helper file telling git what file name patterns to ignore when adding files
-.lgtm.yml: Settings for LGTM.com
 .pre-commit-config.yaml: Settings for pre-commit hooks for flake8 and isort
 .pylintrc: Settings for PyLint
 readthedocs.yaml: Settings for ReadTheDocs

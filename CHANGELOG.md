@@ -49,6 +49,7 @@ The rules for this file:
 - Update cookie contents with basic structure (#8)
 - Update cookiecutter options (#2)
 - Documentation (PR #25, #30)
+- Removed LGTM badge from README (PR #52)
 
 
 ### Deprecated
