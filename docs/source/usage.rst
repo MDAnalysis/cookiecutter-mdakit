@@ -5,7 +5,7 @@ Getting up and running requires a short process.
 
 You will need the following:
     * Python 3.8+
-    * The `cookiecutter`_ tool installed
+    * The cookiecutter_ tool installed
     * A GitHub account
 
 
@@ -35,7 +35,7 @@ Please see :ref:`options-label` for more details.
 The generated repository should be an initialised git repository.
 We now need to connect it to GitHub:
 
-#. `Create a new repository on GitHub`_ .
+#. `Create a new repository on GitHub <https://docs.github.com/en/get-started/quickstart/create-a-repo>`_ .
    Do not initialize the repo with a README, license, or any other files.
 #. Push the local repository to GitHub.
    GitHub should provide instructions for doing so, but in short:
@@ -57,6 +57,7 @@ ReadTheDocs builds documentation automatically for you from the files in ``docs/
 To link ReadTheDocs, ensure that you have a `ReadTheDocs`_ account;
 you should be able to use your GitHub account. To link the project,
 click the ``Import a Project`` button on the dashboard.
+
 
 We strongly recommend turning on building documentation for your
 pull requests to check and preview your docs. To do so:
@@ -123,3 +124,7 @@ To keep things clean and simple, we advise a few tips:
   as well as collaborate with other people.
   See `GitHub's documentation on PRs <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_
   for more information.
+
+
+.. _ReadTheDocs: https://readthedocs.org/
+.. _cookiecutter: https://cookiecutter.readthedocs.io/en/stable/
