@@ -24,6 +24,7 @@ The rules for this file:
 - IAlibay
 - fiona-naughton
 - ianmkenney
+- orbeckst
 
 ### Added
 <!-- New added features -->
@@ -40,6 +41,8 @@ The rules for this file:
 - Remove redundant code of conduct document (Issue #42)
 - Generated template shipped with broken CI options (PR #41)
 - Added MDA install for CI pylint check (Issue #47, PR #48)
+- Avoid codecov upload limit failures in generated repositories by not
+  running codecov in CRON CI (Issue #54, PR#58)
 
 ### Changed
 <!-- Changes in existing functionality -->
