@@ -13,17 +13,16 @@ based on MDAnalysis.
 Starting repositories can be created from this template so you can focus on what's important: the science!
 
 **Features**
-
-* Python-centric skeletal structure with initial module files
-* Pre-configured ``setup.py`` for installation and packaging
-* Pre-configured Window, Linux, and OSX continuous integration on GitHub Actions
-* Choice of dependency locations through ``conda-forge``, default ``conda``, or ``pip``
-* Basic testing structure with `PyTest <https://docs.pytest.org/en/latest/>`_
-* Automatic ``git`` initialization + tag
-* GitHub Hooks
-* Automatic package version control with `Versioneer <https://github.com/warner/python-versioneer>`_
-* Sample data inclusion with packaging instructions
-* Basic documentation structure powered by `Sphinx <http://www.sphinx-doc.org/en/master/>`_
+   * Python-centric skeletal structure with initial module files
+   * Pre-configured ``setup.py`` for installation and packaging
+   * Pre-configured Window, Linux, and OSX continuous integration on GitHub Actions
+   * Choice of dependency locations through ``conda-forge``, default ``conda``, or ``pip``
+   * Basic testing structure with `PyTest <https://docs.pytest.org/en/latest/>`_
+   * Automatic ``git`` initialization + tag
+   * GitHub Hooks
+   * Automatic package version control with `Versioneer <https://github.com/warner/python-versioneer>`_
+   * Sample data inclusion with packaging instructions
+   * Basic documentation structure powered by `Sphinx <http://www.sphinx-doc.org/en/master/>`_
 
 
 .. toctree::
