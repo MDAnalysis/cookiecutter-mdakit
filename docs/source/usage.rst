@@ -123,3 +123,6 @@ To keep things clean and simple, we advise a few tips:
   as well as collaborate with other people.
   See `GitHub's documentation on PRs <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_
   for more information.
+
+
+.. _ReadTheDocs: https://docs.readthedocs.io/en/stable/index.html
