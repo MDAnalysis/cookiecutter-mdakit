@@ -41,12 +41,9 @@ jobs:
     strategy:
         fail-fast: false
         matrix:
-          os: [ubuntu-latest]
-          python-version: ["3.9"]
-          mdanalysis-version: ["latest"]
-          # os: [macOS-latest, ubuntu-latest, windows-latest]
-          # python-version: ["3.8", "3.9", "3.10"]
-          # mdanalysis-version: ["latest", "develop"]
+          os: [macOS-latest, ubuntu-latest, windows-latest]
+          python-version: ["3.8", "3.9", "3.10"]
+          mdanalysis-version: ["latest", "develop"]
 
     steps:
     - uses: actions/checkout@v3
