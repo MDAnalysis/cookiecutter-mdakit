@@ -4,9 +4,9 @@ Usage
 Getting up and running requires a short process.
 
 You will need the following:
-    * Python 3.8+
-    * The `cookiecutter`_ tool installed
-    * A GitHub account
+  * Python 3.8+
+  * The `cookiecutter`_ tool installed
+  * A GitHub account
 
 
 1. Use the cookiecutter to create a new project
@@ -35,7 +35,7 @@ Please see :ref:`options-label` for more details.
 The generated repository should be an initialised git repository.
 We now need to connect it to GitHub:
 
-#. `Create a new repository on GitHub`_ .
+#. `Create a new repository on GitHub <https://docs.github.com/en/get-started/quickstart/create-a-repo>`_ .
    Do not initialize the repo with a README, license, or any other files.
 #. Push the local repository to GitHub.
    GitHub should provide instructions for doing so, but in short:
@@ -123,3 +123,7 @@ To keep things clean and simple, we advise a few tips:
   as well as collaborate with other people.
   See `GitHub's documentation on PRs <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_
   for more information.
+
+
+.. _ReadTheDocs: https://docs.readthedocs.io/en/stable/index.html
+.. _cookiecutter: https://cookiecutter.readthedocs.io/en/stable/
