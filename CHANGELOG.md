@@ -41,6 +41,7 @@ The rules for this file:
 - Remove redundant code of conduct document (Issue #42)
 - Generated template shipped with broken CI options (PR #41)
 - Added MDA install for CI pylint check (Issue #47, PR #48)
+- Removed Python 3.8 from cookiecutter build matrix (Issue #59)
 
 ### Changed
 <!-- Changes in existing functionality -->
