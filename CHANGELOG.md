@@ -24,6 +24,7 @@ The rules for this file:
 - IAlibay
 - fiona-naughton
 - ianmkenney
+- RMeli
 
 ### Added
 <!-- New added features -->
@@ -37,10 +38,12 @@ The rules for this file:
 
 ### Fixed
 <!-- Bug fixes -->
+- Exclude `if TYPE_CHECKING:` branches from code coverage report (PR #67)
 - Remove redundant code of conduct document (Issue #42)
 - Generated template shipped with broken CI options (PR #41)
 - Added MDA install for CI pylint check (Issue #47, PR #48)
 - Cookiecutter docs configuration sys.path change must come before import (Issue #60)
+- Removed Python 3.8 from cookiecutter build matrix (Issue #59)
 
 ### Changed
 <!-- Changes in existing functionality -->
