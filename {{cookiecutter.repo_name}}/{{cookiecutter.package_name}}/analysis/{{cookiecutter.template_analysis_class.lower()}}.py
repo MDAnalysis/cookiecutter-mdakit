@@ -61,7 +61,7 @@ class {{ cookiecutter.template_analysis_class }}(AnalysisBase):
         **kwargs
     ):
         # the below line must be kept to initialize the AnalysisBase class!
-        super().__init__(universe_or_atomgroup.trajectory, **kwards)
+        super().__init__(universe_or_atomgroup.trajectory, **kwargs)
         # after this you will be able to access `self.results`
         # `self.results` is a dictionary-like object
         # that can should used to store and retrieve results
