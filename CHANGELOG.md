@@ -43,6 +43,7 @@ The rules for this file:
 - Added MDA install for CI pylint check (Issue #47, PR #48)
 - Avoid codecov upload limit failures in generated repositories by not
   running codecov in CRON CI (Issue #54, PR#58)
+- Removed Python 3.8 from cookiecutter build matrix (Issue #59)
 
 ### Changed
 <!-- Changes in existing functionality -->
