@@ -74,7 +74,7 @@ pip install -e ".[test,doc]"
 ### Copyright
 
 The {{cookiecutter.project_name}} source code is hosted at https://github.com/{{cookiecutter.github_url}}
-and is available under the GNU General Public License, version 3 (see the file [LICENSE](https://github.com/{{cookiecutter.github_url}}/blob/{{cookiecutter._central_branch_name}}/LICENSE)).
+and is available under the GNU General Public License, version 2 (see the file [LICENSE](https://github.com/{{cookiecutter.github_url}}/blob/{{cookiecutter._central_branch_name}}/LICENSE)).
 
 Copyright (c) {% now 'utc', '%Y' %}, {{cookiecutter.author_name}}
 
