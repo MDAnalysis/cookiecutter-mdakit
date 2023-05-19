@@ -102,6 +102,7 @@ jobs:
         pytest -n 2 -v --cov=mdakit_cookie --cov-report=xml --color=yes mdakit_cookie/tests/
 
     - name: codecov
+      if: github.repository == 'MDAnalysis/mdakit-cookie' && github.event_name != 'schedule'
       uses: codecov/codecov-action@v3
       with:
         file: coverage.xml
