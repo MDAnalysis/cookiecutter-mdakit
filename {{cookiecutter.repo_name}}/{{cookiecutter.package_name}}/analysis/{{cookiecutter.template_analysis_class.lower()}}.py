@@ -106,10 +106,9 @@ class {{ cookiecutter.template_analysis_class }}(AnalysisBase):
         # For example, below we determine the
         # which atoms always have negative coordinates.
         self.results.always_negative = self.results.is_negative.all(axis=0)
-        self.results.always_negative_atoms = \
-            self.atomgroup[self.results.always_negative]
-        self.results.always_negative_atom_names = \
-            self.results.always_negative_atoms.names
+        always_negative_atoms = self.atomgroup[self.results.always_negative]
+        self.results.always_negative_atoms = always_negative_atoms
+        self.results.always_negative_atom_names = always_negative_atoms.names
 
         # results don't have to be arrays -- they can be any value, e.g. floats
         self.results.n_negative_atoms = self.results.is_negative.sum(axis=1)
