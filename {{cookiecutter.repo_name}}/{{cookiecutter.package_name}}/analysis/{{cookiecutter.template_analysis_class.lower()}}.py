@@ -13,6 +13,7 @@ import numpy as np
 if TYPE_CHECKING:
     from MDAnalysis.core.universe import Universe, AtomGroup
 
+
 class {{ cookiecutter.template_analysis_class }}(AnalysisBase):
     """{{ cookiecutter.template_analysis_class }} class.
 
@@ -52,7 +53,6 @@ class {{ cookiecutter.template_analysis_class }}(AnalysisBase):
         :meth:`{{ cookiecutter.template_analysis_class }}.run`
     """
 
-
     def __init__(
         self,
         universe_or_atomgroup: Union["Universe", "AtomGroup"],
@@ -70,8 +70,6 @@ class {{ cookiecutter.template_analysis_class }}(AnalysisBase):
 
         self.universe = universe_or_atomgroup.universe
         self.atomgroup = universe_or_atomgroup.select_atoms(select)
-
-        
 
     def _prepare(self):
         """Set things up before the analysis loop begins"""
@@ -92,7 +90,7 @@ class {{ cookiecutter.template_analysis_class }}(AnalysisBase):
         # It can contain the main analysis method, or just collect data
         # so that analysis can be done over the aggregate data
         # in _conclude.
-        
+
         # The trajectory positions update automatically
         negative = self.atomgroup.positions < 0
         # You can access the frame number using self._frame_index
