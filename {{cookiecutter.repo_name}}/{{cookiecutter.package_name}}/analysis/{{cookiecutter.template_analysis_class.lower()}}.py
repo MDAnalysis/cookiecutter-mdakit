@@ -26,7 +26,8 @@ class {{ cookiecutter.template_analysis_class }}(AnalysisBase):
         If a trajectory is associated with the atoms,
         then the computation iterates over the trajectory.
     select: str
-        Selection string for atoms to extract from the input Universe or AtomGroup
+        Selection string for atoms to extract from the input Universe or
+        AtomGroup
 
     Attributes
     ----------
@@ -105,8 +106,10 @@ class {{ cookiecutter.template_analysis_class }}(AnalysisBase):
         # For example, below we determine the
         # which atoms always have negative coordinates.
         self.results.always_negative = self.results.is_negative.all(axis=0)
-        self.results.always_negative_atoms = self.atomgroup[self.results.always_negative]
-        self.results.always_negative_atom_names = self.results.always_negative_atoms.names
+        self.results.always_negative_atoms = \
+            self.atomgroup[self.results.always_negative]
+        self.results.always_negative_atom_names = \
+            self.results.always_negative_atoms.names
 
         # results don't have to be arrays -- they can be any value, e.g. floats
         self.results.n_negative_atoms = self.results.is_negative.sum(axis=1)
