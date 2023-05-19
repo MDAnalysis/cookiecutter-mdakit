@@ -37,6 +37,7 @@ The rules for this file:
 
 ### Fixed
 <!-- Bug fixes -->
+- Propagate `**kwargs` to `AnalysisBase` (PR #66)
 - Remove redundant code of conduct document (Issue #42)
 - Generated template shipped with broken CI options (PR #41)
 - Added MDA install for CI pylint check (Issue #47, PR #48)
