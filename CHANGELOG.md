@@ -25,6 +25,7 @@ The rules for this file:
 - fiona-naughton
 - ianmkenney
 - RMeli
+- orbeckst
 
 ### Added
 <!-- New added features -->
@@ -34,6 +35,7 @@ The rules for this file:
 - Overhaul cookie CI (PR #7, #28)
 - New packaging standard (PR #6)
 - Analysis template (PR #19)
+- Added Python 3.11 to cookiecutter build matrix (Issue #68)
 
 
 ### Fixed
@@ -43,6 +45,8 @@ The rules for this file:
 - Generated template shipped with broken CI options (PR #41)
 - Added MDA install for CI pylint check (Issue #47, PR #48)
 - Cookiecutter docs configuration sys.path change must come before import (Issue #60)
+- Avoid codecov upload limit failures in generated repositories by not
+  running codecov in CRON CI (Issue #54, PR#58)
 - Removed Python 3.8 from cookiecutter build matrix (Issue #59)
 
 ### Changed
