@@ -24,3 +24,4 @@ The rules for this file:
 **2023**
 - Ian Kenney \<@ianmkenney\>
 - Rocco Meli \<@RMeli\>
+- Oliver Beckstein \<@orbeckst\>
