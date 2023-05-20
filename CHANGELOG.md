@@ -35,6 +35,7 @@ The rules for this file:
 - Overhaul cookie CI (PR #7, #28)
 - New packaging standard (PR #6)
 - Analysis template (PR #19)
+- Added Python 3.11 to cookiecutter build matrix (Issue #68)
 
 
 ### Fixed
