@@ -40,6 +40,7 @@ The rules for this file:
 
 ### Fixed
 <!-- Bug fixes -->
+- Propagate `**kwargs` to `AnalysisBase` (PR #66)
 - Exclude `if TYPE_CHECKING:` branches from code coverage report (PR #67)
 - Remove redundant code of conduct document (Issue #42)
 - Generated template shipped with broken CI options (PR #41)
