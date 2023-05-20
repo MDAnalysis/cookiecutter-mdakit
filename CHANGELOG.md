@@ -44,6 +44,7 @@ The rules for this file:
 - Remove redundant code of conduct document (Issue #42)
 - Generated template shipped with broken CI options (PR #41)
 - Added MDA install for CI pylint check (Issue #47, PR #48)
+- Cookiecutter docs configuration sys.path change must come before import (Issue #60)
 - Avoid codecov upload limit failures in generated repositories by not
   running codecov in CRON CI (Issue #54, PR#58)
 - Removed Python 3.8 from cookiecutter build matrix (Issue #59)
