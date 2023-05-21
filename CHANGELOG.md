@@ -23,21 +23,33 @@ The rules for this file:
 - lilyminium
 - IAlibay
 - fiona-naughton
+- ianmkenney
+- RMeli
+- orbeckst
 
 ### Added
 <!-- New added features -->
+- Cookiecutter version dependency (Issue #33, PR #46)
 - Configuration files for external hooks (PR #9)
 - Overhaul cookiecutter CI (PR #10, #26)
 - Overhaul cookie CI (PR #7, #28)
 - New packaging standard (PR #6)
 - Analysis template (PR #19)
+- Added Python 3.11 to cookiecutter build matrix (Issue #68)
 
 
 ### Fixed
 <!-- Bug fixes -->
 - Fix cookie pypi_check test (PR #45)
+- Propagate `**kwargs` to `AnalysisBase` (PR #66)
+- Exclude `if TYPE_CHECKING:` branches from code coverage report (PR #67)
 - Remove redundant code of conduct document (Issue #42)
 - Generated template shipped with broken CI options (PR #41)
+- Added MDA install for CI pylint check (Issue #47, PR #48)
+- Cookiecutter docs configuration sys.path change must come before import (Issue #60)
+- Avoid codecov upload limit failures in generated repositories by not
+  running codecov in CRON CI (Issue #54, PR#58)
+- Removed Python 3.8 from cookiecutter build matrix (Issue #59)
 
 ### Changed
 <!-- Changes in existing functionality -->
@@ -46,6 +58,7 @@ The rules for this file:
 - Update cookie contents with basic structure (#8)
 - Update cookiecutter options (#2)
 - Documentation (PR #25, #30)
+- Removed LGTM badge from README (PR #52)
 
 
 ### Deprecated

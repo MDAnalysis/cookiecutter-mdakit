@@ -4,9 +4,9 @@ Usage
 Getting up and running requires a short process.
 
 You will need the following:
-    * Python 3.8+
-    * The `cookiecutter`_ tool installed
-    * A GitHub account
+  * Python 3.8+
+  * The `cookiecutter`_ tool installed
+  * A GitHub account
 
 
 1. Use the cookiecutter to create a new project
@@ -35,7 +35,7 @@ Please see :ref:`options-label` for more details.
 The generated repository should be an initialised git repository.
 We now need to connect it to GitHub:
 
-#. `Create a new repository on GitHub`_ .
+#. `Create a new repository on GitHub <https://docs.github.com/en/get-started/quickstart/create-a-repo>`_ .
    Do not initialize the repo with a README, license, or any other files.
 #. Push the local repository to GitHub.
    GitHub should provide instructions for doing so, but in short:
@@ -87,28 +87,6 @@ The ``.codecov.yml`` file contains configuration for Codecov.
 Edit that file to modify settings, such as files to ignore
 and what to include in the coverage report.
 
-
-Code quality analysis: LGTM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Make a `LGTM`_ account and add your project.
-If, desired you can add code review integration
-by clicking the large green button!
-
-Static code analysis dramatically enhances the quality of your code
-by finding a large number of common mistakes that both novice and
-advanced programmers make.
-There are many static analysis codes on the market,
-but we have seen that LGTM is a delicate balance between
-verbosity and catching true errors.
-
-The ``.lgtm.yml`` file contains configuration for LGTM.
-Edit that file to modify settings.
-
-.. _cookiecutter: https://github.com/audreyr/cookiecutter
-.. _ReadTheDocs: https://readthedocs.org
-.. _LGTM: https://lgtm.com
-.. _`Create a new repository on GitHub`: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository
-
 4. Make and push changes to your code
 -------------------------------------
 
@@ -145,3 +123,7 @@ To keep things clean and simple, we advise a few tips:
   as well as collaborate with other people.
   See `GitHub's documentation on PRs <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_
   for more information.
+
+
+.. _ReadTheDocs: https://docs.readthedocs.io/en/stable/index.html
+.. _cookiecutter: https://cookiecutter.readthedocs.io/en/stable/
