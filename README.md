@@ -10,7 +10,7 @@ packages based on MDAnalysis. Starting repositories can be created from this tem
 
 ## Requirements
 
-* Python 3.8+
+* Python 3.9+
 * [Cookiecutter](http://cookiecutter.readthedocs.io/en/latest/installation.html) 2+
 * [Git](https://git-scm.com/)
 
