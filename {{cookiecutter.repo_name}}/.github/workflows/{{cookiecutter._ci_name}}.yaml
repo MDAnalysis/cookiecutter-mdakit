@@ -44,7 +44,7 @@ jobs:
         fail-fast: false
         matrix:
           os: [macOS-latest, ubuntu-latest, windows-latest]
-          python-version: {% raw %}${{ fromJSON(needs.environment-config.outputs.python-matrix) }}{% endraw %}
+          python-version: {{ ${{ needs.environment-config.outputs.python-matrix }} }}
           mdanalysis-version: ["latest", "develop"]
 
     steps:
