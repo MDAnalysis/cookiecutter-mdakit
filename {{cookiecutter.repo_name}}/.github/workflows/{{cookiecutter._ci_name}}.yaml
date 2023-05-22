@@ -26,8 +26,8 @@ jobs:
   environment-config:
     runs-on: ubuntu-latest
     outputs:
-      stable-python-version: {{ ${{ steps.get-compatible-python.outputs.stable-python }} }}
-      python-matrix: {{ ${{ steps.get-compatible-python.outputs.python-versions }} }}
+      stable-python-version: {{ "${{ steps.get-compatible-python.outputs.stable-python }}" }}
+      python-matrix: {{ '${{ steps.get-compatible-python.outputs.python-versions }}' }}
     steps:
       - uses: actions/setup-python@4
         with:
@@ -44,7 +44,7 @@ jobs:
         fail-fast: false
         matrix:
           os: [macOS-latest, ubuntu-latest, windows-latest]
-          python-version: {{ ${{ fromJSON(needs.environment-config.outputs.python-marix) }} }}
+          python-version: {{ '${{ fromJSON(needs.environment-config.outputs.python-marix) }}' }}
           mdanalysis-version: ["latest", "develop"]
 
     steps:
