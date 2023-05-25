@@ -52,4 +52,6 @@ runs:
     - name: Run cookiecutter CI
       working-directory: ${{ inputs.source-directory }}
       shell: bash
-      run: act --job main-tests --platform ubuntu-latest=act-conda
+      run: |
+        docker images
+        act --job main-tests --platform ubuntu-latest=act-conda

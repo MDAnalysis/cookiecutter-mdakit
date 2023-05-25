@@ -40,6 +40,7 @@ The rules for this file:
 
 ### Fixed
 <!-- Bug fixes -->
+- Fix cookie pypi_check test (PR #45)
 - Bump minimum Python version to 3.9 in line with CI build matrix (#70)
 - Propagate `**kwargs` to `AnalysisBase` (PR #66)
 - Exclude `if TYPE_CHECKING:` branches from code coverage report (PR #67)
@@ -67,3 +68,4 @@ The rules for this file:
 ### Removed
 <!-- Removed features -->
 - Unused files from MolSSI
+- `canvas` entrypoint (Issue #40, PR #45)
