@@ -4,7 +4,6 @@ Test MDAKit Project with dependencies using condaforge and ReadTheDocs
 """
 
 # Add imports here
-from .mdakit_cookie import canvas
 
 # Handle versioneer
 from ._version import get_versions

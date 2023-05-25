@@ -149,7 +149,7 @@ jobs:
 
     - name: Check package build
       run: |
-        DISTRIBUTION=$(ls -t1 dist/mdakit_cookie-*.tar.gz | head -n 1)
-        test -n "${DISTRIBUTION}" || { echo "no distribution dist/mdakit_cookie-*.tar.gz found"; exit 1; }
+        DISTRIBUTION=$(ls -t1 dist/mdakit-cookie-*.tar.gz | head -n 1)
+        test -n "${DISTRIBUTION}" || { echo "no distribution dist/mdakit-cookie-*.tar.gz found"; exit 1; }
         echo "twine check $DISTRIBUTION"
         twine check $DISTRIBUTION
