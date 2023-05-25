@@ -7,6 +7,9 @@
 A [cookiecutter](https://github.com/audreyr/cookiecutter) template for those interested in developing
 packages based on MDAnalysis. Starting repositories can be created from this template so you can focus on what's important: the science!
 
+Examples of generated "cookie" repositories can be found in the branches of https://github.com/MDAnalysis/mdakit-cookie.
+This repository is automatically updated by CI in this cookiecutter repository.
+
 
 ## Requirements
 
