@@ -16,7 +16,7 @@ maintainers = [
     {{ "{" }}name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}"{{ "}" }},
 ]
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">={{ cookiecutter._min_py_ver }}"
 dependencies = [
     "MDAnalysis>=2.0.0",
 ]
