@@ -47,3 +47,7 @@ minversion = "6.0"
 testpaths = [
     "{{cookiecutter.repo_name}}/tests",
 ]
+
+[tool.black]
+line-length = 80
+extend-exclude = "versioneer.py"
