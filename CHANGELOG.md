@@ -61,6 +61,7 @@ The rules for this file:
 - Update cookiecutter options (#2)
 - Documentation (PR #25, #30)
 - Removed LGTM badge from README (PR #52)
+- Transferred URLs out of README (PR #80)
 
 
 ### Deprecated
