@@ -176,6 +176,6 @@ texinfo_documents = [
 
 # -- Extension configuration -------------------------------------------------
 intersphinx_mapping = {
-    'https://docs.python.org/3/': None,
-    'https://docs.mdanalysis.org/stable/': None,
+    'python': ('https://docs.python.org/3/', None),
+    'mdanalysis': ('https://docs.mdanalysis.org/stable/', None),
 }
