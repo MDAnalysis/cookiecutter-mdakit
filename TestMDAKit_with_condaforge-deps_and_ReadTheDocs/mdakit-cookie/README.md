@@ -73,14 +73,14 @@ conda deactivate
 To build the package from source, run:
 
 ```
-pip install -e .
+pip install .
 ```
 
 If you want to create a development environment, install
 the dependencies required for tests and docs with:
 
 ```
-pip install -e ".[test,doc]"
+pip install ".[test,doc]"
 ```
 
 ### Copyright
