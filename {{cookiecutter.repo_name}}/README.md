@@ -19,7 +19,9 @@
 [url_docs]: https://{{cookiecutter.repo_name}}.readthedocs.io/en/latest/?badge=latest
 [url_latest_release]: https://github.com/{{cookiecutter.github_url}}/releases
 [url_license]: https://www.gnu.org/licenses/gpl-2.0
-[url_mda]: https://www.mdanalysis.org{{cookiecutter.description}}
+[url_mda]: https://www.mdanalysis.org
+
+{{cookiecutter.description}}
 
 {{cookiecutter.project_name}} is bound by a [Code of Conduct](https://github.com/{{cookiecutter.github_url}}/blob/{{cookiecutter._central_branch_name}}/CODE_OF_CONDUCT.md).
 

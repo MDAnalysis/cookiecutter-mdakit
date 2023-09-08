@@ -59,7 +59,7 @@ def test_write_outputs(
         repo_name="mdakit-cookie",
         package_name="mdakit_cookie",
         github_username="test-user-account",
-        github_host_account="MDAnalysis",
+        github_host_account=github_host_account,
         description=description,
         dependency_source=dependency_source,
         include_ReadTheDocs=include_ReadTheDocs,
