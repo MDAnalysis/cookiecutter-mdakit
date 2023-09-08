@@ -26,3 +26,32 @@ class TestAnalysis:
             ):
                 assert kit.cookie_package_path_exists(file)
                 assert clsname in kit.get_classes_from_package_file(file)
+
+
+class TestGitHubHostAccount:
+    def test_official_mda_theme(self, tmpdir):
+        with tmpdir.as_cwd():
+            kit = CookiecutterMDAKit(github_host_account="MDAnalysis")
+            kit.run()
+
+            conf = kit.cookie_directory / "docs/source/conf.py"
+            assert kit.cookie_path_exists(conf)
+
+            text = conf.read_text()
+            assert '"mda_official": True,' in text
+            assert "html_logo" not in text
+            assert "html_favicon" not in text
+
+        
+    def test_non_official_mda_theme(self, tmpdir):
+        with tmpdir.as_cwd():
+            kit = CookiecutterMDAKit(github_host_account="other")
+            kit.run()
+
+            conf = kit.cookie_directory / "docs/source/conf.py"
+            assert kit.cookie_path_exists(conf)
+
+            text = conf.read_text()
+            assert '"mda_official": False,' in text
+            assert 'html_logo = "_static/logo/placeholder_logo.png"' in text
+            assert 'html_favicon = "_static/logo/placeholder_favicon.svg"' in text

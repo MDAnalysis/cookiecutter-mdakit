@@ -83,7 +83,7 @@ jobs:
           retention-days: 3
 
   update-repo-examples:
-    if: github.event_name != 'pull_request'
+    # if: github.event_name != 'pull_request'
     needs: cookiecutter-main-tests
     runs-on: ubuntu-latest
     steps:
