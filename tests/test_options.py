@@ -35,7 +35,7 @@ class TestGitHubHostAccount:
             kit.run()
 
             conf = kit.cookie_directory / "docs/source/conf.py"
-            assert kit.cookie_path_exists(conf)
+            assert conf.is_file()
 
             text = conf.read_text()
             assert '"mda_official": True,' in text
@@ -49,7 +49,7 @@ class TestGitHubHostAccount:
             kit.run()
 
             conf = kit.cookie_directory / "docs/source/conf.py"
-            assert kit.cookie_path_exists(conf)
+            assert conf.is_file()
 
             text = conf.read_text()
             assert '"mda_official": False,' in text
