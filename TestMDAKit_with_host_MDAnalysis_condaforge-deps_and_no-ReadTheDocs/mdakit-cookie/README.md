@@ -19,7 +19,9 @@ TestMDAKit_with_host_MDAnalysis_condaforge-deps_and_no-ReadTheDocs
 [url_docs]: https://mdakit-cookie.readthedocs.io/en/latest/?badge=latest
 [url_latest_release]: https://github.com/MDAnalysis/mdakit-cookie/releases
 [url_license]: https://www.gnu.org/licenses/gpl-2.0
-[url_mda]: https://www.mdanalysis.orgTest MDAKit Project with dependencies using condaforge and no ReadTheDocs
+[url_mda]: https://www.mdanalysis.org
+
+Test MDAKit Project with dependencies using condaforge and no ReadTheDocs
 
 TestMDAKit_with_host_MDAnalysis_condaforge-deps_and_no-ReadTheDocs is bound by a [Code of Conduct](https://github.com/MDAnalysis/mdakit-cookie/blob/main/CODE_OF_CONDUCT.md).
 

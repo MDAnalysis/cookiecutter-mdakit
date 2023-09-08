@@ -4,7 +4,7 @@ TestMDAKit_with_host_other_anaconda-deps_and_ReadTheDocs was created by Test Use
 
 
 All contributing authors are listed in this file below.
-The repository history at https://github.com/MDAnalysis/mdakit-cookie
+The repository history at https://github.com/other/mdakit-cookie
 and the CHANGELOG show individual code contributions.
 
 ## Chronological list of authors

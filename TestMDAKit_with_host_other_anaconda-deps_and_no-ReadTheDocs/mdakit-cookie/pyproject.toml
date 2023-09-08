@@ -39,7 +39,7 @@ doc = [
 ]
 
 # [project.urls]
-# source = "https://github.com/MDAnalysis/mdakit-cookie"
+# source = "https://github.com/other/mdakit-cookie"
 # documentation = "https://mdakit-cookie.readthedocs.io"
 
 [tool.pytest.ini_options]

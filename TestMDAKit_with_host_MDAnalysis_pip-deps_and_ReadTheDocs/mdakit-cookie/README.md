@@ -19,7 +19,9 @@ TestMDAKit_with_host_MDAnalysis_pip-deps_and_ReadTheDocs
 [url_docs]: https://mdakit-cookie.readthedocs.io/en/latest/?badge=latest
 [url_latest_release]: https://github.com/MDAnalysis/mdakit-cookie/releases
 [url_license]: https://www.gnu.org/licenses/gpl-2.0
-[url_mda]: https://www.mdanalysis.orgTest MDAKit Project with dependencies using pip and ReadTheDocs
+[url_mda]: https://www.mdanalysis.org
+
+Test MDAKit Project with dependencies using pip and ReadTheDocs
 
 TestMDAKit_with_host_MDAnalysis_pip-deps_and_ReadTheDocs is bound by a [Code of Conduct](https://github.com/MDAnalysis/mdakit-cookie/blob/main/CODE_OF_CONDUCT.md).
 
