@@ -12,6 +12,7 @@ project_name
 
 This is the name of the project you would
 use when writing about it in the documentation.
+This can be anything, e.g. have spaces and hyphens.
 
 repo_name
 ---------
@@ -58,7 +59,23 @@ account name. This value is used to generate the URL
 to the project on GitHub
 (i.e. ``github.com/<github_host_account>/<repo_name>``).
 
+If you set this to ``MDAnalysis``,
+we will set some options for you.
+For example, the default logo and favicon
+will be the MDAnalysis logo and favicon.
+You will also have a footer detailing our
+privacy policy.
+
+If you set this to another value,
+there will be entries in the documentation
+`conf.py` that use a placeholder logo and favicon.
+
+Please see our `mdanalysis-sphinx-theme`_
+documentation for more information.
+
 **Default value:** the ``github_username``.
+
+.. _`mdanalysis-sphinx-theme`: https://mdanalysis-sphinx-theme.readthedocs.io/en/latest/
 
 author_name
 -----------
