@@ -56,6 +56,12 @@ extensions = [
 ]
 
 autosummary_generate = True
+# This skips generating an autodoc of the test module
+# when using the autosummary directive that is included
+# by default in api.rst
+autodoc_mock_imports = [
+    'mdakit_cookie.tests'
+]
 napoleon_google_docstring = False
 napoleon_use_param = False
 napoleon_use_ivar = True
