@@ -60,7 +60,7 @@ autosummary_generate = True
 # when using the autosummary directive that is included
 # by default in api.rst
 autodoc_mock_imports = [
-    '{{cookiecutter.project_name}}.tests'
+    '{{cookiecutter.package_name}}.tests'
 ]
 napoleon_google_docstring = False
 napoleon_use_param = False
