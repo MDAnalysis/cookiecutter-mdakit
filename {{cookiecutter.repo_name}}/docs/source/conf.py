@@ -56,6 +56,9 @@ extensions = [
 ]
 
 autosummary_generate = True
+# This skips generating an autodoc of the test module
+# when using the autosummary directive that is included
+# by default in api.rst
 autodoc_mock_imports = [
     '{{cookiecutter.project_name}}.tests'
 ]
