@@ -1,0 +1,16 @@
+name: mdakit-cookie-docs
+channels:
+
+  - defaults
+
+dependencies:
+    # Base depends
+  - python
+  - pip
+
+  - sphinx<7.0
+
+  # Pip-only installs
+  - pip:
+    - sphinx_rtd_theme
+
