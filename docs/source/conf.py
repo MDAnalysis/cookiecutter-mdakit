@@ -115,7 +115,15 @@ html_css_files = []
 # default: ``["localtoc.html", "relations.html", "sourcelink.html",
 # "searchbox.html"]``.
 #
-# html_sidebars = {"**": ["globaltoc.html", "localtoc.html", "relations.html", "sourcelink.html", "searchbox.html"]}
+# html_sidebars = {
+#   "**": [
+#       "globaltoc.html",
+#       "localtoc.html",
+#       "relations.html",
+#       "sourcelink.html",
+#       "searchbox.html"
+#     ]
+# }
 
 
 # -- Options for HTMLHelp output ---------------------------------------------

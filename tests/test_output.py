@@ -45,7 +45,10 @@ def test_write_outputs(
         rtd_name = "no-ReadTheDocs"
 
     dep_name = f"{dependency_source.name.lower()}-deps"
-    project_name = f"TestMDAKit_with_host_{github_host_account}_{dep_name}_and_{rtd_name}"
+    project_name = (
+        "TestMDAKit_with_host_"
+        f"{github_host_account}_{dep_name}_and_{rtd_name}"
+    )
     description = (
         "Test MDAKit Project with "
         f"dependencies using {dependency_source.name.lower()} "

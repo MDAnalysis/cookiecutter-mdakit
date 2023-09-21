@@ -94,7 +94,8 @@ def remove_analysis():
             "{{ cookiecutter.package_name }}/analysis",
             "{{ cookiecutter.package_name }}/tests/analysis"
         )
-    
+
+
 def remove_placeholder_icons():
     """Remove placeholder logos if unnecessary."""
     host_account = '{{ cookiecutter.github_host_account }}'

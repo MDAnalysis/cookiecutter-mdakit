@@ -42,7 +42,6 @@ class TestGitHubHostAccount:
             assert "html_logo" not in text
             assert "html_favicon" not in text
 
-        
     def test_non_official_mda_theme(self, tmpdir):
         with tmpdir.as_cwd():
             kit = CookiecutterMDAKit(github_host_account="other")
