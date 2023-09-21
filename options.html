@@ -1,3 +1,19 @@
+
+
+
+  
+    
+  
+
+
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="_static/logo/mda_favicon.ico">
+</head>
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
@@ -6,8 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Options &mdash; MDAKit Cookiecutter 0.1.0b documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/site.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -17,6 +32,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/js/versions.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,16 +44,32 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: white" >
+        <div class="wy-side-nav-search"  style="background: "#272525"" >
 
-          
-          
-          <a href="index.html">
-            
-          </a>
-              <div class="version">
-                0.1
-              </div>
+
+
+
+  
+
+
+
+
+<a href="index.html">
+  
+    <img src="_static/logo/mda_logo.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+    <div class="version">
+      0.1
+    </div>
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -45,6 +77,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
+
+
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">General</span></p>
 <ul class="current">
@@ -79,7 +113,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: "#272525"" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">MDAKit Cookiecutter</a>
       </nav>
@@ -107,7 +141,8 @@ If there are default values, they are explained.</p>
 <section id="project-name">
 <h2>project_name<a class="headerlink" href="#project-name" title="Permalink to this heading"></a></h2>
 <p>This is the name of the project you would
-use when writing about it in the documentation.</p>
+use when writing about it in the documentation.
+This can be anything, e.g. have spaces and hyphens.</p>
 </section>
 <section id="repo-name">
 <h2>repo_name<a class="headerlink" href="#repo-name" title="Permalink to this heading"></a></h2>
@@ -146,6 +181,17 @@ package for an organisation, use the organisation
 account name. This value is used to generate the URL
 to the project on GitHub
 (i.e. <code class="docutils literal notranslate"><span class="pre">github.com/&lt;github_host_account&gt;/&lt;repo_name&gt;</span></code>).</p>
+<p>If you set this to <code class="docutils literal notranslate"><span class="pre">MDAnalysis</span></code>,
+we will set some options for you.
+For example, the default logo and favicon
+will be the MDAnalysis logo and favicon.
+You will also have a footer detailing our
+privacy policy.</p>
+<p>If you set this to another value,
+there will be entries in the documentation
+<cite>conf.py</cite> that use a placeholder logo and favicon.</p>
+<p>Please see our <a class="reference external" href="https://mdanalysis-sphinx-theme.readthedocs.io/en/latest/">mdanalysis-sphinx-theme</a>
+documentation for more information.</p>
 <p><strong>Default value:</strong> the <code class="docutils literal notranslate"><span class="pre">github_username</span></code>.</p>
 </section>
 <section id="author-name">
@@ -230,11 +276,8 @@ template with comments and notes to modify.</p>
     <p>&#169; Copyright 2022-2023, Irfan Alibay, Oliver Beckstein, Ian Kenney, Rocco Meli, Fiona Naughton, Lily Wang.</p>
   </div>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
   
- 
+
 <div class="footer"><p>Please see
     our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
     to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
@@ -243,12 +286,31 @@ template with comments and notes to modify.</p>
 </div>
 
 
+
 </footer>
         </div>
       </div>
     </section>
   </div>
   <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        0.1.0b
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
