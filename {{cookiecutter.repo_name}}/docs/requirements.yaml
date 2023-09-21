@@ -1,5 +1,10 @@
 name: {{cookiecutter.repo_name}}-docs
 channels:
+{% if cookiecutter.dependency_source == 'Prefer default anaconda channel with pip fallback' %}
+  - defaults
+{% else %}
+  - conda-forge
+{% endif %}
 dependencies:
     # Base depends
   - python
