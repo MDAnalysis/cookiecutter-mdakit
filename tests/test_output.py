@@ -32,10 +32,12 @@ class TestAnalysis:
 
 @pytest.mark.parametrize("dependency_source", DependencyType)
 @pytest.mark.parametrize("include_ReadTheDocs", ["y", "n"])
+@pytest.mark.parametrize("github_host_account", ["MDAnalysis", "other"])
 def test_write_outputs(
     test_output_directory,
     dependency_source,
-    include_ReadTheDocs
+    include_ReadTheDocs,
+    github_host_account,
 ):
     if include_ReadTheDocs == "y":
         rtd_name = "ReadTheDocs"
@@ -43,7 +45,10 @@ def test_write_outputs(
         rtd_name = "no-ReadTheDocs"
 
     dep_name = f"{dependency_source.name.lower()}-deps"
-    project_name = f"TestMDAKit_with_{dep_name}_and_{rtd_name}"
+    project_name = (
+        "TestMDAKit_with_host_"
+        f"{github_host_account}_{dep_name}_and_{rtd_name}"
+    )
     description = (
         "Test MDAKit Project with "
         f"dependencies using {dependency_source.name.lower()} "
@@ -57,7 +62,7 @@ def test_write_outputs(
         repo_name="mdakit-cookie",
         package_name="mdakit_cookie",
         github_username="test-user-account",
-        github_host_account="MDAnalysis",
+        github_host_account=github_host_account,
         description=description,
         dependency_source=dependency_source,
         include_ReadTheDocs=include_ReadTheDocs,

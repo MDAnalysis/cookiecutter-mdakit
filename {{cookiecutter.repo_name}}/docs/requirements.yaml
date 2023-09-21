@@ -10,14 +10,6 @@ dependencies:
   - python
   - pip
 
-  - sphinx<7.0
-{% if cookiecutter.dependency_source == 'Prefer default anaconda channel with pip fallback' %}
-  # Pip-only installs
-  - pip:
-    - sphinx_rtd_theme
-{% else %}
-  - sphinx_rtd_theme
-
+  - mdanalysis-sphinx-theme >=1.0.1
     # Pip-only installs
   #- pip:
-{% endif %}

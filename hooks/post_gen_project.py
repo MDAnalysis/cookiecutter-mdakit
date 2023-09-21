@@ -95,8 +95,17 @@ def remove_analysis():
             "{{ cookiecutter.package_name }}/tests/analysis"
         )
 
-remove_rtd()
-remove_analysis()
+
+def remove_placeholder_icons():
+    """Remove placeholder logos if unnecessary."""
+    host_account = '{{ cookiecutter.github_host_account }}'
+    if host_account.lower() == "mdanalysis":
+        remove_files("docs/source/_static/logo")
 
 
-git_init_and_tag()
+if __name__ == "__main__":
+    remove_rtd()
+    remove_analysis()
+    remove_placeholder_icons()
+
+    git_init_and_tag()

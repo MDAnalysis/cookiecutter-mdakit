@@ -6,9 +6,7 @@ dependencies:
   - python
   - pip
 
-  - sphinx<7.0
-  - sphinx_rtd_theme
-
+  - mdanalysis-sphinx-theme >=1.0.1
   - tree
 
   # Pip-only installs
