@@ -51,6 +51,10 @@ class TestGitHubHostAccount:
             assert conf.is_file()
 
             text = conf.read_text()
-            assert '"mda_official": False,' in text
-            assert 'html_logo = "_static/logo/placeholder_logo.png"' in text
-            assert 'html_favicon = "_static/logo/placeholder_favicon.svg"' in text
+            patterns = [
+                '"mda_official": False,',
+                'html_logo = "_static/logo/placeholder_logo.png"',
+                'html_favicon = "_static/logo/placeholder_favicon.svg"',
+            ]
+            for pattern in patterns:
+                assert pattern in text, f"{pattern} not found"
