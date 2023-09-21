@@ -4,6 +4,7 @@ channels:
   - base
 {% else %}
   - conda-forge
+{% endif %}
 dependencies:
     # Base depends
   - python
