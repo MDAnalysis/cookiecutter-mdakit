@@ -27,7 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       stable-python-version: {{ "${{ steps.get-compatible-python.outputs.stable-python }}" }}
-      latest-python: {{ "${{ setups.get-compatible-python.outputs.latest-python }}" }}
       python-matrix: {{ "${{ steps.get-compatible-python.outputs.python-versions }}" }}
     steps:
       - uses: actions/setup-python@v4
@@ -36,6 +35,8 @@ jobs:
 
       - id: get-compatible-python
         uses: MDAnalysis/mdanalysis-compatible-python@main
+        with:
+          release: "latest"
 
   main-tests:
     if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
@@ -47,9 +48,6 @@ jobs:
           os: [macOS-latest, ubuntu-latest, windows-latest]
           python-version: {% raw %}${{ fromJSON(needs.environment-config.outputs.python-matrix) }}{% endraw %}
           mdanalysis-version: ["latest", "develop"]
-          exclude:
-            - mdanalysis-version: "latest"
-              python-version: {% raw %}"${{ fromJSON(needs.environment-config.outputs.latest-python-version) }}"{% endraw %}
 
     steps:
     - uses: actions/checkout@v4
