@@ -27,8 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       stable-python-version: {{ "${{ steps.get-compatible-python.outputs.stable-python }}" }}
-      latest-python: {{ '${{ setups.get-compatible-python.outputs.latest-python }}" }}
-      python-matrix: {{ '${{ steps.get-compatible-python.outputs.python-versions }}' }}
+      latest-python: {{ "${{ setups.get-compatible-python.outputs.latest-python }}" }}
+      python-matrix: {{ "${{ steps.get-compatible-python.outputs.python-versions }}" }}
     steps:
       - uses: actions/setup-python@v4
         with:
