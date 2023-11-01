@@ -27,11 +27,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=cd7bf820"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="_static/js/versions.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -136,18 +136,18 @@
            <div itemprop="articleBody">
              
   <section id="options">
-<span id="options-label"></span><h1>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h1>
+<span id="options-label"></span><h1>Options<a class="headerlink" href="#options" title="Link to this heading"></a></h1>
 <p>This page goes into the options you can choose in the cookiecutter,
 what they mean, and what they affect.
 If there are default values, they are explained.</p>
 <section id="project-name">
-<h2>project_name<a class="headerlink" href="#project-name" title="Permalink to this heading"></a></h2>
+<h2>project_name<a class="headerlink" href="#project-name" title="Link to this heading"></a></h2>
 <p>This is the name of the project you would
 use when writing about it in the documentation.
 This can be anything, e.g. have spaces and hyphens.</p>
 </section>
 <section id="repo-name">
-<h2>repo_name<a class="headerlink" href="#repo-name" title="Permalink to this heading"></a></h2>
+<h2>repo_name<a class="headerlink" href="#repo-name" title="Link to this heading"></a></h2>
 <p>This is the name of the directory containing
 the package. It cannot contain spaces.
 This value is used to generate the URL
@@ -157,7 +157,7 @@ to the project on GitHub
 with spaces and hyphens replaced with underscores.</p>
 </section>
 <section id="package-name">
-<h2>package_name<a class="headerlink" href="#package-name" title="Permalink to this heading"></a></h2>
+<h2>package_name<a class="headerlink" href="#package-name" title="Link to this heading"></a></h2>
 <p>This is the name of the module you would use
 when importing your package. It must
 follow Python module naming rules, i.e. it cannot
@@ -166,16 +166,16 @@ have spaces or hyphens.</p>
 with spaces and hyphens replaced with underscores.</p>
 </section>
 <section id="description">
-<h2>description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h2>
+<h2>description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
 <p>Give a short description of the project to appear in the README.</p>
 </section>
 <section id="github-username">
-<h2>github_username<a class="headerlink" href="#github-username" title="Permalink to this heading"></a></h2>
+<h2>github_username<a class="headerlink" href="#github-username" title="Link to this heading"></a></h2>
 <p>This should be your <em>personal</em> GitHub username.
 It is used for giving you credit in AUTHORS.md.</p>
 </section>
 <section id="github-host-account">
-<h2>github_host_account<a class="headerlink" href="#github-host-account" title="Permalink to this heading"></a></h2>
+<h2>github_host_account<a class="headerlink" href="#github-host-account" title="Link to this heading"></a></h2>
 <p>This should be the GitHub account name used to host the
 repository. In most cases, this will be the same as
 the GitHub username; however, if you are creating a
@@ -197,20 +197,20 @@ documentation for more information.</p>
 <p><strong>Default value:</strong> the <code class="docutils literal notranslate"><span class="pre">github_username</span></code>.</p>
 </section>
 <section id="author-name">
-<h2>author_name<a class="headerlink" href="#author-name" title="Permalink to this heading"></a></h2>
+<h2>author_name<a class="headerlink" href="#author-name" title="Link to this heading"></a></h2>
 <p>This should be the name you prefer to go by, not your username.
 It is used for giving you credit in files such as
 <code class="docutils literal notranslate"><span class="pre">AUTHORS.md</span></code>, <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, and other packaging materials.</p>
 </section>
 <section id="author-email">
-<h2>author_email<a class="headerlink" href="#author-email" title="Permalink to this heading"></a></h2>
+<h2>author_email<a class="headerlink" href="#author-email" title="Link to this heading"></a></h2>
 <p>This should be an email address that you are comfortable
 getting contacted at. It is used for contact details
 in files such as <code class="docutils literal notranslate"><span class="pre">AUTHORS.md</span></code>, <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, and other packaging materials.
 It is also used as the point of contact in <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code>.</p>
 </section>
 <section id="dependency-source">
-<h2>dependency_source<a class="headerlink" href="#dependency-source" title="Permalink to this heading"></a></h2>
+<h2>dependency_source<a class="headerlink" href="#dependency-source" title="Link to this heading"></a></h2>
 <p>This option determines which sources to use for dependencies for the package.
 It affects the continuous integration testing, as well as
 the dependency files written. The three choices
@@ -218,7 +218,7 @@ the dependency files written. The three choices
 are explained below.</p>
 <p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>.</p>
 <section id="conda-forge">
-<h3>conda-forge<a class="headerlink" href="#conda-forge" title="Permalink to this heading"></a></h3>
+<h3>conda-forge<a class="headerlink" href="#conda-forge" title="Link to this heading"></a></h3>
 <p>This option looks for dependencies first in the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel,
 then the default <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel, before falling back to <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
 <div class="admonition note">
@@ -231,19 +231,19 @@ that are not on the default <code class="docutils literal notranslate"><span cla
 </div>
 </section>
 <section id="anaconda">
-<h3>anaconda<a class="headerlink" href="#anaconda" title="Permalink to this heading"></a></h3>
+<h3>anaconda<a class="headerlink" href="#anaconda" title="Link to this heading"></a></h3>
 <p>This option still uses <code class="docutils literal notranslate"><span class="pre">conda</span></code> to manage dependencies,
 but only uses the <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel and <code class="docutils literal notranslate"><span class="pre">pip</span></code> fallback.
 This option would install MDAnalysis from <a class="reference external" href="https://pypi.org/">PyPI</a> .
 as it is not available on the default <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel.</p>
 </section>
 <section id="pip">
-<h3>pip<a class="headerlink" href="#pip" title="Permalink to this heading"></a></h3>
+<h3>pip<a class="headerlink" href="#pip" title="Link to this heading"></a></h3>
 <p>This option only installs packages from <a class="reference external" href="https://pypi.org/">PyPI</a>.</p>
 </section>
 </section>
 <section id="include-readthedocs">
-<h2>include_ReadTheDocs<a class="headerlink" href="#include-readthedocs" title="Permalink to this heading"></a></h2>
+<h2>include_ReadTheDocs<a class="headerlink" href="#include-readthedocs" title="Link to this heading"></a></h2>
 <p>This option determines whether to include
 ReadTheDocs configuration (<code class="docutils literal notranslate"><span class="pre">readthedocs.yaml</span></code>)
 in the package. It does not affect the documentation itself.
@@ -252,7 +252,7 @@ to automatically build documentation online.</p>
 <p><strong>Default value:</strong> “y” (True)</p>
 </section>
 <section id="template-analysis-class">
-<h2>template_analysis_class<a class="headerlink" href="#template-analysis-class" title="Permalink to this heading"></a></h2>
+<h2>template_analysis_class<a class="headerlink" href="#template-analysis-class" title="Link to this heading"></a></h2>
 <p>This option triggers the building of a skeleton custom
 analysis class, and associated tests.
 If a class name is given, it is used as the name of the

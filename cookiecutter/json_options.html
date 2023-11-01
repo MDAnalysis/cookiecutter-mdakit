@@ -27,11 +27,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=cd7bf820"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/versions.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -122,18 +122,18 @@
            <div itemprop="articleBody">
              
   <section id="cookiecutter-json">
-<h1>cookiecutter.json<a class="headerlink" href="#cookiecutter-json" title="Permalink to this heading"></a></h1>
+<h1>cookiecutter.json<a class="headerlink" href="#cookiecutter-json" title="Link to this heading"></a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">cookiecutter.json</span></code> contains the prompts used for the cookiecutter.
 As JSON does not allow comments, here are some notes:</p>
 <section id="format">
-<h2>Format<a class="headerlink" href="#format" title="Permalink to this heading"></a></h2>
+<h2>Format<a class="headerlink" href="#format" title="Link to this heading"></a></h2>
 <p>Each key is the variable name; each value is the <strong>default value</strong>.
 This severely limits how informative a prompt can be,
 if we want to support a default value.</p>
 <p>Some values are Jinja variables that are rendered on the spot.</p>
 </section>
 <section id="dependency-source">
-<h2>dependency_source<a class="headerlink" href="#dependency-source" title="Permalink to this heading"></a></h2>
+<h2>dependency_source<a class="headerlink" href="#dependency-source" title="Link to this heading"></a></h2>
 <p>We ask users to choose which dependency source to use here.
 However, each option is very verbose so users know what they are in for.
 That can be quite annoying to work with in the resulting project.</p>
@@ -143,7 +143,7 @@ should not be used for the sake of simplicity.</p>
 and <code class="docutils literal notranslate"><span class="pre">__dependency_source</span></code> variables to shorten the choices.</p>
 <p>They correspond to the following options:</p>
 <table class="docutils align-default" id="id1">
-<caption><span class="caption-text">dependency_source to __dependency_source</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<caption><span class="caption-text">dependency_source to __dependency_source</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 30%" />
 <col style="width: 70%" />
