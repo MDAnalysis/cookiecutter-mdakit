@@ -136,7 +136,7 @@ automatically determine your package's version based on
 git tags.
 
 By default, versioning will start from ``0.0.0``.
-You can install versioningit_ to check versioning it from commandline:
+You can install versioningit_ to check the current versioningit output from commandline:
 
 .. code-block:: bash
   
