@@ -20,7 +20,7 @@ Starting repositories can be created from this template so you can focus on what
    * Basic testing structure with `PyTest <https://docs.pytest.org/en/latest/>`_
    * Automatic ``git`` initialization + tag
    * GitHub Hooks
-   * Automatic package version control with `Versioneer <https://github.com/warner/python-versioneer>`_
+   * Automatic package version control with `versioningit <https://versioningit.readthedocs.io/en/stable/index.html>`_
    * Sample data inclusion with packaging instructions
    * Basic documentation structure powered by `Sphinx <http://www.sphinx-doc.org/en/master/>`_
 
