@@ -125,5 +125,50 @@ To keep things clean and simple, we advise a few tips:
   for more information.
 
 
+5. Tagging versions of your code
+--------------------------------
+
+Tagging versions of your code is a good way to keep references
+to specific versions of your code that don't change.
+This is especially useful when you want to make a new code
+release. The ``cookiecutter`` uses `versioningit`_ to
+automatically determine your package's version based on
+git tags.
+
+By default, versioning will start from ``0.0.0``.
+You can install versioningit_ to check the current versioningit output from commandline:
+
+.. code-block:: bash
+  
+  $ cd <my_package_directory>
+  $ versioningit .
+  0.0.0
+
+As you add commits, the versioning will automatically update with
+the commit hashes:
+
+.. code-block:: bash
+
+  $ versioningit .
+  0.0.0+1.g58bcaff
+
+To tag a version, use the following command:
+
+.. code-block:: bash
+
+    git tag -a 0.1.0 -m "Version 0.1.0"
+
+This will create a tag called ``0.1.0`` with the message
+"Version 0.1.0". You can then push this tag to GitHub with ``git push origin --tags``.
+
+After creating a tag, you can check the versioning again:
+
+.. code-block:: bash
+
+  $ versioningit .
+  0.1.0
+
+
 .. _ReadTheDocs: https://docs.readthedocs.io/en/stable/index.html
 .. _cookiecutter: https://cookiecutter.readthedocs.io/en/stable/
+.. _versioningit: https://versioningit.readthedocs.io/en/stable/index.html

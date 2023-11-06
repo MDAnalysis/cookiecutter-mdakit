@@ -92,6 +92,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#make-and-push-changes-to-your-code">4. Make and push changes to your code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tagging-versions-of-your-code">5. Tagging versions of your code</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
@@ -211,7 +212,6 @@ Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </s
 │       └── index.rst                      
 ├── package_name                           
 │   ├── __init__.py                        
-│   ├── _version.py                           &lt;- Automatic version control with Versioneer
 │   ├── analysis                           
 │   │   ├── __init__.py                    
 │   │   └── myanalysisclass.py             
@@ -229,12 +229,9 @@ Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </s
 │       ├── test_package_name.py              &lt;- Example test file
 │       └── utils.py                       
 ├── pyproject.toml                            &lt;- Dependencies for pip
-├── readthedocs.yaml                          &lt;- Settings for ReadTheDocs
-├── setup.cfg                                 &lt;- Near-master config file settings for Coverage, Flake8, YAPF, etc
-├── setup.py                                  &lt;- Your package&#39;s setup file for installing with additional options that can be set
-└── versioneer.py                             &lt;- Automatic version control with Versioneer
+└── readthedocs.yaml                          &lt;- Settings for ReadTheDocs
                                            
-16 directories, 48 files                   
+16 directories, 44 files                   
                                            
 </pre></div>
 </div>
@@ -330,6 +327,39 @@ as well as collaborate with other people.
 See <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">GitHub’s documentation on PRs</a>
 for more information.</p></li>
 </ul>
+</section>
+<section id="tagging-versions-of-your-code">
+<h2>5. Tagging versions of your code<a class="headerlink" href="#tagging-versions-of-your-code" title="Link to this heading"></a></h2>
+<p>Tagging versions of your code is a good way to keep references
+to specific versions of your code that don’t change.
+This is especially useful when you want to make a new code
+release. The <code class="docutils literal notranslate"><span class="pre">cookiecutter</span></code> uses <a class="reference external" href="https://versioningit.readthedocs.io/en/stable/index.html">versioningit</a> to
+automatically determine your package’s version based on
+git tags.</p>
+<p>By default, versioning will start from <code class="docutils literal notranslate"><span class="pre">0.0.0</span></code>.
+You can install <a class="reference external" href="https://versioningit.readthedocs.io/en/stable/index.html">versioningit</a> to check the current versioningit output from commandline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;my_package_directory&gt;
+$<span class="w"> </span>versioningit<span class="w"> </span>.
+<span class="m">0</span>.0.0
+</pre></div>
+</div>
+<p>As you add commits, the versioning will automatically update with
+the commit hashes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>versioningit<span class="w"> </span>.
+<span class="m">0</span>.0.0+1.g58bcaff
+</pre></div>
+</div>
+<p>To tag a version, use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span>.1.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Version 0.1.0&quot;</span>
+</pre></div>
+</div>
+<p>This will create a tag called <code class="docutils literal notranslate"><span class="pre">0.1.0</span></code> with the message
+“Version 0.1.0”. You can then push this tag to GitHub with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">--tags</span></code>.</p>
+<p>After creating a tag, you can check the versioning again:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>versioningit<span class="w"> </span>.
+<span class="m">0</span>.1.0
+</pre></div>
+</div>
 </section>
 </section>
 
