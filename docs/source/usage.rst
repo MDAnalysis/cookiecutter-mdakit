@@ -4,7 +4,7 @@ Usage
 Getting up and running requires a short process.
 
 You will need the following:
-  * Python 3.8+
+  * Python 3.9+
   * The `cookiecutter`_ tool installed
   * A GitHub account
 
