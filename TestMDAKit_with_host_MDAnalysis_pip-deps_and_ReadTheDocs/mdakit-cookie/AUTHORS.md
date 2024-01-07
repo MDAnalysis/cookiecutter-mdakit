@@ -1,6 +1,6 @@
 # Authors
 
-TestMDAKit_with_host_MDAnalysis_pip-deps_and_ReadTheDocs was created by Test User name in 2023.
+TestMDAKit_with_host_MDAnalysis_pip-deps_and_ReadTheDocs was created by Test User name in 2024.
 
 
 All contributing authors are listed in this file below.
@@ -19,5 +19,5 @@ The rules for this file:
   * Don't ever delete anything
 -->
 
-**2023**
+**2024**
 - Test User name <@test-user-account>

@@ -90,7 +90,7 @@ pip install ".[test,doc]"
 The TestMDAKit_with_host_other_condaforge-deps_and_ReadTheDocs source code is hosted at https://github.com/other/mdakit-cookie
 and is available under the GNU General Public License, version 2 (see the file [LICENSE](https://github.com/other/mdakit-cookie/blob/main/LICENSE)).
 
-Copyright (c) 2023, Test User name
+Copyright (c) 2024, Test User name
 
 
 #### Acknowledgements

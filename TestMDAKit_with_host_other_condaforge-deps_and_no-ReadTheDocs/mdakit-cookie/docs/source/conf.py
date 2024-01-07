@@ -24,7 +24,7 @@ import mdakit_cookie  # noqa
 
 project = "TestMDAKit_with_host_other_condaforge-deps_and_no-ReadTheDocs"
 copyright = (
-    "2023, Test User name. "
+    "2024, Test User name. "
     "Project structure based on the "
     "MDAnalysis Cookiecutter version 0.1"
 )
