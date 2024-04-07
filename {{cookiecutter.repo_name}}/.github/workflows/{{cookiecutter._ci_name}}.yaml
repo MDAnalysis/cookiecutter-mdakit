@@ -38,7 +38,7 @@ jobs:
         with:
           release: "latest"
 
-  main-tests:
+  main-tests-latest:
     if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
     needs: environment-config
     runs-on: {{ '${{ matrix.os }}' }}
