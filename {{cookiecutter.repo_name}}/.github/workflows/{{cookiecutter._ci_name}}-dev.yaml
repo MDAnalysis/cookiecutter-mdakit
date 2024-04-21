@@ -36,9 +36,9 @@ jobs:
       - id: get-compatible-python
         uses: MDAnalysis/mdanalysis-compatible-python@main
         with:
-          release: "latest"
+          release: "develop"
 
-  main-tests:
+  main-tests-develop:
     if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
     needs: environment-config
     runs-on: {{ '${{ matrix.os }}' }}
@@ -47,7 +47,7 @@ jobs:
         matrix:
           os: [macOS-latest, ubuntu-latest, windows-latest]
           python-version: {% raw %}${{ fromJSON(needs.environment-config.outputs.python-matrix) }}{% endraw %}
-          mdanalysis-version: ["latest", "develop"]
+          mdanalysis-version: "develop"
 
     steps:
     - uses: actions/checkout@v4
@@ -123,58 +123,3 @@ jobs:
         file: coverage.xml
         name: codecov-{{ '${{ matrix.os }}' }}-py{{ '${{ matrix.python-version }}' }}
         verbose: True
-
-
-  pylint_check:
-    if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
-    needs: environment-config
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
-
-    - name: Install Pylint
-      run: |
-        which pip
-        which python
-        pip install pylint mdanalysis
-
-    - name: Run Pylint
-      env:
-        PYLINTRC: .pylintrc
-      run: |
-        pylint {{ cookiecutter.repo_name }}
-
-
-  pypi_check:
-    if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
-    needs: environment-config
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Python {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
-
-    - name: Install dependencies
-      run: |
-        pip install pipx twine
-
-    - name: Build package
-      run: |
-        python -m pipx run build --sdist
-
-    - name: Check package build
-      run: |
-        DISTRIBUTION=$(ls -t1 dist/{{ cookiecutter.repo_name }}-*.tar.gz | head -n 1)
-        test -n "${DISTRIBUTION}" || { echo "no distribution dist/{{ cookiecutter.repo_name }}-*.tar.gz found"; exit 1; }
-        echo "twine check $DISTRIBUTION"
-        twine check $DISTRIBUTION
