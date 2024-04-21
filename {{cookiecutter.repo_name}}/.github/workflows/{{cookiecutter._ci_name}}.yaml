@@ -27,7 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       stable-python-version: {{ "${{ steps.get-compatible-python.outputs.stable-python }}" }}
-      python-matrix: {{ "${{ steps.get-compatible-python.outputs.python-versions }}" }}
     steps:
       - uses: actions/setup-python@v4
         with:
@@ -46,8 +45,19 @@ jobs:
         fail-fast: false
         matrix:
           os: [macOS-latest, ubuntu-latest, windows-latest]
-          python-version: {% raw %}${{ fromJSON(needs.environment-config.outputs.python-matrix) }}{% endraw %}
+          python-version: ["3.9", "3.10", "3.11", "3.12"]
           mdanalysis-version: ["latest", "develop"]
+          exclude:
+            # Entries here exclude particular combinations of the matrix
+            # Edit or remove as particular combinations come into or out of date
+
+            # Below we exclude runs with "develop" MDAnalysis and Python 3.9
+            - mdanalysis-version: "develop"
+              python-version: "3.9"
+            # Below we exclude runs with the latest release and Python 3.12
+            - mdanalysis-version: "latest"
+              python-version: "3.12"
+
 
     steps:
     - uses: actions/checkout@v4
