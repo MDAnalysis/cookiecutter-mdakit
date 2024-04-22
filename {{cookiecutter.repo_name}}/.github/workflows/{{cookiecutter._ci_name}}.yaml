@@ -126,13 +126,13 @@ jobs:
       run: |
         pytest -n 2 -v --cov={{ cookiecutter.package_name }} --cov-report=xml --color=yes {{ cookiecutter.package_name }}/tests/
 
-    - name: codecov
-      if: github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}' && github.event_name != 'schedule'
-      uses: codecov/codecov-action@v3
-      with:
-        file: coverage.xml
-        name: codecov-{{ '${{ matrix.os }}' }}-py{{ '${{ matrix.python-version }}' }}
-        verbose: True
+    # - name: codecov
+    #   if: github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}' && github.event_name != 'schedule'
+    #   uses: codecov/codecov-action@v3
+    #   with:
+    #     file: coverage.xml
+    #     name: codecov-{{ '${{ matrix.os }}' }}-py{{ '${{ matrix.python-version }}' }}
+    #     verbose: True
 
 
   pylint_check:
