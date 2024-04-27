@@ -111,13 +111,17 @@ jobs:
       if: github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}' && github.event_name != 'schedule'
       uses: codecov/codecov-action@v3
       with:
-        # codecov can be flaky and result in spurious failures
-        # the below option will not fail the CI if codecov fails
-        # change to true to fail the CI if codecov fails
-        fail_ci_if_error: false
         file: coverage.xml
         name: codecov-{{ '${{ matrix.os }}' }}-py{{ '${{ matrix.python-version }}' }}
         verbose: True
+        # to upload coverage reports, set a secret called CODECOV_TOKEN
+        # in the repository settings
+        token: ${{ secrets.CODECOV_TOKEN }}
+        # To fail the CI if there's an error, keep this set to true
+        # If repository forks need to run CI, you may need to set this to false
+        # Forks can't access the CODECOV_TOKEN secret,
+        # and a failed upload registers as an error
+        fail_ci_if_error: true
 
 
   pylint_check:
