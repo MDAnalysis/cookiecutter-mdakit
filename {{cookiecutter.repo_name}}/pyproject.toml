@@ -6,7 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "{{cookiecutter.repo_name}}"
+name = "{{cookiecutter.package_name}}"
 description = "{{cookiecutter.description}}"
 license = {{ "{" }}file = "LICENSE" {{ "}" }}
 authors = [
@@ -43,12 +43,12 @@ doc = [
 # documentation = "https://{{cookiecutter.repo_name}}.readthedocs.io"
 
 [tool.setuptools]
-py-modules = []
+packages = ["{{cookiecutter.package_name}}"]
 
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = [
-    "{{cookiecutter.repo_name}}/tests",
+    "{{cookiecutter.package_name}}/tests",
 ]
 
 [tool.black]
