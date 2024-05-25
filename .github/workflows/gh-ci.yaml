@@ -70,6 +70,7 @@ jobs:
           pytest tests/ $PYTEST_FLAGS
 
       - name: check cookie CI presence
+        if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
           ls -la /home/runner
           ls -la ${{ env.OUTPUT_DIRECTORY }}/
