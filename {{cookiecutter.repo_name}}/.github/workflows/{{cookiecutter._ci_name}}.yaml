@@ -123,6 +123,7 @@ jobs:
         file: coverage.xml
         name: codecov-{{ '${{ matrix.os }}' }}-py{{ '${{ matrix.python-version }}' }}
         verbose: True
+        fail_ci_if_error: false
 
 
   pylint_check:
