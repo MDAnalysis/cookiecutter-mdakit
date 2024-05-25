@@ -71,13 +71,13 @@ jobs:
 
       - name: check cookie CI presence
         run: |
-          ls -la ${{ env.OUTPUT_DIRECTORY }}/${{ env.OUTPUT_SUBCOOKIE_DIRECTORY }}/
+          ls -la ${{ env.OUTPUT_DIRECTORY }}/${{ env.OUTPUT_COOKIE_SUBDIRECTORY }}/
 
       - name: Run cookie CI
         if: ${{ matrix.os == 'ubuntu-latest' }}
         uses: ./.github/actions/run-cookie-ci
         with:
-          source-directory: ${{ env.OUTPUT_DIRECTORY }}/${{ env.OUTPUT_SUBCOOKIE_DIRECTORY }}
+          source-directory: ${{ env.OUTPUT_DIRECTORY }}/${{ env.OUTPUT_COOKIE_SUBDIRECTORY }}
 
       - name: Upload artifact
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.last-n-minor-python-release == 0 }}
