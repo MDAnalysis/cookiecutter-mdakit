@@ -61,7 +61,7 @@ jobs:
         run: |
           # --keep-test-outputs also saves the generated repositories
           if [[ ${{ matrix.os }} == "ubuntu-latest" ]] ; then
-            PYTEST_FLAGS="--keep-test-outputs $OUTPUT_DIRECTORY"
+            PYTEST_FLAGS="--keep-test-outputs ${{ env.OUTPUT_DIRECTORY }}"
           else
             PYTEST_FLAGS=""
           fi
@@ -71,6 +71,7 @@ jobs:
 
       - name: check cookie CI presence
         run: |
+          ls -la /home/runner
           ls -la ${{ env.OUTPUT_DIRECTORY }}/
           ls -la ${{ env.OUTPUT_DIRECTORY }}/${{ env.OUTPUT_COOKIE_SUBDIRECTORY }}/
 
