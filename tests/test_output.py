@@ -60,7 +60,7 @@ def test_write_outputs(
     kitter = CookiecutterMDAKit(
         project_name=project_name,
         repo_name="mdakit-cookie",
-        package_name="mdakit_cookie",
+        package_name="cookiekit",
         github_username="test-user-account",
         github_host_account=github_host_account,
         description=description,
