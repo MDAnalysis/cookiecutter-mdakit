@@ -6,7 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "{{cookiecutter.package_name}}"
+name = "{{cookiecutter.repo_name}}"
 description = "{{cookiecutter.description}}"
 license = {{ "{" }}file = "LICENSE" {{ "}" }}
 authors = [
@@ -42,8 +42,8 @@ doc = [
 # source = "https://github.com/{{cookiecutter.github_url}}"
 # documentation = "https://{{cookiecutter.repo_name}}.readthedocs.io"
 
-[tool.setuptools]
-packages = ["{{cookiecutter.package_name}}"]
+[tool.setuptools.packages.find]
+include = ["{{cookiecutter.package_name}}"]
 
 [tool.pytest.ini_options]
 minversion = "6.0"
