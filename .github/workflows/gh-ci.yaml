@@ -71,6 +71,7 @@ jobs:
 
       - name: check cookie CI presence
         run: |
+          ls -la ${{ env.OUTPUT_DIRECTORY }}/
           ls -la ${{ env.OUTPUT_DIRECTORY }}/${{ env.OUTPUT_COOKIE_SUBDIRECTORY }}/
 
       - name: Run cookie CI
