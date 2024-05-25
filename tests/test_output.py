@@ -77,9 +77,9 @@ def test_install_and_import(tmpdir):
         kit = CookiecutterMDAKit(template_analysis_class="MyAnalysisClass")
         kit.run()
         result = subprocess.run([sys.executable,
-                                 "-m", "pip", "install", 
+                                 "-m", "pip", "install",
                                  "-e", "./test-mda-kit"],
-                                 capture_output=True, text=True)
+                                capture_output=True, text=True)
         if result.returncode != 0:
             pytest.fail(f"Failed to install: {result.stderr}")
         try:
