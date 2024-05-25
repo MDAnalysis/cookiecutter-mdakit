@@ -11,7 +11,6 @@ import sys
 def test_{{cookiecutter.package_name}}_imported():
     """Sample test, will always pass so long as import statement worked"""
     assert "{{cookiecutter.package_name}}" in sys.modules
-    assert False
 
 
 def test_mdanalysis_logo_length(mdanalysis_logo_text):
