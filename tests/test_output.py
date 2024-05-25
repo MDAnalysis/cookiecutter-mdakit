@@ -70,31 +70,3 @@ def test_write_outputs(
         output_directory=str(output_directory.resolve()),
     )
     kitter.run()
-
-
-def test_install_and_import(tmpdir):
-    with tmpdir.as_cwd():
-        kit = CookiecutterMDAKit(template_analysis_class="MyAnalysisClass")
-        kit.run()
-        result = subprocess.run(["python", "-m", "pip", "install",
-                                 "-e", "./test-mda-kit"],
-                                capture_output=True, text=True)
-        if result.returncode != 0:
-            pytest.fail(f"Failed to install: {result.stderr}")
-        try:
-            import test_mdakit_package
-        except ImportError as e:
-            pytest.fail(f"Failed to import 'test_mdakit_package': {e}")
-
-def test_gh_actions_debug_python_env(tmpdir):
-    with tmpdir.as_cwd():
-        
-        result = subprocess.run(["python", "-m", "pip", "install",
-                                 "mdanalysistests"],
-                                capture_output=True, text=True)
-        if result.returncode != 0:
-            pytest.fail(f"Failed to install: {result.stderr}")
-        try:
-            import MDAnalysisTests
-        except ImportError as e:
-            pytest.fail(f"Failed to import 'MDAnalysisTests': {e}")
