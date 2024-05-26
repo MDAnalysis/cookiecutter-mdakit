@@ -121,7 +121,7 @@ jobs:
         # If repository forks need to run CI, you may need to set this to false
         # Forks can't access the CODECOV_TOKEN secret,
         # and a failed upload registers as an error
-        fail_ci_if_error: false
+        fail_ci_if_error: true
 
 
   pylint_check:
