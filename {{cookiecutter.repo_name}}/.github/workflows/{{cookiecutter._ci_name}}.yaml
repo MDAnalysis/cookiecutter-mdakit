@@ -46,9 +46,14 @@ jobs:
         fail-fast: false
         matrix:
           os: [macOS-latest, ubuntu-latest, windows-latest]
-          # python-version: {% raw %}${{ fromJSON(needs.environment-config.outputs.python-matrix) }}{% endraw %}
           mdanalysis-version: ["latest", "develop"]
-          python-version: ["3.11", ]
+          python-version: ["3.10", "3.11", "3.12"]
+          exclude:
+            # Entries here exclude particular combinations of the matrix
+            # Edit or remove as particular combinations come into or out of date
+            # Below we exclude runs with the latest release and Python 3.12
+            - mdanalysis-version: "latest"
+              python-version: "3.12"
 
     steps:
     - uses: actions/checkout@v4
