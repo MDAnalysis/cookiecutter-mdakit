@@ -20,6 +20,9 @@ inputs:
     description: email associated with GitHub user
     required: true
     default: github-action@users.noreply.github.com
+  CODECOV_TOKEN:
+    description: Codecov token
+    required: true
 
 runs:
   using: "composite"
@@ -54,4 +57,4 @@ runs:
       shell: bash
       run: |
         docker images
-        act --job main-tests --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ secrets.COOKIE_CODECOV_TOKEN }}
+        act --job main-tests --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ inputs.CODECOV_TOKEN }}
