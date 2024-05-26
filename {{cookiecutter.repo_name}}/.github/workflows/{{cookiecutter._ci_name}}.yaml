@@ -116,6 +116,7 @@ jobs:
         verbose: True
         # to upload coverage reports, set a secret called CODECOV_TOKEN
         # in the repository settings
+        # (Obtain this from the Codecov website after setting up the repository there)
         token: {{ '${{ secrets.CODECOV_TOKEN }}' }}
         # To fail the CI if there's an error, keep this set to true
         # If repository forks need to run CI, you may need to set this to false
