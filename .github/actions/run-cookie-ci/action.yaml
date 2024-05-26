@@ -54,4 +54,4 @@ runs:
       shell: bash
       run: |
         docker images
-        act --job main-tests --platform ubuntu-latest=act-conda
+        act --job main-tests --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ secrets.COOKIE_CODECOV_TOKEN }}
