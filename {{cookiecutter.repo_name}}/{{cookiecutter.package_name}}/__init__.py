@@ -6,4 +6,4 @@
 # Add imports here
 from importlib.metadata import version
 
-__version__ = version("{{cookiecutter.package_name}}")
+__version__ = version("{{cookiecutter.repo_name}}")
