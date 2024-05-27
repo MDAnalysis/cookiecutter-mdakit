@@ -122,7 +122,6 @@ jobs:
         # Forks can't access the CODECOV_TOKEN secret,
         # and a failed upload registers as an error
         fail_ci_if_error: true
-        use_oidc: false
 
 
   pylint_check:
