@@ -108,7 +108,7 @@ jobs:
 
     - name: codecov
       if: github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}' && github.event_name != 'schedule'
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v3
       with:
         file: coverage.xml
         name: codecov-{{ '${{ matrix.os }}' }}-py{{ '${{ matrix.python-version }}' }}
@@ -122,9 +122,6 @@ jobs:
         # Forks can't access the CODECOV_TOKEN secret,
         # and a failed upload registers as an error
         fail_ci_if_error: true
-        # use OpenID Connect (OIDC) if you have this enabled -- this will ignore
-        # the `token` argument above
-        use_oidc: true
 
 
   pylint_check:
