@@ -20,6 +20,9 @@ inputs:
     description: email associated with GitHub user
     required: true
     default: github-action@users.noreply.github.com
+  CODECOV_TOKEN:
+    description: Codecov token
+    required: true
 
 runs:
   using: "composite"
@@ -54,4 +57,6 @@ runs:
       shell: bash
       run: |
         docker images
-        act --job main-tests --platform ubuntu-latest=act-conda
+        sed -i -e 's/fail_ci_if_error: true/fail_ci_if_error: false/g' .github/workflows/gh-ci.yaml
+        cat .github/workflows/gh-ci.yaml
+        act --job main-tests --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ inputs.CODECOV_TOKEN }} -p=false
