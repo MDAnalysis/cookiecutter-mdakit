@@ -19,6 +19,7 @@ defaults:
 env:
     ARTIFACT_NAME: demo-mdakit-repos
     OUTPUT_DIRECTORY: /home/runner/example_outputs
+    OUTPUT_COOKIE_SUBDIRECTORY: TestMDAKit_with_host_MDAnalysis_condaforge-deps_and_ReadTheDocs/mdakit-cookie
     GH_USER: github-actions
     GH_EMAIL: "github-action@users.noreply.github.com"
     GH_REPOSITORY: "github.com/${{ github.repository }}.git"
@@ -60,7 +61,7 @@ jobs:
         run: |
           # --keep-test-outputs also saves the generated repositories
           if [[ ${{ matrix.os }} == "ubuntu-latest" ]] ; then
-            PYTEST_FLAGS="--keep-test-outputs $OUTPUT_DIRECTORY"
+            PYTEST_FLAGS="--keep-test-outputs ${{ env.OUTPUT_DIRECTORY }}"
           else
             PYTEST_FLAGS=""
           fi
@@ -68,17 +69,18 @@ jobs:
           
           pytest tests/ $PYTEST_FLAGS
 
-      - name: List directories
+      - name: check cookie CI presence
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
-          ls -la ${{ env.OUTPUT_DIRECTORY }}/TestMDAKit_with_host_MDAnalysis_condaforge-deps_and_ReadTheDocs/mdakit-cookie
+          ls -la ${{ env.OUTPUT_DIRECTORY }}/
+          ls -la ${{ env.OUTPUT_DIRECTORY }}/${{ env.OUTPUT_COOKIE_SUBDIRECTORY }}/
 
       - name: Run cookie CI
         if: ${{ matrix.os == 'ubuntu-latest' }}
         uses: ./.github/actions/run-cookie-ci
         with:
+          source-directory: ${{ env.OUTPUT_DIRECTORY }}/${{ env.OUTPUT_COOKIE_SUBDIRECTORY }}
           CODECOV_TOKEN: ${{ secrets.COOKIE_CODECOV_TOKEN }}
-          source-directory: ${{ env.OUTPUT_DIRECTORY }}/TestMDAKit_with_host_MDAnalysis_condaforge-deps_and_ReadTheDocs/mdakit-cookie
 
       - name: Upload artifact
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.last-n-minor-python-release == 0 }}
