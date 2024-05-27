@@ -50,7 +50,7 @@ runs:
     - name: Build Act image
       shell: bash
       working-directory: ${{ github.action_path }}
-      run: docker build -t act-conda image
+      run: docker build -t act-latest image
 
     - name: Run cookiecutter CI
       working-directory: ${{ inputs.source-directory }}
@@ -59,4 +59,4 @@ runs:
         docker images
         # sed -i -e 's/fail_ci_if_error: true/fail_ci_if_error: false/g' .github/workflows/gh-ci.yaml
         cat .github/workflows/gh-ci.yaml
-        act --job main-tests --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ inputs.CODECOV_TOKEN }}
+        act --job main-tests --platform ubuntu-latest=act-latest -s CODECOV_TOKEN=${{ inputs.CODECOV_TOKEN }}
