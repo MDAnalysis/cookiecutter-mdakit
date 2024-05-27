@@ -80,6 +80,7 @@ jobs:
         uses: ./.github/actions/run-cookie-ci
         with:
           source-directory: ${{ env.OUTPUT_DIRECTORY }}/${{ env.OUTPUT_COOKIE_SUBDIRECTORY }}
+          CODECOV_TOKEN: ${{ secrets.COOKIE_CODECOV_TOKEN }}
 
       - name: Upload artifact
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.last-n-minor-python-release == 0 }}

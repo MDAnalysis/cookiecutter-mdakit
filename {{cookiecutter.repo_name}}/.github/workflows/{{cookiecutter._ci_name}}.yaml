@@ -23,24 +23,8 @@ defaults:
     shell: bash {% if cookiecutter.__dependency_source != 'pip' %} -l {0} {% endif %}
 
 jobs:
-  environment-config:
-    runs-on: ubuntu-latest
-    outputs:
-      stable-python-version: {{ "${{ steps.get-compatible-python.outputs.stable-python }}" }}
-      python-matrix: {{ "${{ steps.get-compatible-python.outputs.python-versions }}" }}
-    steps:
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-
-      - id: get-compatible-python
-        uses: MDAnalysis/mdanalysis-compatible-python@main
-        with:
-          release: "latest"
-
   main-tests:
     if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
-    needs: environment-config
     runs-on: {{ '${{ matrix.os }}' }}
     strategy:
         fail-fast: false
@@ -129,12 +113,22 @@ jobs:
         file: coverage.xml
         name: codecov-{{ '${{ matrix.os }}' }}-py{{ '${{ matrix.python-version }}' }}
         verbose: True
-        fail_ci_if_error: false
+        # to upload coverage reports, set a secret called CODECOV_TOKEN
+        # in the repository settings
+        # (Obtain this from the Codecov website after setting up the repository there)
+        token: {{ '${{ secrets.CODECOV_TOKEN }}' }}
+        # To fail the CI if there's an error, keep this set to true
+        # If repository forks need to run CI, you may need to set this to false
+        # Forks can't access the CODECOV_TOKEN secret,
+        # and a failed upload registers as an error
+        fail_ci_if_error: true
+        # use OpenID Connect (OIDC) if you have this enabled -- this will ignore
+        # the `token` argument above
+        use_oidc: true
 
 
   pylint_check:
     if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
-    needs: environment-config
     runs-on: ubuntu-latest
 
     steps:
@@ -143,7 +137,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
+        python-version: "3.11"
 
     - name: Install Pylint
       run: |
@@ -160,16 +154,15 @@ jobs:
 
   pypi_check:
     if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
-    needs: environment-config
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up Python {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: {{ '${{ needs.environment-config.outputs.stable-python-version }}' }}
+        python-version: "3.11"
 
     - name: Install dependencies
       run: |
