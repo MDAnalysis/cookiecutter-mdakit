@@ -24,7 +24,7 @@ defaults:
 
 jobs:
   main-tests:
-    if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
+    # if: "github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}'"
     runs-on: {{ '${{ matrix.os }}' }}
     strategy:
         fail-fast: false
