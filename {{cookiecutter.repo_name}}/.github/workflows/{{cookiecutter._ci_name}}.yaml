@@ -108,7 +108,7 @@ jobs:
 
     - name: codecov
       if: github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}' && github.event_name != 'schedule'
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       with:
         file: coverage.xml
         name: codecov-{{ '${{ matrix.os }}' }}-py{{ '${{ matrix.python-version }}' }}
