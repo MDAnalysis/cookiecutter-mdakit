@@ -57,6 +57,6 @@ runs:
       shell: bash
       run: |
         docker images
-        sed -i -e 's/fail_ci_if_error: true/fail_ci_if_error: false/g' .github/workflows/gh-ci.yaml
+        # sed -i -e 's/fail_ci_if_error: true/fail_ci_if_error: false/g' .github/workflows/gh-ci.yaml
         cat .github/workflows/gh-ci.yaml
         act --job main-tests --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ inputs.CODECOV_TOKEN }}
