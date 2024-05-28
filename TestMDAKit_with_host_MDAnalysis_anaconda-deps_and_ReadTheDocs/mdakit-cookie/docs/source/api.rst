@@ -5,4 +5,4 @@ API Documentation
    :toctree: autosummary
    :recursive:
 
-   mdakit_cookie
+   cookiekit

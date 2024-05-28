@@ -16,7 +16,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath("../.."))
-import mdakit_cookie  # noqa
+import cookiekit  # noqa
 
 
 
@@ -61,7 +61,7 @@ autosummary_generate = True
 # when using the autosummary directive that is included
 # by default in api.rst
 autodoc_mock_imports = [
-    'mdakit_cookie.tests'
+    'cookiekit.tests'
 ]
 napoleon_google_docstring = False
 napoleon_use_param = False

@@ -42,13 +42,13 @@ doc = [
 # source = "https://github.com/other/mdakit-cookie"
 # documentation = "https://mdakit-cookie.readthedocs.io"
 
-[tool.setuptools]
-py-modules = []
+[tool.setuptools.packages.find]
+include = ["cookiekit"]
 
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = [
-    "mdakit-cookie/tests",
+    "cookiekit/tests",
 ]
 
 [tool.black]
