@@ -45,9 +45,6 @@ doc = [
 [tool.setuptools.packages.find]
 include = ["{{cookiecutter.package_name}}"]
 
-[tool.setuptools.packages.find]
-include = ["{{cookiecutter.package_name}}"]
-
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = [
