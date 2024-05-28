@@ -26,9 +26,11 @@ The rules for this file:
 - ianmkenney
 - RMeli
 - orbeckst
+- ljwoods2
 
 ### Added
 <!-- New added features -->
+- Fixed ModuleNotFound after installation (Issue #113, PR #115) 
 - Add black configurartion to `pyproject.toml` (Issue #73, PR #75)
 - Cookiecutter version dependency (Issue #33, PR #46)
 - Configuration files for external hooks (PR #9)

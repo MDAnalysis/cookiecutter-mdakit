@@ -1,8 +1,6 @@
 import pytest
 
 from .utils import CookiecutterMDAKit, DependencyType
-import subprocess
-import sys
 
 class TestAnalysis:
 
