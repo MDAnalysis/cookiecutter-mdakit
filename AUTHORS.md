@@ -25,3 +25,6 @@ The rules for this file:
 - Ian Kenney \<@ianmkenney\>
 - Rocco Meli \<@RMeli\>
 - Oliver Beckstein \<@orbeckst\>
+
+**2024**
+- Lawson Woods \<@ljwoods2\>

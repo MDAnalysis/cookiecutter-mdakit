@@ -2,7 +2,6 @@ import pytest
 
 from .utils import CookiecutterMDAKit, DependencyType
 
-
 class TestAnalysis:
 
     @pytest.mark.parametrize("analysis_name", ["", "Press Enter to skip"])

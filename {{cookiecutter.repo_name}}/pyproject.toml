@@ -42,13 +42,13 @@ doc = [
 # source = "https://github.com/{{cookiecutter.github_url}}"
 # documentation = "https://{{cookiecutter.repo_name}}.readthedocs.io"
 
-[tool.setuptools]
-py-modules = []
+[tool.setuptools.packages.find]
+include = ["{{cookiecutter.package_name}}"]
 
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = [
-    "{{cookiecutter.repo_name}}/tests",
+    "{{cookiecutter.package_name}}/tests",
 ]
 
 [tool.black]
