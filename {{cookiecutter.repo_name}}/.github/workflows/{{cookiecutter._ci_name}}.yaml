@@ -171,7 +171,7 @@ jobs:
 
     - name: Check package build
       run: |
-        DISTRIBUTION=$(ls -t1 dist/{{ cookiecutter.repo_name }}-*.tar.gz | head -n 1)
-        test -n "${DISTRIBUTION}" || { echo "no distribution dist/{{ cookiecutter.repo_name }}-*.tar.gz found"; exit 1; }
+        DISTRIBUTION=$(ls -t1 dist/{{ cookiecutter.repo_name.lower() }}-*.tar.gz | head -n 1)
+        test -n "${DISTRIBUTION}" || { echo "no distribution dist/{{ cookiecutter.repo_name.lower() }}-*.tar.gz found"; exit 1; }
         echo "twine check $DISTRIBUTION"
         twine check $DISTRIBUTION
