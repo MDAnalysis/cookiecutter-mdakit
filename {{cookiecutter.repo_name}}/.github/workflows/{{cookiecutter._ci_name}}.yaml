@@ -171,7 +171,6 @@ jobs:
 
     - name: Check package build
       run: |
-        ls *
         DISTRIBUTION=$(ls -t1 dist/{{ cookiecutter.repo_name.lower().replace('-', '_') }}-*.tar.gz | head -n 1)
         test -n "${DISTRIBUTION}" || { echo "no distribution dist/{{ cookiecutter.repo_name }}-*.tar.gz found"; exit 1; }
         echo "twine check $DISTRIBUTION"
