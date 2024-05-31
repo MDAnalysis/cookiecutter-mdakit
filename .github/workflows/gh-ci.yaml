@@ -19,7 +19,7 @@ defaults:
 env:
     ARTIFACT_NAME: demo-mdakit-repos
     OUTPUT_DIRECTORY: /home/runner/example_outputs
-    OUTPUT_COOKIE_SUBDIRECTORY: TestMDAKit_with_host_MDAnalysis_condaforge-deps_and_ReadTheDocs/mdakit-cookie
+    OUTPUT_COOKIE_SUBDIRECTORY: TestMDAKit_with_host_MDAnalysis_condaforge-deps_and_ReadTheDocs/mdakit-Cookie
     GH_USER: github-actions
     GH_EMAIL: "github-action@users.noreply.github.com"
     GH_REPOSITORY: "github.com/${{ github.repository }}.git"

@@ -30,7 +30,6 @@ The rules for this file:
 
 ### Added
 <!-- New added features -->
-- Fixed ModuleNotFound after installation (Issue #113, PR #115) 
 - Add black configurartion to `pyproject.toml` (Issue #73, PR #75)
 - Cookiecutter version dependency (Issue #33, PR #46)
 - Configuration files for external hooks (PR #9)
@@ -43,6 +42,8 @@ The rules for this file:
 
 ### Fixed
 <!-- Bug fixes -->
+- Fixed pypi_check with lowercase (PR #118, Issue #112)
+- Fixed ModuleNotFound after installation (Issue #113, PR #115) 
 - Fix cookie pypi_check test (PR #45)
 - Bump minimum Python version to 3.9 in line with CI build matrix (#70)
 - Propagate `**kwargs` to `AnalysisBase` (PR #66)
