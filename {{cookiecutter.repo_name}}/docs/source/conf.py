@@ -116,8 +116,9 @@ html_theme_options = {
 
 {%- if cookiecutter.github_host_account != "MDAnalysis" %}
 # Set your logo and favicon here -- replace the placeholders!
-html_logo = "_static/logo/placeholder_logo.png"
-html_favicon = "_static/logo/placeholder_favicon.svg"
+# An SVG with empty gears is provided for editing
+html_logo = "_static/logo/mdakits_placeholder_logo.png"
+html_favicon = "_static/logo/mdakits_placeholder_favicon.svg"
 {% endif %}
 
 # Add any paths that contain custom static files (such as style sheets) here,
