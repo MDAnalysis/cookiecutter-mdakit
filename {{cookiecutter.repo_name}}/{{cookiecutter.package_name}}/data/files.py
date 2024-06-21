@@ -14,6 +14,6 @@ __all__ = [
 
 import importlib.resources
 
-data_directory = importlib.resources.files("{{ cookiecutter.package_name }}") / "tests" / "data"
+data_directory = importlib.resources.files("{{ cookiecutter.package_name }}") / "data"
 
 MDANALYSIS_LOGO = data_directory / "mda.txt"
