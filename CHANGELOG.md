@@ -42,6 +42,7 @@ The rules for this file:
 
 ### Fixed
 <!-- Bug fixes -->
+- Switched deprecated pkg_resources to use importlib (PR #122, Issue #121)
 - Fixed pypi_check with lowercase (PR #118, Issue #112)
 - Fixed ModuleNotFound after installation (Issue #113, PR #115) 
 - Fix cookie pypi_check test (PR #45)
