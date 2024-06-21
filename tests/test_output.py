@@ -58,7 +58,7 @@ def test_write_outputs(
     output_directory.mkdir(exist_ok=True)
     kitter = CookiecutterMDAKit(
         project_name=project_name,
-        repo_name="mdakit-Cookie",
+        repo_name="mdakit-Cookie.repo",
         package_name="cookieKit",
         github_username="test-user-account",
         github_host_account=github_host_account,
