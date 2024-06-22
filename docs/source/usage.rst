@@ -54,6 +54,7 @@ Documentation: ReadTheDocs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ReadTheDocs builds documentation automatically for you from the files in ``docs/``.
+(See more in the section on **Documentation**.)
 To link ReadTheDocs, ensure that you have a `ReadTheDocs`_ account;
 you should be able to use your GitHub account. To link the project,
 click the ``Import a Project`` button on the dashboard.
@@ -125,7 +126,74 @@ To keep things clean and simple, we advise a few tips:
   for more information.
 
 
-5. Tagging versions of your code
+5. Set up documentation
+-----------------------
+
+Documentation is important for your users and for yourself.
+
+The documentation is built using `Sphinx <https://www.sphinx-doc.org/en/master/>`_.
+
+Generally, a project will have a few types of documentation:
+
+  * User guide-type documentation, which explains how and why to use the package.
+    While it may contain code examples, it's typically more of a broad
+    overview of package usage. 
+    For example, this page is user-guide-like documentation.
+    A stub page for user-guide-like documentation is created in
+    ``docs/source/getting_started.rst``.
+
+  * API documentation, which explains how to use the code.
+    This is often automatically generated from docstrings in the code.
+    A stub page for API documentation is created in
+    ``docs/source/api.rst``.
+
+
+Documentation configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The documentation is configured in the ``docs/source/conf.py`` file.
+This file contains settings for the documentation, such as the
+project name, version, and theme. You can also add extensions
+to the documentation.
+More information on configuring Sphinx can be found in the
+`Sphinx documentation <https://www.sphinx-doc.org/en/master/usage/configuration.html>`_.
+
+By default, the documentation is built using the MDAnalysis theme
+sphinx theme using the default template MDAKits logo and `favicon`_.
+You can change the theme by modifying the ``html_theme`` variable in
+``docs/source/conf.py``.
+You can also change the logo by either modifying the
+``html_logo`` variable or by replacing the
+``_static/logo/mdakits-placeholder-logo.png`` file.
+(This path is relative to the ``docs/source`` directory;
+the full path, relative to the repository root, is
+``docs/source/_static/logo/mdakits-placeholder-logo.png``.)
+
+Similarly, you can change the favicon by replacing the
+``html_favicon`` variable or by replacing the
+``_static/logo/mdakits-empty-favicon-template.svg`` file.
+
+You are welcome to either create an entirely custom logo
+and favicon or to use the provided templates.
+An ``mdakits-empty-logo-template.svg`` and
+``mdakits-empty-favicon-template.svg`` are provided in the
+``docs/source/_static/logo`` directory as templates for
+editing -- feel free to place your logo within the gears!
+
+Building the documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To build the documentation, you can use the following command:
+
+.. code-block:: bash
+
+  $ cd docs
+  $ make html
+
+This will build the documentation in the ``docs/build/html`` directory.
+
+
+6. Tagging versions of your code
 --------------------------------
 
 Tagging versions of your code is a good way to keep references
@@ -172,3 +240,4 @@ After creating a tag, you can check the versioning again:
 .. _ReadTheDocs: https://docs.readthedocs.io/en/stable/index.html
 .. _cookiecutter: https://cookiecutter.readthedocs.io/en/stable/
 .. _versioningit: https://versioningit.readthedocs.io/en/stable/index.html
+.. _favicon: https://en.wikipedia.org/wiki/Favicon
