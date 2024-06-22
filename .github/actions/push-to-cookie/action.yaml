@@ -4,8 +4,8 @@ inputs:
   source-directory:
     description: Source directory
     required: true
-  target-branch:
-    description: Target branch
+  source-package:
+    description: Source package name
     required: true
   target-repository:
     description: Target repository name
@@ -53,7 +53,7 @@ runs:
         cp -r ${{ inputs.source-directory }} ${HOME}/cookies
         cd ${HOME}/cookies
 
-        for mdakit_directory in $(ls -d */${{ inputs.target-repository }}) ; do
+        for mdakit_directory in $(ls -d */${{ inputs.source-package }}) ; do
           TARGET_BRANCH=$(dirname $mdakit_directory)
           echo "Target branch: ${TARGET_BRANCH}"
 
