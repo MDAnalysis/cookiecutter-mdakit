@@ -53,8 +53,8 @@ class TestGitHubHostAccount:
             text = conf.read_text()
             patterns = [
                 '"mda_official": False,',
-                'html_logo = "_static/logo/placeholder_logo.png"',
-                'html_favicon = "_static/logo/placeholder_favicon.svg"',
+                'html_logo = "_static/logo/mdakits-placeholder-logo.png"',
+                'html_favicon = "_static/logo/mdakits-empty-favicon-template.svg"',
             ]
             for pattern in patterns:
                 assert pattern in text, f"{pattern} not found"
