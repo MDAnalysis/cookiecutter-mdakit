@@ -110,6 +110,8 @@ jobs:
         uses: ./.github/actions/push-to-cookie
         with:
           source-directory: ${{ env.OUTPUT_DIRECTORY }}
+          target-repository: mdakit-cookie
+          source-package: mdakit-Cookie
           target-ssh-deploy-key: ${{ secrets.MDAKIT_COOKIE_SSH_DEPLOY_KEY }}
 
       - name: Push to remote
