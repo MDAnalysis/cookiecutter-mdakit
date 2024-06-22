@@ -59,4 +59,6 @@ runs:
         docker images
         sed -i -e 's/fail_ci_if_error: true/fail_ci_if_error: false/g' .github/workflows/gh-ci.yaml
         cat .github/workflows/gh-ci.yaml
-        act --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ inputs.CODECOV_TOKEN }} -p=false
+        act --job main-tests --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ inputs.CODECOV_TOKEN }} -p=false --matrix os:ubuntu-latest
+        act --job pylint_check --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ inputs.CODECOV_TOKEN }} -p=false
+        act --job pypi_check --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ inputs.CODECOV_TOKEN }} -p=false
