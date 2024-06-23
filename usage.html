@@ -94,7 +94,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#make-and-push-changes-to-your-code">4. Make and push changes to your code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tagging-versions-of-your-code">5. Tagging versions of your code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-documentation">5. Set up documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-configuration">Documentation configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-documentation">Building the documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tagging-versions-of-your-code">6. Tagging versions of your code</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
@@ -172,69 +177,70 @@ Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </s
 </pre></div>
 </div>
 <p>This generates the output skeleton:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>example-repository                         
-├── .codecov.yml                              &lt;- Settings for Codecov
-├── .gitattributes                         
-├── .github                                   &lt;- GitHub hooks for user contribution, pull request guides and GitHub Actions CI
-│   ├── ISSUE_TEMPLATE                        &lt;- Templates for opening issues on GitHub
-│   │   ├── bug_report.md                  
-│   │   └── feature_request.md             
-│   ├── PULL_REQUEST_TEMPLATE.md              &lt;- Template for opening a pull request on GitHub
-│   └── workflows                             &lt;- where the configuration for CI lives
-│       └── gh-ci.yaml                     
-├── .gitignore                                &lt;- Stock helper file telling git what file name patterns to ignore when adding files
-├── .pre-commit-config.yaml                   &lt;- Settings for pre-commit hooks for flake8 and isort
-├── .pylintrc                                 &lt;- Settings for PyLint
-├── AUTHORS.md                                &lt;- List of all contributors to the package
-├── CHANGELOG.md                              &lt;- Log of changes in each release
-├── CODE_OF_CONDUCT.md                        &lt;- Code of Conduct for developers and users
-├── CONTRIBUTING.md                           &lt;- Guide to contributing
-├── LICENSE                                   &lt;- License file
-├── MANIFEST.in                               &lt;- Packaging information for pip
-├── README.md                                 &lt;- Description of project which GitHub will render
-├── devtools                                  &lt;- Environment and other development tools
-│   └── conda-envs                            &lt;- Conda environments for testing
-│       └── test_env.yaml                     &lt;- Default test environment file
-├── docs                                      &lt;- Documentation template folder with many settings already filled in
-│   ├── Makefile                           
-│   ├── README.md                             &lt;- Instructions on how to build the docs
-│   ├── make.bat                           
-│   ├── requirements.yaml                     &lt;- Documentation building specific requirements. Usually a smaller set than the main program
-│   └── source                             
-│       ├── _static                        
-│       │   ├── README.md                  
-│       │   └── logo                       
-│       │       ├── placeholder_favicon.svg
-│       │       └── placeholder_logo.png   
-│       ├── _templates                     
-│       │   └── README.md                  
-│       ├── api.rst                        
-│       ├── conf.py                        
-│       ├── getting_started.rst            
-│       └── index.rst                      
-├── package_name                           
-│   ├── __init__.py                        
-│   ├── analysis                           
-│   │   ├── __init__.py                    
-│   │   └── myanalysisclass.py             
-│   ├── data                                  &lt;- Sample additional data (non-code) which can be packaged
-│   │   ├── README.md                      
-│   │   ├── __init__.py                    
-│   │   ├── files.py                          &lt;- Recommended file for resolving data file names
-│   │   └── mda.txt                           &lt;- Just an example, delete in production
-│   └── tests                                 &lt;- Unit test directory with sample tests
-│       ├── __init__.py                    
-│       ├── analysis                       
-│       │   ├── __init__.py                
-│       │   └── test_myanalysisclass.py    
-│       ├── conftest.py                       &lt;- File for common pytest fixtures
-│       ├── test_package_name.py              &lt;- Example test file
-│       └── utils.py                       
-├── pyproject.toml                            &lt;- Dependencies for pip
-└── readthedocs.yaml                          &lt;- Settings for ReadTheDocs
-                                           
-16 directories, 44 files                   
-                                           
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>example-repository                                    
+├── .codecov.yml                                         &lt;- Settings for Codecov
+├── .gitattributes                                    
+├── .github                                              &lt;- GitHub hooks for user contribution, pull request guides and GitHub Actions CI
+│   ├── ISSUE_TEMPLATE                                   &lt;- Templates for opening issues on GitHub
+│   │   ├── bug_report.md                             
+│   │   └── feature_request.md                        
+│   ├── PULL_REQUEST_TEMPLATE.md                         &lt;- Template for opening a pull request on GitHub
+│   └── workflows                                        &lt;- where the configuration for CI lives
+│       └── gh-ci.yaml                                
+├── .gitignore                                           &lt;- Stock helper file telling git what file name patterns to ignore when adding files
+├── .pre-commit-config.yaml                              &lt;- Settings for pre-commit hooks for flake8 and isort
+├── .pylintrc                                            &lt;- Settings for PyLint
+├── AUTHORS.md                                           &lt;- List of all contributors to the package
+├── CHANGELOG.md                                         &lt;- Log of changes in each release
+├── CODE_OF_CONDUCT.md                                   &lt;- Code of Conduct for developers and users
+├── CONTRIBUTING.md                                      &lt;- Guide to contributing
+├── LICENSE                                              &lt;- License file
+├── MANIFEST.in                                          &lt;- Packaging information for pip
+├── README.md                                            &lt;- Description of project which GitHub will render
+├── devtools                                             &lt;- Environment and other development tools
+│   └── conda-envs                                       &lt;- Conda environments for testing
+│       └── test_env.yaml                                &lt;- Default test environment file
+├── docs                                                 &lt;- Documentation template folder with many settings already filled in
+│   ├── Makefile                                      
+│   ├── README.md                                        &lt;- Instructions on how to build the docs
+│   ├── make.bat                                      
+│   ├── requirements.yaml                                &lt;- Documentation building specific requirements. Usually a smaller set than the main program
+│   └── source                                        
+│       ├── _static                                   
+│       │   ├── README.md                             
+│       │   └── logo                                  
+│       │       ├── mdakits-empty-favicon-template.svg
+│       │       ├── mdakits-empty-logo-template.svg   
+│       │       └── mdakits-placeholder-logo.png      
+│       ├── _templates                                
+│       │   └── README.md                             
+│       ├── api.rst                                   
+│       ├── conf.py                                   
+│       ├── getting_started.rst                       
+│       └── index.rst                                 
+├── package_name                                      
+│   ├── __init__.py                                   
+│   ├── analysis                                      
+│   │   ├── __init__.py                               
+│   │   └── myanalysisclass.py                        
+│   ├── data                                             &lt;- Sample additional data (non-code) which can be packaged
+│   │   ├── README.md                                 
+│   │   ├── __init__.py                               
+│   │   ├── files.py                                     &lt;- Recommended file for resolving data file names
+│   │   └── mda.txt                                      &lt;- Just an example, delete in production
+│   └── tests                                            &lt;- Unit test directory with sample tests
+│       ├── __init__.py                               
+│       ├── analysis                                  
+│       │   ├── __init__.py                           
+│       │   └── test_myanalysisclass.py               
+│       ├── conftest.py                                  &lt;- File for common pytest fixtures
+│       ├── test_package_name.py                         &lt;- Example test file
+│       └── utils.py                                  
+├── pyproject.toml                                       &lt;- Dependencies for pip
+└── readthedocs.yaml                                     &lt;- Settings for ReadTheDocs
+                                                      
+16 directories, 45 files                              
+                                                      
 </pre></div>
 </div>
 <p>We will go more into these files in the rest of this
@@ -265,6 +271,7 @@ external services. These need to be manually linked to each service to run.</p>
 <section id="documentation-readthedocs">
 <h3>Documentation: ReadTheDocs<a class="headerlink" href="#documentation-readthedocs" title="Link to this heading"></a></h3>
 <p>ReadTheDocs builds documentation automatically for you from the files in <code class="docutils literal notranslate"><span class="pre">docs/</span></code>.
+(See more in the section on <strong>Documentation</strong>.)
 To link ReadTheDocs, ensure that you have a <a class="reference external" href="https://docs.readthedocs.io/en/stable/index.html">ReadTheDocs</a> account;
 you should be able to use your GitHub account. To link the project,
 click the <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">a</span> <span class="pre">Project</span></code> button on the dashboard.</p>
@@ -330,8 +337,65 @@ See <a class="reference external" href="https://docs.github.com/en/pull-requests
 for more information.</p></li>
 </ul>
 </section>
+<section id="set-up-documentation">
+<h2>5. Set up documentation<a class="headerlink" href="#set-up-documentation" title="Link to this heading"></a></h2>
+<p>Documentation is important for your users and for yourself.</p>
+<p>The documentation is built using <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a>.</p>
+<p>Generally, a project will have a few types of documentation:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>User guide-type documentation, which explains how and why to use the package.
+While it may contain code examples, it’s typically more of a broad
+overview of package usage.
+For example, this page is user-guide-like documentation.
+A stub page for user-guide-like documentation is created in
+<code class="docutils literal notranslate"><span class="pre">docs/source/getting_started.rst</span></code>.</p></li>
+<li><p>API documentation, which explains how to use the code.
+This is often automatically generated from docstrings in the code.
+A stub page for API documentation is created in
+<code class="docutils literal notranslate"><span class="pre">docs/source/api.rst</span></code>.</p></li>
+</ul>
+</div></blockquote>
+<section id="documentation-configuration">
+<h3>Documentation configuration<a class="headerlink" href="#documentation-configuration" title="Link to this heading"></a></h3>
+<p>The documentation is configured in the <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code> file.
+This file contains settings for the documentation, such as the
+project name, version, and theme. You can also add extensions
+to the documentation.
+More information on configuring Sphinx can be found in the
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx documentation</a>.</p>
+<p>By default, the documentation is built using the MDAnalysis theme
+sphinx theme using the default template MDAKits logo and <a class="reference external" href="https://en.wikipedia.org/wiki/Favicon">favicon</a>.
+You can change the theme by modifying the <code class="docutils literal notranslate"><span class="pre">html_theme</span></code> variable in
+<code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code>.
+You can also change the logo by either modifying the
+<code class="docutils literal notranslate"><span class="pre">html_logo</span></code> variable or by replacing the
+<code class="docutils literal notranslate"><span class="pre">_static/logo/mdakits-placeholder-logo.png</span></code> file.
+(This path is relative to the <code class="docutils literal notranslate"><span class="pre">docs/source</span></code> directory;
+the full path, relative to the repository root, is
+<code class="docutils literal notranslate"><span class="pre">docs/source/_static/logo/mdakits-placeholder-logo.png</span></code>.)</p>
+<p>Similarly, you can change the favicon by replacing the
+<code class="docutils literal notranslate"><span class="pre">html_favicon</span></code> variable or by replacing the
+<code class="docutils literal notranslate"><span class="pre">_static/logo/mdakits-empty-favicon-template.svg</span></code> file.</p>
+<p>You are welcome to either create an entirely custom logo
+and favicon or to use the provided templates.
+An <code class="docutils literal notranslate"><span class="pre">mdakits-empty-logo-template.svg</span></code> and
+<code class="docutils literal notranslate"><span class="pre">mdakits-empty-favicon-template.svg</span></code> are provided in the
+<code class="docutils literal notranslate"><span class="pre">docs/source/_static/logo</span></code> directory as templates for
+editing – feel free to place your logo within the gears!</p>
+</section>
+<section id="building-the-documentation">
+<h3>Building the documentation<a class="headerlink" href="#building-the-documentation" title="Link to this heading"></a></h3>
+<p>To build the documentation, you can use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>docs
+$<span class="w"> </span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>This will build the documentation in the <code class="docutils literal notranslate"><span class="pre">docs/build/html</span></code> directory.</p>
+</section>
+</section>
 <section id="tagging-versions-of-your-code">
-<h2>5. Tagging versions of your code<a class="headerlink" href="#tagging-versions-of-your-code" title="Link to this heading"></a></h2>
+<h2>6. Tagging versions of your code<a class="headerlink" href="#tagging-versions-of-your-code" title="Link to this heading"></a></h2>
 <p>Tagging versions of your code is a good way to keep references
 to specific versions of your code that don’t change.
 This is especially useful when you want to make a new code
