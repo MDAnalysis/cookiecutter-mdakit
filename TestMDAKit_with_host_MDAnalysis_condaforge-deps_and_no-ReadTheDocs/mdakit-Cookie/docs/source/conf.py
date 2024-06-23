@@ -112,11 +112,6 @@ html_theme_options = {
 
 }
 
-# Set your logo and favicon here -- replace the placeholders!
-# An SVG with empty gears is provided for editing
-html_logo = "_static/logo/mdakits-placeholder-logo.png"
-html_favicon = "_static/logo/mdakits-empty-favicon-template.svg"
-
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
