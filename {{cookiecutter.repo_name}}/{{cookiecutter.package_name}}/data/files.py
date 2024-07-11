@@ -12,6 +12,8 @@ __all__ = [
     "MDANALYSIS_LOGO",  # example file of MDAnalysis logo
 ]
 
-from pkg_resources import resource_filename
+import importlib.resources
 
-MDANALYSIS_LOGO = resource_filename(__name__, "mda.txt")
+data_directory = importlib.resources.files("{{ cookiecutter.package_name }}") / "data"
+
+MDANALYSIS_LOGO = data_directory / "mda.txt"

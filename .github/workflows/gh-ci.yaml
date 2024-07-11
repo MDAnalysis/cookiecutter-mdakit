@@ -19,7 +19,7 @@ defaults:
 env:
     ARTIFACT_NAME: demo-mdakit-repos
     OUTPUT_DIRECTORY: /home/runner/example_outputs
-    OUTPUT_COOKIE_SUBDIRECTORY: TestMDAKit_with_host_MDAnalysis_condaforge-deps_and_ReadTheDocs/mdakit-cookie
+    OUTPUT_COOKIE_SUBDIRECTORY: TestMDAKit_with_host_MDAnalysis_condaforge-deps_and_ReadTheDocs/mdakit-Cookie
     GH_USER: github-actions
     GH_EMAIL: "github-action@users.noreply.github.com"
     GH_REPOSITORY: "github.com/${{ github.repository }}.git"
@@ -34,7 +34,7 @@ jobs:
         last-n-minor-python-release: [2, 1, 0]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - id: get-python-version
         uses: MDAnalysis/get-latest-python-version@main
@@ -49,7 +49,7 @@ jobs:
           echo "Using Python ${{ steps.get-python-version.outputs.python-version }}"
       
       - name: Set up Python ${{ steps.get-python-version.outputs.python-version }}
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ steps.get-python-version.outputs.python-version }}
 
@@ -84,7 +84,7 @@ jobs:
 
       - name: Upload artifact
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.last-n-minor-python-release == 0 }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.OUTPUT_DIRECTORY }}
@@ -95,13 +95,13 @@ jobs:
     needs: cookiecutter-main-tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Make output directory
         run: mkdir $OUTPUT_DIRECTORY
 
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.OUTPUT_DIRECTORY }}
@@ -110,6 +110,8 @@ jobs:
         uses: ./.github/actions/push-to-cookie
         with:
           source-directory: ${{ env.OUTPUT_DIRECTORY }}
+          target-repository: mdakit-cookie
+          source-package: mdakit-Cookie
           target-ssh-deploy-key: ${{ secrets.MDAKIT_COOKIE_SSH_DEPLOY_KEY }}
 
       - name: Push to remote
@@ -148,10 +150,10 @@ jobs:
   build_docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Install conda dependencies
-        uses: conda-incubator/setup-miniconda@v2
+        uses: conda-incubator/setup-miniconda@v3
         with:
           environment-file: docs/requirements.yaml
           add-pip-as-python-dependency: true
