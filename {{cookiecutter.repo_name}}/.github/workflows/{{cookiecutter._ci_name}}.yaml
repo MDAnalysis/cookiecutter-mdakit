@@ -65,7 +65,6 @@ jobs:
         python-version: {{ '${{ matrix.python-version }}' }}
         environment-file: devtools/conda-envs/test_env.yaml
         add-pip-as-python-dependency: true
-        architecture: x64
 {% if cookiecutter.__dependency_source == 'conda-forge' %}
         miniforge-variant: Mambaforge
         use-mamba: true
