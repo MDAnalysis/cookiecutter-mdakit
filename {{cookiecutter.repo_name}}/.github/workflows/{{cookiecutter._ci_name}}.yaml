@@ -145,7 +145,7 @@ jobs:
       env:
         PYLINTRC: .pylintrc
       run: |
-        pylint {{ cookiecutter.package_name }}
+        pylint {{ cookiecutter.repo_name }}
 
 
   pypi_check:
