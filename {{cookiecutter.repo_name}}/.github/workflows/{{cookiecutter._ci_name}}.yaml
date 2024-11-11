@@ -145,6 +145,7 @@ jobs:
       env:
         PYLINTRC: .pylintrc
       run: |
+        ls *
         pylint {{ cookiecutter.repo_name }}
 
 
