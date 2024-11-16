@@ -160,7 +160,7 @@ jobs:
           architecture: x64
           miniforge-version: "latest"
           use-mamba: true
-          channels: conda-forge, defaults
+          channels: conda-forge
           activate-environment: cookiecutter-mdakit-docs
           auto-update-conda: true
           show-channel-urls: true
