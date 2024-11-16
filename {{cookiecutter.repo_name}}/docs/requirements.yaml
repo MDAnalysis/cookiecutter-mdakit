@@ -1,6 +1,6 @@
 name: {{cookiecutter.repo_name}}-docs
 channels:
-{% if if cookiecutter.__dependency_source == 'anaconda' %}
+{% if cookiecutter.__dependency_source == 'anaconda' %}
   - defaults
 {% else %}
   - conda-forge
