@@ -158,9 +158,9 @@ jobs:
           environment-file: docs/requirements.yaml
           add-pip-as-python-dependency: true
           architecture: x64
-          miniforge-variant: Mambaforge
+          miniforge-version: "latest"
           use-mamba: true
-          channels: conda-forge, defaults
+          channels: conda-forge
           activate-environment: cookiecutter-mdakit-docs
           auto-update-conda: true
           show-channel-urls: true

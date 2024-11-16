@@ -66,10 +66,11 @@ jobs:
         environment-file: devtools/conda-envs/test_env.yaml
         add-pip-as-python-dependency: true
 {% if cookiecutter.__dependency_source == 'conda-forge' %}
-        miniforge-variant: Mambaforge
+        miniforge-version: "latest"
         use-mamba: true
-        channels: conda-forge, defaults
+        channels: conda-forge
 {% elif cookiecutter.__dependency_source == 'anaconda' %}
+        miniconda-version: "latest"
         channels: defaults
 {% endif %}
         activate-environment: {{cookiecutter.repo_name}}-test
