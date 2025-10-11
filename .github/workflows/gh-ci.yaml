@@ -11,6 +11,7 @@ on:
   schedule:
     # weekly tests
     - cron: "0 0 * * 0"
+  workflow_dispatch:
 
 defaults:
   run:
@@ -89,11 +90,13 @@ jobs:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.OUTPUT_DIRECTORY }}
           retention-days: 3
+          include-hidden-files: true
 
   update-repo-examples:
     if: github.event_name != 'pull_request'
     needs: cookiecutter-main-tests
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
