@@ -3,9 +3,9 @@ Unit and regression test for the cookieKit package.
 """
 
 # Import package, test suite, and other packages as needed
-import cookieKit
-import pytest
 import sys
+import pytest
+import cookieKit
 
 
 def test_cookieKit_imported():

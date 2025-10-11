@@ -123,7 +123,7 @@ jobs:
       env:
         PYLINTRC: .pylintrc
       run: |
-        pylint mdakit-Cookie
+        pylint .
 
 
   pypi_check:

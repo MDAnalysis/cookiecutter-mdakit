@@ -57,6 +57,7 @@ jobs:
         environment-file: devtools/conda-envs/test_env.yaml
         add-pip-as-python-dependency: true
 
+        miniconda-version: "latest"
         channels: defaults
 
         activate-environment: mdakit-Cookie-test
@@ -132,7 +133,7 @@ jobs:
       env:
         PYLINTRC: .pylintrc
       run: |
-        pylint mdakit-Cookie
+        pylint .
 
 
   pypi_check:

@@ -21,7 +21,7 @@ class MyAnalysisClass(AnalysisBase):
 
     Parameters
     ----------
-    universe_or_atomgroup: :class:`~MDAnalysis.core.universe.Universe` or :class:`~MDAnalysis.core.groups.AtomGroup`
+    universe_or_atomgroup: Universe or AtomGroup
         Universe or group of atoms to apply this analysis to.
         If a trajectory is associated with the atoms,
         then the computation iterates over the trajectory.

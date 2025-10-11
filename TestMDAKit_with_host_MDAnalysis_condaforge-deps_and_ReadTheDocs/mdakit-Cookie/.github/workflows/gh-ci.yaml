@@ -57,9 +57,9 @@ jobs:
         environment-file: devtools/conda-envs/test_env.yaml
         add-pip-as-python-dependency: true
 
-        miniforge-variant: Mambaforge
+        miniforge-version: "latest"
         use-mamba: true
-        channels: conda-forge, defaults
+        channels: conda-forge
 
         activate-environment: mdakit-Cookie-test
         auto-update-conda: true
@@ -134,7 +134,7 @@ jobs:
       env:
         PYLINTRC: .pylintrc
       run: |
-        pylint mdakit-Cookie
+        pylint .
 
 
   pypi_check:
