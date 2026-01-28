@@ -90,7 +90,7 @@ pip install ".[test,doc]"
 The TestMDAKit_with_host_other_pip-deps_and_ReadTheDocs source code is hosted at https://github.com/other/mdakit-Cookie
 and is available under the GNU General Public License, version 2 (see the file [LICENSE](https://github.com/other/mdakit-Cookie/blob/main/LICENSE)).
 
-Copyright (c) 2025, Test User name
+Copyright (c) 2026, Test User name
 
 
 #### Acknowledgements

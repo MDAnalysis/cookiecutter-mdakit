@@ -1,6 +1,6 @@
 # Authors
 
-TestMDAKit_with_host_other_anaconda-deps_and_ReadTheDocs was created by Test User name in 2025.
+TestMDAKit_with_host_other_anaconda-deps_and_ReadTheDocs was created by Test User name in 2026.
 
 
 All contributing authors are listed in this file below.
@@ -19,5 +19,5 @@ The rules for this file:
   * Don't ever delete anything
 -->
 
-**2025**
+**2026**
 - Test User name <@test-user-account>

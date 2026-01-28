@@ -24,7 +24,7 @@ import cookieKit  # noqa
 
 project = "TestMDAKit_with_host_other_anaconda-deps_and_ReadTheDocs"
 copyright = (
-    "2025, Test User name. "
+    "2026, Test User name. "
     "Project structure based on the "
     "MDAnalysis Cookiecutter version 0.1"
 )

@@ -31,13 +31,14 @@ jobs:
         matrix:
           os: [ubuntu-latest, macOS-latest, windows-latest]
           mdanalysis-version: ["latest", "develop"]
-          python-version: ["3.10", "3.11", "3.12"]
+          python-version: ["3.11", "3.12", "3.13", "3.14"]
           exclude:
             # Entries here exclude particular combinations of the matrix
             # Edit or remove as particular combinations come into or out of date
-            # Below we exclude runs with the latest release and Python 3.12
-            - mdanalysis-version: "latest"
-              python-version: "3.12"
+            # Below we exclude runs with the latest release and Python 3.14
+            # just as an example -- please adjust as needed
+            #- mdanalysis-version: "latest"
+            #  python-version: "3.14"
 
     steps:
     - uses: actions/checkout@v4
@@ -95,7 +96,7 @@ jobs:
 
     - name: codecov
       if: github.repository == 'MDAnalysis/mdakit-Cookie' && github.event_name != 'schedule'
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v5
       with:
         file: coverage.xml
         name: codecov-${{ matrix.os }}-py${{ matrix.python-version }}
@@ -121,7 +122,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.11"
+        python-version: "3.12"
 
     - name: Install Pylint
       run: |
@@ -146,7 +147,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.11"
+        python-version: "3.12"
 
     - name: Install dependencies
       run: |
