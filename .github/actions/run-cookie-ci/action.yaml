@@ -23,6 +23,9 @@ inputs:
   CODECOV_TOKEN:
     description: Codecov token
     required: true
+  GITHUB_TOKEN:
+    description: GitHub token
+    required: true
 
 runs:
   using: "composite"
@@ -55,10 +58,13 @@ runs:
     - name: Run cookiecutter CI
       working-directory: ${{ inputs.source-directory }}
       shell: bash
+      env:
+        CODECOV_TOKEN: ${{ inputs.CODECOV_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
       run: |
         docker images
         sed -i -e 's/fail_ci_if_error: true/fail_ci_if_error: false/g' .github/workflows/gh-ci.yaml
         cat .github/workflows/gh-ci.yaml
-        act --job main-tests --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ inputs.CODECOV_TOKEN }} -p=false --matrix os:ubuntu-latest
-        act --job pylint_check --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ inputs.CODECOV_TOKEN }} -p=false
-        act --job pypi_check --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=${{ inputs.CODECOV_TOKEN }} -p=false
+        act --job main-tests --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=$CODECOV_TOKEN -s GITHUB_TOKEN=$GITHUB_TOKEN -p=false --matrix os:ubuntu-latest
+        act --job pylint_check --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=$CODECOV_TOKEN -s GITHUB_TOKEN=$GITHUB_TOKEN -p=false
+        act --job pypi_check --platform ubuntu-latest=act-conda -s CODECOV_TOKEN=$CODECOV_TOKEN -s GITHUB_TOKEN=$GITHUB_TOKEN -p=false

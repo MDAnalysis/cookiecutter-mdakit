@@ -82,6 +82,7 @@ jobs:
         with:
           source-directory: ${{ env.OUTPUT_DIRECTORY }}/${{ env.OUTPUT_COOKIE_SUBDIRECTORY }}
           CODECOV_TOKEN: ${{ secrets.COOKIE_CODECOV_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload artifact
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.last-n-minor-python-release == 0 }}
