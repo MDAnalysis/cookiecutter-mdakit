@@ -1,0 +1,253 @@
+
+
+
+  
+    
+  
+
+
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="../_static/logo/mda_favicon.ico">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Packaging and Releases &mdash; MDAKit Cookiecutter 0.1.0b documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/site.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=cd7bf820"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/js/versions.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Files Overview" href="../files.html" />
+    <link rel="prev" title="Documentation" href="documentation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="../index.html">
+  
+    <img src="../_static/logo/mda_logo.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+    <div class="version">
+      0.1
+    </div>
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../customising.html">Preparing and customising your project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="github.html">Adding the project to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">Making and pushing changes to your code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">Testing and Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Packaging and Releases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#packaging">Packaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#versioning">Versioning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../customising.html#add-your-package-to-the-mdakit-registry">Add your package to the MDAKit Registry!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customising.html#documenting-changes-going-forward">Documenting changes going forward</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../files.html">Files Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cookiecutter/json_options.html">cookiecutter.json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookiecutter/hooks.html">Hook scripts</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MDAKit Cookiecutter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../customising.html">Preparing and customising your project</a></li>
+      <li class="breadcrumb-item active">Packaging and Releases</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/customising/packaging.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="packaging-and-releases">
+<h1>Packaging and Releases<a class="headerlink" href="#packaging-and-releases" title="Link to this heading"></a></h1>
+<section id="packaging">
+<span id="id1"></span><h2>Packaging<a class="headerlink" href="#packaging" title="Link to this heading"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file has been created by the cookiecutter to allow your
+code to be packaged and installed by users. This file has been automatically
+set up with relevant meta information, dependencies (both core and optional
+dependencies for tests and documentaiton), and settings for additional features
+including versioningit for <span class="xref std std-ref">versioning your code</span>.
+You can edit this file to alter and of this information as appropriate.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">MANIFEST.in</span></code> file is also created to identify additional files included
+when packaging your code (e.g., additional comminity information like the
+Code of Conduct).</p>
+<p>Includion of <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> should mean your code is installable from GitHub.</p>
+<p>It is also a good idea to upload your package onto a package repository such
+as <a class="reference external" href="https://pypi.org/">PyPI</a> or <a class="reference external" href="https://conda-forge.org/">conda-forge</a> to
+make installation even easier for your users.</p>
+<p>The <a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">PyPI documentation</a>
+contains instructions for creating distributions for your package and how to add
+these to PyPI.  The initial steps - creation of relevant files - have been
+handled for you by the cookiecutter.
+Once created, distribution files can also be used to
+<a class="reference external" href="https://conda-forge.org/docs/maintainer/adding_pkgs/">add your package to conda-forge</a>.</p>
+<p>As you develop your package, you should package and release new versions of your
+code to give users access to the new features.</p>
+</section>
+<section id="versioning">
+<span id="version"></span><h2>Versioning<a class="headerlink" href="#versioning" title="Link to this heading"></a></h2>
+<p>Tagging is a good way to keep references to a specific version of your code
+that won’t change. This is especially useful when you want to a new a new code release.
+The <code class="docutils literal notranslate"><span class="pre">cookiecutter</span></code> uses <a class="reference external" href="https://versioningit.readthedocs.io/en/stable/index.html">versioningit</a> to automatically determine your
+package’s version based on git tags.</p>
+<p>By default, the initial version has been set to <code class="docutils literal notranslate"><span class="pre">0.0.0</span></code>.
+You can install <a class="reference external" href="https://versioningit.readthedocs.io/en/stable/index.html">versioningit</a> to check the current versioningit output from commandline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;my_package_directory&gt;
+$<span class="w"> </span>versioningit<span class="w"> </span>.
+<span class="m">0</span>.0.0
+</pre></div>
+</div>
+<p>As you add commits, the versioning will automatically update with
+the commit hashes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>versioningit<span class="w"> </span>.
+<span class="m">0</span>.0.0+1.g58bcaff
+</pre></div>
+</div>
+<p>To tag a version, use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span>.1.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Version 0.1.0&quot;</span>
+</pre></div>
+</div>
+<p>This will create a tag called <code class="docutils literal notranslate"><span class="pre">0.1.0</span></code> with the message
+“Version 0.1.0”. You can then push this tag to GitHub with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">--tags</span></code>.</p>
+<p>After creating a tag, you can check the versioning again:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>versioningit<span class="w"> </span>.
+<span class="m">0</span>.1.0
+</pre></div>
+</div>
+<p>Once the new tag has been pushed to GitHub, you can
+<a class="reference external" href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository">make a new release</a>
+from this tag.</p>
+<p>If using PyPI/Conda-forge, you should also upload the new releases here to these.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="documentation.html" class="btn btn-neutral float-left" title="Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../files.html" class="btn btn-neutral float-right" title="Files Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2026, Irfan Alibay, Oliver Beckstein, Ian Kenney, Rocco Meli, Fiona Naughton, Lily Wang, Lawson Woods.</p>
+  </div>
+
+  
+
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        0.1.0b
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

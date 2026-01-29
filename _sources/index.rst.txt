@@ -27,11 +27,11 @@ Starting repositories can be created from this template so you can focus on what
 
 .. toctree::
    :maxdepth: 1
-   :caption: General
-   :hidden:
+   :caption: Usage
    
-   usage
-   options
+   getting_started
+   customising
+   files
 
 .. toctree::
    :maxdepth: 1

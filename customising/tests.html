@@ -1,0 +1,267 @@
+
+
+
+  
+    
+  
+
+
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="../_static/logo/mda_favicon.ico">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testing and Continuous Integration &mdash; MDAKit Cookiecutter 0.1.0b documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/site.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=cd7bf820"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/js/versions.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation" href="documentation.html" />
+    <link rel="prev" title="Making and pushing changes to your code" href="code.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="../index.html">
+  
+    <img src="../_static/logo/mda_logo.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+    <div class="version">
+      0.1
+    </div>
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../customising.html">Preparing and customising your project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="github.html">Adding the project to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">Making and pushing changes to your code</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Testing and Continuous Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#writing-tests-with-pytest">Writing tests with Pytest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-tests-with-pytest">Running tests with Pytest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-continuous-integration-with-github-actions">Running Continuous Integration with GitHub Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-coverage-with-codecov">Test coverage with Codecov</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging and Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customising.html#add-your-package-to-the-mdakit-registry">Add your package to the MDAKit Registry!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customising.html#documenting-changes-going-forward">Documenting changes going forward</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../files.html">Files Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cookiecutter/json_options.html">cookiecutter.json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookiecutter/hooks.html">Hook scripts</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MDAKit Cookiecutter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../customising.html">Preparing and customising your project</a></li>
+      <li class="breadcrumb-item active">Testing and Continuous Integration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/customising/tests.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="testing-and-continuous-integration">
+<h1>Testing and Continuous Integration<a class="headerlink" href="#testing-and-continuous-integration" title="Link to this heading"></a></h1>
+<section id="writing-tests-with-pytest">
+<span id="writing-tests"></span><h2>Writing tests with Pytest<a class="headerlink" href="#writing-tests-with-pytest" title="Link to this heading"></a></h2>
+<p>A subpackage <code class="docutils literal notranslate"><span class="pre">{package_name}/tests/</span></code> is provided for you to add your tests.
+The cookiecutter uses <a class="reference external" href="https://docs.pytest.org">pytest</a>; read the
+<a class="reference external" href="https://docs.pytest.org/en/stable/how-to/assert.html">pytest documentation</a>
+for more information on writing tests with pytest.</p>
+<p>The generated <code class="docutils literal notranslate"><span class="pre">tests/</span></code> subpackage includes several template files and examples
+to get you stated:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">conftest.py</span></code>, which demonstrates creation of a
+<a class="reference external" href="https://docs.pytest.org/en/stable/explanation/fixtures.html">fixture</a> using
+the example MDAnalysis logo datafile</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">test_{package_name}.py</span></code>: an initial test module, where you add the tests
+themselves, with initial sample tests for checking your package can be imported
+and a basic test using the MDAnalysis logo picture setup up in <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">utils.py</span></code>: a utility file for other code useful for your tests, containing a
+class for creating a dummy MDAnalysis Universe.</p></li>
+</ul>
+<p>If you opted to include a template analysis class when using the cookiecutter, an
+<code class="docutils literal notranslate"><span class="pre">analysis</span></code> subpackge is also created, containing a
+<code class="docutils literal notranslate"><span class="pre">test_{template_analysis_class}.py</span></code> module with initial framework for checking
+your analysis class with a dummy universe.</p>
+</section>
+<section id="running-tests-with-pytest">
+<span id="running-tests"></span><h2>Running tests with Pytest<a class="headerlink" href="#running-tests-with-pytest" title="Link to this heading"></a></h2>
+<p>Running pytest requires additional dependencies.
+<code class="docutils literal notranslate"><span class="pre">devtools/conta-denvs/test_env.yaml</span></code> specifies the initial dependencies,
+allowing you to easily <a class="reference internal" href="code.html#virtual-environment"><span class="std std-ref">add them to your virtual environment</span></a>.</p>
+<p>Tests can then be run locally using:</p>
+<p>Depending on your project, you may end up with additional dependentices for
+your tests; add them in both <code class="docutils literal notranslate"><span class="pre">test_env.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+</section>
+<section id="running-continuous-integration-with-github-actions">
+<span id="continuous-integration"></span><h2>Running Continuous Integration with GitHub Actions<a class="headerlink" href="#running-continuous-integration-with-github-actions" title="Link to this heading"></a></h2>
+<p>Continuous Integration (CI) for your project has been set up via a
+<a class="reference external" href="https://docs.github.com/en/actions">GitHub actions</a> workflow in
+<code class="docutils literal notranslate"><span class="pre">.github/workflows/gh-ci.yaml</span></code>. This CI should begin automatically once the
+code is on GitHub, and will run when you push changes to the main branch, a Pull
+Request is made, and on a once-weekly schedule.</p>
+<p>The provided CI workflow include checks for:</p>
+<ul class="simple">
+<li><p>running Pytest on with various combinations of operating system (ubuntu,
+macOS, windows), Python versions, and MDAnalysis version (‘latest’ and ‘develop’)</p></li>
+<li><p>hooks to generate test coverage reports with <a class="reference external" href="https://about.codecov.io/">CodeCov</a>
+(further setup required, see <span class="xref std std-ref">test-covereage</span>)</p></li>
+<li><p>a code formatting check using <a class="reference external" href="https://www.pylint.org/">Pylint</a></p></li>
+<li><p>a test to see if a source distribution can be built</p></li>
+</ul>
+<p>CI results will appear in the <code class="docutils literal notranslate"><span class="pre">Actions</span></code> tab on GitHub or in the PR, as appropriate.</p>
+</section>
+<section id="test-coverage-with-codecov">
+<span id="test-coverage"></span><h2>Test coverage with Codecov<a class="headerlink" href="#test-coverage-with-codecov" title="Link to this heading"></a></h2>
+<p>The MDAKits cookiecutter uses CodeCov for test coverage reporting.
+To make use of this feature, you will first need to sign up at
+<a class="reference external" href="https://about.codecov.io/">Codecov</a> and follow the instructions to
+<a class="reference external" href="https://docs.codecov.com/docs/quick-start">set up this repository</a>
+by adding the GitHub App Integration (Steps 1 and 2).
+Uploading of the coverage report (Step 4) is already provided by the
+<a class="reference internal" href="#continuous-integration"><span class="std std-ref">cookiecutter generated CI</span></a>.</p>
+<p>You may need to trigger some tests (e.g. by pushing to the GitHub repository)
+and wait a few hours before seeing coverage reports appearing on Codecov.
+You can use these reports (also visible from the <cite>Actions</cite> tab on GitHub and
+in your PRs) to discover which parts of your code
+are not checked by your current tests.
+<strong>You should ideally aim for &gt;90% code coverage to ensure that
+your package actually does what you think it does!</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.codecov.yml</span></code> file contains configuration for Codecov.
+Edit that file to modify settings, such as files to ignore
+and what to include in the coverage report.
+See the <a class="reference external" href="https://docs.codecov.com/docs/codecov-yaml">Codecov docs</a> for more information.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="code.html" class="btn btn-neutral float-left" title="Making and pushing changes to your code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="documentation.html" class="btn btn-neutral float-right" title="Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2026, Irfan Alibay, Oliver Beckstein, Ian Kenney, Rocco Meli, Fiona Naughton, Lily Wang, Lawson Woods.</p>
+  </div>
+
+  
+
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        0.1.0b
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

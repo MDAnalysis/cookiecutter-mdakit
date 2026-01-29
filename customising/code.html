@@ -1,0 +1,249 @@
+
+
+
+  
+    
+  
+
+
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="../_static/logo/mda_favicon.ico">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Making and pushing changes to your code &mdash; MDAKit Cookiecutter 0.1.0b documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/site.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=cd7bf820"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/js/versions.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Testing and Continuous Integration" href="tests.html" />
+    <link rel="prev" title="Adding the project to GitHub" href="github.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="../index.html">
+  
+    <img src="../_static/logo/mda_logo.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+    <div class="version">
+      0.1
+    </div>
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../customising.html">Preparing and customising your project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="github.html">Adding the project to GitHub</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Making and pushing changes to your code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tips-while-writing-your-code">Tips while writing your code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">Testing and Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging and Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customising.html#add-your-package-to-the-mdakit-registry">Add your package to the MDAKit Registry!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customising.html#documenting-changes-going-forward">Documenting changes going forward</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../files.html">Files Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cookiecutter/json_options.html">cookiecutter.json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookiecutter/hooks.html">Hook scripts</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MDAKit Cookiecutter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../customising.html">Preparing and customising your project</a></li>
+      <li class="breadcrumb-item active">Making and pushing changes to your code</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/customising/code.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="making-and-pushing-changes-to-your-code">
+<h1>Making and pushing changes to your code<a class="headerlink" href="#making-and-pushing-changes-to-your-code" title="Link to this heading"></a></h1>
+<p id="adding-code">Now you should go forth and code!</p>
+<p>Your project’s code will live in the <code class="docutils literal notranslate"><span class="pre">{package_name}/</span></code> directory.
+A basic <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file (which <span class="xref std std-ref">sets the version</span>) as
+been pre-generated, along with several subpackages (and accompanying (empty)
+<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">analysis/</span></code>: If you chose to include a template analysis class when
+running the cookiecutter, that class will appear in
+<code class="docutils literal notranslate"><span class="pre">{package_name}/anaylsis/{template_analysis_class}.py</span></code>. This class is based
+on <a class="reference external" href="https://docs.mdanalysis.org/stable/documentation_pages/analysis/base.html">MDAnalysis AnalysisBase</a>.
+Comments in file should help you as you customise this class for your analysis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tests/</span></code>: where your code’s unit tests will live. See  <a class="reference internal" href="tests.html#writing-tests"><span class="std std-ref">Writing tests with Pytest</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data/</span></code>: for including additional (non-code) files with your package, such
+as molecular structures; this may be useful for e.g. running tests. The
+included <code class="docutils literal notranslate"><span class="pre">data/README.md</span></code> file provides more information. <code class="docutils literal notranslate"><span class="pre">files.py</span></code>
+provides an example of how to set up files so they can be imported elsewhere
+in your package (useful especially if you wish to use the data in multiple
+places), using the example datafile <code class="docutils literal notranslate"><span class="pre">mda.txt</span></code>- containing ASCII art of the
+MDAnalysis logo. The <a class="reference internal" href="tests.html#writing-tests"><span class="std std-ref">example test files</span></a> include an
+example usage of this file.</p></li>
+</ul>
+<section id="tips-while-writing-your-code">
+<h2>Tips while writing your code<a class="headerlink" href="#tips-while-writing-your-code" title="Link to this heading"></a></h2>
+<p>To keep things clean and simple, we advise a few tips:</p>
+<ul id="virtual-environment">
+<li><p>Always work in a virtual environment like <code class="docutils literal notranslate"><span class="pre">conda</span></code>.
+You can create a development environment by following
+the instructions in the README. In short, to create an environment that should contain
+all the tools you need to write and (locally) run tests and build documentation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>&lt;environment_name&gt;<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
+conda<span class="w"> </span>activate<span class="w"> </span>&lt;environment_name&gt;<span class="w">  </span><span class="c1"># remember to do this every time</span>
+conda<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--name<span class="w"> </span>&lt;environment_name&gt;<span class="w"> </span>--file<span class="w"> </span>devtools/conda-envs/test_env.yaml
+conda<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--name<span class="w"> </span>&lt;environment_name&gt;<span class="w"> </span>--file<span class="w"> </span>docs/requirements.yaml
+</pre></div>
+</div>
+</li>
+<li><p>Always work in a separate branch. The <code class="docutils literal notranslate"><span class="pre">main</span></code> branch
+is the default, or central, branch. All development
+work should be done in a separate branch to avoid
+messing up the main branch, or to allow you to work on
+different approaches at the same time. This also
+allows multiple people to work on the code at the same time.
+Create a new branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">&lt;my_branch_name&gt;</span></code>.
+See <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches">GitHub’s documentation on branches</a>
+for more information.</p></li>
+<li><p>When you feel ready, open a pull request on GitHub.
+<strong>This does not have to be when you think you have finished the code!</strong>
+A PR runs tests and builds documentation.
+This will allow others to review your code and
+help you make sure it is correct.
+It’s always a good way to get feedback and validation,
+as well as collaborate with other people.
+See <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">GitHub’s documentation on PRs</a>
+for more information.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="github.html" class="btn btn-neutral float-left" title="Adding the project to GitHub" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tests.html" class="btn btn-neutral float-right" title="Testing and Continuous Integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2026, Irfan Alibay, Oliver Beckstein, Ian Kenney, Rocco Meli, Fiona Naughton, Lily Wang, Lawson Woods.</p>
+  </div>
+
+  
+
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        0.1.0b
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

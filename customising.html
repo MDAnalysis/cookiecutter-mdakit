@@ -1,0 +1,244 @@
+
+
+
+  
+    
+  
+
+
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="_static/logo/mda_favicon.ico">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preparing and customising your project &mdash; MDAKit Cookiecutter 0.1.0b documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/site.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=cd7bf820"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/js/versions.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Adding the project to GitHub" href="customising/github.html" />
+    <link rel="prev" title="Getting Started" href="getting_started.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="index.html">
+  
+    <img src="_static/logo/mda_logo.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+    <div class="version">
+      0.1
+    </div>
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Preparing and customising your project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="customising/github.html">Adding the project to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customising/code.html">Making and pushing changes to your code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customising/tests.html">Testing and Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customising/documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customising/packaging.html">Packaging and Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-your-package-to-the-mdakit-registry">Add your package to the MDAKit Registry!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documenting-changes-going-forward">Documenting changes going forward</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">Files Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cookiecutter/json_options.html">cookiecutter.json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookiecutter/hooks.html">Hook scripts</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MDAKit Cookiecutter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Preparing and customising your project</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/customising.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="preparing-and-customising-your-project">
+<span id="customising-label"></span><h1>Preparing and customising your project<a class="headerlink" href="#preparing-and-customising-your-project" title="Link to this heading"></a></h1>
+<p>Running the cookiecutter provides you with a skeleton for a Python package,
+including configuration files for several optional tools.  All generated files
+live in a the <code class="docutils literal notranslate"><span class="pre">{repo_name}</span></code> directory.</p>
+<p>The next steps are to add your code, corresponding tests and documentation,
+and complete any extra steps to get optional tools running (e.g. linking to
+external services). The sections below provide more detail on these steps.
+Generated file will be discussed as the become relevant; see
+<a class="reference internal" href="files.html#files-label"><span class="std std-ref">Files Overview</span></a> for an overview of all the generated files.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="customising/github.html">Adding the project to GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customising/code.html">Making and pushing changes to your code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customising/tests.html">Testing and Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customising/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customising/packaging.html">Packaging and Releases</a></li>
+</ul>
+</div>
+<p>In addition to code and configuration files, the cookiecutter template
+includes several ready-to-go human-readable files intended to provide
+information to your users, contributors, or general community. Make sure to
+read each though and see that it matches your vision for your project, or
+ammend appropriately:</p>
+<ul class="simple" id="general-info">
+<li><p><strong>License:</strong> Your code needs to be clearly licensed so that users know if
+they can (legally) use it. The cookiecutter will apply the <strong>GPLv2</strong>
+license by default, included in the <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file. If you decide to use a
+different license (see <a class="reference external" href="https://choosealicense.com/">ChooseALicense</a>), also
+update the copyright infromation in <code class="docutils literal notranslate"><span class="pre">README.md</span></code>.</p></li>
+<li><p><strong>README:</strong> <code class="docutils literal notranslate"><span class="pre">README.md</span></code> is the introductory explanation to you project; it
+will be rendered on your GitHub repo’s home page. It has been pre-filled with
+some basic information, including your description and several badges that
+provide at-a-glance information to users on current version, test status, and more.</p></li>
+</ul>
+<p id="community-resources"><strong>Community resources</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> outlines rules for behaviour for those in your community.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONTRIBUTING.md</span></code> provides information and instructions for those who want to contribute.</p></li>
+</ul>
+<section id="add-your-package-to-the-mdakit-registry">
+<h2>Add your package to the MDAKit Registry!<a class="headerlink" href="#add-your-package-to-the-mdakit-registry" title="Link to this heading"></a></h2>
+<p>The cookiecutter-generated template already ticks off most of the requirements
+for registering your MDAKit on the <a class="reference external" href="https://mdakits.mdanalysis.org/">MDAKit Registry</a>!</p>
+<p>Once you’ve added your code, tests, and added the package to GitHub, you should
+be ready to start the <a class="reference external" href="https://mdakits.mdanalysis.org/addingakit.html">registration process</a>
+(though it is recommended you continue to develop your package beyond these
+basic requirements).</p>
+</section>
+<section id="documenting-changes-going-forward">
+<span id="documenting-changes"></span><h2>Documenting changes going forward<a class="headerlink" href="#documenting-changes-going-forward" title="Link to this heading"></a></h2>
+<p>An initial <code class="docutils literal notranslate"><span class="pre">AUTHORS.md</span></code> (pre-populated with your name)  and tempate
+<code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code>  are also generated. As you go forward and develop your code,
+<strong>update these files to track all contributors and important changes to your
+project</strong>. Instructions are provided within each file suggesting the appropriate
+format to use.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="customising/github.html" class="btn btn-neutral float-right" title="Adding the project to GitHub" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2026, Irfan Alibay, Oliver Beckstein, Ian Kenney, Rocco Meli, Fiona Naughton, Lily Wang, Lawson Woods.</p>
+  </div>
+
+  
+
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        0.1.0b
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

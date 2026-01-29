@@ -1,0 +1,307 @@
+
+
+
+  
+    
+  
+
+
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="../_static/logo/mda_favicon.ico">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation &mdash; MDAKit Cookiecutter 0.1.0b documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/site.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=cd7bf820"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/js/versions.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Packaging and Releases" href="packaging.html" />
+    <link rel="prev" title="Testing and Continuous Integration" href="tests.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="../index.html">
+  
+    <img src="../_static/logo/mda_logo.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+    <div class="version">
+      0.1
+    </div>
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../customising.html">Preparing and customising your project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="github.html">Adding the project to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">Making and pushing changes to your code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">Testing and Continuous Integration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#writing-documentation-for-sphinx">Writing documentation for Sphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-documentation-with-sphinx">Configuring the documentation with Sphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-documentation-with-sphinx">Building the documentation with Sphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hosting-documentation-with-readthedocs">Hosting documentation with ReadTheDocs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging and Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customising.html#add-your-package-to-the-mdakit-registry">Add your package to the MDAKit Registry!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customising.html#documenting-changes-going-forward">Documenting changes going forward</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../files.html">Files Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cookiecutter/json_options.html">cookiecutter.json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookiecutter/hooks.html">Hook scripts</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MDAKit Cookiecutter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../customising.html">Preparing and customising your project</a></li>
+      <li class="breadcrumb-item active">Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/customising/documentation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="documentation">
+<span id="add-docs"></span><h1>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h1>
+<p>Documentation is important for your users and for yourself.</p>
+<p>The documentation is built using <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a>.</p>
+<p>Generally, a project will have a few types of documentation:</p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">README</span></code> style overview, providing an quick introduction to the package
+(or the subdirectory in which it is included) (a base-level <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file
+is <a class="reference internal" href="../customising.html#general-info"><span class="std std-ref">automatically generated by the cookiecutter</span></a>)</p></li>
+<li><p>User guide-type documentation, which explains how and why to use the package.
+While it may contain code examples, it’s typically more of a broad
+overview of package usage.
+For example, this page is user-guide-like documentation.
+A stub page for user-guide-like documentation is created in
+<code class="docutils literal notranslate"><span class="pre">docs/source/getting_started.rst</span></code>.</p></li>
+<li><p>API documentation, which explains how to use the code.
+This is often automatically generated from docstrings in the code.
+A stub page for API documentation is created in
+<code class="docutils literal notranslate"><span class="pre">docs/source/api.rst</span></code>.</p></li>
+</ul>
+<p>The template <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory contains configuration files and initial stub pages for generating User Guide and API documentation using <a class="reference external" href="(https://www.sphinx-doc.org">Sphinx</a>.</p>
+<section id="writing-documentation-for-sphinx">
+<span id="documentation-writing"></span><h2>Writing documentation for Sphinx<a class="headerlink" href="#writing-documentation-for-sphinx" title="Link to this heading"></a></h2>
+<p>The cookiecutter creates three initial pages for your documentation, found in
+<code class="docutils literal notranslate"><span class="pre">docs/source/</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">index.rst</span></code>: the ‘home page’, including a table of contents</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getting_started.rst</span></code>: a stub page for user-guide-like documentation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">api.rst</span></code>: a page for API documentation, using Sphinx’s autosummary extension
+to automatically generate documentation from your code’s docstrings, assumed to
+be <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">NumPy style docstrings</a></p></li>
+</ul>
+<p>These files are written in
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#rst-primer">ReStructuredText format</a>.
+Modify these as you see fit, and add any additional pages in this folder. See the
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/index.html">Sphinx User Guide</a> for help.</p>
+</section>
+<section id="configuring-the-documentation-with-sphinx">
+<span id="documentation-configuration"></span><h2>Configuring the documentation with Sphinx<a class="headerlink" href="#configuring-the-documentation-with-sphinx" title="Link to this heading"></a></h2>
+<p>The documentation is configured in the <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code> file.
+This file contains settings for the documentation, such as the
+project name, version, and theme. You can also add extensions
+to the documentation.
+More information on configuring Sphinx can be found in the
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx documentation</a>.</p>
+<p>By default, the documentation is built using the MDAnalysis sphinx theme using
+the default template MDAKits logo and <a href="#id2"><span class="problematic" id="id3">`favicon`_</span></a>, and includes
+several useful extensions, e.g. to allow building of API docs from NumPy style docstrings.</p>
+<p>You can customise your documentation by:</p>
+<ul>
+<li><p><strong>Add additional extensions and configuration options</strong> - see the
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx documentaiton</a>.</p></li>
+<li><p><strong>Changing the theme</strong> by modifying the <code class="docutils literal notranslate"><span class="pre">html_theme</span></code> variable in
+<code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code>. You could also add custom style sheets in the
+<code class="docutils literal notranslate"><span class="pre">docs/source/_static/</span></code> and/or template pages in <code class="docutils literal notranslate"><span class="pre">docs/source/_templates/</span></code>;
+see the respective <code class="docutils literal notranslate"><span class="pre">README.md</span></code> files in those folders for more information.</p></li>
+<li><p><strong>Changing the logo</strong>: You can also change the logo by either modifying the
+<code class="docutils literal notranslate"><span class="pre">html_logo</span></code> variable or by replacing the <code class="docutils literal notranslate"><span class="pre">_static/logo/mdakits-placeholder-logo.png</span></code>
+file.
+(This path is relative to the <code class="docutils literal notranslate"><span class="pre">docs/source</span></code> directory; the full path, relative
+to the repository root, is <code class="docutils literal notranslate"><span class="pre">docs/source/_static/logo/mdakits-placeholder-logo.png</span></code>.)</p>
+<p>Similarly, you can change the favicon by replacing the <code class="docutils literal notranslate"><span class="pre">html_favicon</span></code>
+variable or by replacing the <code class="docutils literal notranslate"><span class="pre">_static/logo/mdakits-empty-favicon-template.svg</span></code> file.</p>
+<p>You are welcome to either create an entirely custom logo and favicon or to use
+the provided templates. An <code class="docutils literal notranslate"><span class="pre">mdakits-empty-logo-template.svg</span></code> and
+<code class="docutils literal notranslate"><span class="pre">mdakits-empty-favicon-template.svg</span></code> are provided in the
+<code class="docutils literal notranslate"><span class="pre">docs/source/_static/logo</span></code> directory as templates for editing – feel free to
+place your logo within the gears!</p>
+</li>
+</ul>
+</section>
+<section id="building-the-documentation-with-sphinx">
+<span id="documentation-building"></span><h2>Building the documentation with Sphinx<a class="headerlink" href="#building-the-documentation-with-sphinx" title="Link to this heading"></a></h2>
+<p>Building documentation requires different dependencies to you main package;
+an initial list of dependencies is provided in <code class="docutils literal notranslate"><span class="pre">docs/requirements.yaml</span></code> which
+can be used to create a new virtual environment or
+<a class="reference internal" href="code.html#virtual-environment"><span class="std std-ref">be added to the current virtual environment</span></a>.
+If you documentaiton requires additional/different dependencies, include them
+here and in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+<p>The configuration file <code class="docutils literal notranslate"><span class="pre">docs/Makefile</span></code> and <code class="docutils literal notranslate"><span class="pre">docs/make.bat</span></code> are also provided
+to allow you to build your documentation.</p>
+<p>The documentation can be build by running the following command in the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>docs
+$<span class="w"> </span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>This will build the documentation (as <code class="docutils literal notranslate"><span class="pre">.html</span></code> files) in a <code class="docutils literal notranslate"><span class="pre">docs/_build/</span></code>
+directory; you can now view these files to see your built documention.</p>
+</section>
+<section id="hosting-documentation-with-readthedocs">
+<span id="documentation-hosting"></span><h2>Hosting documentation with ReadTheDocs<a class="headerlink" href="#hosting-documentation-with-readthedocs" title="Link to this heading"></a></h2>
+<p>If you selected the to ‘include ReadTheDocs’ when using the cookiecutter
+(the default option), you can now use it to automatically build and host your
+documentation.</p>
+<p><a class="reference external" href="https://docs.readthdocs.io">ReadTheDocs</a> is an external service. To link it
+to your repository, first log
+in to ReadTheDocs using your GitHub account. Click <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">a</span> <span class="pre">Project</span></code> on the
+ReadTheDocs dashboard (your project should appear here once it has pushed to GitHub).
+After importing you project, ReadTheDocs will build your documentation,
+and it will now appear online with it’s very own URL (likely at
+<code class="docutils literal notranslate"><span class="pre">https://{repo_name}.readthedocs.io</span></code>)!</p>
+<p>We strongly recommend turning on building documentation for your
+pull requests to check and preview your docs. To do so:</p>
+<ol class="arabic simple">
+<li><p>Go to the Admin tab</p></li>
+<li><p>Go to Advanced Settings</p></li>
+<li><p>Tick the “Build pull requests for this project” checkbox</p></li>
+<li><p>Scroll down and remember to click “Save”!</p></li>
+</ol>
+<p>A test build of the documentation will now be created and can be viewed for each PR.</p>
+<p>Further configuration can be done on from the ReadTheDocs dashboard or
+in the <code class="docutils literal notranslate"><span class="pre">readthedocs.yaml</span></code> file - see the <a class="reference external" href="https://docs.readthedocs.io/en/stable/config-file/v2.html">ReadTheDocs documentation</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tests.html" class="btn btn-neutral float-left" title="Testing and Continuous Integration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="packaging.html" class="btn btn-neutral float-right" title="Packaging and Releases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2026, Irfan Alibay, Oliver Beckstein, Ian Kenney, Rocco Meli, Fiona Naughton, Lily Wang, Lawson Woods.</p>
+  </div>
+
+  
+
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        0.1.0b
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

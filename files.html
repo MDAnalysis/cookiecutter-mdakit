@@ -1,0 +1,541 @@
+
+
+
+  
+    
+  
+
+
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="_static/logo/mda_favicon.ico">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Files Overview &mdash; MDAKit Cookiecutter 0.1.0b documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/site.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=cd7bf820"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/js/versions.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="cookiecutter.json" href="cookiecutter/json_options.html" />
+    <link rel="prev" title="Packaging and Releases" href="customising/packaging.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="index.html">
+  
+    <img src="_static/logo/mda_logo.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+    <div class="version">
+      0.1
+    </div>
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customising.html">Preparing and customising your project</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Files Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cookiecutter/json_options.html">cookiecutter.json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookiecutter/hooks.html">Hook scripts</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MDAKit Cookiecutter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Files Overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/files.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="files-overview">
+<span id="files-label"></span><h1>Files Overview<a class="headerlink" href="#files-overview" title="Link to this heading"></a></h1>
+<p>The MDAKit cookiecutter generated a large number of files, which can be
+daunting. However, many do no require editing or input from you, or are only
+required to make use of optional features.</p>
+<p>The table below provides a summart of the generated files, (this links to the
+relevant sections of documentation), and an indication of if the file is
+“required” or likely to require modification.</p>
+<p><strong>Is this file ‘required’?</strong></p>
+<p>There are several ways one could consider defining a ‘required file’. The table below uses the
+follow classifications:</p>
+<ul class="simple">
+<li><p><strong>YES</strong> - files that are central to your Python package being a Python package</p></li>
+<li><p><strong>REGISTRATION REQUIREMENT</strong> - files that are not required for the package to work, but are required if you wish to register your MDAKit on the Registry</p></li>
+<li><p><strong>RECOMMENDED</strong> - files that provide additional options not required for MDAKit registration, but that are still recommended for a good software package. Some of these are required in order for certain (optional) features to work; these are noted</p></li>
+<li><p><strong>OPTIONAL</strong> - other files that may still be useful</p></li>
+<li><p><strong>NO</strong> - files that are included only for illustative purposes or to guide you (the developer)</p></li>
+</ul>
+<p><strong>Will I need to modify this file?</strong></p>
+<ul class="simple">
+<li><p><strong>YES</strong> - files that (if you keep) you’ll have to change</p></li>
+<li><p><strong>PROJECT DEPENDENT</strong> - files that will need to be modified in some, but not all cases</p></li>
+<li><p><strong>OPTIONAL</strong> - files that you can opt to edit to e.g. replace default selections or add additional customisation</p></li>
+<li><p><strong>NO</strong> - files where it’s unlikely you’ll need to change any options, or that you shouldn’t touch at all (unless you know what you’re doing)</p></li>
+</ul>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Cookiecutter files</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 11.8%" />
+<col style="width: 11.8%" />
+<col style="width: 41.2%" />
+<col style="width: 17.6%" />
+<col style="width: 17.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>“Required?”</p></th>
+<th class="head"><p>Modify?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code></p></td>
+<td><p><a class="reference internal" href="customising.html#general-info"><span class="std std-ref">GENERAL INFORMATION</span></a></p></td>
+<td><p>File containing the details of the GPLv2 license, the default license for packages developed from the MDAKit cookiecutter</p></td>
+<td><p><strong>YES</strong> - without a clear license, <em>no-one</em> can legally use your code</p></td>
+<td><p><strong>OPTIONAL</strong> - you can opt for a license other than GPLv2</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code></p></td>
+<td><p><a class="reference internal" href="customising.html#general-info"><span class="std std-ref">GENERAL INFORMATION</span></a></p></td>
+<td><p>A basic introduction/overview of the package; this file will be rendered on the GitHub repo’s home</p></td>
+<td><p><strong>REGISTRATION REQUIREMENT</strong> - this is the minimum form of documentation your project should have</p></td>
+<td><p><strong>OPTIONAL</strong> - ammend as you suits your project</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code></p></td>
+<td><p><a class="reference internal" href="customising.html#community-resources"><span class="std std-ref">COMMUNITY</span></a></p></td>
+<td><p>Rules for behaviour for all members of the project’s community (users and developers).</p></td>
+<td><p><strong>RECOMMENDED</strong> - setting clear rules and expectations is the foundation for a healthy community</p></td>
+<td><p><strong>OPTIONAL</strong> - ammend as you suits your project</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CONTRIBUTING.md</span></code></p></td>
+<td><p><a class="reference internal" href="customising.html#community-resources"><span class="std std-ref">COMMUNITY</span></a></p></td>
+<td><p>Basic guide and instructions for those considering conbribution to the project</p></td>
+<td><p><strong>RECOMMENDED</strong> - providing a guide to contributing will lower the entry barrier for first-time contributors to your project</p></td>
+<td><p><strong>OPTIONAL</strong> - ammend as you suits your project</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AUTHORS.md</span></code></p></td>
+<td><p><a class="reference internal" href="customising.html#documenting-changes"><span class="std std-ref">DOCUMENTING CHANGES</span></a></p></td>
+<td><p>List of all contributors to the project</p></td>
+<td><p><strong>RECOMMENDED</strong> - tracking all contributors to your project is important for giving credit</p></td>
+<td><p><strong>YES</strong> - this file will be ammended whenever there is a new contributor</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code></p></td>
+<td><p><a class="reference internal" href="customising.html#documenting-changes"><span class="std std-ref">DOCUMENTING CHANGES</span></a></p></td>
+<td><p>Curated log of notable changes (and corresponding versions) made as the package is developed</p></td>
+<td><p><strong>RECOMMENDED</strong> - keeping a changelog lets both developers and users know what major changes have been introduced and when</p></td>
+<td><p><strong>YES</strong> - this file will be ammended whenever a notable change is made to the project</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p></td>
+<td><p><span class="xref std std-ref">VERSION CONTROL</span></p></td>
+<td><p>Stock helper file telling git what file name patters to ignore when adding files</p></td>
+<td><p><strong>RECOMMENDED</strong> - this will reduce clutter in your commit history</p></td>
+<td><p><strong>NO</strong> - this is a stock file that should cover all likely cases</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.github/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/github.html#github-features"><span class="std std-ref">GITHUB FEATURES</span></a></p></td>
+<td><p><em>Files for options GitHub features</em></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.github/workflows/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/github.html#github-features"><span class="std std-ref">GITHUB FEATURES</span></a></p></td>
+<td><p><em>Workflow confugration files for running automated processes using GitHub actions</em></p></td>
+<td><p><em>RECOMMENDED - having at least a CI workflow to automate tests and checks is recommended</em></p></td>
+<td><p><em>OPTIONAL - you can opt to add additional GitHub Actions workflows here</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.github/ISSUE_TEMPLATE/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/github.html#github-features"><span class="std std-ref">GITHUB FEATURES</span></a></p></td>
+<td><p><em>Templates for GitHub Issues</em></p></td>
+<td><p><em>RECOMMENDED - template issues files will likely make things easier for both issue raisers and responders</em></p></td>
+<td><p><em>NO - the standard templates are already included, though you may also add custom templates</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.github/ISSUE_TEMPLATE/bug_report.md</span></code></p></td>
+<td><p><a class="reference internal" href="customising/github.html#github-features"><span class="std std-ref">GITHUB FEATURES</span></a></p></td>
+<td><p>Template that will be provided to contributors when making a “bug report” issue on GitHub</p></td>
+<td><p><strong>RECOMMENDED</strong> - templates will likely make things easier for both you and the contributor</p></td>
+<td><p><strong>NO</strong> - this is a standard template unlikely to need changing, though you can modify it if you wish</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.github/ISSUE_TEMPLATE/feature_request.md</span></code></p></td>
+<td><p><a class="reference internal" href="customising/github.html#github-features"><span class="std std-ref">GITHUB FEATURES</span></a></p></td>
+<td><p>Template that will be provided to contributors  when making a “feature request” issue on GitHub</p></td>
+<td><p><strong>RECOMMENDED</strong> - templates will likely make things easier for both you and the contributor</p></td>
+<td><p><strong>NO</strong> - this is a standard template unlikely to need changing, though you can modify it if you wish</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.github/PULL_REQUEST_TEMPLATE.md</span></code></p></td>
+<td><p><a class="reference internal" href="customising/github.html#github-features"><span class="std std-ref">GITHUB FEATURES</span></a></p></td>
+<td><p>Template that will be provided to contributors when making a “Pull Requestion” on GitHub</p></td>
+<td><p><strong>RECOMMENDED</strong> - templates will likely make things easier for both you and the contributor</p></td>
+<td><p><strong>NO</strong> - this is a standard template unlikely to need changing, though you can modify it if you wish</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/code.html#adding-code"><span class="std std-ref">CODE</span></a></p></td>
+<td><p><em>The import pacakge, containing your project’s code</em></p></td>
+<td><p><em>YES - this is where your code itself will live</em></p></td>
+<td><p><strong>YES</strong> - you’ll need to add your own code!</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/__init__.py</span></code></p></td>
+<td><p><a class="reference internal" href="customising/code.html#adding-code"><span class="std std-ref">CODE</span></a></p></td>
+<td><p>__init__.py file to mark your code package</p></td>
+<td><p><strong>YES</strong> - this allows <code class="docutils literal notranslate"><span class="pre">{package_name}</span></code> to be imported (and sets your code’s version)</p></td>
+<td><p><strong>PROJECT DEPENDENT</strong> - you may wish to add</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/analysis/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/code.html#adding-code"><span class="std std-ref">CODE</span></a></p></td>
+<td><p><em>(Optional, only created if ‘ template analysis class’ is selected) Directory for analysis code; set up with an (empty) __init__ .py</em></p></td>
+<td><p><em>NO - you do not have to follow the initial generated subpackage structure</em></p></td>
+<td><p><em>YES - if you opt to keep this cookiecutter-generated subpackage, you’ll need to add your own code here!</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/analysis/{class_name}.py</span></code></p></td>
+<td><p><a class="reference internal" href="customising/code.html#adding-code"><span class="std std-ref">CODE</span></a></p></td>
+<td><p>(Optional, only created if ‘ template analysis class’ is selected) File containing a template analysis class, based off  MDAnalysis; <code class="docutils literal notranslate"><span class="pre">AnalysisBase</span></code>.</p></td>
+<td><p><strong>RECOMMENDED</strong> - if your code features a frame-by-brame timeseries analysis, it is highly recommended to start with a Class based on <code class="docutils literal notranslate"><span class="pre">AnalysisBase</span></code>.</p></td>
+<td><p><strong>YES</strong> - if using this template, you’ll need to add your own code here!</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/data/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/code.html#adding-code"><span class="std std-ref">CODE</span></a></p></td>
+<td><p><em>Subpackage for including additional (non-code) date to be included in the package; set up with an empty ``__init__.py`` file</em></p></td>
+<td><p><em>NO - this subpackage demonstrates how additional non-code files can be included, but is not required</em></p></td>
+<td><p><em>OPTIONAL - if you do wish to include non-code data, you’ll add them here</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/data/README.md</span></code></p></td>
+<td><p><a class="reference internal" href="customising/code.html#adding-code"><span class="std std-ref">CODE</span></a></p></td>
+<td><p>Additional information for including non-code files with your package</p></td>
+<td><p><strong>NO</strong> - but you may wish to refer to this file in future, so keep it around</p></td>
+<td><p><strong>NO</strong> - the purpose of this file is only to provide information to you, the devloper</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/data/files.py</span></code></p></td>
+<td><p><a class="reference internal" href="customising/code.html#adding-code"><span class="std std-ref">CODE</span></a></p></td>
+<td><p>Module for setting up non-code files to be imported elsewhere in the package</p></td>
+<td><p><strong>OPTIONAL</strong> - a central file to set up importing of your non-coding will likely make things easier</p></td>
+<td><p><strong>YES</strong> - if you opt to include non-code datafiles this way, you’ll need to add them here</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/data/mda.txt</span></code></p></td>
+<td><p><a class="reference internal" href="customising/code.html#adding-code"><span class="std std-ref">CODE</span></a></p></td>
+<td><p>An example data file (ASCII art of the MDAnalysis logo) to demonstrate inclusion of non-code data</p></td>
+<td><p><strong>NO</strong> - this file is only for illustrative purposes</p></td>
+<td><p><strong>NO</strong> - this file is only for illustrative purposes</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">devtools/</span></code></p></td>
+<td><p><em>Misc.</em></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">devtools/conda-envs/</span></code></p></td>
+<td><p><em>Misc.</em></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/tests/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/tests.html#writing-tests"><span class="std std-ref">TESTING</span></a></p></td>
+<td><p><em>Directory for unit tests. Set up with an empty ``__init__.py``</em></p></td>
+<td><p><em>REGISTRATION REQUIREMENT - your MDAKit must have at least basic tests to be Registered!</em></p></td>
+<td><p><em>YES - you’ll need to add your own tests!</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/tests/conftest.py</span></code></p></td>
+<td><p><a class="reference internal" href="customising/tests.html#writing-tests"><span class="std std-ref">TESTING</span></a></p></td>
+<td><p>File to set up pytest fixtures for use in your tests, containing an example fixture</p></td>
+<td><p><strong>OPTIONAL</strong> - The example fixture can be removed, but fixtures are a very useful feature of pytest; if you have multiple fixtures/used in multiple places, keeping them in a separate file will help keep your tests organised</p></td>
+<td><p><strong>PROJECT DEPENDENT</strong> - The example fixture can be removed, but whether you have fixtures to include here depend on your projects</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/tests/test_{package_name}.py</span></code></p></td>
+<td><p><a class="reference internal" href="customising/tests.html#writing-tests"><span class="std std-ref">TESTING</span></a></p></td>
+<td><p>Initial test module for your package with pytest, containing  sample tests</p></td>
+<td><p><strong>REGISTRATION REQUIREMENT</strong> - to be registered, your MDAKit needs at least basic unit tests, which will live here (though note you can rename or rearrange this file)</p></td>
+<td><p><strong>YES</strong> - add your tests here! The initial sample tests can be removed</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/tests/utils.py</span></code></p></td>
+<td><p><a class="reference internal" href="customising/tests.html#writing-tests"><span class="std std-ref">TESTING</span></a></p></td>
+<td><p>Utility file for setting up other code useful for your tests, containing an example class for setting up a dummy Universe</p></td>
+<td><p><strong>OPTIONAL</strong> - A separate file for setting up common utilities can help keep your tests more organised</p></td>
+<td><p><strong>PROJECT DEPENDENT</strong> - The example fixture can be removed, but whether you have fixtures to include here depend on your projects</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/tests/analysis/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/tests.html#writing-tests"><span class="std std-ref">TESTING</span></a></p></td>
+<td><p>(Optional, only created if ‘ template analysis class’ is selected) Subpackage for test on the package’s analysis class; set up with empty <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>.</p></td>
+<td><p><em>NO - you do not have to follow the initial generated subpackage structure</em></p></td>
+<td><p><em>YES - if you opt to keep this cookiecutter-generated subpackage, you’ll need to add your tests code here!</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{package_name}/tests/analysis/test_{analysis_class}.py</span></code></p></td>
+<td><p><a class="reference internal" href="customising/tests.html#writing-tests"><span class="std std-ref">TESTING</span></a></p></td>
+<td><p>(Optional, only created if ‘ template analysis class’ is selected) Example module with initial framework for tests on the package’s analysis class using pytest</p></td>
+<td><p><strong>RECOMMENDED</strong> - if your code features a frame-by-frame anaysis based on AnalysisBase, this file is a good place to start for writing your tests</p></td>
+<td><p><em>YES - if you opt to keep this cookiecutter-generated subpackage, you’ll need to add your tests code here!</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">devtools/conda-envs/test_env.yaml</span></code></p></td>
+<td><p><a class="reference internal" href="customising/tests.html#running-tests"><span class="std std-ref">TESTING</span></a></p></td>
+<td><p>A configuration file for creating an environment with the required dependencies for running the project’s tests using pytest</p></td>
+<td><p><strong>YES</strong> - this will allow you to set up an environemnt with the tools needed to run your tests locally</p></td>
+<td><p><strong>PROJECT DEPENDENT</strong> - you may need to modify this file if your tests have additional dependencies</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.github/workflows/gh-ci.yaml</span></code></p></td>
+<td><p><a class="reference internal" href="customising/tests.html#continuous-integration"><span class="std std-ref">CONTINUOUS INTEGRATION</span></a></p></td>
+<td><p>A configuration file specifying steps for running Continuous Integration, using <a class="reference external" href="https://docs.github.com/en/actions">GitHub Actions</a></p></td>
+<td><p><strong>RECOMMENDED (required for CI)</strong> - many checks can be run manually, but having them run automatically through CI will make your (and other contributors’) lives easier</p></td>
+<td><p><strong>OPTIONAL</strong> -  if you know what you’re doing, you can add additional CI checks and change settings in this file</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.codecov.yml</span></code></p></td>
+<td><p><a class="reference internal" href="customising/tests.html#running-tests"><span class="std std-ref">TESTING (code coverage)</span></a></p></td>
+<td><p>Settings for <a class="reference external" href="https://about.codecov.io/">Codecov</a>, a test coverage reporting tool</p></td>
+<td><p><strong>OPTIONAL</strong> - this file provides additional options for configuration, but is not required for running codecov</p></td>
+<td><p><strong>OPTIONAL</strong> - adjust this file to suit your preferences</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docs/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#add-docs"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p><em>Configuration files and template source files for building a User Guide using Sphinx</em></p></td>
+<td><p><em>RECOMMENDED - a README.md provides a minimal level of documentation, but a User Guide offering more details is highly recommended</em></p></td>
+<td><p><em>YES - if you opt to create a User Guide using Sphinx, you can add your documentation information here</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docs/source/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-writing"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p><em>Source files for building documentation using Sphinx</em></p></td>
+<td><p><em>RECOMMENDED (required for building documentation with Sphinx)</em></p></td>
+<td><p><em>YES - if you opt to build your User Guide using Sphinx, you’ll add your documentation here</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docs/source/index.rst</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-writing"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Home page for your project’s User Guide, generated using Sphinx</p></td>
+<td><p><strong>RECOMMENDED (required for building documentaiton using Sphinx)</strong> - if you build a User Guide using Sphinx, you’ll need at least this home page</p></td>
+<td><p><strong>YES</strong> - add details here as appropriate for your project</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docs/source/getting_started.rst</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-writing"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Stub page for User Guide-style documentation on your project’s User Guide, generated using Sphinx</p></td>
+<td><p><strong>RECOMMENDED</strong> - providing users with details on how to get started using your package is highly recommended</p></td>
+<td><p><strong>OPTIONAL</strong> - but you need not follow the autogenerated file structure</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docs/source/api.rst</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-writing"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Stub page for API-stype documentation on your project’s User Guide, generated using Sphinx</p></td>
+<td><p><strong>RECOMMENDED</strong> - providing users with an API guide is highly recommended</p></td>
+<td><p><strong>OPTIONAL</strong> - including API-style docs is recommended, but you need</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-configuration"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Configuration file for building documentation using Sphinx</p></td>
+<td><p><strong>RECOMMENDED (required if using Sphinx)</strong></p></td>
+<td><p><strong>OPTIONAL</strong> - you can alter this file to customise your documentation</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docs/source/_static/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-configuration"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Static files for customising your documentation, such as logos and style sheets; see the encloded <code class="docutils literal notranslate"><span class="pre">REAMDE</span></code> for more information.</p></td>
+<td><p><em>OPTIONAL</em></p></td>
+<td><p><em>OPTIONAL - you can add files here to customise your documentation</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docs/source/_templates/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-configuration"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Template files for customising your documentation; see the encloded <code class="docutils literal notranslate"><span class="pre">REAMDE</span></code> for more information.</p></td>
+<td><p><em>OPTIONAL</em></p></td>
+<td><p><em>OPTIONAL - you can add files here to customise your documentation</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docs/source/_static/logos/</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-configuration"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Placeholer and template logo files for MDAKits</p></td>
+<td><p><em>OPTIONAL</em></p></td>
+<td><p><em>OPTIONAL - you can add files here to customise your documentation</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docs/source/_static/logos/mdakits-empty-favicon-template.svg</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-configuration"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Placeholder favicon for the User Guide documentaiton</p></td>
+<td><p><em>OPTIONAL</em></p></td>
+<td><p><em>OPTIONAL - you can alter this file to customise your documentation</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docs/source/_static/logos/mdakits-empty-logo-template.svg</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-configuration"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Template “empty gears” MDAKits logo file, which you can edit to make your own logo</p></td>
+<td><p><strong>NO</strong> - this file is here to provide you with a template to edit, if you wish</p></td>
+<td><p><em>OPTIONAL - you can alter this file to customise your documentation</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docs/source/_static/logos/mdakits-placeholder-logo.png</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-configuration"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Placeholder logo for the User Guide documentation</p></td>
+<td><p><em>OPTIONAL</em></p></td>
+<td><p><em>OPTIONAL - you can alter this file to customise your documentation</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docs/README.md</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-building"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Reference file containing instructions for building the documentaiton</p></td>
+<td><p><strong>NO</strong> - this file is for your reference (but you might want to view it later, so keep it around)</p></td>
+<td><p><strong>NO</strong> - this file serves only as a reference for developers</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docs/requirements.yaml</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-building"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Configuration file listing the depencencies for building the documentation</p></td>
+<td><p><strong>OPTIONAL (required if you want to build documentaiton locally/with ReadTheDocs)</strong></p></td>
+<td><p><strong>PROJECT DEPENDENT</strong> - if your documentation has additional dependencies, you’ll need to add them here</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docs/Makefile</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-building"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Confiugration file for building documentation using Sphinx</p></td>
+<td><p><strong>OPTIONAL (required if you want to build documentaiton locally/with ReadTheDocs)</strong></p></td>
+<td><p><strong>NO</strong> - you shouldn’t need to touch this file</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docs/make.bat</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-building"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Script file for building documentation using Sphinx</p></td>
+<td><p><strong>OPTIONAL (required if you want to build documentaiton locally/with ReadTheDocs)</strong></p></td>
+<td><p><strong>NO</strong> - you shouldn’t need to touch this file</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">readthedocs.yaml</span></code></p></td>
+<td><p><a class="reference internal" href="customising/documentation.html#documentation-hosting"><span class="std std-ref">DOCUMENTATION</span></a></p></td>
+<td><p>Settings for <a class="reference external" href="https://docs.readthedocs.io/en/stable/">ReadTheDocs</a>, a tool for building and hosting documentation</p></td>
+<td><p><strong>OPTIONAL (required if you want to use ReadTheDocs)</strong></p></td>
+<td><p><strong>NO</strong> - not likely, unless you know what you’re doing</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></td>
+<td><p><a class="reference internal" href="customising/packaging.html#packaging"><span class="std std-ref">PACKAGING</span></a></p></td>
+<td><p>Configuration file for the Python package</p></td>
+<td><p><strong>YES</strong> - this is the main configuration file for your package and required for users to be able to isntall your code</p></td>
+<td><p><strong>PROJECT DEPENDENT</strong> -</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MANIFEST.in</span></code></p></td>
+<td><p><a class="reference internal" href="customising/packaging.html#packaging"><span class="std std-ref">PACKAGING</span></a></p></td>
+<td><p>List of additional files to include (or exclude) when packaging code for distrubution</p></td>
+<td><p><strong>NO</strong> - most key files will be included by default</p></td>
+<td><p><strong>NO</strong> -</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code></p></td>
+<td><p>CODE (style checking)</p></td>
+<td><p>Settings for pre-commit hooks to run formatting and linting checks on your code</p></td>
+<td><p><strong>OPTIONAL</strong> - pre-commit hooks can be useful for finding stylistic errors in your code before making commits, but are not required</p></td>
+<td><p><strong>OPTIONAL</strong> - you can change settings in this file as descired</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.pylintrc</span></code></p></td>
+<td><p>CODE (style checing)</p></td>
+<td><p>Settings for <a class="reference external" href="https://pylint.readthedocs.io/en/stable/">PyLint</a></p></td>
+<td><p><strong>OPTIONAL (required to run PyLint)</strong></p></td>
+<td><p><strong>OPTIONAL</strong> - you can change settings in this file as descired</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="customising/packaging.html" class="btn btn-neutral float-left" title="Packaging and Releases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cookiecutter/json_options.html" class="btn btn-neutral float-right" title="cookiecutter.json" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2026, Irfan Alibay, Oliver Beckstein, Ian Kenney, Rocco Meli, Fiona Naughton, Lily Wang, Lawson Woods.</p>
+  </div>
+
+  
+
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        0.1.0b
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

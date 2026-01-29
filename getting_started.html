@@ -22,7 +22,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Usage &mdash; MDAKit Cookiecutter 0.1.0b documentation</title>
+  <title>Getting Started &mdash; MDAKit Cookiecutter 0.1.0b documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/site.css" />
 
@@ -35,7 +35,9 @@
       <script src="_static/js/versions.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Preparing and customising your project" href="customising.html" />
+    <link rel="prev" title="Cookiecutter for MDAnalysis-based packages" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -80,8 +82,30 @@
 <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
     
         <p class="caption" role="heading"><span class="caption-text">Usage</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#options">Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-name">project_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repo-name">repo_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#package-name">package_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#description">description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#github-username">github_username</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#author-name">author_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#author-email">author_email</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependency-source">dependency_source</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#conda-forge">conda-forge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anaconda">anaconda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pip">pip</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#include-readthedocs">include_ReadTheDocs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-analysis-class">template_analysis_class</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="customising.html">Preparing and customising your project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">Files Overview</a></li>
 </ul>
@@ -106,9 +130,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Usage</li>
+      <li class="breadcrumb-item active">Getting Started</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/getting_started.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -116,9 +140,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h1>
-<p>Getting up and running requires a short process.</p>
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
+<p>The page demonstrates the basic usage of the MDAKit cookiecutter to generate a
+skeleton for a Python package.
+Once created, you will then need to add code to and customise your package;
+this is covered in the next section.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
 <dl class="simple">
 <dt>You will need the following:</dt><dd><ul class="simple">
 <li><p>Python 3.9+</p></li>
@@ -127,12 +156,16 @@
 </ul>
 </dd>
 </dl>
-<section id="use-the-cookiecutter-to-create-a-new-project">
-<h2>1. Use the cookiecutter to create a new project<a class="headerlink" href="#use-the-cookiecutter-to-create-a-new-project" title="Link to this heading"></a></h2>
-<p>An example of using the cookiecutter is illustrated below.
-The first line is the prompt, i.e. the actual
-command to use. It is followed by all the prompts you can expect,
-and some example answers.</p>
+</section>
+<section id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading"></a></h2>
+<p>To run the cookiecutter, run the followign command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cookiecutter gh:MDAnalysis/cookiecutter-mdakit
+</pre></div>
+</div>
+<p>You will be prompted to answer a series of questions to begin the initial
+customisation of your project. These prompts, and some example answers are
+illustrated here:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cookiecutter<span class="w"> </span>gh:MDAnalysis/cookiecutter-mdakit
 <span class="w">  </span><span class="o">[</span><span class="m">1</span>/11<span class="o">]</span><span class="w"> </span>project_name<span class="w"> </span><span class="o">(</span>ProjectName<span class="o">)</span>:<span class="w"> </span>My<span class="w"> </span>Project<span class="w"> </span>Name
 <span class="w">  </span><span class="o">[</span><span class="m">2</span>/11<span class="o">]</span><span class="w"> </span>repo_name<span class="w"> </span><span class="o">(</span>my_project_name<span class="o">)</span>:<span class="w"> </span>example-repository
@@ -157,7 +190,11 @@ my-github-username<span class="o">)</span>:<span class="w"> </span>
 Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </span>skip<span class="w"> </span>including<span class="w"> </span>analysis<span class="w"> </span>templates<span class="o">)</span>:<span class="w"> </span>MyAnalysisClass
 </pre></div>
 </div>
-<p>This generates the output skeleton:</p>
+<p>The <a class="reference internal" href="#options-label"><span class="std std-ref">Options</span></a> section below provides more details on these options,
+default values (if applicable), what they mean, and what they affect.</p>
+<p>Running the cookiecutter will the above responses will generate the following
+output skeleton, (as well as initialise a git repository <cite>example-repository</cite>,
+make an initial commit, and add a  “0.0.0” tag to set the initial version):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>example-repository                                    
 ├── .codecov.yml                                         &lt;- Settings for Codecov
 ├── .gitattributes                                    
@@ -224,196 +261,147 @@ Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </s
                                                       
 </pre></div>
 </div>
-<p>We will go more into these files in the rest of this
-tutorial, as well as other sections in this documentation.
-Please see <a class="reference internal" href="getting_started.html#options-label"><span class="std std-ref">Options</span></a> for more details.</p>
+<p>This may seem quite daunting at first glance, but not every file is strictly
+necessary/one that you need to worry about. The following sections on
+<a class="reference internal" href="customising.html#customising-label"><span class="std std-ref">Preparing and customising your project</span></a> will address relevant files as the come up. See also
+<a class="reference internal" href="files.html#files-label"><span class="std std-ref">Files Overview</span></a> for an overview of these files.</p>
 </section>
-<section id="add-the-project-to-github">
-<h2>2. Add the project to GitHub<a class="headerlink" href="#add-the-project-to-github" title="Link to this heading"></a></h2>
-<p>The generated repository should be an initialised git repository.
-We now need to connect it to GitHub:</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://docs.github.com/en/get-started/quickstart/create-a-repo">Create a new repository on GitHub</a> .
-Do not initialize the repo with a README, license, or any other files.</p></li>
-<li><p>Push the local repository to GitHub.
-GitHub should provide instructions for doing so, but in short:</p>
-<ul class="simple">
-<li><p>Add the remote named <code class="docutils literal notranslate"><span class="pre">origin</span></code> with <code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">&lt;URL&gt;</span></code></p></li>
-<li><p>Push the local repository to the remote repository with <code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">main</span></code></p></li>
-<li><p>Verify files were pushed successfully by checking on GitHub</p></li>
-</ul>
-</li>
-</ol>
+<section id="options">
+<span id="options-label"></span><h2>Options<a class="headerlink" href="#options" title="Link to this heading"></a></h2>
+<p>This section goes into the options you can choose in the cookiecutter,
+what they mean, and what they affect.
+If there are default values, they are explained.</p>
+<section id="project-name">
+<h3>project_name<a class="headerlink" href="#project-name" title="Link to this heading"></a></h3>
+<p>This is the name of the project you would
+use when writing about it in the documentation.
+This can be anything, e.g. have spaces and hyphens.</p>
 </section>
-<section id="link-external-hooks">
-<h2>3. Link external hooks<a class="headerlink" href="#link-external-hooks" title="Link to this heading"></a></h2>
-<p>The generated repository contains configuration files for several
-external services. These need to be manually linked to each service to run.</p>
-<section id="documentation-readthedocs">
-<h3>Documentation: ReadTheDocs<a class="headerlink" href="#documentation-readthedocs" title="Link to this heading"></a></h3>
-<p>ReadTheDocs builds documentation automatically for you from the files in <code class="docutils literal notranslate"><span class="pre">docs/</span></code>.
-(See more in the section on <strong>Documentation</strong>.)
-To link ReadTheDocs, ensure that you have a <a class="reference external" href="https://docs.readthedocs.io/en/stable/index.html">ReadTheDocs</a> account;
-you should be able to use your GitHub account. To link the project,
-click the <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">a</span> <span class="pre">Project</span></code> button on the dashboard.</p>
-<p>We strongly recommend turning on building documentation for your
-pull requests to check and preview your docs. To do so:</p>
-<ol class="arabic simple">
-<li><p>Go to the Admin tab</p></li>
-<li><p>Go to Advanced Settings</p></li>
-<li><p>Tick the “Build pull requests for this project” checkbox</p></li>
-<li><p>Scroll down and remember to click “Save”!</p></li>
-</ol>
-<p>Further configuration can be done on <a class="reference external" href="https://docs.readthedocs.io/en/stable/index.html">ReadTheDocs</a>
-or in the <code class="docutils literal notranslate"><span class="pre">readthedocs.yaml</span></code> file.</p>
+<section id="repo-name">
+<h3>repo_name<a class="headerlink" href="#repo-name" title="Link to this heading"></a></h3>
+<p>This is the name of the directory containing
+the package. It cannot contain spaces.
+This value is used to generate the URL
+to the project on GitHub
+(i.e. <code class="docutils literal notranslate"><span class="pre">github.com/&lt;github_host_account&gt;/&lt;repo_name&gt;</span></code>).</p>
+<p><strong>Default value:</strong> the <code class="docutils literal notranslate"><span class="pre">project_name</span></code> in lowercase,
+with spaces and hyphens replaced with underscores.</p>
 </section>
-<section id="test-coverage-codecov">
-<h3>Test coverage: Codecov<a class="headerlink" href="#test-coverage-codecov" title="Link to this heading"></a></h3>
-<p>Sign up at <a class="reference external" href="https://about.codecov.io/">Codecov</a> and
-<a class="reference external" href="https://docs.codecov.com/docs/quick-start">set up this repository</a>
-by adding the GitHub App Integration.
-You may need to trigger some tests and wait a few hours
-before seeing coverage reports appearing on Codecov.
-You can use these reports to discover which parts of your code
-are not checked by your current tests.
-You should ideally aim for &gt;90% code coverage to ensure that
-your package actually does what you think it does!</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">.codecov.yml</span></code> file contains configuration for Codecov.
-Edit that file to modify settings, such as files to ignore
-and what to include in the coverage report.</p>
+<section id="package-name">
+<h3>package_name<a class="headerlink" href="#package-name" title="Link to this heading"></a></h3>
+<p>This is the name of the module you would use
+when importing your package. It must
+follow Python module naming rules, i.e. it cannot
+have spaces or hyphens.</p>
+<p><strong>Default value:</strong> the <code class="docutils literal notranslate"><span class="pre">repo_name</span></code> in lowercase,
+with spaces and hyphens replaced with underscores.</p>
 </section>
+<section id="description">
+<h3>description<a class="headerlink" href="#description" title="Link to this heading"></a></h3>
+<p>Give a short description of the project to appear in the README.</p>
 </section>
-<section id="make-and-push-changes-to-your-code">
-<h2>4. Make and push changes to your code<a class="headerlink" href="#make-and-push-changes-to-your-code" title="Link to this heading"></a></h2>
-<p>Now you should go forth and code!
-To keep things clean and simple, we advise a few tips:</p>
-<ul>
-<li><p>Always work in a virtual environment like <code class="docutils literal notranslate"><span class="pre">conda</span></code>.
-You can create a development environment by following
-the instructions in the README. In short:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>&lt;environment_name&gt;<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
-conda<span class="w"> </span>activate<span class="w"> </span>&lt;environment_name&gt;<span class="w">  </span><span class="c1"># remember to do this every time</span>
-conda<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--name<span class="w"> </span>&lt;environment_name&gt;<span class="w"> </span>--file<span class="w"> </span>devtools/conda-envs/test_env.yaml
-conda<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--name<span class="w"> </span>&lt;environment_name&gt;<span class="w"> </span>--file<span class="w"> </span>docs/requirements.yaml
-</pre></div>
+<section id="github-username">
+<h3>github_username<a class="headerlink" href="#github-username" title="Link to this heading"></a></h3>
+<p>This should be your <em>personal</em> GitHub username.
+It is used for giving you credit in AUTHORS.md.
+github_host_account
+——————-</p>
+<p>This should be the GitHub account name used to host the
+repository. In most cases, this will be the same as
+the GitHub username; however, if you are creating a
+package for an organisation, use the organisation
+account name. This value is used to generate the URL
+to the project on GitHub
+(i.e. <code class="docutils literal notranslate"><span class="pre">github.com/&lt;github_host_account&gt;/&lt;repo_name&gt;</span></code>).</p>
+<p>If you set this to <code class="docutils literal notranslate"><span class="pre">MDAnalysis</span></code>,
+we will set some options for you.
+For example, the default logo and favicon
+will be the MDAnalysis logo and favicon.
+You will also have a footer detailing our
+privacy policy.</p>
+<p>If you set this to another value,
+there will be entries in the documentation
+<cite>conf.py</cite> that use a placeholder logo and favicon.</p>
+<p>Please see our <a class="reference external" href="https://mdanalysis-sphinx-theme.readthedocs.io/en/latest/">mdanalysis-sphinx-theme</a>
+documentation for more information.</p>
+<p><strong>Default value:</strong> the <code class="docutils literal notranslate"><span class="pre">github_username</span></code>.</p>
+</section>
+<section id="author-name">
+<h3>author_name<a class="headerlink" href="#author-name" title="Link to this heading"></a></h3>
+<p>This should be the name you prefer to go by, not your username.
+It is used for giving you credit in files such as
+<code class="docutils literal notranslate"><span class="pre">AUTHORS.md</span></code>, <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, and other packaging materials.</p>
+</section>
+<section id="author-email">
+<h3>author_email<a class="headerlink" href="#author-email" title="Link to this heading"></a></h3>
+<p>This should be an email address that you are comfortable
+getting contacted at. It is used for contact details
+in files such as <code class="docutils literal notranslate"><span class="pre">AUTHORS.md</span></code>, <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, and other packaging materials.
+It is also used as the point of contact in <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code>.</p>
+</section>
+<section id="dependency-source">
+<h3>dependency_source<a class="headerlink" href="#dependency-source" title="Link to this heading"></a></h3>
+<p>This option determines which sources to use for dependencies for the package.
+It affects the continuous integration testing, as well as
+the dependency files written. The three choices
+(<code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>, <code class="docutils literal notranslate"><span class="pre">anaconda</span></code>, and <code class="docutils literal notranslate"><span class="pre">pip</span></code>)
+are explained below.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>.</p>
+<section id="conda-forge">
+<h4>conda-forge<a class="headerlink" href="#conda-forge" title="Link to this heading"></a></h4>
+<p>This option looks for dependencies first in the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel,
+then the default <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel, before falling back to <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We <strong>highly recommend</strong> using <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>.
+<code class="docutils literal notranslate"><span class="pre">conda</span></code> is a great package manager for creating
+isolated environments, and managing dependencies between them.
+Moreover, many packages are available on <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>
+that are not on the default <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel or <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
 </div>
-</li>
-<li><p>Always work in a separate branch. The <code class="docutils literal notranslate"><span class="pre">main</span></code> branch
-is the default, or central, branch. All development
-work should be done in a separate branch to avoid
-messing up the main branch, or to allow you to work on
-different approaches at the same time. This also
-allows multiple people to work on the code at the same time.
-Create a new branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">&lt;my_branch_name&gt;</span></code>.
-See <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches">GitHub’s documentation on branches</a>
-for more information.</p></li>
-<li><p>When you feel ready, open a pull request on GitHub.
-<strong>This does not have to be when you think you have finished the code!</strong>
-A PR runs tests and builds documentation.
-This will allow others to review your code and
-help you make sure it is correct.
-It’s always a good way to get feedback and validation,
-as well as collaborate with other people.
-See <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">GitHub’s documentation on PRs</a>
-for more information.</p></li>
-</ul>
 </section>
-<section id="set-up-documentation">
-<h2>5. Set up documentation<a class="headerlink" href="#set-up-documentation" title="Link to this heading"></a></h2>
-<p>Documentation is important for your users and for yourself.</p>
-<p>The documentation is built using <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a>.</p>
-<p>Generally, a project will have a few types of documentation:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>User guide-type documentation, which explains how and why to use the package.
-While it may contain code examples, it’s typically more of a broad
-overview of package usage.
-For example, this page is user-guide-like documentation.
-A stub page for user-guide-like documentation is created in
-<code class="docutils literal notranslate"><span class="pre">docs/source/getting_started.rst</span></code>.</p></li>
-<li><p>API documentation, which explains how to use the code.
-This is often automatically generated from docstrings in the code.
-A stub page for API documentation is created in
-<code class="docutils literal notranslate"><span class="pre">docs/source/api.rst</span></code>.</p></li>
-</ul>
-</div></blockquote>
-<section id="documentation-configuration">
-<h3>Documentation configuration<a class="headerlink" href="#documentation-configuration" title="Link to this heading"></a></h3>
-<p>The documentation is configured in the <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code> file.
-This file contains settings for the documentation, such as the
-project name, version, and theme. You can also add extensions
-to the documentation.
-More information on configuring Sphinx can be found in the
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx documentation</a>.</p>
-<p>By default, the documentation is built using the MDAnalysis theme
-sphinx theme using the default template MDAKits logo and <a class="reference external" href="https://en.wikipedia.org/wiki/Favicon">favicon</a>.
-You can change the theme by modifying the <code class="docutils literal notranslate"><span class="pre">html_theme</span></code> variable in
-<code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code>.
-You can also change the logo by either modifying the
-<code class="docutils literal notranslate"><span class="pre">html_logo</span></code> variable or by replacing the
-<code class="docutils literal notranslate"><span class="pre">_static/logo/mdakits-placeholder-logo.png</span></code> file.
-(This path is relative to the <code class="docutils literal notranslate"><span class="pre">docs/source</span></code> directory;
-the full path, relative to the repository root, is
-<code class="docutils literal notranslate"><span class="pre">docs/source/_static/logo/mdakits-placeholder-logo.png</span></code>.)</p>
-<p>Similarly, you can change the favicon by replacing the
-<code class="docutils literal notranslate"><span class="pre">html_favicon</span></code> variable or by replacing the
-<code class="docutils literal notranslate"><span class="pre">_static/logo/mdakits-empty-favicon-template.svg</span></code> file.</p>
-<p>You are welcome to either create an entirely custom logo
-and favicon or to use the provided templates.
-An <code class="docutils literal notranslate"><span class="pre">mdakits-empty-logo-template.svg</span></code> and
-<code class="docutils literal notranslate"><span class="pre">mdakits-empty-favicon-template.svg</span></code> are provided in the
-<code class="docutils literal notranslate"><span class="pre">docs/source/_static/logo</span></code> directory as templates for
-editing – feel free to place your logo within the gears!</p>
+<section id="anaconda">
+<h4>anaconda<a class="headerlink" href="#anaconda" title="Link to this heading"></a></h4>
+<p>This option still uses <code class="docutils literal notranslate"><span class="pre">conda</span></code> to manage dependencies,
+but only uses the <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel and <code class="docutils literal notranslate"><span class="pre">pip</span></code> fallback.
+This option would install MDAnalysis from <a class="reference external" href="https://pypi.org/">PyPI</a> .
+as it is not available on the default <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel.</p>
 </section>
-<section id="building-the-documentation">
-<h3>Building the documentation<a class="headerlink" href="#building-the-documentation" title="Link to this heading"></a></h3>
-<p>To build the documentation, you can use the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>docs
-$<span class="w"> </span>make<span class="w"> </span>html
-</pre></div>
-</div>
-<p>This will build the documentation in the <code class="docutils literal notranslate"><span class="pre">docs/build/html</span></code> directory.</p>
+<section id="pip">
+<h4>pip<a class="headerlink" href="#pip" title="Link to this heading"></a></h4>
+<p>This option only installs packages from <a class="reference external" href="https://pypi.org/">PyPI</a>.</p>
 </section>
 </section>
-<section id="tagging-versions-of-your-code">
-<h2>6. Tagging versions of your code<a class="headerlink" href="#tagging-versions-of-your-code" title="Link to this heading"></a></h2>
-<p>Tagging versions of your code is a good way to keep references
-to specific versions of your code that don’t change.
-This is especially useful when you want to make a new code
-release. The <code class="docutils literal notranslate"><span class="pre">cookiecutter</span></code> uses <a class="reference external" href="https://versioningit.readthedocs.io/en/stable/index.html">versioningit</a> to
-automatically determine your package’s version based on
-git tags.</p>
-<p>By default, versioning will start from <code class="docutils literal notranslate"><span class="pre">0.0.0</span></code>.
-You can install <a class="reference external" href="https://versioningit.readthedocs.io/en/stable/index.html">versioningit</a> to check the current versioningit output from commandline:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;my_package_directory&gt;
-$<span class="w"> </span>versioningit<span class="w"> </span>.
-<span class="m">0</span>.0.0
-</pre></div>
-</div>
-<p>As you add commits, the versioning will automatically update with
-the commit hashes:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>versioningit<span class="w"> </span>.
-<span class="m">0</span>.0.0+1.g58bcaff
-</pre></div>
-</div>
-<p>To tag a version, use the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span>.1.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Version 0.1.0&quot;</span>
-</pre></div>
-</div>
-<p>This will create a tag called <code class="docutils literal notranslate"><span class="pre">0.1.0</span></code> with the message
-“Version 0.1.0”. You can then push this tag to GitHub with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">--tags</span></code>.</p>
-<p>After creating a tag, you can check the versioning again:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>versioningit<span class="w"> </span>.
-<span class="m">0</span>.1.0
-</pre></div>
-</div>
+<section id="include-readthedocs">
+<h3>include_ReadTheDocs<a class="headerlink" href="#include-readthedocs" title="Link to this heading"></a></h3>
+<p>This option determines whether to include
+ReadTheDocs configuration (<code class="docutils literal notranslate"><span class="pre">readthedocs.yaml</span></code>)
+in the package. It does not affect the documentation itself.
+We recommend keeping ReadTheDocs, as it is a standard and easy way
+to automatically build documentation online.</p>
+<p><strong>Default value:</strong> “y” (True)</p>
+</section>
+<section id="template-analysis-class">
+<h3>template_analysis_class<a class="headerlink" href="#template-analysis-class" title="Link to this heading"></a></h3>
+<p>This option triggers the building of a skeleton custom
+analysis class, and associated tests.
+If a class name is given, it is used as the name of the
+analysis class. If it is not given, this step is skipped.</p>
+<p>We strongly encourage using this option if you are planning
+to write custom analysis, as it copies a helpful
+template with comments and notes to modify.</p>
+<p><strong>Default value:</strong> skip</p>
+</section>
 </section>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Cookiecutter for MDAnalysis-based packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="customising.html" class="btn btn-neutral float-right" title="Preparing and customising your project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
