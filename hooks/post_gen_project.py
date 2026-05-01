@@ -103,7 +103,32 @@ def remove_placeholder_icons():
         remove_files("docs/source/_static/logo")
 
 
+def set_license():
+    """Set LICENSE from template"""
+    license_name = "{{ cookiecutter._license_choice }}"
+    repo_root = pathlib.Path.cwd()
+    dest = repo_root / "LICENSE"
+    licenses_dir = repo_root / "licenses"
+    gpl3_template = licenses_dir / "GPL-3.0.txt"
+    mit_template = licenses_dir / "MIT.txt"
+
+    if license_name == "gpl3":
+        shutil.copy(gpl3_template, dest)
+    elif license_name == "mit":
+        shutil.copy(mit_template, dest)
+    elif license_name == "none":
+        if dest.is_file():
+            dest.unlink()
+    else:
+        raise ValueError(f"Unsupported license: {license_name}")
+
+    for license_template in (gpl3_template, mit_template):
+        if license_template.is_file():
+            license_template.unlink()
+
+
 if __name__ == "__main__":
+    set_license()
     remove_rtd()
     remove_analysis()
     remove_placeholder_icons()

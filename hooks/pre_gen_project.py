@@ -39,7 +39,8 @@ Set `template_analysis_class` to "" if default value is passed.
 
 === LICENSE ===
 
-{{ cookiecutter.update({"open_source_license": 'GNU Public License v2+'}) }}
+{{ cookiecutter.update({"license": cookiecutter.license | trim }) }}
+{{ cookiecutter.update({"_license_choice": cookiecutter._license_keys[cookiecutter.license]}) }}
 
 """
 

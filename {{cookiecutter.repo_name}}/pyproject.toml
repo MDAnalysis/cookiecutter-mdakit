@@ -23,6 +23,11 @@ dependencies = [
 keywords = [
     "molecular simulations",
 ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+{% if cookiecutter._license_choice == "gpl3" %}    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+{% elif cookiecutter._license_choice == "mit" %}    "License :: OSI Approved :: MIT License",
+{% endif %}]
 dynamic = [
     "version",
 ]

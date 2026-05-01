@@ -17,6 +17,17 @@
         "n"
     ],
     "template_analysis_class": "Class name to template (e.g. {{ cookiecutter.project_name.title().replace(' ', '').replace('-', '').replace('_', '') }} ). Press Enter to skip including analysis templates",
+    "license": [
+        "GNU General Public License v3 or later (GPL-3.0+)",
+        "MIT License",
+        "No license"
+    ],
+    "_license_keys": {
+        "GNU General Public License v3 or later (GPL-3.0+)": "gpl3",
+        "MIT License": "mit",
+        "No license": "none"
+    },
+    "__license": "{{ cookiecutter._license_keys[cookiecutter.license] }}",
     "_mda_cc_version": 0.1,
     "_ci_name": "gh-ci",
     "_central_branch_name": "main",
