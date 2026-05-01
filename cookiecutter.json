@@ -20,14 +20,12 @@
     "license": [
         "MIT License",
         "GNU General Public License v3 or later (GPL-3.0+)",
-        "GNU Lesser General Public License v2.1 or later (LGPL-2.1+)",
         "BSD 3-Clause License",
         "Apache License 2.0"
     ],
     "_license_keys": {
         "MIT License": "mit",
         "GNU General Public License v3 or later (GPL-3.0+)": "gpl3",
-        "GNU Lesser General Public License v2.1 or later (LGPL-2.1+)": "lgpl21",
         "BSD 3-Clause License": "bsd3",
         "Apache License 2.0": "apache2"
     },

@@ -17,7 +17,6 @@ COMMIT_MESSAGE = (
 LICENSE_OPTIONS = {
     "mit": "MIT.txt",
     "gpl3": "GPL-3.0.txt",
-    "lgpl21": "LGPL-2.1.txt",
     "bsd3": "BSD-3.txt",
     "apache2": "Apache-2.0.txt",
 }

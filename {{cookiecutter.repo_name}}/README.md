@@ -5,14 +5,13 @@
 | **Latest release** | [![Last release tag][badge_release]][url_latest_release] ![GitHub commits since latest release (by date) for a branch][badge_commits_since]  {% if cookiecutter.include_ReadTheDocs == 'y' %}[![Documentation Status][badge_docs]][url_docs]{% endif %}|
 | :----------------- | :------- |
 | **Status**         | [![GH Actions Status][badge_actions]][url_actions] [![codecov][badge_codecov]][url_codecov] |
-| **Community**      | {% if cookiecutter._license_choice == "mit" %}[![License: MIT][badge_license]][url_license]{% elif cookiecutter._license_choice == "gpl3" %}[![License: GPL v3][badge_license]][url_license]{% elif cookiecutter._license_choice == "lgpl21" %}[![License: LGPL v2.1][badge_license]][url_license]{% elif cookiecutter._license_choice == "bsd3" %}[![License: BSD 3-Clause][badge_license]][url_license]{% elif cookiecutter._license_choice == "apache2" %}[![License: Apache 2.0][badge_license]][url_license]{% endif %}  [![Powered by MDAnalysis][badge_mda]][url_mda]|
+| **Community**      | {% if cookiecutter._license_choice == "mit" %}[![License: MIT][badge_license]][url_license]{% elif cookiecutter._license_choice == "gpl3" %}[![License: GPL v3][badge_license]][url_license]{% elif cookiecutter._license_choice == "bsd3" %}[![License: BSD 3-Clause][badge_license]][url_license]{% elif cookiecutter._license_choice == "apache2" %}[![License: Apache 2.0][badge_license]][url_license]{% endif %}  [![Powered by MDAnalysis][badge_mda]][url_mda]|
 
 [badge_actions]: https://github.com/{{cookiecutter.github_url}}/actions/workflows/{{cookiecutter._ci_name}}.yaml/badge.svg
 [badge_codecov]: https://codecov.io/gh/{{cookiecutter.github_url}}/branch/{{cookiecutter._central_branch_name}}/graph/badge.svg
 [badge_commits_since]: https://img.shields.io/github/commits-since/{{cookiecutter.github_url}}/latest
 [badge_docs]: https://readthedocs.org/projects/{{cookiecutter.repo_name}}/badge/?version=latest
 {% if cookiecutter._license_choice == "gpl3" %}[badge_license]: https://img.shields.io/badge/License-GPLv3-blue.svg
-{% elif cookiecutter._license_choice == "lgpl21" %}[badge_license]: https://img.shields.io/badge/License-LGPL%20v2.1-blue.svg
 {% elif cookiecutter._license_choice == "mit" %}[badge_license]: https://img.shields.io/badge/License-MIT-yellow.svg
 {% elif cookiecutter._license_choice == "bsd3" %}[badge_license]: https://img.shields.io/badge/License-BSD%203--Clause-blue.svg
 {% elif cookiecutter._license_choice == "apache2" %}[badge_license]: https://img.shields.io/badge/License-Apache%202.0-green.svg
@@ -23,9 +22,8 @@
 [url_codecov]: https://codecov.io/gh/{{cookiecutter.github_url}}/branch/{{cookiecutter._central_branch_name}}
 [url_docs]: https://{{cookiecutter.repo_name}}.readthedocs.io/en/latest/?badge=latest
 [url_latest_release]: https://github.com/{{cookiecutter.github_url}}/releases
-{% if cookiecutter._license_choice == "gpl3" %}[url_license]: https://www.gnu.org/licenses/gpl-3.0
-{% elif cookiecutter._license_choice == "lgpl21" %}[url_license]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html
-{% elif cookiecutter._license_choice == "mit" %}[url_license]: https://opensource.org/licenses/MIT
+{% if cookiecutter._license_choice == "mit" %}[url_license]: https://opensource.org/licenses/MIT
+{% elif cookiecutter._license_choice == "gpl3" %}[url_license]: https://www.gnu.org/licenses/gpl-3.0
 {% elif cookiecutter._license_choice == "bsd3" %}[url_license]: https://opensource.org/licenses/BSD-3-Clause
 {% elif cookiecutter._license_choice == "apache2" %}[url_license]: https://opensource.org/licenses/Apache-2.0
 {% endif %}
@@ -99,7 +97,6 @@ pip install ".[test,doc]"
 
 The {{cookiecutter.project_name}} source code is hosted at https://github.com/{{cookiecutter.github_url}}
 and is available {% if cookiecutter._license_choice == "gpl3" %}under the GNU General Public License, version 3 or later (see the file [LICENSE](https://github.com/{{cookiecutter.github_url}}/blob/{{cookiecutter._central_branch_name}}/LICENSE)).
-{% elif cookiecutter._license_choice == "lgpl21" %}under the GNU Lesser General Public License, version 2.1 or later (see the file [LICENSE](https://github.com/{{cookiecutter.github_url}}/blob/{{cookiecutter._central_branch_name}}/LICENSE)).
 {% elif cookiecutter._license_choice == "mit" %}under the [MIT License](https://opensource.org/licenses/MIT) (see the file [LICENSE](https://github.com/{{cookiecutter.github_url}}/blob/{{cookiecutter._central_branch_name}}/LICENSE)).
 {% elif cookiecutter._license_choice == "bsd3" %}under the [BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause) (see the file [LICENSE](https://github.com/{{cookiecutter.github_url}}/blob/{{cookiecutter._central_branch_name}}/LICENSE)).
 {% elif cookiecutter._license_choice == "apache2" %}under the [Apache License 2.0](https://opensource.org/licenses/Apache-2.0) (see the file [LICENSE](https://github.com/{{cookiecutter.github_url}}/blob/{{cookiecutter._central_branch_name}}/LICENSE)).

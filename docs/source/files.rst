@@ -41,7 +41,7 @@ follow classifications:
      - Modify?
    * - ``LICENSE``
      - :ref:`GENERAL INFORMATION <general-info>`
-     - Generated license text from your chosen option (MIT, GPL-3.0+, LGPL-2.1+, BSD 3-Clause, or Apache 2.0).
+     - Generated license text from your chosen option (MIT, GPL-3.0+, BSD 3-Clause, or Apache 2.0).
      - **YES** - without a clear license, *no-one* can legally use your code.
    * - ``README.md``
      - :ref:`GENERAL INFORMATION <general-info>`

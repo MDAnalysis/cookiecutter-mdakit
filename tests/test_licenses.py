@@ -15,11 +15,6 @@ LICENSES = [
         "GNU GENERAL PUBLIC LICENSE",
         True,
     ),
-    (
-        "GNU Lesser General Public License v2.1 or later (LGPL-2.1+)",
-        "GNU LESSER GENERAL PUBLIC LICENSE",
-        True,
-    ),
     ("BSD 3-Clause License", "BSD 3-Clause License", True),
     ("Apache License 2.0", "Apache License", True),
 ]
@@ -53,8 +48,6 @@ def test_license_matrix(tmpdir, license_option, expected_substring, expect_licen
         assert expected_substring in body
         if license_option.startswith("GNU General Public License v3"):
             assert "Version 3," in body
-        if "LGPL" in license_option:
-            assert "Version 2.1," in body
     else:
         assert not license_path.exists()
 

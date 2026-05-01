@@ -28,7 +28,6 @@ classifiers = [
     "Programming Language :: Python :: 3",
 {% if cookiecutter._license_choice == "mit" %}    "License :: OSI Approved :: MIT License",
 {% elif cookiecutter._license_choice == "gpl3" %}    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
-{% elif cookiecutter._license_choice == "lgpl21" %}    "License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)",
 {% elif cookiecutter._license_choice == "bsd3" %}    "License :: OSI Approved :: BSD License",
 {% elif cookiecutter._license_choice == "apache2" %}    "License :: OSI Approved :: Apache Software License",
 {% endif %}]
