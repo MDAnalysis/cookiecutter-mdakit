@@ -14,6 +14,14 @@ COMMIT_MESSAGE = (
     "{{ cookiecutter._mda_cc_version }}"
 )
 
+LICENSE_OPTIONS = {
+    "mit": "MIT.txt",
+    "gpl3": "GPL-3.0.txt",
+    "lgpl21": "LGPL-2.1.txt",
+    "bsd3": "BSD-3.txt",
+    "apache2": "Apache-2.0.txt",
+}
+
 
 def remove_files(*paths):
     for path in paths:
@@ -109,22 +117,21 @@ def set_license():
     repo_root = pathlib.Path.cwd()
     dest = repo_root / "LICENSE"
     licenses_dir = repo_root / "licenses"
-    gpl3_template = licenses_dir / "GPL-3.0.txt"
-    mit_template = licenses_dir / "MIT.txt"
 
-    if license_name == "gpl3":
-        shutil.copy(gpl3_template, dest)
-    elif license_name == "mit":
-        shutil.copy(mit_template, dest)
-    elif license_name == "none":
-        if dest.is_file():
-            dest.unlink()
+    if license_name in LICENSE_OPTIONS:
+        src = licenses_dir / LICENSE_OPTIONS[license_name]
+        shutil.copy(src, dest)
     else:
-        raise ValueError(f"Unsupported license: {license_name}")
+        supported_licenses = ", ".join(LICENSE_OPTIONS.keys())
+        raise ValueError(
+            f"Unsupported license: {license_name!r}. "
+            f"Supported licenses are: {supported_licenses}"
+        )
 
-    for license_template in (gpl3_template, mit_template):
-        if license_template.is_file():
-            license_template.unlink()
+    for filename in LICENSE_OPTIONS.values():
+        path = licenses_dir / filename
+        if path.is_file():
+            path.unlink()
 
 
 if __name__ == "__main__":

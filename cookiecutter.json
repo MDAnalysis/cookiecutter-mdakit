@@ -18,14 +18,18 @@
     ],
     "template_analysis_class": "Class name to template (e.g. {{ cookiecutter.project_name.title().replace(' ', '').replace('-', '').replace('_', '') }} ). Press Enter to skip including analysis templates",
     "license": [
-        "GNU General Public License v3 or later (GPL-3.0+)",
         "MIT License",
-        "No license"
+        "GNU General Public License v3 or later (GPL-3.0+)",
+        "GNU Lesser General Public License v2.1 or later (LGPL-2.1+)",
+        "BSD 3-Clause License",
+        "Apache License 2.0"
     ],
     "_license_keys": {
-        "GNU General Public License v3 or later (GPL-3.0+)": "gpl3",
         "MIT License": "mit",
-        "No license": "none"
+        "GNU General Public License v3 or later (GPL-3.0+)": "gpl3",
+        "GNU Lesser General Public License v2.1 or later (LGPL-2.1+)": "lgpl21",
+        "BSD 3-Clause License": "bsd3",
+        "Apache License 2.0": "apache2"
     },
     "__license": "{{ cookiecutter._license_keys[cookiecutter.license] }}",
     "_mda_cc_version": 0.1,
