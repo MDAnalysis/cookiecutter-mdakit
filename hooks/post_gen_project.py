@@ -133,6 +133,12 @@ def set_license():
         if path.is_file():
             path.unlink()
 
+    if licenses_dir.is_dir():
+        try:
+            licenses_dir.rmdir()
+        except OSError:
+            pass
+
 
 if __name__ == "__main__":
     set_license()
