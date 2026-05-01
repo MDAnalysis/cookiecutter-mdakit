@@ -20,10 +20,7 @@ README.md: Description of project which GitHub will render
 
 # packaging
 MANIFEST.in: Packaging information for pip
-pyproject.toml: Dependencies for pip
-setup.cfg: Near-master config file settings for Coverage, Flake8, YAPF, etc
-setup.py: Your package's setup file for installing with additional options that can be set
-versioneer.py: Automatic version control with Versioneer
+pyproject.toml: Standard configuration file for Python projects.
 
 # config
 .codecov.yml: Settings for Codecov
