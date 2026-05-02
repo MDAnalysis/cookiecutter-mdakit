@@ -9,7 +9,7 @@ build-backend = "setuptools.build_meta"
 name = "{{cookiecutter.repo_name}}"
 description = "{{cookiecutter.description}}"
 license = "{{cookiecutter.license}}"
-license-files = ["LICENSE"]
+license-files = ["LICENSE", "AUTHORS.md"]
 
 authors = [
     {{ "{" }}name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}"{{ "}" }},
