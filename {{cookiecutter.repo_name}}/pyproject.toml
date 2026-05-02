@@ -1,6 +1,6 @@
 [build-system]
 requires = [
-  "setuptools >=61.2",
+  "setuptools >=77",
   "versioningit",
 ]
 build-backend = "setuptools.build_meta"
@@ -8,7 +8,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "{{cookiecutter.repo_name}}"
 description = "{{cookiecutter.description}}"
-license = {{ "{" }}file = "LICENSE" {{ "}" }}
+license = "{{cookiecutter.license}}"
+license-files = ["LICENSE"]
 
 authors = [
     {{ "{" }}name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}"{{ "}" }},
