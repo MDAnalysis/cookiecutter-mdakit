@@ -23,13 +23,19 @@
         "BSD 3-Clause License",
         "Apache License 2.0"
     ],
-    "_license_keys": {
-        "MIT License": "mit",
-        "GNU General Public License v3 or later (GPL-3.0+)": "gpl3",
-        "BSD 3-Clause License": "bsd3",
-        "Apache License 2.0": "apache2"
+    "_license_SPDX_identifiers": {
+        "MIT License":"MIT",
+        "GNU General Public License v3 or later (GPL-3.0+)":"GPL-3.0-or-later",
+        "BSD 3-Clause License":"BSD-3-Clause",
+        "Apache License 2.0":"Apache-2.0"
     },
-    "__license": "{{ cookiecutter._license_keys[cookiecutter.license] }}",
+    "_license_details": {
+        "MIT": ["MIT License", "yellow", "https://opensource.org/licenses/MIT", "MIT"],
+        "GPL-3.0-or-later": ["GNU General Public License v3 or later", "blue", "https://www.gnu.org/licenses/gpl-3.0", "GPLv3"],
+        "BSD-3-Clause": ["BSD 3-Clause License", "blue", "https://opensource.org/licenses/BSD-3-Clause", "BSD 3--Clause"],
+        "Apache-2.0": ["Apache License 2.0", "green", "https://opensource.org/licenses/Apache-2.0", "Apache 2.0"]
+    },
+    "__license": "{{ cookiecutter.license }}",
     "_mda_cc_version": 0.1,
     "_ci_name": "gh-ci",
     "_central_branch_name": "main",

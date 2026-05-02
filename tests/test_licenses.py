@@ -46,7 +46,7 @@ def test_license_matrix(tmpdir, license_option, expected_substring, expect_licen
         assert license_path.is_file()
         body = license_path.read_text(encoding="utf-8")
         assert expected_substring in body
-        if license_option.startswith("GNU General Public License v3"):
+        if "GPL" in license_option and "3" in license_option:
             assert "Version 3," in body
     else:
         assert not license_path.exists()

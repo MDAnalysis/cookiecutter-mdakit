@@ -39,8 +39,8 @@ Set `template_analysis_class` to "" if default value is passed.
 
 === LICENSE ===
 
-{{ cookiecutter.update({"license": cookiecutter.license | trim }) }}
-{{ cookiecutter.update({"_license_choice": cookiecutter._license_keys[cookiecutter.license]}) }}
+{% set _license_trimmed = cookiecutter.license | trim %}
+{{ cookiecutter.update({"license": cookiecutter._license_SPDX_identifiers[_license_trimmed] if _license_trimmed in cookiecutter._license_SPDX_identifiers else _license_trimmed}) }}
 
 """
 

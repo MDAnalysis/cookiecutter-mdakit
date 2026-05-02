@@ -15,10 +15,10 @@ COMMIT_MESSAGE = (
 )
 
 LICENSE_OPTIONS = {
-    "mit": "MIT.txt",
-    "gpl3": "GPL-3.0.txt",
-    "bsd3": "BSD-3.txt",
-    "apache2": "Apache-2.0.txt",
+    "MIT": "MIT.txt",
+    "GPL-3.0-or-later": "GPL-3.0.txt",
+    "BSD-3-Clause": "BSD-3.txt",
+    "Apache-2.0": "Apache-2.0.txt",
 }
 
 
@@ -112,7 +112,7 @@ def remove_placeholder_icons():
 
 def set_license():
     """Set LICENSE from template"""
-    license_name = "{{ cookiecutter._license_choice }}"
+    license_name = "{{ cookiecutter.license }}"
     repo_root = pathlib.Path.cwd()
     dest = repo_root / "LICENSE"
     licenses_dir = repo_root / "licenses"
