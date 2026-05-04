@@ -36,7 +36,7 @@ The :ref:`options-label` section below provides more details on these options,
 default values (if applicable), what they mean, and what they affect.
 
 Running the cookiecutter will the above responses will generate the following 
-output skeleton, (as well as initialise a git repository `example-repository`, 
+output skeleton, (as well as initialise a git repository `my_project_name`, 
 make an initial commit, and add a  "0.0.0" tag to set the initial version):
 
 .. literalinclude:: generated/cookie_tree.txt
