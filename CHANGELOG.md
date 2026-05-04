@@ -43,7 +43,7 @@ The rules for this file:
 
 ### Fixed
 <!-- Bug fixes -->
-- Build docs by fixing `repo_name` cookicutter cli (Issue #157, PR #158)
+- Build docs by fixing `repo_name` cookiecutter cli (Issue #157, PR #158)
 - Updated mambaforge version in `readthedocs.yaml` (Issue #132, PR #133)
 - Switched deprecated pkg_resources to use importlib (PR #122, Issue #121)
 - Fixed pypi_check with lowercase (PR #118, Issue #112)
