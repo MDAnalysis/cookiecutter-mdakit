@@ -1,14 +1,13 @@
 name: {{cookiecutter.repo_name}}-test
 channels:{% if cookiecutter.dependency_source == 'Prefer conda-forge over the default anaconda channel with pip fallback' %}
   - conda-forge{% endif %}
-  - defaults
 dependencies:
   # Base depends
   - python
   - pip
 {% if cookiecutter.dependency_source == 'Prefer conda-forge over the default anaconda channel with pip fallback' %}
   # MDAnalysis
-  - MDAnalysis
+  - mdanalysis
 {% endif %}
   # Testing
   - pytest
@@ -18,7 +17,7 @@ dependencies:
   # Pip-only installs
   - pip:
     - codecov
-    - MDAnalysis
+    - mdnalysis
 {% else %}  - codecov
 
   # Pip-only installs

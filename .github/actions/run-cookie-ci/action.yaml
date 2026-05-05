@@ -48,7 +48,7 @@ runs:
     - name: Install act
       uses: actionsflow/setup-act@v1
       with:
-        version: '0.2.63'
+        version: '0.2.81'
     
     - name: Build Act image
       shell: bash
