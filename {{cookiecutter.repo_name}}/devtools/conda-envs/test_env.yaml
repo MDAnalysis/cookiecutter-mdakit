@@ -17,7 +17,7 @@ dependencies:
   # Pip-only installs
   - pip:
     - codecov
-    - mdnalysis
+    - MDAnalysis
 {% else %}  - codecov
 
   # Pip-only installs
