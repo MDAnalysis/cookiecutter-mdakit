@@ -79,7 +79,7 @@ jobs:
       with:
         version: {{ "${{ matrix.mdanalysis-version }}" }}
         install-tests: false
-        installer: pip
+        installer: {% if cookiecutter.__dependency_source == 'conda-forge' %} conda {% else %} pip {% endif %}
         shell: bash {% if cookiecutter.__dependency_source != 'pip' %} -l {0} {% endif %}
       
     - name: Install package
