@@ -97,12 +97,13 @@ class ExampleRepositoryDocumentation:
             self.package_name,  # package_name
             "A package to do MD analysis",  # description
             "my-github-username",  # github_username,
-            "",  # github_host_account
+            "my-github-username",  # github_host_account
             "My Name",  # author_name
             "my_example_email@gmail.com",  # author_email
-            "",  # dependency_source
-            "",  # include_ReadTheDocs
+            "1",  # dependency_source
+            "1",  # include_ReadTheDocs
             "MyAnalysisClass",  # template_analysis_class
+            "1",  # license
         ]
 
         with tempfile.TemporaryDirectory() as tmpdir:
