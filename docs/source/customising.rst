@@ -31,10 +31,10 @@ ammend appropriately:
 .. _general-info:
 
 * **License:** Your code needs to be clearly licensed so that users know if 
-  they can (legally) use it. The cookiecutter will apply the **GPLv2** 
-  license by default, included in the ``LICENSE`` file. If you decide to use a
-  different license (see `ChooseALicense <https://choosealicense.com/>`_), also 
-  update the copyright infromation in ``README.md``.
+  they can (legally) use it. During generation users choose one of the supported licenses
+  (defaults to **MIT**) and the cookiecutter fills ``LICENSE`` from that choice. 
+  Users can later change licenses (see `ChooseALicense <https://choosealicense.com/>`_) 
+  and update the copyright information in ``README.md``.
 
 * **README:** ``README.md`` is the introductory explanation to you project; it
   will be rendered on your GitHub repo's home page. It has been pre-filled with 
