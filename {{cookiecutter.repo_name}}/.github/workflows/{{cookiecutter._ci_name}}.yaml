@@ -74,7 +74,6 @@ jobs:
 {% endif %}
 
     - name: Install MDAnalysis version
-      if: {{ "${{ matrix.mdanalysis-version != 'latest' }}" }}
       uses: MDAnalysis/install-mdanalysis@main
       with:
         version: {{ "${{ matrix.mdanalysis-version }}" }}
