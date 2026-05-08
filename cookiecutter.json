@@ -36,7 +36,7 @@
         "Apache-2.0": ["Apache License 2.0", "green", "https://opensource.org/licenses/Apache-2.0", "Apache 2.0"]
     },
     "__license": "{{ cookiecutter.license }}",
-    "_mda_cc_version": 2.10.0,
+    "_mda_cc_version": "2.10.0",
     "_ci_name": "gh-ci",
     "_central_branch_name": "main",
     "_dependency_source_keys": {
