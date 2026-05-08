@@ -41,9 +41,8 @@ follow classifications:
      - Modify?
    * - ``LICENSE``
      - :ref:`GENERAL INFORMATION <general-info>`
-     - File containing the details of the GPLv2 license, the default license for packages developed from the MDAKit cookiecutter
-     - **YES** - without a clear license, *no-one* can legally use your code
-     - **OPTIONAL** - you can opt for a license other than GPLv2
+     - Generated license text from your chosen option (MIT, GPL-3.0+, BSD 3-Clause, or Apache 2.0).
+     - **YES** - without a clear license, *no-one* can legally use your code.
    * - ``README.md``
      - :ref:`GENERAL INFORMATION <general-info>`
      - A basic introduction/overview of the package; this file will be rendered on the GitHub repo's home
