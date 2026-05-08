@@ -2,19 +2,21 @@ import ast
 import enum
 from dataclasses import dataclass, asdict
 import pathlib
-from typing import Literal, List
+from typing import Literal
 
 from cookiecutter.main import cookiecutter
+from hooks.post_gen_project import LICENSE_OPTIONS
 
 COOKIECUTTER_PATH = pathlib.Path(__file__).parent.parent.resolve()
+LICENSE_SOURCE_FILENAMES = tuple(LICENSE_OPTIONS.values())
+DEFAULT_LICENSE = "MIT License"
 
-
-def get_classes_from_file(path: str) -> List:
+def get_classes_from_file(path: str) -> list:
     path = pathlib.Path(path)
     with path.open() as f:
         tree = ast.parse(f.read(), filename=str(path))
 
-    classes: List[str] = []
+    classes: list[str] = []
     for node in ast.iter_child_nodes(tree):
         if isinstance(node, ast.ClassDef):
             classes.append(node.name)
@@ -43,6 +45,7 @@ class CookiecutterMDAKit:
     dependency_source: DependencyType = DependencyType.CONDAFORGE
     include_ReadTheDocs: IncludeReadTheDocs = "y"
     template_analysis_class: str = "MyAnalysisClass"
+    license: str = DEFAULT_LICENSE
     output_directory: str = "."
 
     @property
@@ -75,6 +78,6 @@ class CookiecutterMDAKit:
         path = self.package_directory / path
         return path.exists()
 
-    def get_classes_from_package_file(self, path: str) -> List[str]:
+    def get_classes_from_package_file(self, path: str) -> list[str]:
         path = self.package_directory / path
         return get_classes_from_file(path)
