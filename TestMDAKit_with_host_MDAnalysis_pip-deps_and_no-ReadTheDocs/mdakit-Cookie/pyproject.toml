@@ -1,6 +1,6 @@
 [build-system]
 requires = [
-  "setuptools >=61.2",
+  "setuptools >=77",
   "versioningit",
 ]
 build-backend = "setuptools.build_meta"
@@ -8,7 +8,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "mdakit-Cookie"
 description = "Test MDAKit Project with dependencies using pip and no ReadTheDocs"
-license = {file = "LICENSE" }
+license = "MIT"
+license-files = ["LICENSE", "AUTHORS.md"]
+
 authors = [
     {name = "Test User name", email = "test_email@test.com"},
 ]
@@ -22,6 +24,9 @@ dependencies = [
 ]
 keywords = [
     "molecular simulations",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
 ]
 dynamic = [
     "version",
