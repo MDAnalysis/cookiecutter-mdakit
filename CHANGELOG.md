@@ -78,5 +78,6 @@ The rules for this file:
 
 ### Removed
 <!-- Removed features -->
+- Unused `_version.py` references (PR #160)
 - Unused files from MolSSI
 - `canvas` entrypoint (Issue #40, PR #45)
