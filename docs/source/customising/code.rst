@@ -6,13 +6,14 @@ Making and pushing changes to your code
 Now you should go forth and code!							
 
 Your project's code will live in the ``{package_name}/`` directory. 
-A basic ``__init__.py`` file (which :ref:`sets the version <versioning>`) as 
-been pre-generated, along with several subpackages (and accompanying (empty)
+A basic ``__init__.py`` file (which defines ``__version__`` from installed
+package metadata; see :ref:`version`) has been pre-generated, along with several
+subpackages (and accompanying (empty)
 ``__init__.py``):
 
 * ``analysis/``: If you chose to include a template analysis class when 
   running the cookiecutter, that class will appear in 
-  ``{package_name}/anaylsis/{template_analysis_class}.py``. This class is based 
+  ``{package_name}/analysis/{template_analysis_class}.py``. This class is based 
   on `MDAnalysis AnalysisBase <https://docs.mdanalysis.org/stable/documentation_pages/analysis/base.html>`_. 
   Comments in file should help you as you customise this class for your analysis.						
 * ``tests/``: where your code's unit tests will live. See  :ref:`writing-tests`.
