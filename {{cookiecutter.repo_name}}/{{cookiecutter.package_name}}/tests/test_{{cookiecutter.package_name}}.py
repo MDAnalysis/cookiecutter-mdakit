@@ -24,7 +24,7 @@ def test_mdanalysis_logo_length(mdanalysis_logo_text):
     [
         (0, 0),
         (1, 2),
-        (-5, -25),
+        (-5, -10),
         (1.5, 3.0),
         (-2.0, -4.0)
     ],
