@@ -31,7 +31,6 @@ readthedocs.yaml: Settings for ReadTheDocs
 
 # cookie
 package_name:
-  _version.py: Automatic version control with Versioneer
   data:
     __description: Sample additional data (non-code) which can be packaged
     files.py: Recommended file for resolving data file names
