@@ -8,15 +8,15 @@ Packaging
 A ``pyproject.toml`` file has been created by the cookiecutter to allow your
 code to be packaged and installed by users. This file has been automatically 
 set up with relevant meta information, dependencies (both core and optional
-dependencies for tests and documentaiton), and settings for additional features
-including versioningit for :ref:`versioning your code <versioning>`.
-You can edit this file to alter and of this information as appropriate.
+dependencies for tests and documentation), and settings for additional features
+including `versioningit`_ for :ref:`versioning your code <version>`.
+You can edit this file to alter any of this information as appropriate.
 
 A ``MANIFEST.in`` file is also created to identify additional files included 
-when packaging your code (e.g., additional comminity information like the 
+when packaging your code (e.g., additional community information like the 
 Code of Conduct).
 
-Includion of ``pyproject.toml`` should mean your code is installable from GitHub.
+Inclusion of ``pyproject.toml`` should mean your code is installable from GitHub.
 
 It is also a good idea to upload your package onto a package repository such 
 as `PyPI <https://pypi.org/>`_ or `conda-forge <https://conda-forge.org/>`_ to 
@@ -43,7 +43,7 @@ The ``cookiecutter`` uses `versioningit`_ to automatically determine your
 package's version based on git tags.
 
 By default, the initial version has been set to ``0.0.0``. 
-You can install versioningit_ to check the current versioningit output from commandline:
+You can install `versioningit`_ to check the current versioningit output from commandline:
 
 .. code-block:: bash
 
@@ -51,15 +51,15 @@ You can install versioningit_ to check the current versioningit output from comm
   $ versioningit .
   0.0.0
 
-As you add commits, the versioning will automatically update with
-the commit hashes:
+After additional commits past that tag, the template's format rules produce a
+local version segment (``+…``), for example:
 
 .. code-block:: bash
 
   $ versioningit .
   0.0.0+1.g58bcaff
 
-To tag a version, use the following command:
+To tag a new release, use the following command:
 
 .. code-block:: bash
 

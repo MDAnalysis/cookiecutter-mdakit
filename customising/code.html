@@ -135,13 +135,14 @@
 <h1>Making and pushing changes to your code<a class="headerlink" href="#making-and-pushing-changes-to-your-code" title="Link to this heading"></a></h1>
 <p id="adding-code">Now you should go forth and code!</p>
 <p>Your project’s code will live in the <code class="docutils literal notranslate"><span class="pre">{package_name}/</span></code> directory.
-A basic <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file (which <span class="xref std std-ref">sets the version</span>) as
-been pre-generated, along with several subpackages (and accompanying (empty)
+A basic <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file (which defines <code class="docutils literal notranslate"><span class="pre">__version__</span></code> from installed
+package metadata; see <a class="reference internal" href="packaging.html#version"><span class="std std-ref">Versioning</span></a>) has been pre-generated, along with several
+subpackages (and accompanying (empty)
 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>):</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">analysis/</span></code>: If you chose to include a template analysis class when
 running the cookiecutter, that class will appear in
-<code class="docutils literal notranslate"><span class="pre">{package_name}/anaylsis/{template_analysis_class}.py</span></code>. This class is based
+<code class="docutils literal notranslate"><span class="pre">{package_name}/analysis/{template_analysis_class}.py</span></code>. This class is based
 on <a class="reference external" href="https://docs.mdanalysis.org/stable/documentation_pages/analysis/base.html">MDAnalysis AnalysisBase</a>.
 Comments in file should help you as you customise this class for your analysis.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tests/</span></code>: where your code’s unit tests will live. See  <a class="reference internal" href="tests.html#writing-tests"><span class="std std-ref">Writing tests with Pytest</span></a>.</p></li>
