@@ -32,10 +32,10 @@ generate_cookiecutter_cli()
 project = "MDAKit Cookiecutter"
 # author = "MDAnalysis"
 
-# The short X.Y version
-version = "0.1"
 # The full version, including alpha/beta/rc tags
-release = "0.1.0b"
+release = "2.10.0"
+# The short X.Y version
+version = ".".join(release.split(".")[:2])
 
 author = ", ".join(parse_authors(sort_alphabetically=True))
 now = datetime.datetime.now()
