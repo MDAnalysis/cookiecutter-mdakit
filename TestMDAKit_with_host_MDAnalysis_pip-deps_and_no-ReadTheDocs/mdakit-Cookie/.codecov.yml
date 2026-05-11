@@ -12,5 +12,3 @@ comment:
   behavior: default
   flags: null
   paths: null
-ignore:
-  - "mdakit-Cookie/_version.py"
