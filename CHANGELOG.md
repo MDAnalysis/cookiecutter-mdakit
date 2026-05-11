@@ -31,6 +31,7 @@ The rules for this file:
 
 ### Added
 <!-- New added features -->
+- Add example of API import with unit tests using pytest parametrize (PR #161)
 - Extend license options to MIT (default), GPLv3+, BSD 3-clause and Apache 2 (PR #156)
 - Add black configurartion to `pyproject.toml` (Issue #73, PR #75)
 - Cookiecutter version dependency (Issue #33, PR #46)
