@@ -27,9 +27,12 @@ The rules for this file:
 - RMeli
 - orbeckst
 - ljwoods2
+- ojeda-e
 
 ### Added
 <!-- New added features -->
+- Add example of API import with unit tests using pytest parametrize (PR #161)
+- Extend license options to MIT (default), GPLv3+, BSD 3-clause and Apache 2 (PR #156)
 - Add black configurartion to `pyproject.toml` (Issue #73, PR #75)
 - Cookiecutter version dependency (Issue #33, PR #46)
 - Configuration files for external hooks (PR #9)
@@ -42,6 +45,7 @@ The rules for this file:
 
 ### Fixed
 <!-- Bug fixes -->
+- Build docs by fixing `repo_name` cookiecutter cli (Issue #157, PR #158)
 - Updated mambaforge version in `readthedocs.yaml` (Issue #132, PR #133)
 - Switched deprecated pkg_resources to use importlib (PR #122, Issue #121)
 - Fixed pypi_check with lowercase (PR #118, Issue #112)
@@ -74,5 +78,6 @@ The rules for this file:
 
 ### Removed
 <!-- Removed features -->
+- Unused `_version.py` references (PR #160)
 - Unused files from MolSSI
 - `canvas` entrypoint (Issue #40, PR #45)

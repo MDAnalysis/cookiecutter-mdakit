@@ -31,13 +31,7 @@ jobs:
         matrix:
           os: [ubuntu-latest, macOS-latest, windows-latest]
           mdanalysis-version: ["latest", "develop"]
-          python-version: ["3.10", "3.11", "3.12"]
-          exclude:
-            # Entries here exclude particular combinations of the matrix
-            # Edit or remove as particular combinations come into or out of date
-            # Below we exclude runs with the latest release and Python 3.12
-            - mdanalysis-version: "latest"
-              python-version: "3.12"
+          python-version: ["3.11", "3.12", "3.13", "3.14"]
 
     steps:
     - uses: actions/checkout@v4
@@ -60,13 +54,13 @@ jobs:
 {% else %}
     # More info on options: https://github.com/conda-incubator/setup-miniconda
     - name: Install conda dependencies
-      uses: conda-incubator/setup-miniconda@v3
+      uses: conda-incubator/setup-miniconda@v4
       with:
         python-version: {{ '${{ matrix.python-version }}' }}
         environment-file: devtools/conda-envs/test_env.yaml
         add-pip-as-python-dependency: true
 {% if cookiecutter.__dependency_source == 'conda-forge' %}
-        miniforge-variant: Mambaforge
+        miniforge-version: "latest"
         use-mamba: true
         channels: conda-forge
 {% endif %}
@@ -81,7 +75,7 @@ jobs:
       with:
         version: {{ "${{ matrix.mdanalysis-version }}" }}
         install-tests: false
-        installer: {% if cookiecutter.__dependency_source == 'conda-forge' %} mamba {% else %} pip {% endif %}
+        installer: {% if cookiecutter.__dependency_source == 'conda-forge' %} conda {% else %} pip {% endif %}
         shell: bash {% if cookiecutter.__dependency_source != 'pip' %} -l {0} {% endif %}
       
     - name: Install package
@@ -105,7 +99,7 @@ jobs:
 
     - name: codecov
       if: github.repository == '{{ cookiecutter.github_host_account }}/{{ cookiecutter.repo_name }}' && github.event_name != 'schedule'
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v5
       with:
         file: coverage.xml
         name: codecov-{{ '${{ matrix.os }}' }}-py{{ '${{ matrix.python-version }}' }}
@@ -131,7 +125,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.11"
+        python-version: "3.12"
 
     - name: Install Pylint
       run: |
@@ -156,7 +150,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.11"
+        python-version: "3.12"
 
     - name: Install dependencies
       run: |

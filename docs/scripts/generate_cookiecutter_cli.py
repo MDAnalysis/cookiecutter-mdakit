@@ -13,6 +13,11 @@ COOKIECUTTER_PATH = abs_filepath.parent.parent.parent
 GENERATED_PATH = COOKIECUTTER_PATH / "docs" / "source" / "generated"
 
 
+def repo_name_from_project_name(project_name: str) -> str:
+    """Same reference name as in ``repo_name`` default in ``cookiecutter.json``."""
+    return project_name.lower().replace(" ", "_").replace("-", "_")
+
+
 def flatten_dict(dct, key=tuple()):
     """Turn a nested dict into a flat dict, with keys as tuples."""
     for k, v in dct.items():
@@ -78,7 +83,8 @@ class FileDescriptions:
 class ExampleRepositoryDocumentation:
 
     def __init__(self):
-        self.repo_name = "example-repository"
+        self.project_name = "My Project Name"
+        self.repo_name = repo_name_from_project_name(self.project_name)
         self.package_name = "package_name"
         self.example_repo_path = GENERATED_PATH / self.repo_name
         self.cookiecutter_cli_log = GENERATED_PATH / "cookiecutter_cli.log"
@@ -86,19 +92,18 @@ class ExampleRepositoryDocumentation:
 
     def generate_cli_output(self) -> str:
         inputs = [
-            "My Project Name",  # project_name
+            self.project_name,  # project_name
             self.repo_name,  # repo_name
             self.package_name,  # package_name
             "A package to do MD analysis",  # description
             "my-github-username",  # github_username,
-            "",  # github_host_account
+            "my-github-username",  # github_host_account
             "My Name",  # author_name
             "my_example_email@gmail.com",  # author_email
-            "",  # dependency_source
-            "",  # include_ReadTheDocs
+            "3",  # dependency_source
+            "1",  # include_ReadTheDocs
             "MyAnalysisClass",  # template_analysis_class
-            ""
-            ""
+            "1",  # license
         ]
 
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -110,7 +115,9 @@ class ExampleRepositoryDocumentation:
                 capture_output=True,
                 input="\n".join(inputs),
                 cwd=tmpdir,
+                check=True
             )
+
             source_repo = os.path.join(tmpdir, self.repo_name)
             destination_repo = str(self.example_repo_path.resolve())
             shutil.rmtree(destination_repo, ignore_errors=True)

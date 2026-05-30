@@ -9,7 +9,7 @@ dependencies:
   - pip
 {% if cookiecutter.__dependency_source == 'conda-forge' %}
   # MDAnalysis
-  - MDAnalysis
+  - mdanalysis
 {% endif %}
   # Testing
   - pytest

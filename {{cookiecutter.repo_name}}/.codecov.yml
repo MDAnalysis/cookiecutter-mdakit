@@ -12,5 +12,3 @@ comment:
   behavior: default
   flags: null
   paths: null
-ignore:
-  - "{{cookiecutter.repo_name}}/_version.py"

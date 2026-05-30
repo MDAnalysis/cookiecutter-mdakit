@@ -28,3 +28,6 @@ The rules for this file:
 
 **2024**
 - Lawson Woods \<@ljwoods2\>
+
+**2026**
+- Estefania Barreto-Ojeda \<@ojeda-e\>

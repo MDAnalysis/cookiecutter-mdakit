@@ -2,6 +2,14 @@
 
 version: 2
 
+# Sphinx configuration
+sphinx:
+  configuration: docs/source/conf.py
+
+# Uncomment the following lines to enable MkDocs configuration
+# mkdocs:
+#   configuration: docs/mkdocs.yml
+
 build:
   os: ubuntu-22.04
   tools:
