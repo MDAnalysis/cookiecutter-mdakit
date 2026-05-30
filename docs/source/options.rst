@@ -97,8 +97,8 @@ dependency_source
 
 This option determines which sources to use for dependencies for the package.
 It affects the continuous integration testing, as well as
-the dependency files written. The three choices
-(``conda-forge``, ``anaconda``, and ``pip``)
+the dependency files written. The two choices
+(``conda-forge`` and ``pip``)
 are explained below.
 
 **Default value:** ``conda-forge``.
@@ -107,8 +107,8 @@ are explained below.
 conda-forge
 ~~~~~~~~~~~
 
-This option looks for dependencies first in the ``conda-forge`` channel,
-then the default ``anaconda`` channel, before falling back to ``pip``.
+This option looks for dependencies in the ``conda-forge`` channel,
+before falling back to ``pip``.
 
 .. note::
 
@@ -116,17 +116,8 @@ then the default ``anaconda`` channel, before falling back to ``pip``.
     ``conda`` is a great package manager for creating
     isolated environments, and managing dependencies between them.
     Moreover, many packages are available on ``conda-forge``
-    that are not on the default ``anaconda`` channel or ``pip``.
+    that are not on ``pip``.
 
-
-
-anaconda
-~~~~~~~~
-
-This option still uses ``conda`` to manage dependencies,
-but only uses the ``anaconda`` channel and ``pip`` fallback.
-This option would install MDAnalysis from `PyPI`_ .
-as it is not available on the default ``anaconda`` channel.
 
 pip
 ~~~

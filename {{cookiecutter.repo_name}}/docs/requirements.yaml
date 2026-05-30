@@ -1,10 +1,6 @@
 name: {{cookiecutter.repo_name}}-docs
 channels:
-{% if cookiecutter.__dependency_source == 'anaconda' %}
-  - defaults
-{% else %}
   - conda-forge
-{% endif %}
 dependencies:
     # Base depends
   - python

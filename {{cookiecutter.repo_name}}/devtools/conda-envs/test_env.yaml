@@ -1,7 +1,6 @@
 name: {{cookiecutter.repo_name}}-test
-channels:{% if cookiecutter.__dependency_source == 'anaconda' %}
-  - defaults
-{% elif cookiecutter.__dependency_source == 'conda-forge' %}
+channels:
+{% if cookiecutter.__dependency_source == 'conda-forge' %}
   - conda-forge
 {% endif %}
 dependencies:
@@ -16,14 +15,8 @@ dependencies:
   - pytest
   - pytest-cov
   - pytest-xdist
-{% if cookiecutter.__dependency_source == 'anaconda' %}
-  # Pip-only installs
-  - pip:
-    - codecov
-    - MDAnalysis
-{% else %}  - codecov
+  - codecov
 
   # Pip-only installs
   #- pip:
   #  - codecov
-{% endif %}

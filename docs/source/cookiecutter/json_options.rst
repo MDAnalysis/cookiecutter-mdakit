@@ -32,12 +32,10 @@ They correspond to the following options:
     :widths: 30 70
     :header-rows: 1
 
-    * - __dependency_source 
+    * - __dependency_source
       - dependency_source
     * - conda-forge
-      - Prefer conda-forge over the default anaconda channel with pip fallback
-    * - anaconda
-      - Prefer default anaconda channel with pip fallback
+      - Prefer conda-forge with pip fallback
     * - pip
       - Dependencies from pip only (no conda)
 
