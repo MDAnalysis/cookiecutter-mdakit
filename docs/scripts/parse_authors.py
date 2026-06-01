@@ -7,7 +7,7 @@ AUTHOR_FILE = COOKIECUTTER_PATH / "AUTHORS.md"
 
 
 def parse_authors(sort_alphabetically: bool = False):
-    username_pattern = "<@[\S]+>"
+    username_pattern = r"<@[\S]+>"
     with AUTHOR_FILE.open("r") as f:
         contents = [x.strip() for x in f.readlines()]
 
