@@ -63,9 +63,6 @@ jobs:
         miniforge-version: "latest"
         use-mamba: true
         channels: conda-forge
-{% elif cookiecutter.__dependency_source == 'anaconda' %}
-        miniconda-version: "latest"
-        channels: defaults
 {% endif %}
         activate-environment: {{cookiecutter.repo_name}}-test
         auto-update-conda: true

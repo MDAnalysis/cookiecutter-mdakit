@@ -100,7 +100,7 @@ class ExampleRepositoryDocumentation:
             "my-github-username",  # github_host_account
             "My Name",  # author_name
             "my_example_email@gmail.com",  # author_email
-            "3",  # dependency_source
+            "2",  # dependency_source
             "1",  # include_ReadTheDocs
             "MyAnalysisClass",  # template_analysis_class
             "1",  # license

@@ -27,8 +27,7 @@ IncludeReadTheDocs = Literal["y", "n"]
 
 
 class DependencyType(enum.Enum):
-    CONDAFORGE = "Prefer conda-forge over the default anaconda channel with pip fallback"
-    ANACONDA = "Prefer default anaconda channel with pip fallback"
+    CONDAFORGE = "Prefer conda-forge with pip fallback"
     PIP = "Dependencies from pip only (no conda)"
 
 

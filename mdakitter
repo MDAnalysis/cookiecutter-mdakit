@@ -57,11 +57,10 @@ parser.add_argument(
 )
 parser.add_argument(
     "--dependency-source",
-    choices=["conda-forge", "anaconda", "pip"],
+    choices=["conda-forge", "pip"],
     help=(
         "Source to choose for dependencies. "
-        "'conda-forge' prefers conda-forge over the default anaconda channel with pip fallback. "
-        "'anaconda' prefers default anaconda channel with pip fallback. "
+        "'conda-forge' prefers the conda-forge channel with pip fallback. "
         "'pip' uses dependencies from pip only (no conda)"
     ),
     default="conda-forge",

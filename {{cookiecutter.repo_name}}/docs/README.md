@@ -3,9 +3,9 @@
 The docs for this project are built with [Sphinx](http://www.sphinx-doc.org/en/master/).
 To compile the docs, first ensure that Sphinx and the ReadTheDocs theme are installed.
 
-{% if (cookiecutter.dependency_source == 'Prefer conda-forge over the default anaconda channel with pip fallback' or cookiecutter.dependency_source == 'Prefer default anaconda channel with pip fallback') %}
+{% if cookiecutter.dependency_source == 'Prefer conda-forge with pip fallback' %}
 ```bash
-conda install sphinx sphinx_rtd_theme 
+conda install sphinx sphinx_rtd_theme
 ```
 {% elif cookiecutter.dependency_source == 'Dependencies from pip only (no conda)' %}
 ```bash
