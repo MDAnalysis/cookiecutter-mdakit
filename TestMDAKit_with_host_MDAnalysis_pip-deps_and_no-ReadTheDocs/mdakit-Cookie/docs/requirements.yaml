@@ -1,8 +1,6 @@
 name: mdakit-Cookie-docs
 channels:
-
   - conda-forge
-
 dependencies:
     # Base depends
   - python

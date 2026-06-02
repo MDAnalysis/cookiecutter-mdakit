@@ -1,6 +1,6 @@
 name: mdakit-Cookie-test
 channels:
-  - defaults
+
 dependencies:
   # Base depends
   - python
@@ -15,4 +15,3 @@ dependencies:
   # Pip-only installs
   #- pip:
   #  - codecov
-
