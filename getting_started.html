@@ -96,7 +96,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#author-email">author_email</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dependency-source">dependency_source</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#conda-forge">conda-forge</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#anaconda">anaconda</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pip">pip</a></li>
 </ul>
 </li>
@@ -178,10 +177,9 @@ my-github-username<span class="o">)</span>:<span class="w"> </span>my-github-use
 <span class="w">  </span><span class="o">[</span><span class="m">7</span>/12<span class="o">]</span><span class="w"> </span>author_name<span class="w"> </span><span class="o">(</span>Your<span class="w"> </span>name<span class="w"> </span><span class="o">(</span>or<span class="w"> </span>your<span class="w"> </span>organization/company/team<span class="o">))</span>:<span class="w"> </span>My<span class="w"> </span>Name
 <span class="w">  </span><span class="o">[</span><span class="m">8</span>/12<span class="o">]</span><span class="w"> </span>author_email<span class="w"> </span><span class="o">(</span>Your<span class="w"> </span>email<span class="w"> </span><span class="o">(</span>or<span class="w"> </span>your<span class="w"> </span>organization/company/team<span class="o">))</span>:<span class="w"> </span>my_example_email@gmail.com
 <span class="w">  </span><span class="o">[</span><span class="m">9</span>/12<span class="o">]</span><span class="w"> </span>Select<span class="w"> </span>dependency_source
-<span class="w">    </span><span class="m">1</span><span class="w"> </span>-<span class="w"> </span>Prefer<span class="w"> </span>conda-forge<span class="w"> </span>over<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>anaconda<span class="w"> </span>channel<span class="w"> </span>with<span class="w"> </span>pip<span class="w"> </span>fallback
-<span class="w">    </span><span class="m">2</span><span class="w"> </span>-<span class="w"> </span>Prefer<span class="w"> </span>default<span class="w"> </span>anaconda<span class="w"> </span>channel<span class="w"> </span>with<span class="w"> </span>pip<span class="w"> </span>fallback
-<span class="w">    </span><span class="m">3</span><span class="w"> </span>-<span class="w"> </span>Dependencies<span class="w"> </span>from<span class="w"> </span>pip<span class="w"> </span>only<span class="w"> </span><span class="o">(</span>no<span class="w"> </span>conda<span class="o">)</span>
-<span class="w">    </span>Choose<span class="w"> </span>from<span class="w"> </span><span class="o">[</span><span class="m">1</span>/2/3<span class="o">]</span><span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span>:<span class="w"> </span><span class="m">3</span>
+<span class="w">    </span><span class="m">1</span><span class="w"> </span>-<span class="w"> </span>Prefer<span class="w"> </span>conda-forge<span class="w"> </span>with<span class="w"> </span>pip<span class="w"> </span>fallback
+<span class="w">    </span><span class="m">2</span><span class="w"> </span>-<span class="w"> </span>Dependencies<span class="w"> </span>from<span class="w"> </span>pip<span class="w"> </span>only<span class="w"> </span><span class="o">(</span>no<span class="w"> </span>conda<span class="o">)</span>
+<span class="w">    </span>Choose<span class="w"> </span>from<span class="w"> </span><span class="o">[</span><span class="m">1</span>/2<span class="o">]</span><span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span>:<span class="w"> </span><span class="m">2</span>
 <span class="w">  </span><span class="o">[</span><span class="m">10</span>/12<span class="o">]</span><span class="w"> </span>Select<span class="w"> </span>include_ReadTheDocs
 <span class="w">    </span><span class="m">1</span><span class="w"> </span>-<span class="w"> </span>y
 <span class="w">    </span><span class="m">2</span><span class="w"> </span>-<span class="w"> </span>n
@@ -349,29 +347,22 @@ It is also used as the point of contact in <code class="docutils literal notrans
 <h3>dependency_source<a class="headerlink" href="#dependency-source" title="Link to this heading"></a></h3>
 <p>This option determines which sources to use for dependencies for the package.
 It affects the continuous integration testing, as well as
-the dependency files written. The three choices
-(<code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>, <code class="docutils literal notranslate"><span class="pre">anaconda</span></code>, and <code class="docutils literal notranslate"><span class="pre">pip</span></code>)
+the dependency files written. The two choices
+(<code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code>)
 are explained below.</p>
 <p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>.</p>
 <section id="conda-forge">
 <h4>conda-forge<a class="headerlink" href="#conda-forge" title="Link to this heading"></a></h4>
-<p>This option looks for dependencies first in the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel,
-then the default <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel, before falling back to <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<p>This option looks for dependencies in the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel,
+before falling back to <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We <strong>highly recommend</strong> using <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>.
 <code class="docutils literal notranslate"><span class="pre">conda</span></code> is a great package manager for creating
 isolated environments, and managing dependencies between them.
 Moreover, many packages are available on <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>
-that are not on the default <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel or <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+that are not available on <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
 </div>
-</section>
-<section id="anaconda">
-<h4>anaconda<a class="headerlink" href="#anaconda" title="Link to this heading"></a></h4>
-<p>This option still uses <code class="docutils literal notranslate"><span class="pre">conda</span></code> to manage dependencies,
-but only uses the <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel and <code class="docutils literal notranslate"><span class="pre">pip</span></code> fallback.
-This option would install MDAnalysis from <a class="reference external" href="https://pypi.org/">PyPI</a> .
-as it is not available on the default <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> channel.</p>
 </section>
 <section id="pip">
 <h4>pip<a class="headerlink" href="#pip" title="Link to this heading"></a></h4>
